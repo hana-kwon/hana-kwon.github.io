@@ -16,6 +16,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/brands.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/fontawesome.min.js"></script>
 <style id="site-css">
 /* Layout concept: the hexagon is a color wheel and the front door. Each color opens its own page of cards. */
 :root{
@@ -51,10 +53,14 @@ h1 a{text-decoration:none}
 .about{min-width:0;max-width:40em}
 .about h2{font-family:var(--serif);font-weight:300;font-size:2.15rem;line-height:1.2;margin:4px 0 18px;color:var(--wine);text-wrap:balance}
 .about p{margin:0 0 14px;font-size:16px;line-height:1.6}
-.clinks{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:4px}
-.clinks a{display:inline-flex;align-items:center;gap:7px;color:var(--soft);text-decoration:none;font-size:14px;font-weight:500;transition:color .15s}
+.clinks{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;margin-top:6px}
+.clinks a{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;color:var(--soft);text-decoration:none;font-size:22px;line-height:1;transition:color .15s}
 .clinks a:hover{color:var(--wine)}
-.clinks svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.clinks svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.clinks svg.svg-inline--fa{width:22px;height:22px;fill:currentColor;stroke:none}
+.clinks i.fa-linkedin{font-style:normal;font-weight:700;font-size:16px;font-family:var(--sans,system-ui),sans-serif}
+.clinks i.fa-linkedin::before{content:"in"}
+.clinks a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
 @media (max-width:760px){.intro{grid-template-columns:minmax(0,1fr);gap:20px}.pfig{width:min(220px,70%);justify-self:center}.about h2{font-size:1.65rem}}
 .side{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
 .nav{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
@@ -336,7 +342,11 @@ a.store:hover{box-shadow:0 0 0 3px var(--vc)}
 label.eadd{display:block;cursor:pointer}
 
 /* Research page */
-.alead{font-family:var(--serif);font-weight:300;font-size:1.75rem;line-height:1.3;margin:18px 0 4px;max-width:30em;text-wrap:balance}
+.rhead{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:28px;align-items:center;margin-top:10px}
+.atop{min-width:0}
+.atitle{font-family:var(--serif);font-weight:300;font-size:clamp(1.8rem,3.4vw,2.5rem);line-height:1.2;margin:0 0 16px;color:var(--wine);text-wrap:balance}
+.akw{color:inherit;text-decoration:underline;text-decoration-color:var(--vc);text-decoration-thickness:.16em;text-underline-offset:.16em;text-decoration-skip-ink:none}
+.alead{font-size:16.5px;line-height:1.6;color:var(--soft);margin:0;max-width:34em}
 .vwrap{display:grid;place-items:center;padding-block:6px 10px}
 .venn{width:min(100%,520px);height:auto;overflow:visible;display:block}
 .vc{fill-opacity:.6;mix-blend-mode:var(--blend);stroke:var(--paper);stroke-width:2;cursor:pointer;transition:fill-opacity .25s;transform-box:fill-box;transform-origin:center;animation:breathe 7s ease-in-out infinite}
@@ -348,26 +358,24 @@ label.eadd{display:block;cursor:pointer}
 .vl svg{stroke:var(--ink)}
 .vl:focus-visible text{text-decoration:underline}
 .vcenter{font-family:var(--serif);font-style:italic;font-weight:600;font-size:17px;fill:var(--ink);text-anchor:middle}
-.axes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:6px}
-.axis{border-radius:10px;padding:16px;background:color-mix(in srgb,var(--vc) 14%,var(--paper));transition:opacity .25s,box-shadow .25s;scroll-margin-top:20px;min-width:0}
-.axis.off{opacity:.5}
-.axis.on{box-shadow:0 0 0 2px var(--vc)}
-.axh{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start}
-.badge{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--vc)}
-.badge .ic{width:24px;height:24px;stroke:var(--vk)}
-.axis h3{font-family:var(--serif);font-weight:400;font-size:1.2rem;line-height:1.25;margin:2px 0 4px;text-wrap:balance}
-.axq{margin:0;font-size:14px;color:var(--soft)}
-.ail{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:6px}
-.ail li{display:flex;align-items:flex-start;gap:8px;min-width:0}
-.ai{flex:1 1 auto;min-width:0;display:grid;grid-template-columns:30px minmax(0,1fr);gap:10px;padding:8px;border-radius:6px;background:var(--paper)}
-.ai:hover{box-shadow:0 0 0 1px var(--vc)}
-.ib{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--vc) 38%,var(--paper))}
-.ib .ic{width:18px;height:18px;stroke:var(--ink)}
 .ic{fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.at b{display:block;font-weight:600;font-size:14.5px;line-height:1.3}
-.am{display:block;font-size:12.5px;color:var(--soft);margin-top:2px}
-.aq{display:block;font-size:13.5px;margin-top:4px}
-@media (max-width:860px){.axes{grid-template-columns:minmax(0,1fr)}.alead{font-size:1.4rem}}
+.arows{display:grid;gap:64px;margin-top:40px}
+.axis{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:40px;align-items:start;scroll-margin-top:24px;transition:opacity .25s;min-width:0;--fc:var(--ink)}
+.axis:nth-child(even) .fimg{order:2}
+.axis .fimg{margin-top:4px}
+.axis.off{opacity:.45}
+.atx{min-width:0}
+.axis .fq{margin-bottom:14px}
+.ail{list-style:none;margin:0;padding:0;display:grid;border-top:1px solid var(--rule)}
+.ail li{display:flex;align-items:flex-start;gap:10px;min-width:0;border-bottom:1px solid var(--rule)}
+.ai{flex:1 1 auto;min-width:0;display:grid;gap:2px;padding:11px 2px;text-align:left;border-radius:4px}
+.ai b{font-weight:600;font-size:14.5px;line-height:1.35;color:var(--ink);transition:color .15s}
+.ai:hover b{color:var(--fc)}
+.ai:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.ail .lnk{flex:none;margin-top:12px}
+.am{display:block;font-size:12.5px;color:var(--soft)}
+.aq{display:block;font-size:13.5px;line-height:1.5;margin-top:2px}
+@media (max-width:860px){.rhead{grid-template-columns:minmax(0,1fr);gap:8px}.venn{width:min(100%,420px)}.arows{gap:44px;margin-top:28px}.axis{grid-template-columns:minmax(0,1fr);gap:16px}.axis:nth-child(even) .fimg{order:0}}
 @media (prefers-reduced-motion:reduce){.vc{animation:none}}
 
 /* Misc */
@@ -484,7 +492,7 @@ details .ef{margin-bottom:8px}
   <section class="view" id="v-agenda" hidden=""></section>
 
   <section class="view" id="v-misc" hidden="">
-    <div class="mhead"><h2>Fun Projects</h2><p class="mintro" id="misc-intro"></p></div>
+    <div class="mhead"><h2>Fun Projects!</h2><p class="mintro" id="misc-intro"></p></div>
     <div class="mgrid" id="misc-grid"></div>
   </section>
 
@@ -496,10 +504,10 @@ details .ef{margin-bottom:8px}
  "role": "Pre-doctorate, Harvard Business School",
  "email": "hkkwon5@gmail.com",
  "cv": "assets/HanaKwon_CV.pdf",
- "linkedin": "https://www.linkedin.com/in/hanakwon526",
+ "linkedin": "https://www.linkedin.com/in/hanakwon26/",
  "photo": "assets/hana_portrait6.jpg",
  "about": {
-  "h": "Who leads at the technological frontier?",
+  "h": "",
   "p": [
    "Hello! I am a pre-doctoral researcher in Strategy and Entrepreneurial Management at Harvard Business School, where I am fortunate to work with Professors Andy Wu, Ebehi Iyoha, and Jaya Wen.",
    "I study how firms turn frontier science and technology into advantage under socio-economic and political uncertainty: build-or-buy choices, critical input control, and responses to export controls, tariffs, and industrial policy.",
@@ -564,10 +572,10 @@ details .ef{margin-bottom:8px}
    "key": "consulting",
    "name": "Strategy Consulting",
    "title": "Consulting",
-   "sub": "Go-to-Market\nDigital Transformation",
+   "sub": "Tech Strategy\nMarket Entry",
    "ab": "Consulting",
    "head": "Strategy Consulting",
-   "meta": "Go-to-market · Digital transformation · Cloud and data",
+   "meta": "Tech strategy · Market entry · Digital transformation",
    "intro": "Go-to-market and digital transformation for technology firms, including Hitachi Vantara (cloud and HCI) and Siemens (digital twins).",
    "groups": [
     {
@@ -910,11 +918,11 @@ details .ef{margin-bottom:8px}
    "key": "quant",
    "name": "Causal Inference",
    "title": "Columbia",
-   "sub": "Experiments\nData Science",
+   "sub": "Quant Data Science",
    "ab": "Columbia",
    "head": "M.A. Quantitative Methods in the Social Sciences",
    "meta": "Data Science · Columbia University",
-   "intro": "Causal inference, experiments, and machine learning. Research assistant at Columbia Business School and ISERP with Professor Lori Yue.",
+   "intro": "Causal inference, experiments, and machine learning. Research assistant at Columbia Business School and ISERP with Professors Lori Yue and Mabel Abraham.",
    "groups": [
     {
      "h": "Thesis",
@@ -1237,7 +1245,7 @@ details .ef{margin-bottom:8px}
   },
   {
    "t": "Columbia Business School and ISERP",
-   "s": "Research Assistant to Professor Lori Yue",
+   "s": "Research Assistant to Professors Lori Yue and Mabel Abraham",
    "go": "quant"
   },
   {
@@ -1247,7 +1255,7 @@ details .ef{margin-bottom:8px}
   },
   {
    "t": "AI Edu Studio",
-   "s": "Co-founder · Yappi, an interactive AI tutor for children's spoken English",
+   "s": "Co-founder, AI EdTech startup · Yappi, an interactive AI tutor app for children's spoken English",
    "go": "entrepreneur"
   },
   {
@@ -1287,29 +1295,35 @@ details .ef{margin-bottom:8px}
    {
     "c": 4,
     "icon": "atom",
-    "t": "Science → Advantage",
-    "h": "Frontier science and technology into firm advantage",
-    "q": "When a frontier technology arrives, or becomes available to everyone, what lets a firm build lasting advantage?",
+    "t": "Science & Tech",
+    "k": "Science & Technology",
+    "kw": "frontier",
+    "img": "assets/ax_sci.jpg",
+    "h": "How frontier technology becomes advantage",
+    "q": "When a frontier technology arrives and spreads, which firms turn it into lasting advantage?",
     "items": [
      {
       "card": "clock",
       "icon": "clock"
      },
      {
-      "card": "moats",
-      "icon": "moat"
+      "card": "config",
+      "icon": "network"
      },
      {
-      "card": "cc",
-      "icon": "compass"
+      "card": "africa",
+      "icon": "globe"
      }
     ]
    },
    {
     "c": 5,
-    "icon": "compass",
-    "t": "Geopolitics → Direction",
-    "h": "Geopolitics and policy shape the direction of innovation",
+    "icon": "map",
+    "t": "Geopolitics",
+    "k": "Geopolitics",
+    "kw": "decides",
+    "img": "assets/ax_geo.jpg",
+    "h": "How geopolitics shapes the direction of innovation",
     "q": "How do tariffs, export controls, and state priorities change not only how much firms innovate, but what they innovate on?",
     "items": [
      {
@@ -1338,22 +1352,32 @@ details .ef{margin-bottom:8px}
    },
    {
     "c": 2,
-    "icon": "network",
-    "t": "Ecosystems → Inclusion",
-    "h": "Who gets to take part in frontier innovation",
-    "q": "Can regions and latecomer economies, not only the countries that set the rules, take part in frontier innovation?",
+    "icon": "spark",
+    "t": "Entrepreneurship",
+    "k": "Entrepreneurship",
+    "kw": "wins",
+    "img": "assets/ax_ent.jpg",
+    "h": "Entrepreneurial bets under uncertainty",
+    "q": "When can startups build advantage on technology anyone can buy, and when should founders and investors commit or let go?",
     "items": [
      {
-      "card": "africa",
-      "icon": "globe"
+      "card": "moats",
+      "icon": "moat"
      },
      {
-      "card": "returning",
-      "icon": "route"
+      "card": "cc",
+      "icon": "compass"
+     },
+     {
+      "go": "entrepreneur",
+      "t": "Building an AI EdTech startup",
+      "s": "Co-founded AI Edu Studio and launched Yappi, an AI tutor app",
+      "icon": "mic"
      }
     ]
    }
-  ]
+  ],
+  "title": "Who wins at the frontier, and who decides?"
  },
  "misc": [
   {
@@ -1417,7 +1441,7 @@ details .ef{margin-bottom:8px}
    "sc": "races until half of visible vs. hidden innovations were copied"
   }
  ],
- "miscIntro": "Research is my favorite way to explore. Beyond my main research streams, these are the worlds I can't stop asking questions about.",
+ "miscIntro": "Research is my favorite way to explore the world. Beyond my main streams, these are the side quests I love digging into.",
  "links": [
   {
    "a": 0,
@@ -1527,7 +1551,7 @@ var CSS=(document.getElementById('site-css')||{}).textContent||'';
 var WRAP=document.querySelector('.wrap').outerHTML;
 var ORIG=document.getElementById('site-data').textContent;
 var D=JSON.parse(ORIG);
-var FONTS='<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap">';
+var FONTS='<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap">\n<script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/brands.min.js"><\/script>\n<script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/fontawesome.min.js"><\/script>';
 var RESET=':root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:14px}img{max-width:100%}[hidden]{display:none!important}';
 
 var Q=function(s){return document.querySelector(s)};
@@ -1907,7 +1931,7 @@ function renderIntro(){
   box.classList.toggle('nophoto',!D.photo);
   var CI={mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.6 6.6 12 13l8.4-6.4"/>',cv:'<path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/><path d="M10 13h6M10 17h6"/>',li:'<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2.2"/><path d="M5.8 16.2c.6-1.8 1.8-2.7 3.2-2.7s2.6.9 3.2 2.7"/><path d="M14.5 10h4M14.5 13.5h3"/>'};
   var CL=[];if(D.email)CL.push({k:'mail',u:'mailto:'+D.email,t:'Email',x:D.email});if(D.cv)CL.push({k:'cv',u:D.cv,t:'CV'});if(D.linkedin)CL.push({k:'li',u:D.linkedin,t:'LinkedIn'});
-  Q('#about').innerHTML=(ab.h?'<h2>'+esc(ab.h)+'</h2>':'')+ps.map(function(x){return '<p>'+esc(x)+'</p>'}).join('')+(CL.length?'<div class="clinks">'+CL.map(function(l){return '<a href="'+esc(l.u)+'"'+(l.k==='mail'?'':' target="_blank" rel="noopener"')+' title="'+esc(l.x||l.t)+'"><svg viewBox="0 0 24 24" aria-hidden="true">'+CI[l.k]+'</svg><span>'+esc(l.t)+'</span></a>'}).join('')+'</div>':'');
+  Q('#about').innerHTML=(ab.h?'<h2>'+esc(ab.h)+'</h2>':'')+ps.map(function(x){return '<p>'+esc(x)+'</p>'}).join('')+(CL.length?'<div class="clinks">'+CL.map(function(l){return '<a href="'+esc(l.u)+'"'+(l.k==='mail'?'':' target="_blank" rel="noopener"')+' title="'+esc(l.x||l.t)+'" aria-label="'+esc(l.t)+'">'+(l.k==='li'?'<i class="fa-brands fa-linkedin" aria-hidden="true"></i>':'<svg viewBox="0 0 24 24" aria-hidden="true">'+CI[l.k]+'</svg>')+'</a>'}).join('')+'</div>':'');
   box.hidden=!D.photo&&!ab.h&&!ps.length;
   if(D.photo){f.innerHTML='<img src="'+esc(D.photo)+'" alt="'+esc((D.name||'')+' portrait')+'">';f.hidden=false}else{f.innerHTML='';f.hidden=true}
 }
@@ -2083,11 +2107,16 @@ function agItem(it){
   var c=it.card?CARD[it.card]:null;if(it.card&&!c)return '';
   var t=c?c.t:it.t,meta=c?wsHTML(c,' · '):esc(it.s||''),q=c?c.q:'';
   var attr=c?' data-card="'+esc(c.id)+'"':(it.go?' data-go="'+esc(it.go)+'"':'');
-  return '<li><button type="button" class="ai"'+attr+'><span class="ib">'+icon(it.icon)+'</span><span class="at"><b>'+esc(t)+'</b>'+(meta?'<span class="am">'+meta+'</span>':'')+(q?'<span class="aq">'+esc(q)+'</span>':'')+'</span></button>'+(c&&c.url?'<a class="lnk" href="'+esc(c.url)+'" target="_blank" rel="noopener">'+esc(c.ul||hostOf(c.url))+' ↗</a>':'')+'</li>';
+  return '<li><button type="button" class="ai"'+attr+'><b>'+esc(t)+'</b>'+(meta?'<span class="am">'+meta+'</span>':'')+(q?'<span class="aq">'+esc(q)+'</span>':'')+'</button>'+(c&&c.url?'<a class="lnk" href="'+esc(c.url)+'" target="_blank" rel="noopener">'+esc(c.ul||hostOf(c.url))+' ↗</a>':'')+'</li>';
 }
 function vennLabel(x,i,cx,cy){
   var parts=String(x.t||'').split('→'),l1=parts[0].trim(),l2=parts.length>1?'→ '+parts.slice(1).join('→').trim():'';
   return '<g class="vl" data-ax="'+i+'" tabindex="0" role="button" aria-label="'+esc(x.h||x.t)+'"><svg x="'+(cx-11)+'" y="'+(cy-40)+'" width="22" height="22" viewBox="0 0 24 24" class="ic">'+(ICONS[x.icon]||ICONS.dot)[1]+'</svg><text x="'+cx+'" y="'+(cy)+'">'+esc(l1)+'</text>'+(l2?'<text x="'+cx+'" y="'+(cy+18)+'">'+esc(l2)+'</text>':'')+'</g>';
+}
+function agTitle(AG){
+  var t=String(AG.title||''),ax=(AG.axes||[]).slice(0,3);
+  ax.forEach(function(x,i){if(!x.kw)return;var k=String(x.kw),at=t.toLowerCase().indexOf(k.toLowerCase());if(at<0)return;t=t.slice(0,at)+'\u0001'+i+'\u0002'+t.slice(at,at+k.length)+'\u0003'+t.slice(at+k.length)});
+  return esc(t).replace(/\u0001(\d)\u0002/g,function(m,i){return '<span class="akw" style="'+cv(ax[+i].c)+'">'}).replace(/\u0003/g,'</span>');
 }
 function agendaViewHTML(pre){
   var AG=D.agenda||{axes:[]};
@@ -2096,16 +2125,16 @@ function agendaViewHTML(pre){
     AG.axes.slice(0,3).forEach(function(x,i){svg+='<circle class="vc" data-ax="'+i+'" cx="'+pos[i][0]+'" cy="'+pos[i][1]+'" r="104" style="fill:var(--c'+x.c+');animation-delay:'+(-i*2.3)+'s"/>'});
     AG.axes.slice(0,3).forEach(function(x,i){svg+=vennLabel(x,i,lab[i][0],lab[i][1])});
     svg+='<text class="vcenter" x="200" y="204">'+esc(AG.center||'')+'</text></svg>';
-    return '<p class="alead">'+esc(AG.lead)+'</p><div class="vwrap">'+svg+'</div><div class="axes">'+AG.axes.map(function(x,i){return '<section class="axis" id="'+pre+'ax-'+i+'" data-ax="'+i+'" style="'+cv(x.c)+'"><div class="axh"><span class="badge">'+icon(x.icon)+'</span><div><h3>'+esc(x.h)+'</h3><p class="axq">'+esc(x.q)+'</p></div></div><ul class="ail">'+(x.items||[]).map(agItem).join('')+'</ul></section>'}).join('')+'</div>';
+    return '<div class="rhead"><div class="atop">'+(AG.title?'<h2 class="atitle">'+agTitle(AG)+'</h2>':'')+'<p class="alead">'+esc(AG.lead)+'</p></div><div class="vwrap">'+svg+'</div></div><div class="arows">'+AG.axes.map(function(x,i){return '<section class="axis" id="'+pre+'ax-'+i+'" data-ax="'+i+'" style="'+cv(x.c)+';--fc:var(--t'+x.c+')">'+(x.img?'<div class="fimg"><img src="'+esc(x.img)+'" alt="" loading="lazy"><span class="fno">0'+(i+1)+'</span></div>':'')+'<div class="atx"><p class="fkick">'+esc(x.k||x.t)+'</p><h3 class="fh">'+esc(x.h)+'</h3><p class="fq">'+esc(x.q)+'</p><ul class="ail">'+(x.items||[]).map(agItem).join('')+'</ul></div></section>'}).join('')+'</div>';
 }
 function renderAgenda(){
   var AG=D.agenda||{axes:[]},box=Q('#v-agenda'),h='';
   if(!editing){
     h=agendaViewHTML('');
   }else{
-    h='<div class="epanel"><h2 class="eh">Research page</h2>'+inp('agenda.lead','Opening sentence',{area:1,rows:3})+inp('agenda.center','Word in the middle of the circles')+'</div>';
+    h='<div class="epanel"><h2 class="eh">Research page</h2>'+inp('agenda.title','Question at the top')+inp('agenda.lead','Opening sentence',{area:1,rows:3})+inp('agenda.center','Word in the middle of the circles')+'</div>';
     AG.axes.forEach(function(x,i){var p='agenda.axes.'+i;
-      h+='<div class="aedit" style="'+cv(x.c)+'"><div class="two">'+inp(p+'.t','Label inside the circle (→ starts a second line)')+inp(p+'.h','Heading')+'</div>'+inp(p+'.q','Question',{area:1})+'<div class="two">'+colorSelect(p+'.c','Color',x.c)+iconSelect(p+'.icon','Symbol',x.icon)+'</div>'+
+      h+='<div class="aedit" style="'+cv(x.c)+'"><div class="two">'+inp(p+'.t','Label inside the circle (→ starts a second line)')+inp(p+'.h','Heading')+'</div><div class="two">'+inp(p+'.k','Small label above the heading')+inp(p+'.kw','Word in the top question to underline')+'</div>'+inp(p+'.q','Question',{area:1})+(ASSETS?'<label class="eb" style="justify-self:start;cursor:pointer">'+(x.img?'Change photo':'Add photo')+'<input type="file" accept="image/*" data-card-photo="'+p+'" hidden></label>':'')+'<div class="two">'+colorSelect(p+'.c','Color',x.c)+iconSelect(p+'.icon','Symbol',x.icon)+'</div>'+
         (x.items||[]).map(function(it,j){var ip=p+'.items.'+j;return '<div class="erowcard">'+(it.card!==undefined?cardSelect(ip+'.card','Project',it.card):'<div class="two">'+inp(ip+'.t','Title')+inp(ip+'.s','Details')+'</div>'+areaSelect(ip+'.go','Links to',it.go||'',true))+iconSelect(ip+'.icon','Symbol',it.icon)+'<div class="erow">'+moveDel(ip)+'</div></div>'}).join('')+
         eb('additem',p+'.items','+ Add project').replace('class="eb"','class="eadd"')+'</div>';
     });
@@ -2113,7 +2142,7 @@ function renderAgenda(){
   box.innerHTML=h;
 }
 function setAx(i){document.querySelectorAll('#v-agenda [data-ax],#home-lists [data-ax]').forEach(function(el){var on=i!==null&&+el.dataset.ax===i;el.classList.toggle('on',on);el.classList.toggle('off',i!==null&&!on)})}
-document.addEventListener('mouseover',function(e){if((curView!=='agenda'&&curView!=='home')||editing)return;var g=e.target.closest&&e.target.closest('#v-agenda [data-ax],#home-lists [data-ax]');setAx(g?+g.dataset.ax:null)});
+document.addEventListener('mouseover',function(e){if((curView!=='agenda'&&curView!=='home')||editing)return;var g=e.target.closest&&e.target.closest('#v-agenda .vc,#v-agenda .vl,#home-lists .vc,#home-lists .vl');setAx(g?+g.dataset.ax:null)});
 document.addEventListener('focusin',function(e){if((curView!=='agenda'&&curView!=='home')||editing)return;var g=e.target.closest&&e.target.closest('#v-agenda .vl,#home-lists .vl');setAx(g?+g.dataset.ax:null)});
 
 /* ---------- Router ---------- */
