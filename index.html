@@ -51,6 +51,10 @@ h1 a{text-decoration:none}
 .about{min-width:0;max-width:40em}
 .about h2{font-family:var(--serif);font-weight:300;font-size:2.15rem;line-height:1.2;margin:4px 0 18px;color:var(--wine);text-wrap:balance}
 .about p{margin:0 0 14px;font-size:16px;line-height:1.6}
+.clinks{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:4px}
+.clinks a{display:inline-flex;align-items:center;gap:7px;color:var(--soft);text-decoration:none;font-size:14px;font-weight:500;transition:color .15s}
+.clinks a:hover{color:var(--wine)}
+.clinks svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 @media (max-width:760px){.intro{grid-template-columns:minmax(0,1fr);gap:20px}.pfig{width:min(220px,70%);justify-self:center}.about h2{font-size:1.65rem}}
 .side{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
 .nav{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
@@ -453,7 +457,7 @@ details .ef{margin-bottom:8px}
     </div>
     <div class="side">
       <nav class="nav" aria-label="Pages"><a href="#home" data-nav="home">Home</a><a href="#agenda" data-nav="agenda">Research</a><a href="#misc" data-nav="misc">Fun Projects</a><button class="editbtn" id="editbtn" type="button" hidden="">Edit</button></nav>
-      <div class="contact"><span id="mail"></span><button class="copy" id="copy" type="button">Copy</button></div>
+      <div class="contact" hidden=""><span id="mail"></span><button class="copy" id="copy" type="button">Copy</button></div>
     </div>
   </header>
 
@@ -491,6 +495,8 @@ details .ef{margin-bottom:8px}
  "name": "Hana Kwon",
  "role": "Pre-doctorate, Harvard Business School",
  "email": "hkkwon5@gmail.com",
+ "cv": "assets/HanaKwon_CV.pdf",
+ "linkedin": "https://www.linkedin.com/in/hanakwon526",
  "photo": "assets/hana_portrait6.jpg",
  "about": {
   "h": "Who leads at the technological frontier?",
@@ -498,7 +504,7 @@ details .ef{margin-bottom:8px}
    "Hello! I am a pre-doctoral researcher in Strategy and Entrepreneurial Management at Harvard Business School, where I am fortunate to work with Professors Andy Wu, Ebehi Iyoha, and Jaya Wen.",
    "I study how firms turn frontier science and technology into advantage under socio-economic and political uncertainty: build-or-buy choices, critical input control, and responses to export controls, tariffs, and industrial policy.",
    "Before HBS, I was a researcher at KIET, Korea's national economic policy research institute, working on industrial policy for semiconductors, batteries, and supply chains, and a research assistant at Columbia Business School and ISERP with Professor Lori Yue.",
-   "I am also a founder. I co-founded AI Edu Studio, an English education startup, and built and launched its AI app, Yappi. Before that, I was a strategy consultant on digital transformation and go-to-market for manufacturing, software, and fintech firms."
+   "I am also a co-founder of an EdTech startup, where I built and launched Yappi, an interactive AI voice app now being piloted in an English kindergarten in Korea. Before that, I was a strategy consultant on digital transformation and go-to-market for manufacturing, software, and fintech firms."
   ]
  },
  "center": "*Innovation*\nunder technological · political uncertainty",
@@ -1899,7 +1905,9 @@ function renderHeader(){
 function renderIntro(){
   var box=Q('#intro'),f=Q('#pfig'),ab=D.about||{},ps=(ab.p||[]).filter(function(x){return String(x).trim()});
   box.classList.toggle('nophoto',!D.photo);
-  Q('#about').innerHTML=(ab.h?'<h2>'+esc(ab.h)+'</h2>':'')+ps.map(function(x){return '<p>'+esc(x)+'</p>'}).join('');
+  var CI={mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.6 6.6 12 13l8.4-6.4"/>',cv:'<path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/><path d="M10 13h6M10 17h6"/>',li:'<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2.2"/><path d="M5.8 16.2c.6-1.8 1.8-2.7 3.2-2.7s2.6.9 3.2 2.7"/><path d="M14.5 10h4M14.5 13.5h3"/>'};
+  var CL=[];if(D.email)CL.push({k:'mail',u:'mailto:'+D.email,t:'Email',x:D.email});if(D.cv)CL.push({k:'cv',u:D.cv,t:'CV'});if(D.linkedin)CL.push({k:'li',u:D.linkedin,t:'LinkedIn'});
+  Q('#about').innerHTML=(ab.h?'<h2>'+esc(ab.h)+'</h2>':'')+ps.map(function(x){return '<p>'+esc(x)+'</p>'}).join('')+(CL.length?'<div class="clinks">'+CL.map(function(l){return '<a href="'+esc(l.u)+'"'+(l.k==='mail'?'':' target="_blank" rel="noopener"')+' title="'+esc(l.x||l.t)+'"><svg viewBox="0 0 24 24" aria-hidden="true">'+CI[l.k]+'</svg><span>'+esc(l.t)+'</span></a>'}).join('')+'</div>':'');
   box.hidden=!D.photo&&!ab.h&&!ps.length;
   if(D.photo){f.innerHTML='<img src="'+esc(D.photo)+'" alt="'+esc((D.name||'')+' portrait')+'">';f.hidden=false}else{f.innerHTML='';f.hidden=true}
 }
@@ -1911,7 +1919,7 @@ function renderEdHome(){
   if(!editing){box.hidden=true;box.innerHTML='';return}
   box.hidden=false;
   box.innerHTML='<div class="epanel"><h2 class="eh">Page settings</h2>'+
-    (ASSETS?'<label class="eb" style="justify-self:start;cursor:pointer">'+(D.photo?'Change photo':'Add photo')+'<input type="file" accept="image/*" data-upload-photo hidden></label>':'')+(D.photo?eb('delphoto',null,'Remove photo',true):'')+inp('about.h','Heading next to your photo')+lines('about.p','Text next to your photo (one paragraph per line)')+
+    (ASSETS?'<label class="eb" style="justify-self:start;cursor:pointer">'+(D.photo?'Change photo':'Add photo')+'<input type="file" accept="image/*" data-upload-photo hidden></label>':'')+(D.photo?eb('delphoto',null,'Remove photo',true):'')+inp('about.h','Heading next to your photo')+lines('about.p','Text next to your photo (one paragraph per line)')+'<div class="two">'+inp('cv','CV link (under your intro)',{ph:'https://'})+inp('linkedin','LinkedIn link',{ph:'https://'})+'</div>'+
     '<div class="two">'+inp('name','Name')+inp('role','Title under your name')+'</div>'+
     inp('email','Email')+
     inp('center','Center of the hexagon. Put *stars* around a word to make it bold.')+
