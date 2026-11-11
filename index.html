@@ -248,12 +248,13 @@ button.li:hover{background:color-mix(in srgb,var(--vc) 22%,var(--paper))}
 #home-lists{padding-top:26px}
 .htabs{display:flex;flex-wrap:wrap;gap:6px 4px;padding-block:26px 0;border-bottom:1px solid var(--rule)}
 @media (min-width:761px){#home-lists{padding-top:12px}.htabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:var(--paper);padding-block:14px 0}}
-.maphint{display:flex;justify-content:center;align-items:center;gap:6px;margin:4px 0 0;font-size:13.5px;color:var(--soft)}
+.maphint{display:flex;justify-content:center;align-items:center;gap:5px;margin:2px 0 0;font-size:11.5px;letter-spacing:.02em;color:var(--soft);animation:mhblink 2.2s ease-in-out infinite}
 .maphint i{font-style:normal;animation:mhb 2.4s ease-in-out infinite}
 .maphint .mh-t{display:none}
 @media (hover:none){.maphint .mh-c{display:none}.maphint .mh-t{display:inline}}
 @keyframes mhb{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
-@media (prefers-reduced-motion:reduce){.maphint i{animation:none}}
+@keyframes mhblink{0%,100%{opacity:1}50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.maphint,.maphint i{animation:none}}
 .sqfold{margin:56px 0 0;border-top:1px solid var(--rule);scroll-margin-top:20px}
 .sqfold>summary{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;padding:20px 0 8px;cursor:pointer;color:var(--soft);font-size:14.5px}
 .sqfold>summary::-webkit-details-marker{display:none}
@@ -807,6 +808,7 @@ label.eadd{display:block;cursor:pointer}
 .note .nt{margin:0;font-size:14.5px;line-height:1.62;color:var(--ink);text-wrap:pretty}
 .note .mlk{align-self:flex-start;margin-top:4px}
 @media (max-width:640px){.gbn{grid-template-columns:minmax(0,1fr);gap:28px}}
+
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .note{background:color-mix(in srgb,var(--nc) 16%,var(--paper))}:root:not([data-theme="light"]) .note .nk,:root:not([data-theme="light"]) .note .nhand{color:color-mix(in srgb,var(--nc) 45%,var(--ink))}}
 :root[data-theme="dark"] .note{background:color-mix(in srgb,var(--nc) 16%,var(--paper))}
 :root[data-theme="dark"] .note .nk,:root[data-theme="dark"] .note .nhand{color:color-mix(in srgb,var(--nc) 45%,var(--ink))}
@@ -1089,8 +1091,8 @@ details .ef{margin-bottom:8px}
     <ol class="lsvlist" id="ls-vlist"></ol>
     <section class="lstree" aria-labelledby="ls-treeh">
       <h3 id="ls-treeh">Branching out, coming together</h3>
-      <p class="mintro"><span class="ln">It starts with a family of educators and branches out from there.</span> <span class="ln">Every thread comes together in the PhD, on the way to becoming a professor.</span></p>
-      <div class="lsstage lststage"><svg id="ls-tree" viewBox="0 0 1690 690" role="img" aria-labelledby="ls-treetitle"><title id="ls-treetitle">A branching map: a family of educators leads to an undergraduate degree in English and Education and branches into threads (teaching, entrepreneurship, strategy, research, policy, and methods) that converge at Harvard Business School, lead to a PhD, and end in the dream of becoming a professor.</title></svg></div>
+      <p class="mintro"><span class="ln">Every step was heading toward one destination.</span></p>
+      <div class="lsstage lststage"><svg id="ls-tree" viewBox="0 0 1690 690" role="img" aria-labelledby="ls-treetitle"><title id="ls-treetitle">A branching map: a family of educators leads to an undergraduate degree in English and Education and branches into threads (teaching, entrepreneurship, technology, strategy, policy, and organizations) that converge at Harvard Business School, lead to a PhD, and end in the dream of becoming a professor.</title></svg></div>
       <div class="lstlist" id="ls-tlist"></div>
     </section>
   </section>
@@ -1695,7 +1697,7 @@ details .ef{margin-bottom:8px}
        "w": "Assisted W. Bentley MacLeod",
        "q": "How do strategies such as tit-for-tat pay off in finite versus indefinite relationships?",
        "ic": "cycle",
-       "img": "assets/card_relc.jpg",
+       "img": "assets/card_relc_game.jpg",
        "abs": "Using experimental data on repeated prisoner’s dilemmas, compared how strategies such as tit-for-tat pay off in finite versus indefinite relationships."
       }
      ]
@@ -1755,7 +1757,7 @@ details .ef{margin-bottom:8px}
        "q": "How African firms adopt and build with AI, and what slows its diffusion.",
        "tg": "iefg",
        "ic": "map",
-       "img": "assets/card_africa.jpg",
+       "img": "assets/card_africa_net.jpg",
        "l": "RADIA",
        "abs": "A research initiative on how African firms adopt and build with AI: which startups and enterprises use AI to solve industry problems, how deeply and how early firms of different sizes adopt it, how adoption shows up in sales, profits, and wage premiums, and how the pull of AI talent toward firms abroad and gaps in skills, networks, and financing slow diffusion. Combines firm surveys with workforce data on African professionals."
       },
@@ -1801,7 +1803,7 @@ details .ef{margin-bottom:8px}
        ],
        "abs": "Asks when control of an input that an entire technology depends on, such as the high-bandwidth memory Korean firms supply to the AI industry, becomes leadership in that technology. Against the prevailing view that such suppliers gain most by selling to every downstream producer, the study hypothesizes that they integrate forward, as BYD moved from batteries into cars, only when the input’s margin falls below the value they can capture downstream and they already hold the complementary assets the downstream technology requires. U.S. export controls on advanced chips (2022) and high-bandwidth memory (2024), which cut some suppliers’ sales to China more than others’, provide the variation to compare downstream investment, acquisitions, and patenting.",
        "ic": "chip",
-       "img": "assets/card_cic.jpg"
+       "img": "assets/card_wars_chip.jpg"
       },
       {
        "id": "svm",
@@ -1815,7 +1817,7 @@ details .ef{margin-bottom:8px}
        ],
        "abs": "Studies how market incentives and policy priorities shape firms’ choices about where to direct innovation, using provincial leadership data and technology plans in China.",
        "ic": "balance",
-       "img": "assets/card_svm.jpg"
+       "img": "assets/card_svm_globe.jpg"
       },
       {
        "id": "ideology",
@@ -1829,7 +1831,7 @@ details .ef{margin-bottom:8px}
         4
        ],
        "ic": "ship",
-       "img": "assets/card_ideology.jpg",
+       "img": "assets/card_reroute.jpg",
        "abs": "How does an owner's political orientation shape a small business's response to tariffs? Linking firms' trade records with owners' political data, the project compares sourcing before and after the 2025 tariffs with difference-in-differences and event-study designs, asking whether firms switch suppliers, shift sourcing countries, or absorb costs differently depending on their owners' ideology."
       }
      ]
@@ -1869,7 +1871,7 @@ details .ef{margin-bottom:8px}
        "q": "How startups use revenue projections to establish credibility.",
        "tg": "e",
        "ic": "trend",
-       "img": "assets/card_projection.jpg"
+       "img": "assets/card_projection_photo.jpg"
       }
      ]
     }
@@ -1942,7 +1944,7 @@ details .ef{margin-bottom:8px}
   },
   {
    "t": "Korea Institute for Industrial Economics and Trade (KIET)",
-   "s": "Researcher, Korea's government think tank for industry and trade",
+   "s": "Researcher, Korea's government think tank for economic and industrial policy",
    "go": "policy",
    "loc": "Sejong, Korea"
   },
@@ -2084,7 +2086,7 @@ details .ef{margin-bottom:8px}
   {
    "c": 5,
    "t": "K-Beauty and Olive Young",
-   "img": "assets/sq_kbeauty_cartoon.jpg",
+   "img": "assets/sq_kbeauty_shelf.jpg",
    "q": "Ideas from dermatology clinics or from cosmetic science: which one decides the K-beauty brands that move first, with Olive Young as the bridge to the mass market. Plus: what brands do when the EU bans an ingredient in one market only.",
    "chips": [
     "Market entry",
@@ -2166,7 +2168,7 @@ details .ef{margin-bottom:8px}
    }
   }
  ],
- "miscIntro": "Research is my favorite way to explore the world! I’m a nerd at heart: once I fall for something, I dig all the way in. Teaching is how I share what I find.",
+ "miscIntro": "Research is my favorite way to explore the world! I’m a rabbit-hole person: once something catches my interest, I go all the way down. Teaching is how I share what I find.",
  "links": [
   {
    "a": 5,
@@ -2272,7 +2274,7 @@ details .ef{margin-bottom:8px}
  },
  "teach": {
   "h": "A Third-Generation Educator",
-  "lead": "Most Koreans learn this phrase in school. In my family, it was more like a job description: three generations of us have been educators. My family runs an education business, so I grew up in classrooms, and teaching language came naturally to me. In college, I studied English and Education and earned my teaching certificate in English. Teaching has followed me ever since, from kindergarten conversation lessons to business school classrooms to an app for children. To me, it is the simplest way to give what I have and watch it grow in someone else.",
+  "lead": "Most Koreans learn this phrase in school. In my family, it was more like a job description: three generations of us have been educators. My family runs an education business, so I grew up in classrooms, and teaching language came naturally to me. In college, I studied English and Education and became certified to teach English in secondary schools. Teaching has followed me ever since, from kindergarten conversation lessons to business school classrooms to an app for children. To me, it is where I am most useful to the world around me: I pass on what inspires me and get back the energy of someone else’s curiosity.",
   "items": [
    {
     "ic": "speech",
@@ -2387,7 +2389,7 @@ details .ef{margin-bottom:8px}
    },
    {
     "t": "Piano and ✈️ Travel",
-    "d": "Classical piano and about 20 countries",
+    "d": "Classical piano and 20+ countries",
     "to": "music",
     "c": 4,
     "em": "🎹"
@@ -2407,12 +2409,12 @@ details .ef{margin-bottom:8px}
   "kick": "Classical piano · since age 5",
   "img": "assets/beyond_piano.jpg",
   "alt": "Piano keys in warm light",
-  "story": "I have loved classical piano since I started at five. Music runs on my mother’s side: my grandfather and my mom both studied music, which makes me the third generation. I played for years and was good at it. At twelve, I won the grand prize at a national competition with Liszt’s Mephisto Waltz No. 1, and I seriously considered a life in music. When I had to choose between an arts high school and a foreign language high school, I asked my mom for advice. A musician herself, she knew how narrow a career in music could be, mostly performing or teaching, and she told me to choose the path with more doors and a wider world. I took her advice and went to the foreign language high school, but I never stopped playing.\n\nMusic is still how I unwind, let go of stress, and take in the world. I have been listening to classical music since before I was born, so it has always felt like home. I especially love playing Chopin’s “Revolutionary” and “Black Key” Études, and my favorite piece of all is Mendelssohn’s Rondo Capriccioso."
+  "story": "I have loved classical piano since I started at five. Music runs on my mother’s side: my grandfather and my mom both studied music, which makes me the third generation. I played for years and was good at it. At twelve, I won the grand prize at a national competition with Liszt’s Mephisto Waltz No. 1, and I seriously considered a life in music. When I had to choose between an arts high school and a foreign language high school, I asked my mom for advice. A musician herself, she knew how narrow a career in music could be, mostly performing or teaching, and she told me to choose the path with more doors and a wider world. I took her advice and let that option go, but never the music.\n\nMusic is still how I unwind, shake off stress, and take in the world. I have been listening to classical music since before I was born, so it has always felt like home. I especially love playing Chopin’s “Revolutionary” and “Black Key” Études, and my favorite piece of all is Mendelssohn’s Rondo Capriccioso."
  },
  "travel": {
   "h": "Travel",
   "em": "✈️",
-  "story": "Growing up, my family traveled abroad two or three times a year during school breaks. I have been to about 20 countries across five continents so far.",
+  "story": "Growing up, my family traveled abroad two or three times a year during school breaks. I have been to more than 20 countries across five continents so far.",
   "photos": [
    {
     "src": "assets/travel_paris_night.jpg",
@@ -2514,8 +2516,31 @@ details .ef{margin-bottom:8px}
     "th": "ent"
    },
    {
-    "k": "Strategy",
+    "k": "Technology",
     "c": "cons",
+    "steps": [
+     [
+      "Consulting",
+      "Technology adoption at Kia and Hitachi"
+     ],
+     [
+      "HBS",
+      "Frontier technology and AI adoption"
+     ],
+     [
+      "HBS",
+      "The Technology Clock"
+     ],
+     [
+      "HBS",
+      "RADIA: AI in Africa"
+     ]
+    ],
+    "th": "tec"
+   },
+   {
+    "k": "Strategy",
+    "c": "snu",
     "steps": [
      [
       "Consulting",
@@ -2539,29 +2564,6 @@ details .ef{margin-bottom:8px}
      ]
     ],
     "th": "str"
-   },
-   {
-    "k": "Technology",
-    "c": "hbs",
-    "steps": [
-     [
-      "Consulting",
-      "Technology adoption at Kia and Hitachi"
-     ],
-     [
-      "HBS",
-      "Frontier technology and AI adoption"
-     ],
-     [
-      "HBS",
-      "The Technology Clock"
-     ],
-     [
-      "HBS",
-      "RADIA: AI in Africa"
-     ]
-    ],
-    "th": "tec"
    },
    {
     "k": "Policy",
@@ -2595,7 +2597,7 @@ details .ef{margin-bottom:8px}
     "th": "pol"
    },
    {
-    "k": "Methods",
+    "k": "Organizations",
     "c": "col",
     "steps": [
      [
@@ -2619,7 +2621,7 @@ details .ef{margin-bottom:8px}
       "My field-experiment thesis"
      ]
     ],
-    "th": "met"
+    "th": "org"
    }
   ]
  },
@@ -2629,7 +2631,7 @@ details .ef{margin-bottom:8px}
    "em": "🍎",
    "h": "A Third-Generation Educator",
    "prem": "홍익인간 (hongik ingan): “live to benefit the world widely.”",
-   "lead": "Most Koreans learn this phrase in school. In my family, it was more like a job description: three generations of us have been educators. My family runs an education business, so I grew up in classrooms, and teaching language came naturally to me. In college, I studied English and Education and earned my teaching certificate in English. Teaching has followed me ever since, from kindergarten conversation lessons to business school classrooms to an app for children. To me, it is the simplest way to give what I have and watch it grow in someone else.",
+   "lead": "Most Koreans learn this phrase in school. In my family, it was more like a job description: three generations of us have been educators. My family runs an education business, so I grew up in classrooms, and teaching language came naturally to me. In college, I studied English and Education and became certified to teach English in secondary schools. Teaching has followed me ever since, from kindergarten conversation lessons to business school classrooms to an app for children. To me, it is where I am most useful to the world around me: I pass on what inspires me and get back the energy of someone else’s curiosity.",
    "code": "T",
    "rec": 1,
    "items": [
@@ -2664,15 +2666,15 @@ details .ef{margin-bottom:8px}
      "em": "🎹",
      "t": "",
      "code": "Since age 5",
-     "story": "I have loved classical piano since I started at five. Music runs on my mother’s side: my grandfather and my mom both studied music, which makes me the third generation. I played for years and was good at it. At twelve, I won the grand prize at a national competition with Liszt’s Mephisto Waltz No. 1, and I seriously considered a life in music. When I had to choose between an arts high school and a foreign language high school, I asked my mom for advice. A musician herself, she knew how narrow a career in music could be, mostly performing or teaching, and she told me to choose the path with more doors and a wider world. I took her advice and went to the foreign language high school, but I never stopped playing.\n\nMusic is still how I unwind, let go of stress, and take in the world. I have been listening to classical music since before I was born, so it has always felt like home. I especially love playing Chopin’s “Revolutionary” and “Black Key” Études, and my favorite piece of all is Mendelssohn’s Rondo Capriccioso.",
+     "story": "I have loved classical piano since I started at five. Music runs on my mother’s side: my grandfather and my mom both studied music, which makes me the third generation. I played for years and was good at it. At twelve, I won the grand prize at a national competition with Liszt’s Mephisto Waltz No. 1, and I seriously considered a life in music. When I had to choose between an arts high school and a foreign language high school, I asked my mom for advice. A musician herself, she knew how narrow a career in music could be, mostly performing or teaching, and she told me to choose the path with more doors and a wider world. I took her advice and let that option go, but never the music.\n\nMusic is still how I unwind, shake off stress, and take in the world. I have been listening to classical music since before I was born, so it has always felt like home. I especially love playing Chopin’s “Revolutionary” and “Black Key” Études, and my favorite piece of all is Mendelssohn’s Rondo Capriccioso.",
      "sh": "Classical piano"
     },
     {
      "em": "✈️",
      "t": "",
      "photos": "travel",
-     "code": "20 countries",
-     "story": "Travel is a family tradition. Every school break, we went somewhere new, and we have covered about 20 countries across five continents so far. Most recently, the destination was Boston and New York, with me as the ultimate tour guide. Where to next? That decision is currently under review, by a few PhD admissions committees. 😉",
+     "code": "20+ countries",
+     "story": "Travel is a family tradition. Every school break, we went somewhere new, and we have covered more than 20 countries across five continents so far. Most recently, the destination was Boston and New York, with me as the ultimate tour guide. Where to next? 😉",
      "sh": "Family travel"
     }
    ]
@@ -2692,6 +2694,27 @@ details .ef{margin-bottom:8px}
      "t": "For twelve years, my family has given five children a full scholarship to our English kindergarten each year. When I started my own business, I joined in: those kids use our AI tutor for free, premium features included, and if one of them needs a tablet, we provide it."
     },
     {
+     "em": "🤝",
+     "hand": "Dream mentoring",
+     "k": "Since college · monthly",
+     "c": "fnd",
+     "t": "It began in college, when I was president of KULAP, Korea University’s first student public-consulting society, and we took on JOB-A-Dream, a mentoring program for students from low-income families in Seongbuk District, Seoul. I have kept mentoring ever since, once a month."
+    },
+    {
+     "em": "📱",
+     "hand": "Grandma’s friends",
+     "k": "Jeomchon, Korea · every visit",
+     "c": "kiet",
+     "t": "Every time I visit my grandmother in Jeomchon, one of the oldest cities in Korea, I volunteer at the local senior welfare center, teaching older residents how to use their smartphones. My grandmother comes along, and it has become my favorite way to meet her friends."
+    },
+    {
+     "em": "🌐",
+     "hand": "Lost in translation? Not here",
+     "k": "Boston & New York",
+     "c": "col",
+     "t": "Through an agency that hosts Korea-related events across the U.S. East Coast, I volunteer as an interpreter and translator whenever one comes to Boston or New York. Most recently, I interpreted for Korean climate-tech companies, a great chance to meet the founders behind Korea’s green tech startups."
+    },
+    {
      "em": "🎹",
      "hand": "Playing for others",
      "k": "Talent donation",
@@ -2704,15 +2727,6 @@ details .ef{margin-bottom:8px}
      "k": "These days",
      "c": "cons",
      "t": "I volunteer at an animal shelter, spending time with dogs that have been rescued."
-    },
-    {
-     "em": "🧑‍💻",
-     "hand": "Shared openly",
-     "k": "On GitHub",
-     "c": "fnd",
-     "t": "I share the code and data behind my research, so anyone can check my work or build on it.",
-     "u": "https://github.com/hana-kwon",
-     "ul": "GitHub"
     }
    ],
    "style": "cards"
@@ -3179,7 +3193,7 @@ function groupsHTML(i){
   if(dk.length)h+='<div class="agrp" style="--fc:var(--t'+i+')"><h3>Slides</h3><div class="decks">'+dk.map(function(c){return deckHTML(c,i)}).join('')+'</div></div>';
   return h;
 }
-var homeTab='home';
+var homeTab='none';
 var NBP=['Columbia Business School','Harvard Business School','Seoul National University','Lori Yue','Mabel Abraham','Andy Wu','Ebehi Iyoha','Jaya Wen','AI Edu Studio','Ministry of Economy and Finance','Ministry of Trade, Industry and Energy','Google Cloud','Kia Global','go-to-market strategy','process innovation','technology adoption'];
 function nbp(t){NBP.forEach(function(x){var e=esc(x);t=t.split(e).join('<span class="nw">'+e+'</span>')});return t}
 function akw(a){return a.kick?String(a.kick):String(a.sub||'').split('\n').map(function(x){return x.trim()}).filter(Boolean).join(' · ')}
@@ -3187,7 +3201,7 @@ function areaHeadHTML(a,i){var k=akw(a);return '<header class="hhead" style="'+c
 function focusHTML(a){return a.focus&&a.focus.length?'<div class="hfocus" aria-label="Focus areas">'+a.focus.map(function(f){return '<span>'+esc(f)+'</span>'}).join('')+'</div>':''}
 function tabOrder(){var o=(D.tabs||[]).map(function(k){return KEY[k]}).filter(function(i){return i!=null&&D.areas[i]});D.areas.forEach(function(a,i){if(o.indexOf(i)<0)o.push(i)});return o}
 function htabsHTML(){
-  return '<nav class="htabs" aria-label="Sections"><button type="button" class="htab" data-htab="-1" aria-pressed="'+(sel.v===null&&homeTab!=='sel')+'">Overview</button>'+tabOrder().map(function(i){var a=D.areas[i];return '<button type="button" class="htab" data-htab="'+i+'" aria-pressed="'+(sel.v===i)+'" style="'+cv(i)+'"><i class="hx"></i>'+esc(a.ab||a.title)+'</button>'}).join('')+'</nav>';
+  return '<nav class="htabs" aria-label="Sections"><button type="button" class="htab" data-htab="-1" aria-pressed="'+(sel.v===null&&homeTab==='home')+'">At a glance</button>'+tabOrder().map(function(i){var a=D.areas[i];return '<button type="button" class="htab" data-htab="'+i+'" aria-pressed="'+(sel.v===i)+'" style="'+cv(i)+'"><i class="hx"></i>'+esc(a.ab||a.title)+'</button>'}).join('')+'</nav>';
 }
 function homeTalksHTML(){
   var ai=-1,g=null;D.areas.forEach(function(a,i){(a.groups||[]).forEach(function(x){if(!g&&x.talks&&x.talks.length){g=x;ai=i}})});
@@ -3202,9 +3216,10 @@ function renderHomeLists(){
   if(!editing&&sel.v!==null&&D.areas[sel.v]){
     var a=D.areas[sel.v];
     h+='<div class="hdetail">'+areaHeadHTML(a,sel.v)+brandHTML(a)+groupsHTML(sel.v)+
-      '<div class="hback"><button type="button" class="chip" data-overview>← Back to overview</button></div></div>';
+      '<div class="hback"><button type="button" class="chip" data-overview>← Back</button></div></div>';
   }else if(!editing&&homeTab==='sel'){
     h+='<div class="hagenda">'+agendaViewHTML('h')+'</div>';
+  }else if(!editing&&homeTab==='none'){
   }else if(!editing){
     D.home.forEach(function(g){var items=g.ids.map(liHTML).join('');if(items)h+='<div class="grp"><h2>'+esc(g.h)+'</h2><ul class="items">'+items+'</ul></div>'});
     if(D.exp.length)h+='<div class="grp"><h2>Experience</h2><ul class="items tl">'+D.exp.map(rowHTML).join('')+'</ul></div>';
@@ -3288,7 +3303,7 @@ function bxHTML(x){
     var ph='';var src=it.photos&&D[it.photos];if(src&&src.photos&&src.photos.length)ph='<div class="bstrip mstrip" style="--n:'+src.photos.length+'">'+src.photos.map(function(p){return '<figure><img src="'+esc(p.src)+'" alt="'+esc(p.alt||p.cap||'')+'" loading="lazy"'+(p.pos?' style="object-position:'+esc(p.pos)+'"':'')+'></figure>'}).join('')+'</div>';
     return '<li><span class="mcode">'+esc(it.code||((x.code||'')+(i+1)))+'</span><span class="mem" aria-hidden="true">'+esc(it.em||'')+'</span><div class="mtx">'+(it.sh?'<p class="msh">'+esc(it.sh)+'</p>':'')+(it.t?'<p>'+esc(it.t)+link+go+'</p>':'')+gob+more+ph+'</div></li>'}).join('');
   var rec='';var b=D[x.key];if(x.rec&&b&&b.recg&&b.recg.length)rec='<details class="trec"><summary><span class="tpl" aria-hidden="true"></span>'+esc(b.rech||'Details')+'</summary><div class="tgroups">'+b.recg.map(function(g){return '<div class="tgp"><p class="tgh"><b>'+esc(g.h)+'</b>'+(g.s?'<span>'+esc(g.s)+'</span>':'')+'</p>'+(g.note?'<p class="tgn">'+esc(g.note)+'</p>':'')+(g.rows&&g.rows.length?'<ul>'+g.rows.map(function(r){return '<li><span class="rc"><b>'+esc(r.c)+'</b>'+(r.l?'<i>'+esc(r.l)+'</i>':'')+'</span><span class="ri">'+esc(r.i||'')+(r.y?' · '+esc(r.y):'')+'</span></li>'}).join('')+'</ul>':'')+'</div>'}).join('')+'</div></details>';
-  if(x.style==='cards'){var NC={roots:'#5E1424',snu:'#4A63C2',cons:'#E0952B',fnd:'#3AA57A'};items='<div class="gbn">'+(x.items||[]).map(function(it,i){return '<article class="note" style="--nc:'+(NC[it.c]||'#5E1424')+';--rot:'+[-1.4,1.1,.9,-1][i%4]+'deg"><span class="tape" aria-hidden="true"></span><div class="nh"><span class="nem" aria-hidden="true">'+esc(it.em||'')+'</span><span class="nk">'+esc(it.k||'')+'</span></div><p class="nhand">'+esc(it.hand||'')+'</p><p class="nt">'+esc(it.t)+'</p>'+(it.u?'<a class="mlk" href="'+esc(it.u)+'" target="_blank" rel="noopener">'+esc(it.ul||hostOf(it.u))+' \u2197</a>':'')+'</article>'}).join('')+'</div>';return '<section class="bsec mx" id="bq-'+esc(x.key)+'"><div class="bhead"><h3>'+emo(x.em)+esc(x.h)+'</h3>'+(x.prem?'<p class="mprem">'+esc(x.prem)+'</p>':'')+'</div>'+items+'</section>'}
+  if(x.style==='cards'){var NC={roots:'#5E1424',snu:'#4A63C2',cons:'#E0952B',fnd:'#3AA57A',kiet:'#8B6AD8',col:'#3B95CF'};items='<div class="gbn">'+(x.items||[]).map(function(it,i){var body='<div class="nh"><span class="nem" aria-hidden="true">'+esc(it.em||'')+'</span><span class="nk">'+esc(it.k||'')+'</span></div><p class="nhand">'+esc(it.hand||'')+'</p><p class="nt">'+esc(it.t)+'</p>'+(it.u?'<a class="mlk" href="'+esc(it.u)+'" target="_blank" rel="noopener">'+esc(it.ul||hostOf(it.u))+' \u2197</a>':'');return '<article class="note'+(it.model?' nwide':'')+'" style="--nc:'+(NC[it.c]||'#5E1424')+';--rot:'+(it.model?'.35':[-1.4,1.1,.9,-1][i%4])+'deg"><span class="tape" aria-hidden="true"></span>'+body+'</article>'}).join('')+'</div>';return '<section class="bsec mx" id="bq-'+esc(x.key)+'"><div class="bhead"><h3>'+emo(x.em)+esc(x.h)+'</h3>'+(x.prem?'<p class="mprem">'+esc(x.prem)+'</p>':'')+'</div>'+items+'</section>'}
   return '<section class="bsec mx" id="bq-'+esc(x.key)+'"><div class="bhead"><h3>'+emo(x.em)+esc(x.h)+'</h3>'+(x.prem?'<p class="mprem">'+esc(x.prem)+'</p>':'')+'</div>'+(x.lead?'<p class="mlead">'+esc(x.lead)+'</p>':'')+'<ol class="mlist">'+items+'</ol>'+rec+'</section>';
 }
 function bxTicketHTML(){var t=D.bxTicket;if(!t||!(D.misc||[]).length)return '';return '<div class="mtk-wrap"><button type="button" class="mtk" data-bq="bq-sq"><span class="mtki" aria-hidden="true">'+esc(t.em||'')+'</span><span class="mtkt"><span class="mtkk">'+esc(t.k)+'</span><span class="mtkn">'+esc(t.t)+' →</span></span></button></div>'}
@@ -3405,7 +3420,7 @@ function agendaViewHTML(pre){
     var mm=(AG.motivation?'<section class="mmcard"><p class="mml">Motivation</p><p class="mmt">'+nbp(esc(AG.motivation))+'</p></section>':'')+(AG.mission?'<section class="mmcard mmis"><p class="mml">Mission</p><p class="mmt">'+nbp(esc(AG.mission))+'</p></section>':'');
     return '<div class="rhead"><div class="atop">'+(AG.title?'<h2 class="atitle">'+agTitle(AG)+'</h2>':'')+'<p class="alead">'+esc(AG.lead)+'</p></div><div class="vwrap">'+svg+'</div></div>'+(mm?'<div class="mmrow">'+mm+'</div>':'')+researchMapHTML()+'<div class="arows">'+AG.axes.map(function(x,i){return '<section class="axis" id="'+pre+'ax-'+i+'" data-ax="'+i+'" style="'+cv(x.c)+';--fc:var(--t'+x.c+')">'+(x.img?'<div class="fimg"><img src="'+esc(x.img)+'" alt="" loading="lazy"><span class="fno">0'+(i+1)+'</span></div>':'')+'<div class="atx"><p class="fkick">'+esc(x.k||x.t)+'</p><h3 class="fh">'+esc(x.h)+'</h3><p class="fq">'+esc(x.q)+'</p><ul class="ail">'+(x.items||[]).map(agItem).join('')+'</ul></div></section>'}).join('')+'</div>'+sqTeaserHTML();
 }
-var UMB_SVG="<svg class=\"umb\" viewBox=\"0 0 1200 1070\" role=\"img\" aria-labelledby=\"ut ud\" xmlns=\"http://www.w3.org/2000/svg\"><title id=\"ut\">Research map: a strategy question over three overlapping research areas, resting on teaching<\/title><desc id=\"ud\">An umbrella labeled Strategy lens, Who wins at the frontier, and who decides, covers a three-circle Venn diagram of Science and Technology, Geopolitics, and Entrepreneurship, with Innovation at the center and ten projects placed in the regions. Below, an arch of stones labeled Teaching cradles the diagram: a family of educators, a degree in English and Education, ten years of tutoring, and an AI tutor for children. At the bottom, the places and methods behind the work.<\/desc><defs><clipPath id=\"ucp\"><path d=\"M250,172 A350.0,122 0 0 1 950,172 Q891.7,148 833.3,172 Q775.0,148 716.7,172 Q658.3,148 600.0,172 Q541.7,148 483.3,172 Q425.0,148 366.7,172 Q308.3,148 250.0,172 Z\"/><\/clipPath><\/defs><line x1=\"600\" y1=\"50\" x2=\"600\" y2=\"28\" class=\"u-tip\"/><circle cx=\"600\" cy=\"25\" r=\"3.5\" class=\"u-tipdot\"/><path d=\"M250,172 A350.0,122 0 0 1 950,172 Q891.7,148 833.3,172 Q775.0,148 716.7,172 Q658.3,148 600.0,172 Q541.7,148 483.3,172 Q425.0,148 366.7,172 Q308.3,148 250.0,172 Z\" class=\"u-can\"/><g clip-path=\"url(#ucp)\" class=\"u-pan\"><path d=\"M600,50 L250.0,176 L366.7,176 Z\"/><path d=\"M600,50 L483.3,176 L600.0,176 Z\"/><path d=\"M600,50 L716.7,176 L833.3,176 Z\"/><\/g><g clip-path=\"url(#ucp)\" class=\"u-rib\"><line x1=\"600\" y1=\"50\" x2=\"366.7\" y2=\"172\"/><line x1=\"600\" y1=\"50\" x2=\"483.3\" y2=\"172\"/><line x1=\"600\" y1=\"50\" x2=\"600.0\" y2=\"172\"/><line x1=\"600\" y1=\"50\" x2=\"716.7\" y2=\"172\"/><line x1=\"600\" y1=\"50\" x2=\"833.3\" y2=\"172\"/><\/g><path d=\"M250,172 A350.0,122 0 0 1 950,172 Q891.7,148 833.3,172 Q775.0,148 716.7,172 Q658.3,148 600.0,172 Q541.7,148 483.3,172 Q425.0,148 366.7,172 Q308.3,148 250.0,172 Z\" class=\"u-canline\"/><text x=\"600.0\" y=\"112.0\" class=\"u-uk\" text-anchor=\"middle\">STRATEGY LENS<\/text><text x=\"600.0\" y=\"148.0\" class=\"u-uq\" text-anchor=\"middle\">Who wins at the frontier, and who decides?<\/text><g class=\"u-circ\"><circle cx=\"600\" cy=\"394\" r=\"200\" class=\"u-ca\"/><circle cx=\"480.0\" cy=\"601.8\" r=\"200\" class=\"u-cb\"/><circle cx=\"720.0\" cy=\"601.8\" r=\"200\" class=\"u-cc\"/><\/g><text x=\"600.0\" y=\"258.0\" class=\"u-h u-ha\" text-anchor=\"middle\">SCIENCE &amp; TECHNOLOGY<\/text><g class=\"u-pj\" data-card=\"clock\" role=\"button\" tabindex=\"0\" aria-label=\"Future Tech Clock\"><text x=\"600.0\" y=\"290.0\" class=\"u-p\" text-anchor=\"middle\">Future Tech Clock<\/text><\/g><g class=\"u-pj\" data-card=\"config\" role=\"button\" tabindex=\"0\" aria-label=\"Geography of AI\"><text x=\"600.0\" y=\"311.0\" class=\"u-p\" text-anchor=\"middle\">Geography of AI<\/text><\/g><g class=\"u-pj\" data-card=\"africa\" role=\"button\" tabindex=\"0\" aria-label=\"RADIA: AI in Africa\"><text x=\"600.0\" y=\"332.0\" class=\"u-p\" text-anchor=\"middle\">RADIA: AI in Africa<\/text><\/g><text x=\"418.0\" y=\"631.8\" class=\"u-h u-hb\" text-anchor=\"middle\">GEOPOLITICS<\/text><g class=\"u-pj\" data-card=\"svm\" role=\"button\" tabindex=\"0\" aria-label=\"State vs. Market-led Innovation\"><text x=\"418.0\" y=\"661.8\" class=\"u-p\" text-anchor=\"middle\">State vs. Market-led<\/text><text x=\"418.0\" y=\"679.8\" class=\"u-p\" text-anchor=\"middle\">Innovation<\/text><\/g><g class=\"u-pj\" data-card=\"ideology\" role=\"button\" tabindex=\"0\" aria-label=\"Trading on Ideology\"><text x=\"418.0\" y=\"709.8\" class=\"u-p\" text-anchor=\"middle\">Trading on Ideology<\/text><\/g><text x=\"782.0\" y=\"631.8\" class=\"u-h u-hc\" text-anchor=\"middle\">ENTREPRENEURSHIP<\/text><g class=\"u-pj\" data-card=\"cc\" role=\"button\" tabindex=\"0\" aria-label=\"Commitment Compass\"><text x=\"782.0\" y=\"661.8\" class=\"u-p\" text-anchor=\"middle\">Commitment Compass<\/text><\/g><g class=\"u-pj\" data-card=\"cic\" role=\"button\" tabindex=\"0\" aria-label=\"Critical Input Control\"><text x=\"478.0\" y=\"454.6\" class=\"u-p\" text-anchor=\"middle\">Critical Input<\/text><text x=\"478.0\" y=\"471.6\" class=\"u-p\" text-anchor=\"middle\">Control<\/text><\/g><g class=\"u-pj\" data-card=\"returning\" role=\"button\" tabindex=\"0\" aria-label=\"Scientist Mobility\"><text x=\"478.0\" y=\"498.6\" class=\"u-p\" text-anchor=\"middle\">Scientist<\/text><text x=\"478.0\" y=\"515.6\" class=\"u-p\" text-anchor=\"middle\">Mobility<\/text><\/g><g class=\"u-pj\" data-card=\"moats\" role=\"button\" tabindex=\"0\" aria-label=\"Startup AI Moats\"><text x=\"722.0\" y=\"476.6\" class=\"u-p\" text-anchor=\"middle\">Startup<\/text><text x=\"722.0\" y=\"493.6\" class=\"u-p\" text-anchor=\"middle\">AI Moats<\/text><\/g><text x=\"600.0\" y=\"671.8\" class=\"u-p\" text-anchor=\"middle\">Reading<\/text><text x=\"600.0\" y=\"688.8\" class=\"u-p\" text-anchor=\"middle\">Politics<\/text><text x=\"600.0\" y=\"540.6\" class=\"u-core\" text-anchor=\"middle\">Innovation<\/text><g class=\"u-arch\"><path d=\"M220.4,686.9 A542,542 0 0 0 351.9,781.9 L319.0,845.9 A614,614 0 0 1 170.0,738.3 Z\" class=\"u-st\"/><text x=\"261.5\" y=\"765.0\" text-anchor=\"middle\" class=\"u-sl\" transform=\"rotate(35.84 261.5 768.5)\">Third generation<\/text><text x=\"261.5\" y=\"782.0\" text-anchor=\"middle\" class=\"u-sl\" transform=\"rotate(35.84 261.5 768.5)\">of educators<\/text><path d=\"M361.2,786.6 A542,542 0 0 0 525.7,836.9 L515.9,908.2 A614,614 0 0 1 329.5,851.2 Z\" class=\"u-st u-st2\"/><text x=\"431.0\" y=\"849.2\" text-anchor=\"middle\" class=\"u-sl\" transform=\"rotate(17.01 431.0 852.7)\">A degree in English<\/text><text x=\"431.0\" y=\"866.2\" text-anchor=\"middle\" class=\"u-sl\" transform=\"rotate(17.01 431.0 852.7)\">and Education<\/text><path d=\"M536.8,832.3 A536,536 0 0 0 663.2,832.3 L674.1,923.6 A628,628 0 0 1 525.9,923.6 Z\" class=\"u-key\"/><text x=\"600.0\" y=\"888.0\" text-anchor=\"middle\" class=\"u-kl\" transform=\"rotate(-0.00 600.0 882.0)\">TEACHING<\/text><path d=\"M674.3,836.9 A542,542 0 0 0 838.8,786.6 L870.5,851.2 A614,614 0 0 1 684.1,908.2 Z\" class=\"u-st u-st2\"/><text x=\"769.0\" y=\"849.2\" text-anchor=\"middle\" class=\"u-sl\" transform=\"rotate(-17.01 769.0 852.7)\">Ten years<\/text><text x=\"769.0\" y=\"866.2\" text-anchor=\"middle\" class=\"u-sl\" transform=\"rotate(-17.01 769.0 852.7)\">of tutoring<\/text><path d=\"M848.1,781.9 A542,542 0 0 0 979.6,686.9 L1030.0,738.3 A614,614 0 0 1 881.0,845.9 Z\" class=\"u-st\"/><text x=\"938.5\" y=\"765.0\" text-anchor=\"middle\" class=\"u-sl\" transform=\"rotate(-35.84 938.5 768.5)\">An AI tutor<\/text><text x=\"938.5\" y=\"782.0\" text-anchor=\"middle\" class=\"u-sl\" transform=\"rotate(-35.84 938.5 768.5)\">for children<\/text><\/g><text x=\"600.0\" y=\"968.0\" class=\"u-cap\" text-anchor=\"middle\">The foundation under all of it: why I want to be a professor<\/text><line x1=\"210\" y1=\"990\" x2=\"990\" y2=\"990\" class=\"u-gl\"/><text x=\"600\" y=\"1020\" text-anchor=\"middle\" class=\"u-g\"><tspan class=\"u-gk\">WHERE I&#8217;VE SEEN IT<\/tspan><tspan dx=\"14\">HBS · KIET · Columbia · SNU · Strategy Consulting · EdTech Startup<\/tspan><\/text><text x=\"600\" y=\"1048\" text-anchor=\"middle\" class=\"u-g\"><tspan class=\"u-gk\">HOW I MEASURE IT<\/tspan><tspan dx=\"14\">Causal inference · Field and online experiments · Panel data · LLM text measurement<\/tspan><\/text><\/svg>";
+var UMB_SVG="<svg class=\"umb\" viewBox=\"0 0 1200 883\" role=\"img\" aria-labelledby=\"ut ud\" xmlns=\"http://www.w3.org/2000/svg\"><title id=\"ut\">Research map: one overarching question over three overlapping research areas<\/title><desc id=\"ud\">An umbrella labeled The overarching question, Who wins at the frontier, and who decides, covers a three-circle Venn diagram of Science and Technology, Geopolitics, and Entrepreneurship, with Innovation at the center and ten projects placed in the regions. At the bottom, the methods behind the work.<\/desc><defs><clipPath id=\"ucp\"><path d=\"M250,172 A350.0,122 0 0 1 950,172 Q891.7,148 833.3,172 Q775.0,148 716.7,172 Q658.3,148 600.0,172 Q541.7,148 483.3,172 Q425.0,148 366.7,172 Q308.3,148 250.0,172 Z\"/><\/clipPath><\/defs><line x1=\"600\" y1=\"50\" x2=\"600\" y2=\"28\" class=\"u-tip\"/><circle cx=\"600\" cy=\"25\" r=\"3.5\" class=\"u-tipdot\"/><path d=\"M250,172 A350.0,122 0 0 1 950,172 Q891.7,148 833.3,172 Q775.0,148 716.7,172 Q658.3,148 600.0,172 Q541.7,148 483.3,172 Q425.0,148 366.7,172 Q308.3,148 250.0,172 Z\" class=\"u-can\"/><g clip-path=\"url(#ucp)\" class=\"u-pan\"><path d=\"M600,50 L250.0,176 L366.7,176 Z\"/><path d=\"M600,50 L483.3,176 L600.0,176 Z\"/><path d=\"M600,50 L716.7,176 L833.3,176 Z\"/><\/g><g clip-path=\"url(#ucp)\" class=\"u-rib\"><line x1=\"600\" y1=\"50\" x2=\"366.7\" y2=\"172\"/><line x1=\"600\" y1=\"50\" x2=\"483.3\" y2=\"172\"/><line x1=\"600\" y1=\"50\" x2=\"600.0\" y2=\"172\"/><line x1=\"600\" y1=\"50\" x2=\"716.7\" y2=\"172\"/><line x1=\"600\" y1=\"50\" x2=\"833.3\" y2=\"172\"/><\/g><path d=\"M250,172 A350.0,122 0 0 1 950,172 Q891.7,148 833.3,172 Q775.0,148 716.7,172 Q658.3,148 600.0,172 Q541.7,148 483.3,172 Q425.0,148 366.7,172 Q308.3,148 250.0,172 Z\" class=\"u-canline\"/><text x=\"600.0\" y=\"112.0\" class=\"u-uk\" text-anchor=\"middle\">THE OVERARCHING QUESTION<\/text><text x=\"600.0\" y=\"148.0\" class=\"u-uq\" text-anchor=\"middle\">Who wins at the frontier, and who decides?<\/text><g class=\"u-circ\"><circle cx=\"600\" cy=\"394\" r=\"200\" class=\"u-ca\"/><circle cx=\"480.0\" cy=\"601.8\" r=\"200\" class=\"u-cb\"/><circle cx=\"720.0\" cy=\"601.8\" r=\"200\" class=\"u-cc\"/><\/g><text x=\"600.0\" y=\"258.0\" class=\"u-h u-ha\" text-anchor=\"middle\">SCIENCE &amp; TECHNOLOGY<\/text><g class=\"u-pj\" data-card=\"clock\" role=\"button\" tabindex=\"0\" aria-label=\"Future Tech Clock\"><text x=\"600.0\" y=\"290.0\" class=\"u-p\" text-anchor=\"middle\">Future Tech Clock<\/text><\/g><g class=\"u-pj\" data-card=\"config\" role=\"button\" tabindex=\"0\" aria-label=\"Geography of AI\"><text x=\"600.0\" y=\"311.0\" class=\"u-p\" text-anchor=\"middle\">Geography of AI<\/text><\/g><g class=\"u-pj\" data-card=\"africa\" role=\"button\" tabindex=\"0\" aria-label=\"RADIA: AI in Africa\"><text x=\"600.0\" y=\"332.0\" class=\"u-p\" text-anchor=\"middle\">RADIA: AI in Africa<\/text><\/g><text x=\"418.0\" y=\"631.8\" class=\"u-h u-hb\" text-anchor=\"middle\">GEOPOLITICS<\/text><g class=\"u-pj\" data-card=\"svm\" role=\"button\" tabindex=\"0\" aria-label=\"State vs. Market-led Innovation\"><text x=\"418.0\" y=\"661.8\" class=\"u-p\" text-anchor=\"middle\">State vs. Market-led<\/text><text x=\"418.0\" y=\"679.8\" class=\"u-p\" text-anchor=\"middle\">Innovation<\/text><\/g><g class=\"u-pj\" data-card=\"ideology\" role=\"button\" tabindex=\"0\" aria-label=\"Trading on Ideology\"><text x=\"418.0\" y=\"709.8\" class=\"u-p\" text-anchor=\"middle\">Trading on Ideology<\/text><\/g><text x=\"782.0\" y=\"631.8\" class=\"u-h u-hc\" text-anchor=\"middle\">ENTREPRENEURSHIP<\/text><g class=\"u-pj\" data-card=\"cc\" role=\"button\" tabindex=\"0\" aria-label=\"Commitment Compass\"><text x=\"782.0\" y=\"661.8\" class=\"u-p\" text-anchor=\"middle\">Commitment Compass<\/text><\/g><g class=\"u-pj\" data-card=\"cic\" role=\"button\" tabindex=\"0\" aria-label=\"Critical Input Control\"><text x=\"478.0\" y=\"454.6\" class=\"u-p\" text-anchor=\"middle\">Critical Input<\/text><text x=\"478.0\" y=\"471.6\" class=\"u-p\" text-anchor=\"middle\">Control<\/text><\/g><g class=\"u-pj\" data-card=\"returning\" role=\"button\" tabindex=\"0\" aria-label=\"Scientist Mobility\"><text x=\"478.0\" y=\"498.6\" class=\"u-p\" text-anchor=\"middle\">Scientist<\/text><text x=\"478.0\" y=\"515.6\" class=\"u-p\" text-anchor=\"middle\">Mobility<\/text><\/g><g class=\"u-pj\" data-card=\"moats\" role=\"button\" tabindex=\"0\" aria-label=\"Startup AI Moats\"><text x=\"722.0\" y=\"476.6\" class=\"u-p\" text-anchor=\"middle\">Startup<\/text><text x=\"722.0\" y=\"493.6\" class=\"u-p\" text-anchor=\"middle\">AI Moats<\/text><\/g><text x=\"600.0\" y=\"671.8\" class=\"u-p\" text-anchor=\"middle\">Reading<\/text><text x=\"600.0\" y=\"688.8\" class=\"u-p\" text-anchor=\"middle\">Politics<\/text><text x=\"600.0\" y=\"540.6\" class=\"u-core\" text-anchor=\"middle\">Innovation<\/text><line x1=\"210\" y1=\"829\" x2=\"990\" y2=\"829\" class=\"u-gl\"/><text x=\"600\" y=\"859\" text-anchor=\"middle\" class=\"u-g\"><tspan class=\"u-gk\">METHODS<\/tspan><tspan dx=\"14\">Causal inference · Field and online experiments · Panel data · LLM text measurement<\/tspan><\/text><\/svg>";
 function researchMapHTML(){
   if(editing)return '';
   return '<details class="qfold umbfold" open><summary><span class="qfh">How the projects fit together</span><span class="qfs">One map of the research</span><i class="sqchev" aria-hidden="true"></i></summary><div class="umbwrap">'+UMB_SVG+'</div></details>';
@@ -3539,8 +3554,8 @@ function el(tag,a,p){var e=document.createElementNS(NS,tag);for(var k in a)if(a[
 function C(c){return 'var(--'+c+')'}
 function X(y){return 470+(y-2017)*90}
 // themes (for tracing) use the same colors as the hexagons
-var TH={tea:{n:'Teaching',c:'roots'},ent:{n:'Entrepreneurship',c:'fnd'},str:{n:'Strategy',c:'cons'},tec:{n:'Technology',c:'hbs'},pol:{n:'Policy',c:'kiet'},met:{n:'Methods',c:'col'},res:{n:'Research',c:'snu'}};
-var ROWS=[['tea','TEACHING','roots'],['ent','ENTREPRENEURSHIP','fnd'],['str','STRATEGY','cons'],['res','RESEARCH','snu'],['pol','POLICY','kiet'],['met','METHODS','col']];
+var TH={tea:{n:'Teaching',c:'roots'},ent:{n:'Entrepreneurship',c:'fnd'},str:{n:'Strategy',c:'snu'},tec:{n:'Technology',c:'cons'},pol:{n:'Policy',c:'kiet'},org:{n:'Organizations',c:'col'},res:{n:'Research',c:'snu'}};
+var ROWS=[['tea','TEACHING','roots'],['ent','ENTREPRENEURSHIP','fnd'],['str','TECHNOLOGY','cons','tec'],['res','STRATEGY','snu','str'],['pol','POLICY','kiet'],['met','ORGANIZATIONS','col','org']];
 var NOW=2026.85,XN=X(NOW),L={tea:190,tea2:214,ent:296,str:402,res:508,pol:614,met:720},PH={x:1544,y:508},PR={x:1684,y:508};
 T.setAttribute('viewBox','0 0 1760 800');
 var defs=el('defs',{},T);
@@ -3557,8 +3572,8 @@ function why(x1,y1,x2,y2,c,th,tip){stop(x1,y1,c,th);var d=curve(x1,y1,x2,y2);
   el('path',{d:d,class:'mt-halo','data-th':th},gL);el('path',{d:d,class:'mt-why mt-fl',stroke:C(c),'data-th':th},gL);stop(x2,y2,c,th);if(tip)hit(d,th,tip)}
 function hpath(x1,y1,x2,y2,c,cls,arrow,th){var mx=(x1+x2)/2;return el('path',{d:'M'+x1+' '+y1+' C '+mx+' '+y1+', '+mx+' '+y2+', '+x2+' '+y2,class:cls,stroke:C(c),'marker-end':arrow?'url(#mta-'+c+')':null,'data-th':th},gL)}
 // row labels at the front, light rules between rows
-ROWS.forEach(function(r,i){var y=L[r[0]];if(i)el('line',{x1:14,y1:y-53,x2:XN+24,y2:y-53,class:'mt-rowrule'},gBg);
-  var g=el('g',{class:'mt-th',role:'button',tabindex:'0','data-pick':r[0],'aria-label':'Trace '+TH[r[0]].n},gN);
+ROWS.forEach(function(r,i){var y=L[r[0]],pk=r[3]||r[0];if(i)el('line',{x1:14,y1:y-53,x2:XN+24,y2:y-53,class:'mt-rowrule'},gBg);
+  var g=el('g',{class:'mt-th',role:'button',tabindex:'0','data-pick':pk,'aria-label':'Trace '+TH[pk].n},gN);
   el('rect',{x:8,y:y-15,width:r[1].length*10.6+42,height:30,rx:15,class:'mt-thbg',fill:'color-mix(in srgb,var(--'+r[2]+') 16%,var(--card))',stroke:C(r[2])},g);
   el('circle',{cx:22,cy:y,r:5,fill:C(r[2])},g);var t=el('text',{x:34,y:y+4.5,class:'mt-thl',fill:'color-mix(in srgb,var(--'+r[2]+') 85%,var(--ink))'},g);t.textContent=r[1]});
 // year grid and the 2023-on band
@@ -3566,7 +3581,7 @@ for(var y=2017;y<=2026;y++){el('line',{x1:X(y),y1:84,x2:X(y),y2:772,class:'mt-gr
 el('rect',{x:X(2023)-10,y:84,width:XN-X(2023)+20,height:688,rx:16,class:'mt-band'},gBg);
 txt((X(2023)+XN)/2,764,'startup and research, side by side','mt-bandt','middle',gBg);
 // rails
-var TAG={ent:'ent tea tec',str:'str tec pol met ent',res:'res str tec pol ent met',pol:'pol met tec',met:'met pol'};
+var TAG={ent:'ent tea tec',str:'str tec pol ent',res:'res str tec pol ent org',pol:'pol tec',met:'org pol'};
 [['ent','fnd',X(2023)],['str','cons',X(2018)],['res','snu',X(2020.5)],['pol','kiet',X(2023.5)],['met','col',X(2024.5)]].forEach(function(r){el('line',{x1:r[2],y1:L[r[0]],x2:XN,y2:L[r[0]],class:'mt-rail',stroke:C(r[1]),'data-th':TAG[r[0]]},gBg)});
 // bars: a small kicker and the title sit above each bar
 var BARS=[
@@ -3574,11 +3589,11 @@ var BARS=[
  {l:'tea',th:'tea',a:2024.5,b:NOW,c:'roots',faded:1},
  {l:'tea2',th:'tea',a:2020.5,b:2023.95,c:'roots',thin:1,after:'TA at SNU, 2020–2023'},
  {l:'ent',th:'ent tea tec',a:2023,b:NOW,c:'fnd',t:['AI EdTech startup'],m:'co-founder, 2023–',pad:16},
- {l:'str',th:'str tec pol met ent',a:2018,b:2022.5,c:'cons',t:['Consulting'],m:'2018–2022'},
- {l:'res',th:'res str pol met tea tec ent',a:2020.5,b:2023.95,c:'snu',t:['MS in Strategy'],m:'2020–2023',pad:16},
- {l:'res',th:'res str tec pol ent met',a:2025.5,b:NOW,c:'hbs',t:['HBS'],m:'predoc, 2025–',pad:16},
- {l:'pol',th:'pol met tec',a:2023.5,b:2025.1,c:'kiet',t:['KIET'],m:'2023–2025',pad:16},
- {l:'met',th:'met pol',a:2024.5,b:2025.95,c:'col',t:['MA in QMSS','RA at CBS'],m:'2024–2025',pad:16}];
+ {l:'str',th:'str tec pol ent',a:2018,b:2022.5,c:'cons',t:['Consulting'],m:'2018–2022'},
+ {l:'res',th:'res str pol tea tec ent',a:2020.5,b:2023.95,c:'snu',t:['MS in Strategy'],m:'2020–2023',pad:16},
+ {l:'res',th:'res str tec pol ent org',a:2025.5,b:NOW,c:'hbs',t:['HBS'],m:'predoc, 2025–',pad:16},
+ {l:'pol',th:'pol tec',a:2023.5,b:2025.1,c:'kiet',t:['KIET'],m:'2023–2025',pad:16},
+ {l:'met',th:'org pol',a:2024.5,b:2025.95,c:'col',t:['MA in QMSS','RA at CBS'],m:'2024–2025',pad:16}];
 BARS.forEach(function(b){var y=L[b.l],x1=X(b.a),x2=X(b.b);
   el('line',{x1:x1,y1:y,x2:x2,y2:y,class:'mt-bar'+(b.thin?' mt-thin':'')+(b.faded?' mt-faded':''),stroke:b.fade?'url(#mtfade)':C(b.c),'data-th':b.th},gB);
   if(b.after){txt(x2+14,y+5,b.after,'mt-m mt-small','start',null,b.th);return}
@@ -3602,31 +3617,30 @@ lab((FAM.x+FAM.w/2+X(2018))/2,L.str-12,'curious how businesses run','middle','st
 // the whys
 why(X(2019.4),L.str,X(2020.5),L.res,'cons','str res','Strategy consulting → M.S. in Strategy · questions from the field');lab(X(2019.4)-12,L.str+66,['questions','from the field'],'end','str res');
 why(X(2022.7),L.tea,X(2023),L.ent,'roots','tea ent','Teaching → EdTech startup · what I learned from teaching');lab(X(2022.7)-12,L.tea+62,['teaching','know-how'],'end','tea ent');
-why(X(2022.3),L.str,X(2023),L.ent,'cons','str ent','Strategy consulting → EdTech startup · tech and startup clients');lab(X(2022.3)-12,L.str-50,['startup','clients'],'end','str ent');
+why(X(2022.3),L.str,X(2023),L.ent,'cons','tec str ent','Strategy consulting → EdTech startup · tech and startup clients');lab(X(2022.3)-12,L.str-50,['startup','clients'],'end','tec str ent');
 why(X(2023.2),L.res,X(2023.5),L.pol,'snu','pol res','M.S. thesis → KIET · a thesis on ESG and regulation, into policy');lab(X(2023.2)-12,L.res+46,['ESG thesis,','into policy'],'end','pol res');
-why(X(2024.2),L.pol,X(2024.5),L.met,'kiet','pol met','KIET → Columbia · to learn data, from consulting, my thesis, and KIET');lab(X(2024.2)-12,L.pol+46,['to learn','data'],'end','pol met');
+why(X(2024.2),L.pol,X(2024.5),L.met,'kiet','pol org','KIET → Columbia · to learn data, from consulting, my thesis, and KIET');lab(X(2024.2)-12,L.pol+46,['to learn','data'],'end','pol org');
 // feeders: every earlier thread carries into HBS, as a dotted line into the start of the HBS bar
-(function(){var hx=X(2025.5)-4,hy=L.res;[['str',2024.85,'cons',TAG.str,'Consulting → HBS'],['ent',2024.65,'fnd','ent tec','AI EdTech startup → HBS'],['pol',2025.1,'kiet','pol tec','KIET → HBS'],['met',2025.95,'col','met','Columbia → HBS']].forEach(function(f){var x1=X(f[1]),y1=L[f[0]],d=curve(x1,y1,hx,hy);
+(function(){var hx=X(2025.5)-4,hy=L.res;[['str',2024.85,'cons',TAG.str,'Consulting → HBS'],['ent',2024.65,'fnd','ent tec','AI EdTech startup → HBS'],['pol',2025.1,'kiet','pol tec','KIET → HBS'],['met',2025.95,'col','org','Columbia → HBS']].forEach(function(f){var x1=X(f[1]),y1=L[f[0]],d=curve(x1,y1,hx,hy);
   el('path',{d:d,class:'mt-feed mt-fl',stroke:C(f[2]),'data-th':f[3]},gL);el('circle',{cx:x1,cy:y1,r:3.5,fill:C(f[2]),'data-th':f[3]},gS);hit(d,f[3],f[4])});
   el('circle',{cx:hx,cy:hy,r:4.5,class:'mt-stop',stroke:C('hbs')},gS)})();
 // traces: hidden until a theme is picked, then they light up and flow
 var TRACES=[
- {th:'tec',c:'hbs',a:['str',2019.2],b:['res',2021.0],tip:'Technology adoption projects at Kia and Hitachi → innovation research at SNU'},
- {th:'tec',c:'hbs',a:['res',2022.8],b:['pol',2023.9],tip:'Innovation research at SNU → semiconductor and battery policy at KIET'},
- {th:'tec',c:'hbs',a:['pol',2024.6],b:['res',2026.1],tip:'Semiconductors and batteries at KIET → frontier technology and AI at HBS'},
+ {th:'tec',c:'cons',a:['str',2019.2],b:['res',2021.0],tip:'Technology adoption projects at Kia and Hitachi → innovation research at SNU'},
+ {th:'tec',c:'cons',a:['res',2022.8],b:['pol',2023.9],tip:'Innovation research at SNU → semiconductor and battery policy at KIET'},
+ {th:'tec',c:'cons',a:['pol',2024.6],b:['res',2026.1],tip:'Semiconductors and batteries at KIET → frontier technology and AI at HBS'},
  {th:'ent',c:'fnd',a:['res',2022.6],b:['ent',2023.35],tip:'Strategy and entrepreneurship at SNU → co-founding the EdTech startup'},
  {th:'tea',c:'roots',a:['tea2',2021.25],b:['res',2021.25],tip:'Teaching assistant at SNU, during my M.S.'},
- {th:'str',c:'cons',a:['res',2020.9],b:['res',2025.9],tip:'Innovation strategy of Korean multinationals (SNU) → Configuring AI in multinationals (HBS)'},
+ {th:'str',c:'snu',a:['res',2020.9],b:['res',2025.9],tip:'Innovation strategy of Korean multinationals (SNU) → Configuring AI in multinationals (HBS)'},
  {th:'pol',c:'kiet',a:['str',2020.2],b:['res',2022.9],tip:'Risk analysis in consulting → thesis on ESG and regulation'},
  {th:'pol',c:'kiet',a:['res',2021.2],b:['pol',2024.3],tip:'Regional innovation clusters (SNU) → Pohang tech hub project (KIET)'},
  {th:'pol',c:'kiet',a:['pol',2024.1],b:['res',2026.3],tip:'Battery and chip policy (KIET) → critical inputs and export controls (HBS)'},
  {th:'pol',c:'kiet',a:['met',2025.1],b:['res',2026.5],tip:'Political identity in markets (Columbia) → Trading on Ideology (HBS)'},
  {th:'ent',c:'fnd',a:['ent',2024.6],b:['res',2026.65],tip:'Building an AI EdTech startup → proprietary AI and startup advantage (HBS)'},
- {th:'met',c:'col',a:['str',2021.5],b:['met',2024.6],tip:'Data platforms in consulting → M.A. at Columbia'},
- {th:'met',c:'col',a:['res',2022.6],b:['met',2024.75],tip:'Text analysis for my thesis → M.A. at Columbia'},
- {th:'met',c:'col',a:['met',2024.8],b:['met',2025.7],tip:'Return2Work field experiments (Columbia) → my field-experiment thesis'}];
+ {th:'org',c:'col',a:['met',2025.35],b:['res',2026.35],tip:'How work is organized (Columbia) → where AI workers sit relative to managers (HBS)'},
+ {th:'org',c:'col',a:['met',2024.8],b:['met',2025.7],tip:'Remote work evaluations (Columbia) → my thesis on how job design shapes who applies'}];
 TRACES.forEach(function(m){var x1=X(m.a[1]),y1=L[m.a[0]],x2=X(m.b[1]),y2=L[m.b[0]],d;
-  if(m.a[0]===m.b[0])d='M'+x1+' '+(y1+7)+' C '+x1+' '+(y1+62)+', '+x2+' '+(y1+62)+', '+x2+' '+(y1+8);
+  if(m.a[0]===m.b[0]){var dp=m.a[0]==='met'?40:62;d='M'+x1+' '+(y1+7)+' C '+x1+' '+(y1+dp)+', '+x2+' '+(y1+dp)+', '+x2+' '+(y1+8)}
   else{var dy=y2>y1?-8:8;d=curve(x1,y1,x2,y2+dy)}
   el('path',{d:d,class:'mt-trace mt-fl',stroke:C(m.c),'marker-end':'url(#mta-'+m.c+')','data-th':m.th},gX);el('circle',{cx:x1,cy:y1,r:4.5,class:'mt-trace mt-tdot',fill:C(m.c),'data-th':m.th},gX);hit(d,m.th,m.tip,'mt-thit')});
 // every thread flows into the PhD
@@ -3662,7 +3676,7 @@ LINKS.forEach(function(h){
 var S=D.streams;
 if(S&&S.rows&&S.rows.length){
   var stage=T.parentNode,box2=document.createElement('div');box2.className='mt-chips';
-  box2.innerHTML='<span class="mtc-l">Research themes</span>'+S.rows.map(function(r){return '<button type="button" class="mtc" data-th="'+esc(r.th||'')+'" aria-pressed="false" style="--c:var(--'+esc(r.c)+')"><i aria-hidden="true"></i>'+esc(r.k)+'</button>'}).join('')+'<button type="button" class="mtc-reset" hidden aria-label="Show the whole map again"><span aria-hidden="true">↺</span> Show all</button><span class="mtc-h">Click one to see its stream on the map.</span>';
+  box2.innerHTML='<span class="mtc-l">Threads</span>'+S.rows.map(function(r){return '<button type="button" class="mtc" data-th="'+esc(r.th||'')+'" aria-pressed="false" style="--c:var(--'+esc(r.c)+')"><i aria-hidden="true"></i>'+esc(r.k)+'</button>'}).join('')+'<button type="button" class="mtc-reset" hidden aria-label="Show the whole map again"><span aria-hidden="true">↺</span> Show all</button><span class="mtc-h">Click one to see its stream on the map.</span>';
   stage.parentNode.insertBefore(box2,stage.nextSibling);
   box2.addEventListener('click',function(e){if(e.target.closest('.mtc-reset')){picked=null;show(null);return}var r=e.target.closest('.mtc[data-th]');if(!r||!TH[r.dataset.th])return;pick(r.dataset.th);if(picked&&stage.getBoundingClientRect().top<0)stage.scrollIntoView({block:'start',behavior:RM?'auto':'smooth'})});
   box2.addEventListener('mouseover',function(e){var r=e.target.closest('.mtc[data-th]');if(r&&!picked&&TH[r.dataset.th])show([r.dataset.th])});
@@ -3671,7 +3685,7 @@ if(S&&S.rows&&S.rows.length){
 // phone version
 var TLs=document.getElementById('ls-tlist');
 TLs.innerHTML='<div class="tr" style="--c:var(--roots)"><b>Roots</b><span>Third generation of educators → Undergrad in English and Education</span></div><div class="tm">branches into these threads ↓</div>'+
- [['Teaching','roots','Tutoring and teaching since college, a teaching assistant at SNU, and tutoring on Zoom since 2024'],['Entrepreneurship','fnd','Teaching + tech and startup clients → EdTech startup'],['Strategy','cons','Strategy consulting → M.S. in Strategy'],['Policy','kiet','Risk analysis in consulting + master’s thesis → KIET'],['Methods','col','Consulting + master’s + KIET → M.A. in Quantitative Methods and Data Science']].map(function(r){return '<div class="tr" style="--c:var(--'+r[1]+')"><b>'+r[0]+'</b><span>'+r[2]+'</span></div>'}).join('')+
+ [['Teaching','roots','Tutoring and teaching since college, a teaching assistant at SNU, and tutoring on Zoom since 2024'],['Entrepreneurship','fnd','Teaching + tech and startup clients → EdTech startup'],['Technology','cons','Tech adoption in consulting → chips and batteries at KIET → AI at HBS'],['Strategy','snu','Questions from consulting → M.S. in Strategy → HBS'],['Policy','kiet','Risk analysis in consulting + master’s thesis → KIET'],['Organizations','col','Remote work, job design, and corporate activism at Columbia → how firms organize AI at HBS']].map(function(r){return '<div class="tr" style="--c:var(--'+r[1]+')"><b>'+r[0]+'</b><span>'+r[2]+'</span></div>'}).join('')+
  '<div class="tm">they come together ↓</div><div class="tend">Harvard Business School → 🎓 PhD → 👩‍🏫 Professor</div><div class="tm">teaching runs through all of it, from the very first step</div>';
 })();
 }
@@ -3698,7 +3712,7 @@ document.addEventListener('click',function(e){
   var ch=e.target.closest('.chip[data-lens]');if(ch){setLens(ch.dataset.lens);return}
   var vx=e.target.closest('.vc,.vl');if(vx){var vroot=vx.closest('#home-lists,#v-agenda')||document,ax=vroot.querySelector('.axis[data-ax="'+vx.getAttribute('data-ax')+'"]');if(ax)ax.scrollIntoView({block:'start',behavior:RM?'auto':'smooth'});return}
   var abt=e.target.closest('.abt');if(abt){var ap=abt.closest('.lit');ap=ap&&ap.querySelector('.absp');var op=abt.getAttribute('aria-expanded')!=='true';abt.setAttribute('aria-expanded',op?'true':'false');if(ap)ap.hidden=!op;return}
-  var ht=e.target.closest('[data-htab]');if(ht){var hvs=ht.dataset.htab;if(hvs==='sel'||hvs==='-1'){homeTab=hvs==='sel'?'sel':'home';if(sel.v!==null)closeAll();else renderHomeLists()}else{var hv=+hvs;if(sel.v!==hv)openV(hv)}return}
+  var ht=e.target.closest('[data-htab]');if(ht){var hvs=ht.dataset.htab;if(hvs==='sel'||hvs==='-1'){homeTab=(hvs==='-1'&&homeTab==='home'&&sel.v===null)?'none':(hvs==='sel'?'sel':'home');if(sel.v!==null)closeAll();else renderHomeLists()}else{var hv=+hvs;if(sel.v!==hv)openV(hv)}return}
   if(e.target.closest('[data-overview]')){closeAll();var st=Q('#stage');if(st.scrollIntoView)st.scrollIntoView({block:'nearest',behavior:RM?'auto':'smooth'});return}
   var xt=e.target.closest('.xt');if(xt){sel.c=+xt.dataset.g;sel.l=null;clearX();render(null);renderExplore();var gEl=Q('#home-lists .agrp[data-g="'+xt.dataset.g+'"]');if(gEl&&gEl.scrollIntoView)gEl.scrollIntoView({block:'start',behavior:RM?'auto':'smooth'});return}
   var xi=e.target.closest('button.xi[data-cid]');if(xi){var xc0=CARD[xi.dataset.cid];if(!xc0)return;sel.l=xc0.id;renderExplore();markX(xc0);
