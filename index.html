@@ -1,821 +1,2206 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Research portfolio of Hana Kwon, a research associate studying technology, innovation, entrepreneurship, and firm strategy.">
-  <meta name="theme-color" content="#f4f0e7">
-  <title>Hana Kwon — Research Portfolio</title>
-  <style>
-    :root {
-      --paper: #f4f0e7;
-      --paper-deep: #e9e2d5;
-      --ink: #1f211d;
-      --muted: #62645d;
-      --green: #244c3c;
-      --green-soft: #dce7df;
-      --coral: #d96d52;
-      --line: rgba(31, 33, 29, 0.16);
-      --shadow: 0 24px 70px rgba(55, 45, 31, 0.11);
-      --radius: 24px;
-      --page: min(1160px, calc(100vw - 40px));
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at 92% 8%, rgba(217, 109, 82, 0.13), transparent 24rem),
-        radial-gradient(circle at 8% 32%, rgba(36, 76, 60, 0.10), transparent 26rem),
-        var(--paper);
-      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: inherit; }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    button { font: inherit; }
-    ::selection { color: #fff; background: var(--green); }
-
-    .skip-link {
-      position: fixed;
-      top: 12px;
-      left: 12px;
-      z-index: 100;
-      padding: 10px 14px;
-      color: #fff;
-      background: var(--ink);
-      border-radius: 8px;
-      transform: translateY(-160%);
-    }
-    .skip-link:focus { transform: translateY(0); }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: color-mix(in srgb, var(--paper) 82%, transparent);
-      border-bottom: 1px solid transparent;
-      backdrop-filter: blur(18px);
-      transition: border-color 180ms ease;
-    }
-    .site-header.is-scrolled { border-color: var(--line); }
-
-    .nav {
-      width: var(--page);
-      min-height: 72px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 11px;
-      text-decoration: none;
-      font-weight: 750;
-      letter-spacing: -0.02em;
-    }
-    .brand-mark {
-      width: 34px;
-      height: 34px;
-      display: grid;
-      place-items: center;
-      color: #fff;
-      background: var(--green);
-      border-radius: 50%;
-      font-family: Georgia, serif;
-      font-size: 0.9rem;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 26px;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-    .nav-links a {
-      text-decoration: none;
-      transition: color 160ms ease;
-    }
-    .nav-links a:hover, .nav-links a:focus-visible { color: var(--ink); }
-    .nav-contact {
-      padding: 9px 15px;
-      color: #fff !important;
-      background: var(--green);
-      border-radius: 999px;
-    }
-
-    main { overflow: hidden; }
-    .section {
-      width: var(--page);
-      margin: 0 auto;
-      padding: 104px 0;
-    }
-
-    .hero {
-      min-height: calc(100svh - 72px);
-      display: grid;
-      grid-template-columns: minmax(0, 1.28fr) minmax(290px, 0.72fr);
-      align-items: center;
-      gap: clamp(48px, 8vw, 112px);
-      padding-top: 72px;
-      padding-bottom: 84px;
-    }
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 0 0 22px;
-      color: var(--green);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-    .eyebrow::before {
-      content: "";
-      width: 30px;
-      height: 2px;
-      background: var(--coral);
-    }
-    h1, h2, h3, p { margin-top: 0; }
-    h1 {
-      max-width: 860px;
-      margin-bottom: 28px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3.45rem, 7.2vw, 6.8rem);
-      font-weight: 500;
-      line-height: 0.95;
-      letter-spacing: -0.055em;
-    }
-    .hero-accent {
-      position: relative;
-      display: inline-block;
-      color: var(--green);
-    }
-    .hero-accent::after {
-      content: "";
-      position: absolute;
-      left: 2%;
-      right: -1%;
-      bottom: 0.02em;
-      height: 0.12em;
-      z-index: -1;
-      background: var(--coral);
-      border-radius: 99px;
-      opacity: 0.55;
-      transform: rotate(-1.3deg);
-    }
-    .hero-summary {
-      max-width: 690px;
-      margin-bottom: 34px;
-      color: var(--muted);
-      font-size: clamp(1.05rem, 1.7vw, 1.28rem);
-      line-height: 1.72;
-    }
-    .hero-summary strong { color: var(--ink); font-weight: 720; }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      min-height: 48px;
-      padding: 0 19px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 730;
-      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
-    }
-    .button:hover { transform: translateY(-2px); }
-    .button-primary { color: #fff; background: var(--green); border-color: var(--green); }
-    .button-secondary { background: rgba(255, 255, 255, 0.36); }
-    .arrow { font-size: 1.1em; }
-
-    .hero-note {
-      position: relative;
-      padding: 34px;
-      color: #f8f5ed;
-      background: var(--green);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      transform: rotate(1.5deg);
-    }
-    .hero-note::before {
-      content: "";
-      position: absolute;
-      inset: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: calc(var(--radius) - 8px);
-      pointer-events: none;
-    }
-    .note-label {
-      margin-bottom: 30px;
-      color: #bed0c5;
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-    .note-question {
-      margin-bottom: 34px;
-      font-family: Georgia, serif;
-      font-size: clamp(1.45rem, 2.6vw, 2.05rem);
-      line-height: 1.28;
-      letter-spacing: -0.025em;
-    }
-    .note-meta {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      padding-top: 20px;
-      color: #d7e2dc;
-      border-top: 1px solid rgba(255, 255, 255, 0.18);
-      font-size: 0.78rem;
-    }
-
-    .agenda {
-      display: grid;
-      grid-template-columns: 0.72fr 1.28fr;
-      gap: clamp(50px, 9vw, 130px);
-      border-top: 1px solid var(--line);
-    }
-    .section-kicker {
-      margin-bottom: 16px;
-      color: var(--coral);
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-    h2 {
-      margin-bottom: 22px;
-      font-family: Georgia, serif;
-      font-size: clamp(2.35rem, 5vw, 4.5rem);
-      font-weight: 500;
-      line-height: 1.02;
-      letter-spacing: -0.045em;
-    }
-    .section-intro { color: var(--muted); font-size: 1.06rem; }
-    .theme-list { border-top: 1px solid var(--line); }
-    .theme {
-      display: grid;
-      grid-template-columns: 48px 1fr;
-      gap: 20px;
-      padding: 26px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .theme-number {
-      color: var(--coral);
-      font-family: Georgia, serif;
-      font-size: 1.2rem;
-    }
-    .theme h3 { margin-bottom: 7px; font-size: 1.08rem; }
-    .theme p { margin-bottom: 0; color: var(--muted); }
-
-    .work-shell {
-      width: 100%;
-      padding: 104px max(20px, calc((100vw - min(1160px, calc(100vw - 40px))) / 2));
-      background: #20241f;
-    }
-    .work-inner { width: min(1160px, 100%); margin: 0 auto; }
-    .work-heading {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 30px;
-      margin-bottom: 44px;
-      color: #f5f0e7;
-    }
-    .work-heading h2 { margin-bottom: 0; }
-    .work-heading p { max-width: 450px; margin-bottom: 7px; color: #aeb5ad; }
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-bottom: 28px;
-    }
-    .filter-button {
-      padding: 8px 13px;
-      color: #b9c0b8;
-      background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 999px;
-      cursor: pointer;
-    }
-    .filter-button:hover, .filter-button:focus-visible,
-    .filter-button.is-active {
-      color: #fff;
-      background: var(--green);
-      border-color: #54806e;
-    }
-    .project-list { border-top: 1px solid rgba(255, 255, 255, 0.17); }
-    .project {
-      display: grid;
-      grid-template-columns: 80px minmax(0, 1.1fr) minmax(270px, 0.75fr);
-      gap: 30px;
-      padding: 36px 0;
-      color: #f5f0e7;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.17);
-      transition: opacity 160ms ease, transform 160ms ease;
-    }
-    .project[hidden] { display: none; }
-    .project-index { color: #9ba29a; font-family: Georgia, serif; font-size: 1.1rem; }
-    .project-status {
-      display: inline-flex;
-      margin-bottom: 13px;
-      color: #e7a795;
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-    .project h3 {
-      max-width: 650px;
-      margin-bottom: 12px;
-      font-family: Georgia, serif;
-      font-size: clamp(1.45rem, 2.6vw, 2.25rem);
-      font-weight: 500;
-      line-height: 1.16;
-      letter-spacing: -0.025em;
-    }
-    .project-question { max-width: 650px; margin-bottom: 0; color: #adb4ac; }
-    .project-detail { color: #cbd0ca; font-size: 0.91rem; }
-    .project-detail strong { color: #f5f0e7; }
-    .project-detail p { margin-bottom: 13px; }
-    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
-    .tag {
-      padding: 5px 9px;
-      color: #bfc8c0;
-      background: rgba(255, 255, 255, 0.055);
-      border-radius: 6px;
-      font-size: 0.72rem;
-    }
-
-    .profile {
-      display: grid;
-      grid-template-columns: 0.86fr 1.14fr;
-      gap: clamp(52px, 9vw, 122px);
-      align-items: start;
-    }
-    .profile-copy {
-      position: sticky;
-      top: 112px;
-    }
-    .profile-copy .lead {
-      color: var(--muted);
-      font-size: 1.08rem;
-      line-height: 1.75;
-    }
-    .profile-groups { display: grid; gap: 46px; }
-    .profile-group h3 {
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--line);
-      font-size: 0.78rem;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-    }
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 22px;
-      padding: 16px 0;
-    }
-    .timeline-date { color: var(--coral); font-family: Georgia, serif; font-size: 0.9rem; }
-    .timeline-item h4 { margin: 0 0 3px; font-size: 1rem; }
-    .timeline-item p { margin-bottom: 0; color: var(--muted); font-size: 0.91rem; }
-    .method-cloud { display: flex; flex-wrap: wrap; gap: 9px; }
-    .method {
-      padding: 8px 12px;
-      color: var(--green);
-      background: var(--green-soft);
-      border-radius: 8px;
-      font-size: 0.82rem;
-      font-weight: 690;
-    }
-
-    footer {
-      width: var(--page);
-      margin: 0 auto;
-      padding: 30px 0 44px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 0.82rem;
-    }
-    .footer-inner { display: flex; justify-content: space-between; gap: 20px; }
-    .footer-inner a { color: var(--green); text-underline-offset: 3px; }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 650ms ease, transform 650ms ease;
-    }
-    .reveal.is-visible { opacity: 1; transform: none; }
-
-    :focus-visible { outline: 3px solid rgba(217, 109, 82, 0.58); outline-offset: 3px; }
-
-    @media (max-width: 860px) {
-      .nav-links a:not(.nav-contact) { display: none; }
-      .hero, .agenda, .profile { grid-template-columns: 1fr; }
-      .hero { min-height: auto; gap: 56px; }
-      .hero-note { max-width: 520px; }
-      .work-heading { align-items: start; flex-direction: column; }
-      .project { grid-template-columns: 54px 1fr; }
-      .project-detail { grid-column: 2; }
-      .profile-copy { position: static; }
-    }
-
-    @media (max-width: 560px) {
-      :root { --page: min(100% - 28px, 1160px); --radius: 19px; }
-      .nav { min-height: 64px; }
-      .nav-contact { padding: 8px 12px; }
-      .section, .work-shell { padding-top: 78px; padding-bottom: 78px; }
-      .hero { padding-top: 56px; }
-      h1 { font-size: clamp(3rem, 16vw, 4.6rem); }
-      .hero-note { padding: 28px; }
-      .project { grid-template-columns: 1fr; gap: 10px; }
-      .project-detail { grid-column: 1; margin-top: 12px; }
-      .timeline-item { grid-template-columns: 1fr; gap: 4px; }
-      .footer-inner { flex-direction: column; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { animation: none !important; transition: none !important; }
-      .reveal { opacity: 1; transform: none; }
-    }
-
-    @media print {
-      .site-header, .filters, .actions { display: none; }
-      body { background: #fff; }
-      .hero { min-height: auto; }
-      .section, .work-shell { padding: 34px 0; }
-      .hero-note { box-shadow: none; }
-      .work-shell { color: #000; background: #fff; }
-      .work-heading, .project, .project-detail, .project-question { color: #000; }
-      .project { break-inside: avoid; border-color: #bbb; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Hana Kwon</title>
+<meta name="description" content="Hana Kwon, pre-doctoral researcher in Strategy and Entrepreneurial Management at Harvard Business School, studying how firms turn frontier science and technology into advantage.">
+<meta property="og:title" content="Hana Kwon">
+<meta property="og:description" content="Pre-doctoral researcher at Harvard Business School studying frontier technology, innovation, and firm strategy.">
+<meta property="og:image" content="assets/hana_portrait5.jpg">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" id="site-header">
-    <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="#top" aria-label="Hana Kwon, home">
-        <span class="brand-mark" aria-hidden="true">HK</span>
-        <span id="nav-name">Hana Kwon</span>
-      </a>
-      <div class="nav-links">
-        <a href="#agenda">Research</a>
-        <a href="#work">Projects</a>
-        <a href="#profile">Background</a>
-        <a class="nav-contact" id="nav-email" href="mailto:hkwon@hbs.edu">Contact</a>
-      </div>
-    </nav>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap">
+<style id="site-css">
+/* Layout concept: the hexagon is a color wheel and the front door. Each color opens its own page of cards. */
+:root{
+  --paper:#FCFCFA; --ink:#1D2430; --soft:#5D6A73; --faint:#8E9BA2; --rule:#E4E8EA; --edge:#C3CDD2; --white:#FFFFFF; --danger:#B4232A; --blend:multiply;
+  --c0:#FFC46B; --c1:#4A63C2; --c2:#6FD3A6; --c3:#B89BF2; --c4:#7EC4F0; --c5:#F47C7C;
+  --k0:#1D2430; --k1:#FFFFFF; --k2:#1D2430; --k3:#1D2430; --k4:#1D2430; --k5:#1D2430;
+  --wine:#7B2D3E; --mt:#5A3EC0; --mtb:#EFEAFC; --mtl:#7B62CF;
+  --t0:#F0A83A; --t1:#4A63C2; --t2:#3FBF87; --t3:#9B7BE6; --t4:#4FA9E3; --t5:#EC5F5F;
+  --serif:"Spectral",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#12181D; --ink:#E9EEF0; --soft:#A7B4BC; --faint:#76868F; --rule:#28333A; --edge:#4D5E67; --t1:#8297EA; --wine:#D99AA6; --mt:#C9B9FF; --mtb:#2B2546; --mtl:#B7A6F2; --danger:#FF8A8A; --blend:screen; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#12181D; --ink:#E9EEF0; --soft:#A7B4BC; --faint:#76868F; --rule:#28333A; --edge:#4D5E67; --t1:#8297EA; --wine:#D99AA6; --mt:#C9B9FF; --mtb:#2B2546; --mtl:#B7A6F2; --danger:#FF8A8A; --blend:screen; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.45;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-underline-offset:.18em;text-decoration-thickness:1px}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));padding-block:0 72px}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:10px 32px;padding-block:34px 18px}
+h1{font-family:var(--serif);font-weight:300;font-size:2.7rem;line-height:1.05;margin:0;letter-spacing:-.01em}
+h1 a{text-decoration:none}
+.role{margin:6px 0 0;color:var(--soft)}
+.intro{display:grid;grid-template-columns:290px minmax(0,1fr);gap:44px;align-items:start;margin:12px 0 34px}
+.intro.nophoto{grid-template-columns:minmax(0,1fr)}
+.pfig{margin:0}
+.pfig img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:10px;background:var(--rule)}
+.about{min-width:0;max-width:40em}
+.about h2{font-family:var(--serif);font-weight:300;font-size:2.15rem;line-height:1.2;margin:4px 0 18px;color:var(--wine);text-wrap:balance}
+.about p{margin:0 0 14px;font-size:16px;line-height:1.6}
+@media (max-width:760px){.intro{grid-template-columns:minmax(0,1fr);gap:20px}.pfig{width:min(220px,70%);justify-self:center}.about h2{font-size:1.65rem}}
+.side{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.nav{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.nav a{padding:5px 12px;border-radius:99px;text-decoration:none;color:var(--soft);font-size:14px}
+.nav a:hover{color:var(--ink)}
+.nav a[aria-current="page"]{background:var(--ink);color:var(--paper)}
+.editbtn{padding:4px 12px;border-radius:99px;border:1px solid var(--edge);font-size:14px;margin-left:6px}
+.editbtn:hover{border-color:var(--ink)}
+.contact{color:var(--soft);font-size:14px}
+.copy{font-size:12px;margin-left:8px;border-bottom:1px solid currentColor;line-height:1.2}
+
+.view[hidden]{display:none!important}
+.tools{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:6px 14px;border:1px solid var(--edge);border-radius:99px;font-size:14px;transition:background .2s,color .2s,border-color .2s}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+
+#stage{position:relative;height:660px;margin-top:6px;transition:height .38s cubic-bezier(.3,.7,.3,1);touch-action:manipulation;overflow:hidden;--tw:150px;--th:130px;--cw:186px;--ch:161px}
+#stage.m{--tw:104px;--th:90px;--cw:118px;--ch:102px}
+#lat,#wires{position:absolute;inset:0;width:100%;height:100%;display:block}
+#lat{-webkit-mask-image:radial-gradient(closest-side,#000 55%,transparent);mask-image:radial-gradient(closest-side,#000 55%,transparent)}
+#lat circle{fill:var(--edge);opacity:.5}
+.kite{fill-opacity:.3;transition:fill-opacity .25s}
+.kite.hot{fill-opacity:.5}
+.ring,.chord{fill:none;transition:stroke-width .2s}
+.ring{stroke-width:3.5}
+.chord{stroke-width:1.8;stroke-dasharray:1 6;stroke-linecap:round}
+.ring.hot{stroke-width:5.5}
+.chord.hot{stroke-width:2.6;stroke-dasharray:none}
+.branch,.xl{fill:none;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .55s ease-out}
+.branch{stroke-width:2;stroke-opacity:.75}
+.branch.in,.xl.in{stroke-dashoffset:0}
+.branch.lit{stroke-width:2.8;stroke-opacity:1}
+.xl{stroke-width:2.2}
+
+.tile,.dot,.n{position:absolute;left:0;top:0;will-change:transform}
+.tile{width:var(--tw);height:var(--th);display:grid;place-items:center;text-align:center;color:var(--vk);transition:width .35s,height .35s}
+.tile svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.tile polygon{fill:var(--vc);stroke:var(--paper);stroke-width:2.5;vector-effect:non-scaling-stroke;transition:fill .25s,filter .2s}
+.tile:hover polygon{filter:brightness(1.06) saturate(1.1)}
+.tile:focus-visible{outline:none}
+.tile:focus-visible polygon{stroke:var(--ink);stroke-width:3}
+.tile .full,.tile .ab{position:relative;display:block;padding-inline:11px;line-height:1.2}
+.tile .ab{display:none;font-size:11.5px;font-weight:600;padding-inline:2px}
+.tile b{display:block;font-weight:600;font-size:15px;white-space:pre-line}
+.tile i{display:block;font-style:normal;font-size:12px;opacity:.8;margin-top:4px;white-space:pre-line}
+#stage.m .tile b{font-size:12.5px}
+#stage.m .tile i{font-size:10px;margin-top:2px}
+#stage.m .tile .full{padding-inline:9px}
+#stage.m .tile .ab{font-size:9px}
+.tile.compact{width:calc(var(--tw)*.58);height:calc(var(--th)*.58)}
+#stage.m .tile.compact{width:calc(var(--tw)*.68);height:calc(var(--th)*.68)}
+.tile.compact .full{display:none}
+.tile.compact .ab{display:block}
+.tile.linked polygon{stroke:var(--ink);stroke-width:3}
+.tile.dim{color:var(--soft)}
+.tile.dim polygon{fill:color-mix(in srgb,var(--vc) 22%,var(--paper))}
+.tile.center{width:var(--cw);height:var(--ch);z-index:1;color:var(--paper)}
+.tile.center polygon{fill:var(--ink)}
+.tile.center .full{font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.25;padding-inline:30px}
+.tile.center .full b{display:inline;font-size:inherit;font-weight:600;white-space:normal}
+#stage.m .tile.center .full{font-size:11.5px;padding-inline:20px}
+.tile.center.compact{width:calc(var(--cw)*.48);height:calc(var(--ch)*.48)}
+.dot{width:30px;height:30px;display:grid;place-items:center;transition:opacity .2s;z-index:1}
+.dot::after{content:"";width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,var(--da),var(--db));box-shadow:0 0 0 2.5px var(--paper),0 0 0 3.5px color-mix(in srgb,var(--ink) 18%,transparent);transition:transform .2s}
+.dot:hover::after,.dot.hot::after{transform:scale(1.3)}
+.dot:focus-visible{outline:2px solid var(--ink);outline-offset:-2px;border-radius:50%}
+#stage.open .dot:not(.hot){opacity:0;pointer-events:none}
+.ring,.chord{transition:stroke-width .25s,opacity .3s}
+#stage.open .ring:not(.hot),#stage.open .chord:not(.hot){opacity:.38}
+#stage .chord.aux:not(.hot),#stage.open .chord.aux:not(.hot){opacity:0}
+.dot.aux{display:none}
+#stage.open .ring.hot,#stage.open .chord.hot{stroke-width:6.5;stroke-dasharray:16 7;animation:flow 1.1s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-23}}
+.tile.sel{z-index:2}
+.tile.sel polygon{stroke:var(--ink);stroke-width:3.5}
+.tile.far polygon{fill:color-mix(in srgb,var(--vc) 40%,var(--paper))}
+.tile.far{color:var(--soft)}
+#explore{margin-top:4px}
+.xp{display:grid;gap:14px;padding:16px 18px;border-radius:8px;background:color-mix(in srgb,var(--vc) 15%,var(--paper))}
+.xhead{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 20px}
+.xhead>div{min-width:0}
+.xhead h3{font-family:var(--serif);font-weight:400;font-size:1.3rem;line-height:1.25;margin:0;text-wrap:balance}
+.xhead .meta{font-size:14px;color:var(--soft);margin:2px 0 0}
+.xconn{display:flex;flex-wrap:wrap;gap:6px}
+.xc{display:flex;align-items:center;gap:7px;padding:4px 12px 4px 5px;border-radius:99px;background:var(--paper);font-size:13px}
+.xc::before{content:"";flex:none;width:16px;height:16px;border-radius:50%;background:linear-gradient(135deg,var(--da) 45%,var(--db) 55%)}
+.xc b{font-weight:600}
+.xc:hover{box-shadow:0 0 0 1px var(--ink)}
+.xtabs{display:flex;flex-wrap:wrap;gap:6px}
+.xt{padding:6px 13px;border-radius:99px;font-size:14px;font-weight:500;background:color-mix(in srgb,var(--vc) 30%,var(--paper))}
+.xt[aria-pressed="true"]{background:var(--vc);color:var(--vk)}
+.xitems{display:flex;flex-wrap:wrap;gap:6px}
+.xi{padding:6px 11px;border-radius:5px;font-size:14px;line-height:1.3;background:var(--paper);border:1px solid color-mix(in srgb,var(--vc) 50%,var(--edge))}
+button.xi:hover{border-color:var(--ink)}
+.xi[aria-pressed="true"]{background:var(--vc);color:var(--vk);border-color:var(--vc)}
+.xi.dim{opacity:.35}
+span.xi{color:var(--soft)}
+#tip{position:absolute;left:0;top:0;z-index:3;background:var(--ink);color:var(--paper);font-size:13px;line-height:1.3;padding:5px 10px;border-radius:4px;pointer-events:none;max-width:210px;width:max-content;opacity:0;transition:opacity .15s}
+#tip.show{opacity:1}
+
+.n{font-size:14px;text-align:left;line-height:1.3;opacity:0;transition:opacity .28s,background .2s,color .2s;display:flex;justify-content:space-between;gap:8px;align-items:center;text-decoration:none;color:var(--ink);background:color-mix(in srgb,var(--vc) 24%,var(--paper));border-radius:5px}
+.n.in{opacity:1}
+.n.d1{font-weight:500;padding:9px 12px}
+.n.d2{padding:6px 9px;background:var(--paper)}
+.n:hover{background:color-mix(in srgb,var(--vc) 36%,var(--paper))}
+.n.on{background:var(--vc);color:var(--vk)}
+.n .chev{font-style:normal;opacity:.6;transition:transform .2s;flex:none}
+.n.on .chev{transform:rotate(90deg);opacity:1}
+.n.dim{opacity:.32}
+
+#panel{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 32px;padding:14px 18px;margin-top:4px;background:color-mix(in srgb,var(--vc,var(--ink)) 20%,var(--paper));border-radius:6px}
+#panel h3{font-family:var(--serif);font-weight:400;font-size:1.3rem;line-height:1.25;margin:0;text-wrap:balance}
+#panel .meta{font-size:14px;color:var(--soft);margin:2px 0 0}
+#panel .body{margin:4px 0 0;font-size:15px}
+#panel>div{min-width:0}
+.acts{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.go{font-size:13px;font-weight:500;padding:5px 12px;border-radius:99px;background:var(--gc);color:var(--gk);text-decoration:none;flex:none}
+.go.open{background:var(--ink);color:var(--paper)}
+
+.grp{display:grid;grid-template-columns:128px minmax(0,1fr);gap:10px 24px;padding-block:30px 0}
+.grp h2{font-family:var(--serif);font-weight:400;font-size:1.15rem;line-height:1.3;margin:0;color:var(--soft)}
+.items{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:4px;max-width:46em}
+.li{display:grid;grid-template-columns:15px minmax(0,1fr);gap:10px;width:100%;padding:6px 8px;margin-inline:-8px;border-radius:5px;transition:background .15s}
+button.li:hover{background:color-mix(in srgb,var(--vc) 22%,var(--paper))}
+.hx{width:15px;height:13px;margin-top:.22em;background:var(--vc);clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);display:block}
+.li b{font-weight:500}
+.li .s{display:block;font-size:13.5px;color:var(--soft)}
+.li.wy{grid-template-columns:15px minmax(0,1fr) auto}
+.lirow{display:flex;align-items:flex-start;min-width:0}
+.lirow .li{flex:0 1 auto;min-width:0}
+.lnks{display:flex;flex-wrap:wrap;gap:2px 16px;margin:0 0 0 25px;padding-block:0 4px}
+.lnk{font-size:13px;font-weight:500;color:var(--soft);text-decoration:none}
+.lnk:hover{color:var(--ink);text-decoration:underline}
+.lmeta{margin:-6px 0 2px 25px;font-size:13.5px;line-height:1.45;color:var(--soft)}
+.lmeta .ilk{font-style:normal;font-weight:500;margin-left:2px;color:var(--soft);text-decoration:none}
+.lmeta .ilk:hover{color:var(--ink);text-decoration:underline}
+.abt{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;margin-left:8px;padding:0;vertical-align:-3px;border:1px solid var(--edge);border-radius:50%;background:none;color:var(--soft);font:inherit;font-size:12px;line-height:1;cursor:pointer}
+.abt::after{content:"+"}
+.abt[aria-expanded="true"]::after{content:"\2212"}
+.abt:hover{color:var(--ink);border-color:var(--ink)}
+.abt:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.lirow>.abt{margin-top:9px}
+.absp{margin:4px 0 8px 25px;max-width:44em;font-size:14px;line-height:1.55;color:var(--ink)}
+.li .y{font-size:13.5px;color:var(--soft);font-variant-numeric:tabular-nums;white-space:nowrap;padding-top:.1em}
+#home-lists{padding-top:26px}
+.htabs{display:flex;flex-wrap:wrap;gap:6px 4px;padding-block:26px 0;border-bottom:1px solid var(--rule)}
+.htab{display:inline-flex;align-items:center;gap:6px;padding:7px 12px 9px;margin-bottom:-1px;border:0;border-bottom:2px solid transparent;background:none;font:inherit;font-size:14px;color:var(--soft);cursor:pointer}
+.htab .hx{width:10px;height:11px}
+.htab:hover{color:var(--ink)}
+.htab[aria-pressed="true"]{color:var(--ink);font-weight:600;border-bottom-color:var(--ink)}
+.htab:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.hdetail{display:grid;gap:4px;padding-top:8px}
+.hagenda{padding-top:6px}
+.decks{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:18px;margin-top:18px}
+.deck{border:1px solid var(--rule);border-radius:12px;overflow:hidden;min-width:0}
+.dtop{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 12px;padding:10px 14px;border-bottom:1px solid var(--rule)}
+.dtop h4{margin:0;font-size:15px;font-weight:600}
+.dn{font-size:13px;color:var(--soft)}
+.dscroll{max-height:min(70vh,520px);overflow-y:auto;display:grid;gap:12px;padding:12px;background:color-mix(in srgb,var(--ink) 6%,var(--paper));overscroll-behavior:contain}
+.dscroll img{display:block;width:100%;height:auto;aspect-ratio:auto 16/9;border-radius:4px;background:#fff;box-shadow:0 1px 4px color-mix(in srgb,var(--ink) 18%,transparent)}
+.dscroll:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
+.hdetail .agrp h3{margin-top:22px}
+.hintro{margin:4px 0 0;font-size:16px;max-width:40em}
+.hintro a{font-weight:500}
+.hback{margin-top:30px}
+.lit{display:grid;min-width:0}
+.abs{margin:0 0 6px 25px;max-width:44em;min-width:0}
+.abs summary{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border:1px solid var(--edge);border-radius:50%;font-size:14px;line-height:1;color:var(--soft);list-style:none;cursor:pointer}
+.abs summary::-webkit-details-marker{display:none}
+.abs summary::after{content:"+";font-weight:400}
+.abs[open] summary{margin-bottom:0}
+.abs[open] summary::after{content:"\2212"}
+.abs summary:hover{color:var(--ink);border-color:var(--ink)}
+.abs summary:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.abs p{margin:4px 0 8px;font-size:14px;line-height:1.55;color:var(--ink)}
+.card .abs{margin:4px 0 0}
+
+/* Area pages */
+.ahead{display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px 32px;align-items:center;padding-block:16px 8px}
+.bighex{width:150px;height:130px;position:relative;display:grid;place-items:center;color:var(--vk);text-align:center;font-weight:600;font-size:17px;line-height:1.2;white-space:pre-line}
+.bighex svg{position:absolute;inset:0;width:100%;height:100%}
+.bighex polygon{fill:var(--vc)}
+.bighex span{position:relative;padding-inline:16px}
+.ahead h2{font-family:var(--serif);font-weight:400;font-size:1.9rem;line-height:1.15;margin:0;text-wrap:balance}
+.ahead .meta{margin:6px 0 0;color:var(--soft)}
+.ahead .intro{margin:10px 0 0;font-size:16px;max-width:40em}
+.ahead .intro a{font-weight:500}
+.abrand{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin:14px 0 2px}
+.alogo{display:block;height:46px;width:auto;max-width:100%;background:#fff;border:1px solid var(--rule);border-radius:10px;padding:6px 12px}
+.alogo-d{background:#0b0914;border:0;padding:0}
+.alogoa{display:block;border-radius:10px;transition:transform .15s,box-shadow .15s}
+.alogoa:hover{transform:translateY(-1px);box-shadow:0 4px 14px color-mix(in srgb,var(--ink) 18%,transparent)}
+.alogoa:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.alinks{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:15px}
+.alinks a{font-weight:500}
+.switch{display:flex;flex-wrap:wrap;gap:6px;padding-block:18px 4px}
+.sw{display:flex;align-items:center;gap:7px;padding:5px 12px 5px 9px;border-radius:99px;font-size:13.5px;text-decoration:none;background:color-mix(in srgb,var(--vc) 22%,var(--paper))}
+.sw .hx{margin:0}
+.sw[aria-current="page"]{background:var(--vc);color:var(--vk);font-weight:500}
+.agrp h3{font-family:var(--serif);font-weight:400;font-size:1.25rem;margin:34px 0 14px;color:var(--soft)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:18px}
+.card{border-radius:8px;overflow:hidden;background:color-mix(in srgb,var(--vc) 10%,var(--paper));display:flex;flex-direction:column;scroll-margin-top:20px;transition:box-shadow .3s}
+.card .art{aspect-ratio:16/7;max-width:100%;display:block;background:color-mix(in srgb,var(--vc) 26%,var(--paper))}
+.card .art svg{display:block;width:100%;height:100%}
+.card .art img{display:block;width:100%;height:100%;object-fit:cover}
+.card .cb{padding:14px 16px 16px;display:grid;gap:4px;min-width:0}
+.card h4{margin:0;font-size:16px;font-weight:600;line-height:1.3;text-wrap:balance}
+.card .w,.card .s{margin:0;font-size:13.5px;color:var(--soft)}
+.mins{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 0}
+.li .mins{margin-top:5px}
+.mtag{display:inline-block;font-size:12.5px;font-weight:600;line-height:1.3;padding:3px 10px;border-radius:99px;color:var(--mt);background:var(--mtb)}
+.card .w.pl{color:var(--mtl)}
+.card .w .ilk{font-style:normal;font-weight:500;color:var(--soft);text-decoration:none}
+.card .w .ilk:hover{color:var(--ink);text-decoration:underline}
+.card .ft{margin:-2px 0 0;font-size:13.5px;line-height:1.4;font-style:italic;color:var(--soft)}
+.card .q{margin:4px 0 0;font-size:14.5px}
+.card .lk{margin-top:6px;font-size:13.5px;font-weight:500;color:var(--soft);text-decoration:none}
+.card .lk:hover{color:var(--ink);text-decoration:underline}
+.card.focus{box-shadow:0 0 0 3px var(--vc),0 8px 24px color-mix(in srgb,var(--vc) 40%,transparent)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.tag{padding:7px 14px;border-radius:99px;background:color-mix(in srgb,var(--vc) 26%,var(--paper));font-size:14px}
+
+/* Galleries */
+.lks{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:6px}
+.lks .lk{margin-top:0}
+.mgal{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:16px;align-items:start}
+.mgal figure{margin:0;min-width:0;display:grid;gap:6px}
+.mgal figcaption{font-size:13px;color:var(--soft);line-height:1.35}
+.mp img,.mv video{display:block;width:100%;max-width:100%;height:auto;border-radius:8px;background:color-mix(in srgb,var(--vc) 18%,var(--paper))}
+.mv video{max-height:600px;object-fit:contain;background:#000}
+.mp img{aspect-ratio:4/3;object-fit:cover}
+.mfeat{display:grid;grid-template-columns:minmax(0,300px);justify-content:center;gap:10px 16px}
+.mfeat.has-side{grid-template-columns:minmax(0,300px) minmax(0,150px)}
+.mfeat .mv{margin:0;grid-column:1;grid-row:1;min-width:0}
+.mvcap{grid-column:1;grid-row:2;margin:0;font-size:14px;color:var(--soft);text-align:center}
+.mside{grid-column:2;grid-row:1;min-width:0;display:flex;flex-direction:column;gap:8px;contain:size;overflow:hidden}
+.mfeat video{display:block;width:100%;height:auto;border-radius:12px;background:#000;object-fit:contain;box-shadow:0 12px 32px color-mix(in srgb,var(--ink) 20%,transparent)}
+
+.mrefh{margin:0;font-size:12px;line-height:1.3;color:var(--soft)}
+.mxrow{display:grid;grid-template-columns:minmax(0,380px) minmax(0,380px);justify-content:center;gap:24px 44px;align-items:start}
+.mapp,.mpilot{display:grid;gap:10px;min-width:0;align-content:start}
+.mlab{margin:0;font-size:13px;font-weight:600;color:var(--soft);letter-spacing:.02em}
+.mshots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 12px}
+.mshots .phone{width:100%;border-radius:18px;padding:5px}
+.mshots .phone img{border-radius:14px}
+.mxrow .mfeat{justify-content:start}
+.mxrow .mfeat.has-side{grid-template-columns:minmax(0,230px) minmax(0,130px)}
+@media (max-width:860px){.mxrow{grid-template-columns:minmax(0,1fr);justify-content:stretch}.mxrow .mfeat{justify-content:center}}
+.steps{list-style:none;margin:4px 0 26px;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:12px;counter-reset:st}
+.steps li{position:relative;padding:12px 14px 12px 46px;border:1px solid var(--rule);border-radius:10px;counter-increment:st;min-width:0}
+.steps li::before{content:counter(st);position:absolute;left:14px;top:13px;width:22px;height:22px;border-radius:50%;background:var(--vc);color:var(--vk);font-size:12px;font-weight:700;display:grid;place-items:center}
+.steps b{display:block;font-size:15px}
+.steps span{display:block;font-size:14px;line-height:1.45;color:var(--soft);margin-top:2px}
+.mrefs{flex:1;min-height:0;display:grid;gap:8px}
+.mref{min-height:0}
+@media (max-width:520px){.mfeat.has-side{grid-template-columns:minmax(0,1fr) 96px;gap:10px}}
+.mref img{display:block;width:100%;height:100%;object-fit:cover;border-radius:6px}
+.mgal.has-video{grid-template-columns:minmax(0,.8fr) repeat(2,minmax(0,1fr))}
+.mgal.has-video .mv{grid-row:span 2}
+.mgal.has-video{align-items:stretch}
+.mgal.has-video .mp{position:relative;aspect-ratio:4/3;min-width:0;width:100%;justify-self:stretch}
+.mgal.has-video .mp img{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto}
+@media (max-width:640px){.mgal.has-video{grid-template-columns:repeat(2,minmax(0,1fr))}.mgal.has-video .mv{grid-column:1/-1;grid-row:auto}.mv video{max-height:480px}}
+.ms{justify-items:center;text-align:center}
+.phone{width:min(100%,210px);border-radius:26px;padding:7px;background:var(--ink);box-shadow:0 10px 28px color-mix(in srgb,var(--ink) 22%,transparent)}
+.phone img{display:block;width:100%;height:auto;border-radius:20px}
+.stores{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.store{display:flex;align-items:center;gap:9px;padding:8px 16px 8px 12px;border-radius:10px;background:var(--ink);color:var(--paper);text-decoration:none;line-height:1.15}
+.store .ic{width:22px;height:22px;stroke:var(--paper)}
+.store small{display:block;font-size:11px;opacity:.75}
+.store b{display:block;font-size:15px;font-weight:600}
+a.store:hover{box-shadow:0 0 0 3px var(--vc)}
+.medit{display:grid;gap:4px;margin-bottom:12px}
+.mrow{display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;align-items:start}
+.mrow img,.mrow video{width:96px;height:72px;object-fit:cover;border-radius:6px;background:var(--rule)}
+.eadd input{display:none}
+label.eadd{display:block;cursor:pointer}
+
+/* Research page */
+.alead{font-family:var(--serif);font-weight:300;font-size:1.75rem;line-height:1.3;margin:18px 0 4px;max-width:30em;text-wrap:balance}
+.vwrap{display:grid;place-items:center;padding-block:6px 10px}
+.venn{width:min(100%,520px);height:auto;overflow:visible;display:block}
+.vc{fill-opacity:.6;mix-blend-mode:var(--blend);stroke:var(--paper);stroke-width:2;cursor:pointer;transition:fill-opacity .25s;transform-box:fill-box;transform-origin:center;animation:breathe 7s ease-in-out infinite}
+.vc.on{fill-opacity:.85}
+.vc.off{fill-opacity:.22}
+@keyframes breathe{50%{transform:scale(1.025)}}
+.vl{cursor:pointer;outline:none}
+.vl text{font-family:var(--sans);font-size:14px;font-weight:600;fill:var(--ink);text-anchor:middle}
+.vl svg{stroke:var(--ink)}
+.vl:focus-visible text{text-decoration:underline}
+.vcenter{font-family:var(--serif);font-style:italic;font-weight:600;font-size:17px;fill:var(--ink);text-anchor:middle}
+.axes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:6px}
+.axis{border-radius:10px;padding:16px;background:color-mix(in srgb,var(--vc) 14%,var(--paper));transition:opacity .25s,box-shadow .25s;scroll-margin-top:20px;min-width:0}
+.axis.off{opacity:.5}
+.axis.on{box-shadow:0 0 0 2px var(--vc)}
+.axh{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start}
+.badge{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--vc)}
+.badge .ic{width:24px;height:24px;stroke:var(--vk)}
+.axis h3{font-family:var(--serif);font-weight:400;font-size:1.2rem;line-height:1.25;margin:2px 0 4px;text-wrap:balance}
+.axq{margin:0;font-size:14px;color:var(--soft)}
+.ail{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:6px}
+.ail li{display:flex;align-items:flex-start;gap:8px;min-width:0}
+.ai{flex:1 1 auto;min-width:0;display:grid;grid-template-columns:30px minmax(0,1fr);gap:10px;padding:8px;border-radius:6px;background:var(--paper)}
+.ai:hover{box-shadow:0 0 0 1px var(--vc)}
+.ib{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--vc) 38%,var(--paper))}
+.ib .ic{width:18px;height:18px;stroke:var(--ink)}
+.ic{fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.at b{display:block;font-weight:600;font-size:14.5px;line-height:1.3}
+.am{display:block;font-size:12.5px;color:var(--soft);margin-top:2px}
+.aq{display:block;font-size:13.5px;margin-top:4px}
+@media (max-width:860px){.axes{grid-template-columns:minmax(0,1fr)}.alead{font-size:1.4rem}}
+@media (prefers-reduced-motion:reduce){.vc{animation:none}}
+
+/* Misc */
+.mhead h2{font-family:var(--serif);font-weight:400;font-size:1.9rem;margin:16px 0 4px}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:18px;margin-top:20px}
+
+/* Edit mode */
+.ebar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 16px;background:var(--ink);color:var(--paper);font-size:14px;padding-top:12px;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px));padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.ebar .eacts{display:flex;gap:8px}
+.ebar button{padding:7px 16px;border-radius:99px;border:1px solid color-mix(in srgb,var(--paper) 45%,transparent)}
+.ebar button.primary{background:var(--paper);color:var(--ink);font-weight:500}
+.ebar button:disabled{opacity:.5;cursor:default}
+body.is-editing .wrap{padding-bottom:140px}
+.ed{font:inherit;font-size:14px;width:100%;padding:7px 9px;border:1px solid var(--edge);border-radius:5px;background:var(--paper);color:var(--ink);min-width:0}
+.ed:focus{outline:2px solid var(--ink);outline-offset:0;border-color:var(--ink)}
+textarea.ed{resize:vertical;line-height:1.4}
+.ef{display:grid;gap:4px;min-width:0}
+.ef>span{font-size:12px;color:var(--soft)}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.erow{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.erow.wide .ed{flex:1 1 200px}
+.eb{font-size:12.5px;padding:4px 10px;border-radius:99px;border:1px solid var(--edge);background:var(--paper);color:var(--ink)}
+.eb:hover{border-color:var(--ink)}
+.eb.danger{color:var(--danger)}
+.eadd{margin-top:14px;font-size:14px;font-weight:500;padding:9px 14px;border-radius:6px;border:1px dashed var(--edge);width:100%;text-align:center}
+.eadd:hover{border-color:var(--ink)}
+.epanel,.aedit{display:grid;gap:12px;padding:16px;margin-block:8px 18px;border-radius:8px;background:color-mix(in srgb,var(--vc,var(--c4)) 14%,var(--paper))}
+.eh{font-family:var(--serif);font-weight:400;font-size:1.2rem;margin:0}
+.ehint{font-size:13px;color:var(--soft);margin:2px 0 0}
+.tgs{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13.5px}
+.tgs label{display:flex;gap:5px;align-items:center}
+.card.editing .cb{gap:10px}
+.cards.editing{grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr))}
+.grp.editing{display:block}
+.grp.editing h2{margin-bottom:8px}
+.gtitle{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:end;margin-bottom:8px}
+.eitem{display:grid;grid-template-columns:15px minmax(0,1fr) auto;gap:10px;align-items:center;padding:7px 0;border-bottom:1px solid var(--rule)}
+.eitem .hx{margin-top:0}
+.erowcard{display:grid;gap:8px;padding:12px 0;border-bottom:1px solid var(--rule)}
+.ghead{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:end;margin:30px 0 12px}
+details summary{cursor:pointer;font-size:13px;color:var(--soft)}
+details[open] summary{margin-bottom:8px}
+details .ef{margin-bottom:8px}
+
+@media (max-width:760px){
+  h1{font-size:2.3rem}
+  .top{padding-block:24px 14px}
+  .side{align-items:flex-start}
+  #panel{padding:12px 14px}
+  .grp{grid-template-columns:minmax(0,1fr)}
+  .items{grid-template-columns:minmax(0,1fr)}
+  .ahead{grid-template-columns:minmax(0,1fr)}
+  .bighex{width:112px;height:97px;font-size:13px}
+  .ahead h2{font-size:1.55rem}
+  .two,.gtitle,.ghead{grid-template-columns:minmax(0,1fr)}
+  .eitem{grid-template-columns:15px minmax(0,1fr)}
+  .eitem .erow{grid-column:2}
+}
+@media (prefers-reduced-motion:reduce){
+  #stage,.tile,.n,.branch,.xl,.card{transition:none}
+  #stage.open .ring.hot,#stage.open .chord.hot{animation:none;stroke-dasharray:none}
+}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1><a href="#home" id="name-link"></a></h1>
+      <p class="role" id="role"></p>
+    </div>
+    <div class="side">
+      <nav class="nav" aria-label="Pages"><a href="#home" data-nav="home">Home</a><a href="#agenda" data-nav="agenda">Research</a><a href="#misc" data-nav="misc">Misc</a><button class="editbtn" id="editbtn" type="button" hidden="">Edit</button></nav>
+      <div class="contact"><span id="mail"></span><button class="copy" id="copy" type="button">Copy</button></div>
+    </div>
   </header>
 
-  <main id="main">
-    <section class="section hero" id="top">
-      <div class="reveal">
-        <p class="eyebrow" id="hero-role"></p>
-        <h1 id="hero-title">I study how firms and people navigate technological change.</h1>
-        <p class="hero-summary" id="hero-summary"></p>
-        <div class="actions">
-          <a class="button button-primary" href="#work">Explore my research <span class="arrow" aria-hidden="true">↓</span></a>
-          <a class="button button-secondary" id="hero-email" href="mailto:hkwon@hbs.edu">Get in touch <span class="arrow" aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-      <aside class="hero-note reveal" aria-label="Guiding research question">
-        <p class="note-label">A question that guides my work</p>
-        <p class="note-question" id="guiding-question"></p>
-        <div class="note-meta"><span id="research-fields"></span><span id="updated-date"></span></div>
-      </aside>
-    </section>
-
-    <section class="section agenda" id="agenda">
-      <div class="reveal">
-        <p class="section-kicker">Research agenda</p>
-        <h2>Questions before categories.</h2>
-        <p class="section-intro" id="agenda-intro"></p>
-      </div>
-      <div class="theme-list reveal" id="theme-list"></div>
-    </section>
-
-    <section class="work-shell" id="work">
-      <div class="work-inner">
-        <div class="work-heading reveal">
-          <div>
-            <p class="section-kicker">Selected work</p>
-            <h2>Research in progress.</h2>
-          </div>
-          <p>Each project combines a substantive question with careful research design, data construction, or empirical analysis.</p>
-        </div>
-        <div class="filters reveal" id="filters" role="group" aria-label="Filter projects"></div>
-        <div class="project-list" id="project-list" aria-live="polite"></div>
-      </div>
-    </section>
-
-    <section class="section profile" id="profile">
-      <div class="profile-copy reveal">
-        <p class="section-kicker">Background</p>
-        <h2>Built across fields and methods.</h2>
-        <p class="lead" id="profile-summary"></p>
-        <a class="button button-secondary" id="profile-email" href="mailto:hkwon@hbs.edu">hkwon@hbs.edu <span class="arrow" aria-hidden="true">↗</span></a>
-      </div>
-      <div class="profile-groups reveal">
-        <section class="profile-group" aria-labelledby="experience-title">
-          <h3 id="experience-title">Research experience</h3>
-          <div id="experience-list"></div>
-        </section>
-        <section class="profile-group" aria-labelledby="education-title">
-          <h3 id="education-title">Education</h3>
-          <div id="education-list"></div>
-        </section>
-        <section class="profile-group" aria-labelledby="methods-title">
-          <h3 id="methods-title">Methods &amp; tools</h3>
-          <div class="method-cloud" id="method-list"></div>
-        </section>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-      <span>© <span id="year"></span> <span id="footer-name">Hana Kwon</span></span>
-      <span>Designed as a living research portfolio · <a href="#top">Back to top ↑</a></span>
+  <section class="view" id="v-home">
+    <div class="intro" id="intro">
+      <figure class="pfig" id="pfig" hidden=""></figure>
+      <div class="about" id="about"></div>
     </div>
-  </footer>
+    <div id="ed-home" hidden=""></div>
+    <div class="tools" id="chips" role="group" aria-label="Themes"></div>
+    <div id="stage" role="group" aria-label="Interactive map of six areas and the work connected to each">
+      <svg id="lat" aria-hidden="true"><defs><pattern id="hexdots" width="30" height="51.96" patternUnits="userSpaceOnUse"><circle cx="0" cy="0" r="1"></circle><circle cx="30" cy="0" r="1"></circle><circle cx="15" cy="25.98" r="1"></circle><circle cx="0" cy="51.96" r="1"></circle><circle cx="30" cy="51.96" r="1"></circle></pattern></defs><rect width="100%" height="100%" fill="url(#hexdots)"></rect></svg>
+      <svg id="wires" aria-hidden="true"><defs id="grads"></defs><g id="gKite"></g><g id="gRing"></g><circle id="walker" r="4"></circle><g id="gBranch"></g><g id="gX"></g></svg>
+      <div id="layer"></div>
+      <div id="tip" role="status"></div>
+    </div>
+    <div id="explore" hidden=""></div>
+    <div id="panel" aria-live="polite" hidden=""></div>
+    <div id="home-lists"></div>
+  </section>
 
-  <noscript>This page requires JavaScript to display the portfolio content.</noscript>
+  <section class="view" id="v-area" hidden=""></section>
 
-  <script>
-    /* ================================================================
-       EDIT YOUR CONTENT HERE
-       ----------------------------------------------------------------
-       To update this portfolio later, edit only the PORTFOLIO object.
-       The layout, project filters, and responsive styling update on their own.
-       ================================================================ */
-    const PORTFOLIO = {
-      name: "Hana Kwon",
-      initials: "HK",
-      email: "hkwon@hbs.edu",
-      role: "Research Associate · Harvard Business School",
-      heroTitle: "I study how firms and people navigate <span class='hero-accent'>technological change.</span>",
-      heroSummary: "My work sits at the intersection of <strong>strategy, technology, innovation, and entrepreneurship</strong>. I use large-scale administrative data, field experiments, and computational methods to understand adaptation under uncertainty.",
-      guidingQuestion: "When technology or institutions change the rules, who adapts—and what shapes the choices they make?",
-      fields: "Strategy · Technology · Organizations",
-      updated: "July 2026",
-      agendaIntro: "I am especially interested in settings where a new technology, policy shock, or organizational design makes previously hidden differences in judgment and capability visible.",
-      profileSummary: "I am a research associate at Harvard Business School and am preparing for doctoral study in strategy and technology. My training spans management, quantitative social science, and experimental research.",
+  <section class="view" id="v-agenda" hidden=""></section>
 
-      themes: [
-        {
-          title: "Technology, judgment & adoption",
-          text: "How do individuals and organizations evaluate unfamiliar technologies, and why do some turn new tools into capability while others do not?"
-        },
-        {
-          title: "Firm adaptation to institutional shocks",
-          text: "How do political identity, resource constraints, and supply-chain structure shape firms’ responses to policy change?"
-        },
-        {
-          title: "Entrepreneurial & work design",
-          text: "How can experiments reveal the mechanisms behind commitment, participation, and the choices people make about how to work?"
-        }
-      ],
+  <section class="view" id="v-misc" hidden="">
+    <div class="mhead"><h2>Misc</h2></div>
+    <div class="mgrid" id="misc-grid"></div>
+  </section>
 
-      /* category must match one of the filter labels below. */
-      filters: ["All", "Firms & institutions", "AI & innovation", "Experiments", "Data infrastructure"],
-      projects: [
-        {
-          status: "Ongoing research",
-          category: "Firms & institutions",
-          title: "Political identity and firm responses to a tariff shock",
-          question: "How do owner politics and sourcing constraints shape firm adaptation after the 2025 U.S.–China tariff increase?",
-          contribution: "Constructed and analyzed a firm–origin–time panel; developed measures of owner politics, firm size, sourcing concentration, and cross-country alignment; designed heterogeneity and robustness analyses.",
-          evidence: "U.S. shipment records linked to business registries, voter files, campaign-finance records, and international political indicators.",
-          tags: ["Panel data", "Causal inference", "Entity matching", "Stata", "Python"]
-        },
-        {
-          status: "Ongoing research",
-          category: "AI & innovation",
-          title: "AI adoption and capability mapping in African firms",
-          question: "Which organizational and market conditions enable firms to adopt AI—and translate adoption into meaningful capability?",
-          contribution: "Supported a multi-country firm survey and developed a computational pipeline to classify AI ventures by capability and sector, with validation across multiple data sources.",
-          evidence: "Firm survey design, startup descriptions, geospatial sources, natural-language processing, and LLM-assisted classification.",
-          tags: ["AI adoption", "Survey research", "NLP", "LLM workflows", "Python"]
-        },
-        {
-          status: "Study design",
-          category: "Experiments",
-          title: "Entrepreneurial commitment and personalized feedback",
-          question: "Can an interactive decision exercise and personalized recommendation help founders convert reflection into sustained action?",
-          contribution: "Contributing to the design of a fully online randomized experiment, implementation plan, outcome measures, recruitment strategy, and longitudinal follow-ups.",
-          evidence: "Interactive choice task, treatment feedback, behavioral pledges, and 30/60-day follow-up measures.",
-          tags: ["Online RCT", "Behavioral design", "Entrepreneurship", "Longitudinal follow-up"]
-        },
-        {
-          status: "Master’s thesis · Completed",
-          category: "Experiments",
-          title: "The future of work: a field experiment on work-design preferences",
-          question: "Does the way a job is designed—in-person, hybrid, or remote—change whether qualified job seekers express interest?",
-          contribution: "Designed and executed a randomized field experiment with 991 participants; estimated intention-to-treat effects using seven-day click-through behavior.",
-          evidence: "Random assignment across three work-design conditions with a behavioral, rather than stated-preference, outcome.",
-          tags: ["Field experiment", "Work design", "Randomization", "R"]
-        },
-        {
-          status: "Research infrastructure",
-          category: "Data infrastructure",
-          title: "Building a firm-level trade data linkage",
-          question: "How can noisy shipment-level names and addresses be linked reliably to stable firm identifiers at scale?",
-          contribution: "Built a staged exact and fuzzy matching pipeline with geographic recovery rules, threshold calibration, and manual validation.",
-          evidence: "Large-scale shipment records, business registry identifiers, names, addresses, and ZIP-code information.",
-          tags: ["Record linkage", "Fuzzy matching", "Validation", "Python", "Data engineering"]
-        }
-      ],
+  <div class="ebar" id="ebar" hidden=""><span id="estat" role="status">Editing. Nothing is saved until you press Save.</span><span class="eacts"><button type="button" id="ecancel">Cancel</button><button type="button" id="esave" class="primary">Save</button></span></div>
+</div>
 
-      experience: [
-        {
-          date: "2025–present",
-          title: "Research Associate · Harvard Business School",
-          detail: "Research in entrepreneurship, strategy, technology, firm adaptation, and experimental design."
-        },
-        {
-          date: "2024–2025",
-          title: "Research Assistant · Columbia Business School",
-          detail: "Research on organizations, activism, workplace design, and field experimentation."
-        }
-      ],
-      education: [
-        {
-          date: "2026",
-          title: "M.A. · Columbia University",
-          detail: "Quantitative Methods in the Social Sciences, Data Science track."
-        },
-        {
-          date: "2024",
-          title: "M.S. · Seoul National University",
-          detail: "Business Administration, Strategy & International Management."
-        },
-        {
-          date: "2017",
-          title: "B.A. · Korea University",
-          detail: "English Language & Literature."
-        }
-      ],
-      methods: [
-        "Field experiments", "Causal inference", "Panel data", "Survey design",
-        "Entity resolution", "Natural-language processing", "LLM-assisted research",
-        "Python", "R", "Stata", "SQL"
-      ]
-    };
-
-    const $ = (selector) => document.querySelector(selector);
-    const escapeHTML = (value) => String(value)
-      .replaceAll("&", "&amp;")
-      .replaceAll("<", "&lt;")
-      .replaceAll(">", "&gt;")
-      .replaceAll('"', "&quot;")
-      .replaceAll("'", "&#039;");
-
-    function renderStaticContent() {
-      document.title = `${PORTFOLIO.name} — Research Portfolio`;
-      $("#nav-name").textContent = PORTFOLIO.name;
-      $(".brand-mark").textContent = PORTFOLIO.initials;
-      $("#footer-name").textContent = PORTFOLIO.name;
-      $("#hero-role").textContent = PORTFOLIO.role;
-      $("#hero-title").innerHTML = PORTFOLIO.heroTitle;
-      $("#hero-summary").innerHTML = PORTFOLIO.heroSummary;
-      $("#guiding-question").textContent = PORTFOLIO.guidingQuestion;
-      $("#research-fields").textContent = PORTFOLIO.fields;
-      $("#updated-date").textContent = PORTFOLIO.updated;
-      $("#agenda-intro").textContent = PORTFOLIO.agendaIntro;
-      $("#profile-summary").textContent = PORTFOLIO.profileSummary;
-      $("#year").textContent = new Date().getFullYear();
-
-      ["#nav-email", "#hero-email", "#profile-email"].forEach((id) => {
-        $(id).href = `mailto:${PORTFOLIO.email}`;
-      });
-      $("#profile-email").firstChild.textContent = `${PORTFOLIO.email} `;
-    }
-
-    function renderThemes() {
-      $("#theme-list").innerHTML = PORTFOLIO.themes.map((theme, index) => `
-        <article class="theme">
-          <span class="theme-number">0${index + 1}</span>
-          <div>
-            <h3>${escapeHTML(theme.title)}</h3>
-            <p>${escapeHTML(theme.text)}</p>
-          </div>
-        </article>
-      `).join("");
-    }
-
-    function renderFilters() {
-      $("#filters").innerHTML = PORTFOLIO.filters.map((filter, index) => `
-        <button class="filter-button ${index === 0 ? "is-active" : ""}"
-                type="button"
-                data-filter="${escapeHTML(filter)}"
-                aria-pressed="${index === 0 ? "true" : "false"}">
-          ${escapeHTML(filter)}
-        </button>
-      `).join("");
-    }
-
-    function renderProjects() {
-      $("#project-list").innerHTML = PORTFOLIO.projects.map((project, index) => `
-        <article class="project reveal" data-category="${escapeHTML(project.category)}">
-          <span class="project-index">0${index + 1}</span>
-          <div>
-            <span class="project-status">${escapeHTML(project.status)}</span>
-            <h3>${escapeHTML(project.title)}</h3>
-            <p class="project-question">${escapeHTML(project.question)}</p>
-          </div>
-          <div class="project-detail">
-            <p><strong>My contribution</strong><br>${escapeHTML(project.contribution)}</p>
-            <p><strong>Data &amp; design</strong><br>${escapeHTML(project.evidence)}</p>
-            <div class="tags">${project.tags.map((tag) => `<span class="tag">${escapeHTML(tag)}</span>`).join("")}</div>
-          </div>
-        </article>
-      `).join("");
-    }
-
-    function renderTimeline(target, items) {
-      $(target).innerHTML = items.map((item) => `
-        <article class="timeline-item">
-          <span class="timeline-date">${escapeHTML(item.date)}</span>
-          <div>
-            <h4>${escapeHTML(item.title)}</h4>
-            <p>${escapeHTML(item.detail)}</p>
-          </div>
-        </article>
-      `).join("");
-    }
-
-    function renderMethods() {
-      $("#method-list").innerHTML = PORTFOLIO.methods
-        .map((method) => `<span class="method">${escapeHTML(method)}</span>`)
-        .join("");
-    }
-
-    function setupFiltering() {
-      $("#filters").addEventListener("click", (event) => {
-        const button = event.target.closest("button[data-filter]");
-        if (!button) return;
-        const selected = button.dataset.filter;
-
-        document.querySelectorAll(".filter-button").forEach((item) => {
-          const active = item === button;
-          item.classList.toggle("is-active", active);
-          item.setAttribute("aria-pressed", String(active));
-        });
-
-        document.querySelectorAll(".project").forEach((project) => {
-          project.hidden = selected !== "All" && project.dataset.category !== selected;
-        });
-      });
-    }
-
-    function setupReveal() {
-      if (!("IntersectionObserver" in window)) {
-        document.querySelectorAll(".reveal").forEach((item) => item.classList.add("is-visible"));
-        return;
+<script type="application/json" id="site-data">{
+ "name": "Hana Kwon",
+ "role": "Pre-doctorate, Harvard Business School",
+ "email": "hkkwon5@gmail.com",
+ "photo": "assets/hana_portrait5.jpg",
+ "about": {
+  "h": "Who leads at the technological frontier?",
+  "p": [
+   "Hello! I am a pre-doctoral researcher in Strategy and Entrepreneurial Management at Harvard Business School, where I am fortunate to work with Professors Andy Wu, Ebehi Iyoha, and Jaya Wen.",
+   "I study how firms turn frontier science and technology into advantage under socio-economic and political uncertainty: build-or-buy choices, critical input control, and responses to export controls, tariffs, and industrial policy.",
+   "Before HBS, I was a researcher at KIET, Korea's national economic policy research institute, working on industrial policy for semiconductors, batteries, and supply chains, and a research assistant at Columbia Business School and ISERP with Professor Lori Yue.",
+   "I am also a founder. I co-founded AI Edu Studio, an English education startup, and built and launched its AI app, Yappi. Before that, I was a strategy consultant on digital transformation and go-to-market for manufacturing, software, and fintech firms."
+  ]
+ },
+ "center": "*Innovation*\nunder technological · political uncertainty",
+ "themes": [
+  {
+   "k": "i",
+   "label": "Innovation",
+   "areas": [
+    "research",
+    "policy",
+    "entrepreneur",
+    "quant",
+    "strategy",
+    "consulting"
+   ]
+  },
+  {
+   "k": "f",
+   "label": "Deep Tech",
+   "areas": [
+    "research",
+    "consulting",
+    "policy"
+   ]
+  },
+  {
+   "k": "g",
+   "label": "Global Strategy",
+   "areas": [
+    "research",
+    "consulting",
+    "policy"
+   ]
+  },
+  {
+   "k": "e",
+   "label": "Entrepreneurship",
+   "areas": [
+    "research",
+    "consulting",
+    "strategy",
+    "entrepreneur"
+   ]
+  },
+  {
+   "k": "p",
+   "label": "Political Economy",
+   "areas": [
+    "research",
+    "policy",
+    "quant"
+   ]
+  }
+ ],
+ "areas": [
+  {
+   "key": "consulting",
+   "name": "Strategy Consulting",
+   "title": "Consulting",
+   "sub": "Go-to-Market\nDigital Transformation",
+   "ab": "Consulting",
+   "head": "Strategy Consulting",
+   "meta": "Go-to-market · Digital transformation · Cloud and data",
+   "intro": "Go-to-market and digital transformation for technology firms, including Hitachi Vantara (cloud and HCI) and Siemens (digital twins).",
+   "groups": [
+    {
+     "h": "Projects",
+     "cards": [
+      {
+       "id": "notion",
+       "l": "Notion · market entry",
+       "t": "Go-to-Market Strategy: Notion's Market Entry into Korea",
+       "q": "Supported Notion's entry into Korea, its first market beyond English, in 2020.",
+       "url": "https://marketerasia.com/notion-south-korea/",
+       "ul": "Marketer Asia",
+       "tg": "sg",
+       "x": [
+        5
+       ],
+       "ic": "flag",
+       "img": "assets/card_notion_real.jpg",
+       "w": "with Notion"
+      },
+      {
+       "id": "dx",
+       "t": "Digital Transformation: Kia Global",
+       "q": "Digital transformation of manufacturing process engineering for Kia worldwide, and a Google Cloud–based data platform built with Google.",
+       "tg": "sif",
+       "x": [
+        5
+       ],
+       "l": "Kia Global · digital transformation",
+       "ic": "cloud",
+       "img": "assets/card_kia_real.jpg",
+       "url": "https://formingworld.com/kia-digital-transformation-part1/",
+       "ul": "FormingWorld",
+       "more": [
+        "Google Cloud|https://cloud.google.com/customers/kia?hl=ko",
+        "CES 2019|https://www.kiamedia.com/us/es/media/pressreleases/14844/ces-2019-kia-prepares-for-post-autonomous-driving-era-with-ai-based-real-time-emotion-recognition-te"
+       ],
+       "w": "with Kia Global, Google Cloud"
       }
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.08 });
-      document.querySelectorAll(".reveal").forEach((item) => observer.observe(item));
+     ]
     }
-
-    function setupHeader() {
-      const header = $("#site-header");
-      const update = () => header.classList.toggle("is-scrolled", window.scrollY > 8);
-      update();
-      window.addEventListener("scroll", update, { passive: true });
+   ]
+  },
+  {
+   "key": "strategy",
+   "name": "Strategy",
+   "title": "SNU",
+   "sub": "Strategy\nEntrepreneurship\nInt'l Business",
+   "ab": "SNU",
+   "head": "M.S. Strategy and International Business",
+   "meta": "Seoul National University",
+   "intro": "Graduate training in strategy and international business.",
+   "groups": [
+    {
+     "h": "Research",
+     "cards": [
+      {
+       "id": "esg",
+       "l": "Product recalls and firm risk",
+       "t": "Market Reaction Following Corporate Crisis: The Role of ESG Performance & Crisis Response Speed",
+       "w": "with Theresa S. Cho",
+       "s": "M.S. Thesis · [AOM Proceedings](https://journals.aom.org/doi/10.5465/AMPROC.2024.11914abstract)",
+       "q": "How do product recalls turn into firm-specific risk? Evidence from FDA high-severity Class I recalls across industries on market penalties, crisis response speed, and post-crisis risk. Presented at AOM and SMS.",
+       "tg": "sp",
+       "ic": "shield",
+       "img": "assets/card_recall.jpg",
+       "deck": [
+        "assets/deck_s-01.jpg",
+        "assets/deck_s-02.jpg",
+        "assets/deck_s-03.jpg",
+        "assets/deck_s-04.jpg",
+        "assets/deck_s-05.jpg",
+        "assets/deck_s-06.jpg",
+        "assets/deck_s-07.jpg",
+        "assets/deck_s-08.jpg",
+        "assets/deck_s-09.jpg",
+        "assets/deck_s-10.jpg",
+        "assets/deck_s-11.jpg",
+        "assets/deck_s-12.jpg",
+        "assets/deck_s-13.jpg",
+        "assets/deck_s-14.jpg",
+        "assets/deck_s-15.jpg",
+        "assets/deck_s-16.jpg",
+        "assets/deck_s-17.jpg",
+        "assets/deck_s-18.jpg",
+        "assets/deck_s-19.jpg",
+        "assets/deck_s-20.jpg"
+       ],
+       "dh": "Thesis presentation",
+       "k": "Product Recalls, Crisis Response, and Firm Risk"
+      },
+      {
+       "id": "recall",
+       "l": "Recall disclosure",
+       "t": "Which Recalls Become Company-Level Events? Product Recall Disclosure and External Evaluation",
+       "w": "with Theresa S. Cho",
+       "s": "Working paper",
+       "q": "How product recall disclosure shapes external evaluation, in medical devices and robotics.",
+       "tg": "s",
+       "ic": "alert",
+       "img": "assets/card_recall2.jpg",
+       "k": "Recall Disclosure in Medical Devices and Robotics"
+      },
+      {
+       "id": "impact",
+       "l": "SNU in Social Impact · regional innovation",
+       "t": "SNU in Social Impact and Regional Innovation Clusters",
+       "w": "with Jonghoon Bae, Booyeol Kim",
+       "q": "Social-venture proposals for regions facing population decline, from SNU's international summer program on social entrepreneurship, alongside case studies built from interviews with East Asian entrepreneurs.",
+       "tg": "ie",
+       "x": [
+        2
+       ],
+       "ic": "leaf",
+       "img": "assets/card_impact3.jpg",
+       "deck": [
+        "assets/imp_p-02.jpg",
+        "assets/imp_p-04.jpg",
+        "assets/imp_p-09.jpg",
+        "assets/imp_p-10.jpg",
+        "assets/imp_p-20.jpg",
+        "assets/imp_p-23.jpg",
+        "assets/imp_p-29.jpg",
+        "assets/imp_p-34.jpg",
+        "assets/imp_p-36.jpg"
+       ],
+       "dh": "Project portfolio"
+      }
+     ]
     }
+   ]
+  },
+  {
+   "key": "entrepreneur",
+   "name": "Entrepreneur",
+   "title": "Founder",
+   "sub": "AI EdTech\nStartup",
+   "ab": "Founder",
+   "head": "Co-founder, AI Edu Studio",
+   "meta": "Yappi",
+   "intro": "Co-founded an AI education startup, then built and launched Yappi, an interactive voice-based AI tutoring app for children's spoken English.",
+   "groups": [
+    {
+     "h": "Built and launched",
+     "steps": [
+      {
+       "t": "Co-founded",
+       "q": "AI Edu Studio, an AI English-education startup based in Seoul"
+      },
+      {
+       "t": "Built",
+       "q": "Yappi, a voice AI tutor on large language models, for iOS and Android"
+      },
+      {
+       "t": "Launched",
+       "q": "A pilot at an English kindergarten, where teachers used it in class"
+      }
+     ],
+     "sh": "The app",
+     "vh": "Classroom pilot",
+     "media": [
+      {
+       "k": "shot",
+       "src": "assets/shot_freetalk-home.jpg",
+       "alt": "Home screen: talk with an AI friend"
+      },
+      {
+       "k": "shot",
+       "src": "assets/freetalk-chat.webp",
+       "cap": "Free Talk: a voice conversation with an AI friend"
+      },
+      {
+       "k": "shot",
+       "src": "assets/shot_scenario-list.jpg",
+       "alt": "Role-play scenarios: restaurant, airport, school, store"
+      },
+      {
+       "k": "shot",
+       "src": "assets/shot_storybook-reader.jpg",
+       "alt": "Storybook reader"
+      },
+      {
+       "k": "shot",
+       "src": "assets/pronunciation-feedback.webp",
+       "cap": "Pronunciation feedback after reading aloud"
+      },
+      {
+       "k": "shot",
+       "src": "assets/shot_storybook-list.jpg",
+       "alt": "Storybook library"
+      },
+      {
+       "k": "video",
+       "src": "assets/yappi_classroom.mp4",
+       "poster": "assets/yappi_poster.jpg",
+       "cap": "A child practices with Yappi while a teacher looks on"
+      },
+      {
+       "k": "img",
+       "src": "assets/yappi_img_3008.jpg",
+       "alt": "A teacher-led English class"
+      },
+      {
+       "k": "img",
+       "src": "assets/yappi_img_3010.jpg",
+       "alt": "Children reading in the classroom"
+      },
+      {
+       "k": "img",
+       "src": "assets/yappi_img_3011.jpg",
+       "alt": "One-on-one practice"
+      },
+      {
+       "k": "img",
+       "src": "assets/yappi_img_3012.jpg",
+       "alt": "Class with a classroom screen"
+      }
+     ]
+    }
+   ],
+   "img": "assets/yappi_logo.jpg",
+   "links": [
+    {
+     "t": "AI Edu Studio",
+     "url": "https://aiedustudio.com/company"
+    },
+    {
+     "t": "Yappi",
+     "url": "https://aiedustudio.com/"
+    }
+   ],
+   "img2": "assets/aies_logo_pad.jpg"
+  },
+  {
+   "key": "policy",
+   "name": "Economic & Industrial Policy",
+   "title": "Policy",
+   "sub": "KIET\nNational Think Tank",
+   "ab": "Policy",
+   "head": "Korea Institute for Industrial Economics and Trade",
+   "meta": "Korea's national economic policy research institute",
+   "intro": "Policy research for Korea's Ministry of Economy and Finance and Ministry of Trade, Industry and Energy.",
+   "groups": [
+    {
+     "h": "Focus areas",
+     "tg": "ipfg",
+     "chips": [
+      "National economic and industrial policy",
+      "Supply chains",
+      "Economic security",
+      "Semiconductors",
+      "Clean energy, renewables, and batteries",
+      "Regional tech hubs"
+     ]
+    },
+    {
+     "h": "Policy research",
+     "cards": [
+      {
+       "id": "sfs",
+       "t": "Sustainability for Survival: Strategies for Korean Battery Makers in the European Market",
+       "w": "with Kyung In Hwang",
+       "s": "KIET Industrial Economic Review, 2025",
+       "q": "How European sustainability regulation reshapes the competitive strategy of Korean battery makers.",
+       "url": "https://ssrn.com/abstract=5132325",
+       "ul": "SSRN",
+       "tg": "spg",
+       "ic": "battery",
+       "img": "assets/card_sfs.jpg",
+       "k": "EU Sustainability Rules and Korean Battery Makers",
+       "more": [
+        "KIET Industrial Economic Review|https://www.kiet.re.kr/en/pub/ecoreviewDetailView?detail_no=1057"
+       ]
+      },
+      {
+       "id": "battery",
+       "l": "Clean energy and battery policy",
+       "t": "National Technology Strategy: Policy Proposals in Response to Changes in Global Energy & Battery Industrial and Trade Policies",
+       "s": "Project with Ministry of Trade, Industry and Energy, 2024",
+       "q": "How shifts in U.S. and European industrial and trade policy reshape the clean energy and battery industries, with policy proposals for Korea.",
+       "url": "https://www.kiet.re.kr/research/reportView?report_no=1137",
+       "ul": "KIET",
+       "tg": "sipg",
+       "ic": "bolt",
+       "img": "assets/card_battery.jpg",
+       "k": "Battery Tech Strategy amid Global Trade Shifts",
+       "more": [
+        "National Knowledge Information System|https://www.nkis.re.kr/subject_view1.do?otpId=OTP_0000000000015276&otpSeq=0"
+       ],
+       "hu": "https://www.nkis.re.kr/subject_view1.do?otpId=OTP_0000000000015276&otpSeq=0",
+       "hul": "National Knowledge Information System"
+      },
+      {
+       "id": "pohang",
+       "l": "Pohang Valley Tech Hub",
+       "t": "Innovation Strategy and Cluster Development in the Renewable Energy Industry: The Case of Pohang Valley Tech Hub",
+       "s": "Project with Ministry of Trade, Industry and Energy, 2024",
+       "q": "How a regional innovation cluster can build a renewable energy industry: the case of Pohang Valley.",
+       "tg": "i",
+       "ic": "wind",
+       "img": "assets/card_pohang.jpg",
+       "k": "Renewable Energy Innovation Cluster: Pohang Tech Hub"
+      }
+     ]
+    },
+    {
+     "h": "Projects",
+     "cards": [
+      {
+       "id": "secur",
+       "l": "Supply-chain stability",
+       "t": "Core items for supply-chain stability",
+       "s": "KIET Issue Paper",
+       "q": "Identifying the inputs that matter for economic security.",
+       "tg": "ipg",
+       "x": [
+        5
+       ],
+       "ic": "link",
+       "img": "assets/card_secur.jpg"
+      },
+      {
+       "id": "reg",
+       "l": "Regulatory impact analysis",
+       "t": "Regulatory impact analysis",
+       "s": "KIET Research Report",
+       "q": "A framework for analyzing regulation in advanced strategic industries.",
+       "tg": "sp",
+       "x": [
+        1
+       ],
+       "ic": "doc",
+       "img": "assets/card_reg.jpg"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "quant",
+   "name": "Causal Inference",
+   "title": "Columbia",
+   "sub": "Experiments\nData Science",
+   "ab": "Columbia",
+   "head": "M.A. Quantitative Methods in the Social Sciences",
+   "meta": "Data Science · Columbia University",
+   "intro": "Causal inference, experiments, and machine learning. Research assistant at Columbia Business School and ISERP with Professor Lori Yue.",
+   "groups": [
+    {
+     "h": "Thesis",
+     "cards": [
+      {
+       "id": "fow",
+       "l": "The Future of Work",
+       "t": "The Future of Work: Work Arrangements and Job Interest",
+       "s": "M.A. thesis",
+       "q": "A randomized experiment on how in-person, hybrid, and remote work shape job interest.",
+       "tg": "e",
+       "x": [
+        2
+       ],
+       "ic": "home",
+       "img": "assets/card_fow.jpg"
+      }
+     ]
+    },
+    {
+     "h": "With Lori Yue",
+     "cards": [
+      {
+       "id": "nation",
+       "l": "Nationalism in digital marketplaces",
+       "t": "Nationalism in digital marketplaces",
+       "w": "with Lori Yue",
+       "q": "Why small businesses use nationalist rhetoric in partisan marketplaces.",
+       "tg": "ep",
+       "ic": "flag",
+       "img": "assets/card_nation.jpg"
+      },
+      {
+       "id": "blm",
+       "l": "Corporate activism around BLM",
+       "t": "Corporate activism around Black Lives Matter",
+       "w": "with Lori Yue, Soomin Cho",
+       "tg": "p",
+       "ic": "speech",
+       "img": "assets/card_blm.jpg"
+      }
+     ]
+    },
+    {
+     "h": "Experiments and models",
+     "cards": [
+      {
+       "id": "r2w",
+       "t": "Return2Work",
+       "w": "with Mabel Abraham, Derek Brown",
+       "q": "A field experiment on work arrangements and candidate interest.",
+       "tg": "e",
+       "ic": "people",
+       "img": "assets/card_r2w.jpg"
+      },
+      {
+       "id": "relc",
+       "t": "Relational contracts",
+       "w": "with W. Bentley MacLeod",
+       "q": "A repeated-game simulation of how trust emerges.",
+       "ic": "cycle",
+       "img": "assets/card_relc.jpg"
+      }
+     ]
+    },
+    {
+     "h": "Methods",
+     "chips": [
+      "Causal inference",
+      "Field experiments",
+      "NLP and machine learning",
+      "Record linkage",
+      "Survey design"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "name": "Frontier Technology",
+   "title": "HBS",
+   "sub": "Tech Strategy\nGeopolitics",
+   "ab": "HBS",
+   "head": "Pre-doctorate",
+   "meta": "Harvard Business School",
+   "intro": "",
+   "groups": [
+    {
+     "h": "Frontier technology and advantage",
+     "cards": [
+      {
+       "id": "clock",
+       "t": "The Technology Clock: Expected Arrival and Investment Timing in Deep Technologies",
+       "s": "Proposal under review at Organization Science",
+       "q": "When do firms expect a deep technology to arrive, and do they invest earlier when that date moves closer?",
+       "tg": "sif",
+       "l": "Technology Clock",
+       "abs": "Asks whether a field’s stated arrival date for a deep technology moves closer as the technology progresses, and whether firms whose expected arrival moves closer invest earlier in patents, hiring, and partnerships. Starting with quantum computing, a language model extracts dated arrival estimates from 2,247 passages in 1,222 company earnings calls; Nvidia CEO Jensen Huang’s January 2025 remark that useful quantum computers were 15 to 30 years away provides a field-wide shock to expectations. The measurement is being extended to the U.S. government’s list of critical and emerging technologies.",
+       "ic": "clock",
+       "img": "assets/card_clock.jpg"
+      },
+      {
+       "id": "moats",
+       "t": "Proprietary AI and the Durability of Startup Advantage",
+       "s": "Proposal under review at Organization Science",
+       "q": "Does building AI in-house still confer an advantage once comparable models can be bought?",
+       "tg": "sef",
+       "x": [
+        2
+       ],
+       "l": "AI Moats",
+       "abs": "Asks whether building AI in-house still confers advantage once comparable capabilities can be bought from a few foundation-model providers, as they could after ChatGPT’s release. Language models read the pre-ChatGPT archived websites of more than 60,000 startups founded in 2017–2020 to identify those that claimed proprietary models, data, and customer relationships. Linking these measures to funding and hiring records, the study compares startups that built their own models with those that relied on external technology, before and after ChatGPT, across markets where foundation models can perform more or less of a startup’s core work.",
+       "ic": "moat",
+       "img": "assets/card_moats.jpg"
+      },
+      {
+       "id": "cc",
+       "l": "Commitment Compass",
+       "t": "Commitment Compass",
+       "w": "with Ebehi Iyoha, Reza Satchu",
+       "q": "When do founders and investors stop paying to keep weaker options open? Real options logic meets the behavioral economics of commitment.",
+       "tg": "ief",
+       "ic": "compass",
+       "img": "assets/card_cc.jpg",
+       "abs": "Real options logic prizes flexibility, but in many ventures commitment compounds: the longer one stays with a path, the more it pays, while every option kept alive has a cost and eventually expires. This project studies when people stop paying to keep weaker options open and commit to the option their experience supports, using an incentivized game with compounding and expiring options, and tests in a two-wave online experiment whether personalized feedback improves follow-through. The setting speaks to founders choosing among ideas and investors deciding when to stop funding a bet."
+      },
+      {
+       "id": "config",
+       "l": "Configuring AI",
+       "t": "Configuring Artificial Intelligence in Multinational Enterprises: Managerial Capabilities and the Gains from Adoption",
+       "w": "with Ebehi Iyoha",
+       "s": "Under review at Global Strategy Journal",
+       "q": "Do AI gains depend on where AI workers sit relative to managers?",
+       "tg": "sifg",
+       "x": [
+        0
+       ],
+       "abs": "Examines how multinational firms combine AI expertise with existing managerial capabilities. Using workforce and financial data on manufacturing multinationals, the study asks whether the gains from AI adoption depend on where AI employees are located relative to managers, linking the geographic configuration of new capabilities to firm performance.",
+       "ic": "globe",
+       "img": "assets/card_config.jpg"
+      },
+      {
+       "id": "bubble",
+       "t": "AI Bubble",
+       "w": "with Andy Wu",
+       "q": "Value creation and value capture in AI.",
+       "tg": "sf",
+       "ic": "chart",
+       "img": "assets/card_bubble.jpg"
+      },
+      {
+       "id": "wars",
+       "t": "AI Wars",
+       "w": "with Andy Wu",
+       "s": "HBS case",
+       "q": "Competition and partnerships in the AI industry.",
+       "tg": "sf",
+       "x": [
+        0
+       ],
+       "ic": "network",
+       "img": "assets/card_wars.jpg"
+      }
+     ]
+    },
+    {
+     "h": "Geopolitics and the direction of innovation",
+     "cards": [
+      {
+       "id": "cic",
+       "l": "Critical Inputs",
+       "t": "Critical Input Control and Technological Leadership",
+       "w": "with Andy Wu",
+       "q": "When does control of an input a whole technology depends on, like the memory chips behind AI, become leadership in that technology?",
+       "tg": "ifgp",
+       "x": [
+        3
+       ],
+       "abs": "Asks when control of an input that an entire technology depends on, such as the high-bandwidth memory Korean firms supply to the AI industry, becomes leadership in that technology. Against the prevailing view that such suppliers gain most by selling to every downstream producer, the study hypothesizes that they integrate forward, as BYD moved from batteries into cars, only when the input’s margin falls below the value they can capture downstream and they already hold the complementary assets the downstream technology requires. U.S. export controls on advanced chips (2022) and high-bandwidth memory (2024), which cut some suppliers’ sales to China more than others’, provide the variation to compare downstream investment, acquisitions, and patenting.",
+       "ic": "chip",
+       "img": "assets/card_cic.jpg"
+      },
+      {
+       "id": "ideology",
+       "l": "SMB Tariff",
+       "t": "Trading on Ideology: Small-Business Sourcing in the 2025 Trade War",
+       "w": "with David Atkin, Zoe Cullen, Ebehi Iyoha",
+       "q": "How owners' politics shape sourcing under tariffs.",
+       "tg": "sipg",
+       "x": [
+        3,
+        4
+       ],
+       "ic": "ship",
+       "img": "assets/card_ideology.jpg",
+       "abs": "How does an owner's political orientation shape a small business's response to tariffs? Linking firms' trade records with owners' political data, the project compares sourcing before and after the 2025 tariffs with difference-in-differences and event-study designs, asking whether firms switch suppliers, shift sourcing countries, or absorb costs differently depending on their owners' ideology."
+      },
+      {
+       "id": "svm",
+       "l": "State vs. Market",
+       "t": "State vs. Market-Oriented Innovation",
+       "w": "with Jaya Wen, Todd Lensman",
+       "q": "What shapes where firms direct innovation?",
+       "tg": "ipg",
+       "x": [
+        3
+       ],
+       "abs": "Studies how market incentives and policy priorities shape firms’ choices about where to direct innovation, using provincial leadership data and technology plans in China.",
+       "ic": "balance",
+       "img": "assets/card_svm.jpg"
+      },
+      {
+       "id": "export",
+       "t": "Export controls and innovation",
+       "w": "with Jaya Wen",
+       "q": "What happens to innovation when access closes?",
+       "tg": "ipfg",
+       "x": [
+        3
+       ],
+       "ic": "lock",
+       "img": "assets/card_export.jpg"
+      },
+      {
+       "id": "reroute",
+       "t": "Trade rerouting",
+       "w": "with Jaya Wen, Ebehi Iyoha, Edmund Malesky",
+       "q": "Rerouting and relocation in the U.S.–China trade war.",
+       "tg": "ipg",
+       "ic": "route",
+       "img": "assets/card_reroute.jpg"
+      }
+     ]
+    },
+    {
+     "h": "Entrepreneurs and ecosystems",
+     "cards": [
+      {
+       "id": "returning",
+       "l": "Returning to Explore",
+       "t": "Returning to Explore: Scientist Mobility and Recombination of Expertise",
+       "q": "Does incoming scientists' expertise help existing researchers with their own problems, or redirect research toward the newcomers' agendas?",
+       "tg": "i",
+       "ic": "swap",
+       "img": "assets/card_returning.jpg"
+      },
+      {
+       "id": "africa",
+       "t": "RADIA: Research on AI Diffusion and Innovation in Africa",
+       "w": "with Ebehi Iyoha, Abdoulaye Ndiaye",
+       "q": "How African firms adopt and build with AI, and what slows its diffusion.",
+       "tg": "iefg",
+       "ic": "map",
+       "img": "assets/card_africa.jpg",
+       "l": "RADIA",
+       "abs": "A research initiative on how African firms adopt and build with AI: which startups and enterprises use AI to solve industry problems, how deeply and how early firms of different sizes adopt it, how adoption shows up in sales, profits, and wage premiums, and how the pull of AI talent toward firms abroad and gaps in skills, networks, and financing slow diffusion. Combines firm surveys with workforce data on African professionals."
+      },
+      {
+       "id": "projection",
+       "t": "Entrepreneurial Projection Strategy",
+       "w": "with Andy Wu, Aticus Peterson",
+       "q": "How startups use revenue projections to establish credibility.",
+       "tg": "e",
+       "ic": "trend",
+       "img": "assets/card_projection.jpg"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "tabs": [
+  "research",
+  "policy",
+  "entrepreneur",
+  "quant",
+  "strategy",
+  "consulting"
+ ],
+ "home": [
+  {
+   "h": "Current Research",
+   "ids": [
+    "cic",
+    "clock",
+    "moats"
+   ]
+  },
+  {
+   "h": "Projects in Progress",
+   "ids": [
+    "africa",
+    "ideology",
+    "svm",
+    "cc"
+   ]
+  },
+  {
+   "h": "Working Papers",
+   "ids": [
+    "config",
+    "recall"
+   ]
+  },
+  {
+   "h": "Publications",
+   "ids": [
+    "esg",
+    "sfs",
+    "battery"
+   ]
+  }
+ ],
+ "exp": [
+  {
+   "t": "Korea Institute for Industrial Economics and Trade (KIET)",
+   "s": "Researcher, Korea's national economic policy research institute",
+   "go": "policy"
+  },
+  {
+   "t": "AI Edu Studio",
+   "s": "Co-founder · Yappi, an interactive AI tutor for children's spoken English",
+   "go": "entrepreneur"
+  },
+  {
+   "t": "MSL Global",
+   "s": "Associate Consultant, IT/Tech/Startup",
+   "go": "consulting"
+  },
+  {
+   "t": "Hill+Knowlton Strategies",
+   "s": "Strategy Consultant",
+   "go": "consulting"
+  }
+ ],
+ "edu": [
+  {
+   "t": "Harvard Business School",
+   "s": "Pre-doctorate in Strategy and Entrepreneurial Management",
+   "go": "research",
+   "y": "Present"
+  },
+  {
+   "t": "Columbia University",
+   "s": "M.A. Quantitative Methods in the Social Sciences - Data Science ",
+   "go": "quant",
+   "y": "2026"
+  },
+  {
+   "t": "Seoul National University",
+   "s": "M.S. Strategy and International Business",
+   "go": "strategy",
+   "y": "2024"
+  },
+  {
+   "t": "Korea University",
+   "s": "B.A. English Language and Literature, Education",
+   "y": "2017"
+  }
+ ],
+ "agenda": {
+  "lead": "I study how firms turn frontier science and technology into advantage when governments compete over who can build, buy, and use it.",
+  "center": "Innovation",
+  "axes": [
+   {
+    "c": 4,
+    "icon": "atom",
+    "t": "Science → Advantage",
+    "h": "Frontier science and technology into firm advantage",
+    "q": "When a frontier technology arrives, or becomes available to everyone, what lets a firm build lasting advantage?",
+    "items": [
+     {
+      "card": "clock",
+      "icon": "clock"
+     },
+     {
+      "card": "moats",
+      "icon": "moat"
+     },
+     {
+      "card": "cc",
+      "icon": "compass"
+     }
+    ]
+   },
+   {
+    "c": 5,
+    "icon": "compass",
+    "t": "Geopolitics → Direction",
+    "h": "Geopolitics and policy shape the direction of innovation",
+    "q": "How do tariffs, export controls, and state priorities change not only how much firms innovate, but what they innovate on?",
+    "items": [
+     {
+      "card": "cic",
+      "icon": "chip"
+     },
+     {
+      "card": "export",
+      "icon": "lock"
+     },
+     {
+      "card": "svm",
+      "icon": "balance"
+     },
+     {
+      "card": "ideology",
+      "icon": "ship"
+     },
+     {
+      "go": "policy",
+      "t": "Industrial policy research at KIET",
+      "s": "Semiconductors, batteries, and supply-chain chokepoints",
+      "icon": "factory"
+     }
+    ]
+   },
+   {
+    "c": 2,
+    "icon": "network",
+    "t": "Ecosystems → Inclusion",
+    "h": "Who gets to take part in frontier innovation",
+    "q": "Can regions and latecomer economies, not only the countries that set the rules, take part in frontier innovation?",
+    "items": [
+     {
+      "card": "africa",
+      "icon": "globe"
+     },
+     {
+      "card": "returning",
+      "icon": "route"
+     }
+    ]
+   }
+  ]
+ },
+ "misc": [
+  {
+   "c": 2,
+   "t": "Things I build",
+   "q": "Yappi, an interactive AI tutor for children's spoken English, designed for remote and hybrid learning.",
+   "url": "https://aiedustudio.com/",
+   "ul": "Yappi"
+  },
+  {
+   "c": 4,
+   "t": "Languages",
+   "chips": [
+    "Korean",
+    "English",
+    "Japanese"
+   ]
+  },
+  {
+   "c": 3,
+   "t": "Where I started",
+   "q": "English language and literature, with a minor in education."
+  }
+ ],
+ "links": [
+  {
+   "a": 0,
+   "b": 1,
+   "bend": 0,
+   "text": "Digital transformation → firm strategy"
+  },
+  {
+   "a": 1,
+   "b": 2,
+   "bend": 0,
+   "text": "Studying entrepreneurs → becoming one"
+  },
+  {
+   "a": 2,
+   "b": 3,
+   "bend": 0,
+   "text": "One firm → whole industries"
+  },
+  {
+   "a": 3,
+   "b": 4,
+   "bend": 0,
+   "text": "Policy questions → causal methods"
+  },
+  {
+   "a": 4,
+   "b": 5,
+   "bend": 0,
+   "text": "Causal inference → trade data at scale"
+  },
+  {
+   "a": 5,
+   "b": 0,
+   "bend": 0,
+   "text": "Advising tech firms → studying them"
+  },
+  {
+   "a": 1,
+   "b": 3,
+   "bend": -0.12,
+   "text": "Regulation and firms"
+  },
+  {
+   "a": 3,
+   "b": 5,
+   "bend": -0.12,
+   "text": "Supply chains → tariffs and export controls"
+  },
+  {
+   "a": 2,
+   "b": 5,
+   "bend": 0.98,
+   "text": "Building an AI product → studying AI advantage"
+  },
+  {
+   "a": 0,
+   "b": 2,
+   "bend": -0.12,
+   "text": "Advising startups → founding one",
+   "aux": true
+  },
+  {
+   "a": 0,
+   "b": 3,
+   "bend": 0,
+   "text": "Firms' digital transformation → national industrial policy",
+   "aux": true
+  },
+  {
+   "a": 0,
+   "b": 4,
+   "bend": -0.12,
+   "text": "Business questions → causal evidence",
+   "aux": true
+  },
+  {
+   "a": 1,
+   "b": 4,
+   "bend": 0,
+   "text": "Strategy research → causal methods",
+   "aux": true
+  },
+  {
+   "a": 1,
+   "b": 5,
+   "bend": -0.12,
+   "text": "Firm strategy → technology strategy",
+   "aux": true
+  },
+  {
+   "a": 2,
+   "b": 4,
+   "bend": -0.12,
+   "text": "Remote and hybrid learning → remote and hybrid work",
+   "aux": true
+  }
+ ]
+}</script>
 
-    renderStaticContent();
-    renderThemes();
-    renderFilters();
-    renderProjects();
-    renderTimeline("#experience-list", PORTFOLIO.experience);
-    renderTimeline("#education-list", PORTFOLIO.education);
-    renderMethods();
-    setupFiltering();
-    setupReveal();
-    setupHeader();
-  </script>
+<script>
+(function(){
+'use strict';
+/* Pristine copies, taken before anything renders, so Save can rebuild this exact page. */
+var SRC=document.currentScript?document.currentScript.textContent:'';
+var CSS=(document.getElementById('site-css')||{}).textContent||'';
+var WRAP=document.querySelector('.wrap').outerHTML;
+var ORIG=document.getElementById('site-data').textContent;
+var D=JSON.parse(ORIG);
+var FONTS='<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap">';
+var RESET=':root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:14px}img{max-width:100%}[hidden]{display:none!important}';
+
+var Q=function(s){return document.querySelector(s)};
+var SVGNS='http://www.w3.org/2000/svg';
+var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+var HEX='<svg viewBox="0 0 100 86.6" preserveAspectRatio="none" aria-hidden="true"><polygon points="25,0 75,0 100,43.3 75,86.6 25,86.6 0,43.3"/></svg>';
+
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function cv(i){return (i==null)?'--vc:var(--edge);--vk:var(--ink)':'--vc:var(--c'+i+');--vk:var(--k'+i+')'}
+function ctr(s){return esc(s).replace(/\*([^*]+)\*/g,'<b>$1</b>').replace(/\n/g,'<br>')}
+function hostOf(u){try{return new URL(u).hostname.replace(/^www\./,'')}catch(e){return u||''}}
+function get(path){return path.split('.').reduce(function(o,k){return o==null?undefined:o[k]},D)}
+function set(path,v){var p=path.split('.'),k=p.pop(),o=p.length?get(p.join('.')):D;if(!o)return;if(v===''||v==null)delete o[k];else o[k]=v}
+
+/* Indexes */
+var CARD={},AREAOF={},KEY={},LENS={};
+function index(){
+  CARD={};AREAOF={};KEY={};
+  D.areas.forEach(function(a,i){KEY[a.key]=i;a.groups.forEach(function(g){(g.cards||[]).forEach(function(c){CARD[c.id]=c;AREAOF[c.id]=i})})});
+}
+function prune(){D.home.forEach(function(h){h.ids=h.ids.filter(function(id){return CARD[id]})})}
+function computeLens(){
+  LENS={};
+  D.themes.forEach(function(t){var v=[];if(t.areas&&t.areas.length){t.areas.forEach(function(k){if(KEY.hasOwnProperty(k)&&v.indexOf(KEY[k])<0)v.push(KEY[k])});LENS[t.k]={v:v};return}D.areas.forEach(function(a,i){if(a.groups.some(function(g){return (g.tg||'').indexOf(t.k)>=0||(g.cards||[]).some(function(c){return (c.tg||'').indexOf(t.k)>=0})}))v.push(i)});LENS[t.k]={v:v}});
+}
+function hit(d,l){if(d.card)return (d.card.tg||'').indexOf(l)>=0;if(d.k)return d.k.some(function(k){return hit(k,l)});return (d.t||'').indexOf(l)>=0}
+index();computeLens();
+
+/* ---------- Map ---------- */
+var stage=Q('#stage'),layer=Q('#layer'),gRing=Q('#gRing'),gKite=Q('#gKite'),gBranch=Q('#gBranch'),gX=Q('#gX'),grads=Q('#grads'),walker=Q('#walker'),panel=Q('#panel'),tip=Q('#tip');
+var W=0,H=660,mobile=false,tw=150,th=130;
+var hex={x:0,y:0,R:0,th:0,vx:0,vy:0,vR:0,vth:0,tx:0,ty:0,tR:0,tth:0};
+var sel={v:null,c:null,l:null},lens=null,branches=[],xlines=[],first=true,tipThread=null,homeVisible=true;
+var T=[],TH=[],center=null;
+var ASSETS=null,editing=false,dirty=false,ART=null,pendingCard=null,curView='home',curArea=null;
+
+function buildMap(){
+  layer.innerHTML='';gKite.innerHTML='';gRing.innerHTML='';grads.innerHTML='';gBranch.innerHTML='';gX.innerHTML='';
+  branches=[];xlines=[];sel={v:null,c:null,l:null};tipThread=null;tip.classList.remove('show');panel.hidden=true;
+  stage.classList.remove('open');Q('#explore').hidden=true;Q('#explore').innerHTML='';
+  T=D.areas.map(function(a,i){
+    var b=document.createElement('button');b.type='button';b.className='tile';b.setAttribute('style',cv(i));
+    b.setAttribute('aria-expanded','false');b.setAttribute('aria-label',(a.name||a.ab)+', '+String(a.sub||'').replace(/\n/g,' '));
+    b.innerHTML=HEX+'<span class="full"><b>'+esc(a.title)+'</b><i>'+esc(a.sub)+'</i></span><span class="ab">'+esc(a.ab)+'</span>';
+    b.addEventListener('click',function(){openV(i)});
+    b.addEventListener('pointerenter',function(e){if(e.pointerType==='mouse'&&sel.v===null)hot(i)});
+    b.addEventListener('pointerleave',function(e){if(e.pointerType==='mouse'&&sel.v===null)hot(null)});
+    layer.appendChild(b);
+    var k=document.createElementNS(SVGNS,'polygon');k.setAttribute('class','kite');k.style.fill='var(--t'+i+')';gKite.appendChild(k);
+    var kids=a.groups.map(function(g){return{l:g.h,k:(g.cards||[]).map(function(c){return{l:c.l||c.t,card:c,t:c.tg}}).concat((g.chips||[]).map(function(ch){return{l:ch,chip:true,t:g.tg}}))}});
+    return {a:a,el:b,kite:k,x:0,y:0,f:.74,vf:0,tf:.74,kids:kids};
+  });
+  center=document.createElement('button');center.type='button';center.className='tile center';
+  center.innerHTML=HEX+'<span class="full">'+ctr(D.center)+'</span><span class="ab">Overview</span>';
+  center.addEventListener('click',function(){if(sel.v!==null)closeAll();else setLens(lens)});
+  layer.appendChild(center);
+  var LK=D.links.slice(),nT=T.length;
+  for(var a0=0;a0<nT;a0++)for(var b0=a0+1;b0<nT;b0++){
+    if(!LK.some(function(l){return (l.a===a0&&l.b===b0)||(l.a===b0&&l.b===a0)}))LK.push({a:a0,b:b0,bend:(b0-a0===nT/2)?0:-.12,text:'',aux:true});
+  }
+  TH=LK.map(function(l,n){
+    var t={a:l.a,b:l.b,bend:l.bend||0,text:l.text||'',aux:!!l.aux,qx:0,qy:0};
+    var g=document.createElementNS(SVGNS,'linearGradient');g.id='g'+n;g.setAttribute('gradientUnits','userSpaceOnUse');
+    g.innerHTML='<stop offset="0" style="stop-color:var(--t'+t.a+')"/><stop offset="1" style="stop-color:var(--t'+t.b+')"/>';
+    grads.appendChild(g);t.g=g;
+    var p=document.createElementNS(SVGNS,'path');p.setAttribute('class',(t.bend||t.aux?'chord':'ring')+(t.aux?' aux':''));p.setAttribute('stroke','url(#g'+n+')');gRing.appendChild(p);t.p=p;
+    var d=document.createElement('button');d.type='button';d.className=t.aux?'dot aux':'dot';if(t.aux)d.tabIndex=-1;d.setAttribute('aria-label',t.text);
+    d.style.setProperty('--da','var(--c'+t.a+')');d.style.setProperty('--db','var(--c'+t.b+')');
+    function on(){hotThread(t);showTip(t)}
+    function off(){if(sel.v!==null)hot(sel.v,true);else hot(null);hideTip()}
+    d.addEventListener('pointerenter',function(e){if(e.pointerType==='mouse')on()});
+    d.addEventListener('pointerleave',function(e){if(e.pointerType==='mouse')off()});
+    d.addEventListener('focus',on);d.addEventListener('blur',off);d.addEventListener('click',on);
+    layer.appendChild(d);t.d=d;return t;
+  });
+  first=true;targetsF();applyLens();plan();
+}
+function hot(i,sticky){TH.forEach(function(t){var h=i!==null&&(t.a===i||t.b===i);t.p.classList.toggle('hot',h);t.d.classList.toggle('hot',!!sticky&&h)});T.forEach(function(v,k){v.kite.classList.toggle('hot',k===i)})}
+function nearOf(i){var n=[];TH.forEach(function(t){if(t.a===i)n.push(t.b);else if(t.b===i)n.push(t.a)});return n}
+function hotThread(t){TH.forEach(function(o){o.p.classList.toggle('hot',o===t);o.d.classList.toggle('hot',o===t)});T.forEach(function(v,k){v.kite.classList.toggle('hot',k===t.a||k===t.b)})}
+function showTip(t){tip.textContent=t.text;tipThread=t;tip.classList.add('show');placeTip()}
+function hideTip(){tipThread=null;tip.classList.remove('show')}
+function placeTip(){if(!tipThread)return;var w=tip.offsetWidth,h=tip.offsetHeight,x=Math.max(4,Math.min(W-w-4,tipThread.qx-w/2)),y=Math.max(4,tipThread.qy-h-20);tip.style.transform='translate('+x.toFixed(1)+'px,'+y.toFixed(1)+'px)'}
+
+/* Panel under the map */
+function render(o,ci){
+  if(!o){panel.hidden=true;panel.innerHTML='';return}
+  panel.hidden=false;panel.style.setProperty('--vc','var(--c'+ci+')');
+  var h='<div><h3>'+esc(o.title)+'</h3>'+((o.meta||o.st)?'<p class="meta">'+esc(o.meta||'')+(o.meta&&o.st?' · ':'')+(o.st?'<em>'+esc(o.st)+'</em>':'')+'</p>':'')+(o.body?'<p class="body">'+esc(o.body)+'</p>':'')+'</div><div class="acts">';
+  (o.links||[]).forEach(function(v){if(D.areas[v])h+='<button class="go" type="button" data-v="'+v+'" style="--gc:var(--c'+v+');--gk:var(--k'+v+')">'+esc(D.areas[v].ab)+'</button>'});
+  if(o.url)h+='<a class="go" href="'+esc(o.url)+'" target="_blank" rel="noopener" style="--gc:var(--c'+ci+');--gk:var(--k'+ci+')">'+esc(o.ul||hostOf(o.url))+' ↗</a>';
+  if(o.open)h+='<a class="go open" href="#'+esc(D.areas[o.open.a].key)+'" data-pend="'+esc(o.open.c||'')+'">Open page →</a>';
+  panel.innerHTML=h+'</div>';
+  panel.querySelectorAll('button.go').forEach(function(b){b.addEventListener('click',function(){var v=+b.dataset.v;if(sel.v!==v)openV(v)})});
+  panel.querySelectorAll('a.open').forEach(function(a){a.addEventListener('click',function(){pendingCard=a.dataset.pend||null})});
+}
+function vPanel(i){var v=D.areas[i];return {title:v.head,meta:v.meta,url:v.link,ul:v.lt||hostOf(v.link),open:{a:i}}}
+function cPanel(c,ai){var il=sLink(c.s);return {title:c.t,meta:c.w||'',st:sPlain(c.s),body:c.q||'',links:c.x||[],url:c.url||(il&&il.u),ul:c.url?c.ul:(il&&il.t),open:{a:ai,c:c.id}}}
+
+/* Branches */
+function anchor(n){
+  if(n.depth===1){var v=T[n.vi];return mobile?{x:v.x,y:v.y+th/2}:{x:v.x+tw/2,y:v.y}}
+  var p=n.parent;return mobile?{x:p.x+10,y:p.y+p.h/2}:{x:p.x+p.w,y:p.y};
+}
+function mk(d,parent,depth,vi){
+  var el=document.createElement('button');el.type='button';el.className='n d'+depth;
+  el.innerHTML='<span>'+esc(d.l)+'</span>'+(d.k?'<i class="chev" aria-hidden="true">›</i>':'');
+  if(d.k)el.setAttribute('aria-expanded','false');
+  el.setAttribute('style',cv(vi));layer.appendChild(el);
+  var p=document.createElementNS(SVGNS,'path');p.setAttribute('pathLength','1');p.setAttribute('class','branch');p.style.stroke='var(--t'+vi+')';gBranch.appendChild(p);
+  var n={el:el,p:p,d:d,parent:parent,depth:depth,vi:vi,x:0,y:0,vx:0,vy:0,tx:0,ty:0,w:0,h:0,dying:false};
+  var a=anchor(n);n.x=a.x;n.y=a.y;n.tx=a.x;n.ty=a.y;
+  el.addEventListener('click',function(){depth===1?openC(n):openL(n)});
+  branches.push(n);place(n);
+  var show=function(){el.classList.add('in');p.classList.add('in')};
+  if(RM)show();else requestAnimationFrame(function(){requestAnimationFrame(show)});
+  return n;
+}
+function place(n){n.el.style.transform='translate('+n.x.toFixed(1)+'px,'+n.y.toFixed(1)+'px) translateY(-50%)'}
+function kill(n){n.dying=true;n.el.classList.remove('in');n.p.classList.remove('in');n.el.style.pointerEvents='none';var rm=function(){n.el.remove();n.p.remove();branches=branches.filter(function(b){return b!==n})};if(RM)rm();else setTimeout(rm,300)}
+function clearX(){xlines.forEach(function(x){x.el.remove()});xlines=[];T.forEach(function(v){v.el.classList.remove('linked')})}
+function drawX(n){
+  clearX();var xs=n.d.card?(n.d.card.x||[]):[];
+  xs.forEach(function(v){
+    if(!T[v])return;T[v].el.classList.add('linked');if(mobile)return;
+    var p=document.createElementNS(SVGNS,'path');p.setAttribute('pathLength','1');p.setAttribute('class','xl');p.style.stroke='var(--t'+v+')';gX.appendChild(p);
+    xlines.push({el:p,n:n,v:v});
+    if(RM)p.classList.add('in');else requestAnimationFrame(function(){requestAnimationFrame(function(){p.classList.add('in')})});
+  });
+}
+function live(){return branches.filter(function(b){return !b.dying})}
+/* Selecting a hexagon keeps the map still: its lines light up in both colors and the details open below. */
+function markSel(){
+  var i=sel.v,near=i===null?[]:nearOf(i);
+  T.forEach(function(v,k){v.el.setAttribute('aria-expanded',k===i?'true':'false');v.el.classList.toggle('sel',k===i);v.el.classList.toggle('far',i!==null&&k!==i&&near.indexOf(k)<0)});
+  stage.classList.toggle('open',i!==null);
+  if(i===null)hot(null);else hot(i,true);
+  targetsF();if(RM){T.forEach(function(v){v.f=v.tf});draw(0)}
+}
+function openV(i){
+  if(sel.v===i){closeAll();return}
+  hideTip();clearX();sel={v:i,c:0,l:null};
+  markSel();renderExplore();render(null);renderHomeLists();
+  if(mobile){var ex=Q('#explore');if(ex.scrollIntoView)ex.scrollIntoView({block:'nearest',behavior:RM?'auto':'smooth'})}
+}
+function closeAll(){clearX();sel={v:null,c:null,l:null};markSel();renderExplore();render(null);renderHomeLists()}
+function markX(c){clearX();(c.x||[]).forEach(function(v){if(T[v])T[v].el.classList.add('linked')})}
+function sharedText(i,o){
+  var out=[];
+  [[i,o],[o,i]].forEach(function(pr){(D.areas[pr[0]].groups||[]).forEach(function(g){(g.cards||[]).forEach(function(c){if((c.x||[]).indexOf(pr[1])>=0&&out.length<2)out.push(c.l||c.t)})})});
+  return out.join(' · ');
+}
+function renderExplore(){
+  var box=Q('#explore'),i=sel.v;
+  if(i===null||!D.areas[i]){box.hidden=true;box.innerHTML='';return}
+  var a=D.areas[i],vis=a.groups.filter(function(gg){return (gg.cards&&gg.cards.length)||(gg.chips&&gg.chips.length)});
+  var g=a.groups[sel.c];if(!g||vis.indexOf(g)<0)g=vis[0]||{h:'',cards:[]};
+  var conn=TH.filter(function(t){return t.a===i||t.b===i}).map(function(t){var o=t.a===i?t.b:t.a;return {o:o,text:t.text||sharedText(i,o)}}).sort(function(x,y){return x.o-y.o});
+  var h='<div class="xp" style="'+cv(i)+'"><div class="xhead"><div><h3>'+esc(a.head)+'</h3>'+(a.meta?'<p class="meta">'+esc(a.meta)+'</p>':'')+'</div><div class="acts">'+
+    (a.link?'<a class="go" href="'+esc(a.link)+'" target="_blank" rel="noopener" style="--gc:var(--c'+i+');--gk:var(--k'+i+')">'+esc(a.lt||hostOf(a.link))+' ↗</a>':'')+
+    '<a class="go open" href="#'+esc(a.key)+'">Open page →</a></div></div>';
+  if(conn.length)h+='<div class="xconn">'+conn.map(function(t){var o=t.o;return '<button type="button" class="xc" data-v="'+o+'" style="--da:var(--c'+i+');--db:var(--c'+o+')"><b>'+esc((D.areas[o]||{}).ab)+'</b>'+esc(t.text)+'</button>'}).join('')+'</div>';
+  h+='<div class="xtabs" role="group" aria-label="Sections">'+a.groups.map(function(gg,gi){return vis.indexOf(gg)<0?'':'<button type="button" class="xt" data-g="'+gi+'" aria-pressed="'+(gg===g?'true':'false')+'">'+esc(gg.h)+'</button>'}).join('')+'</div>';
+  h+='<div class="xitems">'+(g.cards||[]).map(function(c){return '<button type="button" class="xi" data-cid="'+esc(c.id)+'" data-tg="'+esc(c.tg||'')+'" aria-pressed="'+(sel.l===c.id?'true':'false')+'">'+esc(c.l||c.t)+'</button>'}).join('')+
+    (g.chips||[]).map(function(ch){return '<span class="xi" data-tg="'+esc(g.tg||'')+'">'+esc(ch)+'</span>'}).join('')+'</div></div>';
+  box.innerHTML=h;box.hidden=false;applyLens();
+}
+function openC(n){
+  live().filter(function(b){return b.depth===2}).forEach(kill);clearX();
+  live().forEach(function(b){b.el.classList.remove('on');b.p.classList.remove('lit');if(b.d.k)b.el.setAttribute('aria-expanded','false')});
+  if(sel.c===n){sel.c=null;sel.l=null;render(vPanel(sel.v),sel.v);plan();return}
+  sel.c=n;sel.l=null;n.el.classList.add('on');n.p.classList.add('lit');
+  if(n.d.k){n.el.setAttribute('aria-expanded','true');n.d.k.forEach(function(d){mk(d,n,2,n.vi)})}
+  plan();applyLens();render(vPanel(sel.v),sel.v);
+}
+function openL(n){
+  live().filter(function(b){return b.depth===2}).forEach(function(b){b.el.classList.remove('on');b.p.classList.remove('lit')});
+  sel.l=n;n.el.classList.add('on');n.p.classList.add('lit');
+  if(n.d.card)render(cPanel(n.d.card,n.vi),n.vi);else render(vPanel(sel.v),sel.v);
+  drawX(n);
+  if(mobile&&!panel.hidden&&panel.scrollIntoView)panel.scrollIntoView({block:'nearest',behavior:RM?'auto':'smooth'});
+}
+function applyLens(){
+  var set=lens&&LENS[lens]?LENS[lens].v:null;
+  T.forEach(function(v,i){v.el.classList.toggle('dim',!!set&&set.indexOf(i)<0&&sel.v!==i)});
+  live().forEach(function(b){b.el.classList.toggle('dim',!!lens&&(!hit(b.d,lens)||(!!set&&set.indexOf(b.vi)<0)))});
+  document.querySelectorAll('#explore .xi').forEach(function(b){b.classList.toggle('dim',!!lens&&(b.dataset.tg||'').indexOf(lens)<0)});
+  document.querySelectorAll('.chip[data-lens]').forEach(function(c){c.setAttribute('aria-pressed',c.dataset.lens===lens?'true':'false')});
+}
+function setLens(l){lens=(l===lens)?null:l;applyLens();targetsF();if(RM){T.forEach(function(v){v.f=v.tf});draw(0)}}
+
+function near(cur,t){while(t-cur>180)t-=360;while(t-cur<-180)t+=360;return t}
+function plan(){
+  W=stage.clientWidth;if(!W)return;mobile=W<720;stage.classList.toggle('m',mobile);stage.classList.toggle('open',sel.v!==null);
+  tw=mobile?104:150;th=mobile?90:130;
+  var open=false,nodes=live();
+  T.forEach(function(v,i){v.el.classList.toggle('compact',open&&i!==sel.v)});
+  if(center)center.classList.toggle('compact',open);
+  if(!open){
+    H=mobile?Math.round(W*.86+tw+8):660;
+    hex.tx=W/2;hex.ty=H/2;hex.tR=mobile?W*.345:Math.min(238,W*.235);hex.tth=near(hex.th,0);
+  }else if(!mobile){
+    hex.tR=Math.min(158,Math.max(108,W*.15));hex.tx=Math.max(hex.tR+58,W*.205);
+    hex.tth=near(hex.th,0-(-90+60*sel.v));
+    var ax=hex.tx+hex.tR+tw/2,gap=W>900?56:36,cx=ax+gap,cw=Math.max(140,Math.min(190,W*.18));
+    var lx=cx+cw+(W>900?52:32),lw=Math.max(150,Math.min(270,W-lx-6));
+    var d1=nodes.filter(function(n){return n.depth===1}),d2=nodes.filter(function(n){return n.depth===2});
+    d1.forEach(function(n){n.el.style.width=cw+'px';n.w=cw;n.h=n.el.offsetHeight});
+    d2.forEach(function(n){n.el.style.width=lw+'px';n.w=lw;n.h=n.el.offsetHeight});
+    var g1=14,g2=7,t1=d1.reduce(function(s,n){return s+n.h},0)+g1*Math.max(0,d1.length-1);
+    var t2=d2.reduce(function(s,n){return s+n.h},0)+g2*Math.max(0,d2.length-1);
+    H=Math.max(540,t1+70,t2+70);hex.ty=H/2;
+    var y=(H-t1)/2;d1.forEach(function(n){n.tx=cx;n.ty=y+n.h/2;y+=n.h+g1});
+    if(d2.length){var c=sel.c?sel.c.ty:H/2,y2=Math.max(24,Math.min(H-24-t2,c-t2/2));d2.forEach(function(n){n.tx=lx;n.ty=y2+n.h/2;y2+=n.h+g2})}
+  }else{
+    hex.tR=W*.285;hex.tx=W/2;hex.ty=hex.tR+36;
+    hex.tth=near(hex.th,90-(-90+60*sel.v));
+    var y0=hex.ty+hex.tR+th/2+36,x1=28,w1=W-x1-2,x2=52,w2=W-x2-2,cur=y0;
+    nodes.filter(function(n){return n.depth===1}).forEach(function(n){
+      n.el.style.width=w1+'px';n.w=w1;n.h=n.el.offsetHeight;n.tx=x1;n.ty=cur+n.h/2;cur+=n.h+10;
+      if(n===sel.c){nodes.filter(function(k){return k.depth===2}).forEach(function(k){k.el.style.width=w2+'px';k.w=w2;k.h=k.el.offsetHeight;k.tx=x2;k.ty=cur+k.h/2;cur+=k.h+6});cur+=6}
+    });
+    H=Math.max(cur+14,hex.ty+hex.tR+th/2+40);
+  }
+  stage.style.height=H+'px';
+  if(first||RM){hex.x=hex.tx;hex.y=hex.ty;hex.R=hex.tR;hex.th=hex.tth;nodes.forEach(function(n){n.x=n.tx;n.y=n.ty});first=false;if(RM)draw(0)}
+}
+
+var last=0;
+function spring(o,k,kt,kv,s,d){var a=(o[kt]-o[k])*s;o[kv]=(o[kv]+a)*d;o[k]+=o[kv]}
+function draw(t){
+  if(!center)return;
+  var open=false,amp=RM?0:2.6,n6=T.length||6;
+  center.style.transform='translate('+hex.x.toFixed(1)+'px,'+hex.y.toFixed(1)+'px) translate(-50%,-50%)';
+  var P=[];
+  T.forEach(function(v,i){
+    var a=(-90+360/n6*i+hex.th)*Math.PI/180;
+    v.x=hex.x+hex.R*Math.cos(a)+Math.sin(t*.00042+i*1.7)*amp;v.y=hex.y+hex.R*Math.sin(a)+Math.cos(t*.00035+i*2.3)*amp;
+    v.el.style.transform='translate('+v.x.toFixed(1)+'px,'+v.y.toFixed(1)+'px) translate(-50%,-50%)';
+    P.push({x:hex.x+hex.R*v.f*Math.cos(a),y:hex.y+hex.R*v.f*Math.sin(a)});
+  });
+  T.forEach(function(v,i){var p=P[i],a=P[(i+n6-1)%n6],b=P[(i+1)%n6],f=function(q){return q.x.toFixed(1)+','+q.y.toFixed(1)};
+    v.kite.setAttribute('points',f({x:hex.x,y:hex.y})+' '+f({x:(a.x+p.x)/2,y:(a.y+p.y)/2})+' '+f(p)+' '+f({x:(b.x+p.x)/2,y:(b.y+p.y)/2}))});
+  TH.forEach(function(q){
+    var A1=T[q.a],B=T[q.b];if(!A1||!B)return;var dx=B.x-A1.x,dy=B.y-A1.y,len=Math.hypot(dx,dy)||1;
+    var mx=(A1.x+B.x)/2,my=(A1.y+B.y)/2,cx=mx+(-dy/len)*q.bend*hex.R,cy=my+(dx/len)*q.bend*hex.R;
+    q.p.setAttribute('d','M'+A1.x.toFixed(1)+' '+A1.y.toFixed(1)+'Q'+cx.toFixed(1)+' '+cy.toFixed(1)+' '+B.x.toFixed(1)+' '+B.y.toFixed(1));
+    q.g.setAttribute('x1',A1.x.toFixed(1));q.g.setAttribute('y1',A1.y.toFixed(1));q.g.setAttribute('x2',B.x.toFixed(1));q.g.setAttribute('y2',B.y.toFixed(1));
+    q.qx=.25*A1.x+.5*cx+.25*B.x;q.qy=.25*A1.y+.5*cy+.25*B.y;
+    q.d.style.transform='translate('+q.qx.toFixed(1)+'px,'+q.qy.toFixed(1)+'px) translate(-50%,-50%)';
+  });
+  placeTip();
+  if(!open&&!RM&&T.length){var u=(t/6500)%n6,i=Math.floor(u),f=u-i,P0=T[i],P1=T[(i+1)%n6];walker.setAttribute('cx',(P0.x+(P1.x-P0.x)*f).toFixed(1));walker.setAttribute('cy',(P0.y+(P1.y-P0.y)*f).toFixed(1));walker.style.fill='var(--ink)';walker.style.opacity=.85}
+  else walker.style.opacity=0;
+  branches.forEach(function(n){
+    var a=anchor(n),d;if(n.dying){n.tx=a.x;n.ty=a.y}
+    place(n);
+    if(!mobile){var m=(a.x+n.x)/2;d='M'+a.x.toFixed(1)+' '+a.y.toFixed(1)+'C'+m.toFixed(1)+' '+a.y.toFixed(1)+' '+m.toFixed(1)+' '+n.y.toFixed(1)+' '+n.x.toFixed(1)+' '+n.y.toFixed(1)}
+    else if(n.depth===1){var tx=14;d='M'+a.x.toFixed(1)+' '+a.y.toFixed(1)+'C'+a.x.toFixed(1)+' '+(a.y+18).toFixed(1)+' '+tx+' '+(a.y+2).toFixed(1)+' '+tx+' '+(a.y+24).toFixed(1)+'L'+tx+' '+Math.max(a.y+24,n.y-8).toFixed(1)+'Q'+tx+' '+n.y.toFixed(1)+' '+(tx+8)+' '+n.y.toFixed(1)+'L'+n.x.toFixed(1)+' '+n.y.toFixed(1)}
+    else{d='M'+a.x.toFixed(1)+' '+a.y.toFixed(1)+'L'+a.x.toFixed(1)+' '+Math.max(a.y,n.y-6).toFixed(1)+'Q'+a.x.toFixed(1)+' '+n.y.toFixed(1)+' '+(a.x+6).toFixed(1)+' '+n.y.toFixed(1)+'L'+n.x.toFixed(1)+' '+n.y.toFixed(1)}
+    n.p.setAttribute('d',d);
+  });
+  xlines.forEach(function(x){var n=x.n,v=T[x.v],bx=n.x-120;x.el.setAttribute('d','M'+n.x.toFixed(1)+' '+n.y.toFixed(1)+'C'+bx.toFixed(1)+' '+n.y.toFixed(1)+' '+(v.x+90).toFixed(1)+' '+v.y.toFixed(1)+' '+v.x.toFixed(1)+' '+v.y.toFixed(1))});
+}
+function targetsF(){
+  if(sel.v!==null){var near=nearOf(sel.v);T.forEach(function(v,i){v.tf=i===sel.v?1.04:(near.indexOf(i)>=0?.8:.4)});return}
+  var set=lens&&LENS[lens]?LENS[lens].v:null;T.forEach(function(v,i){v.tf=set?(set.indexOf(i)>=0?.97:.36):.74});
+}
+function tick(now){
+  var steps=Math.min(3,Math.max(1,Math.round((now-last)/16.67)));last=now;
+  if(homeVisible){
+    for(var s=0;s<steps;s++){
+      spring(hex,'x','tx','vx',.075,.74);spring(hex,'y','ty','vy',.075,.74);spring(hex,'R','tR','vR',.075,.74);spring(hex,'th','tth','vth',.06,.76);
+      T.forEach(function(v){spring(v,'f','tf','vf',.07,.76)});
+      branches.forEach(function(n){spring(n,'x','tx','vx',.11,.7);spring(n,'y','ty','vy',.11,.7)});
+    }
+    draw(now);
+  }
+  requestAnimationFrame(tick);
+}
+
+/* ---------- Read-mode views ---------- */
+var ILK=/\s*(?:·\s*)?\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/;
+function sPlain(t){return String(t||'').replace(ILK,'').trim()}
+function sLink(t){var m=String(t||'').match(ILK);return m?{t:m[1],u:m[2]}:null}
+function sHTML(t){var m=String(t||'').match(ILK);if(!m)return esc(t);var i=String(t).indexOf(m[0]);var pre=String(t).slice(0,i),mid=m[0].slice(0,m[0].indexOf('['));return esc(pre)+esc(mid)+'<a class="ilk" href="'+esc(m[2])+'" target="_blank" rel="noopener">'+esc(m[1])+' ↗</a>'+esc(String(t).slice(i+m[0].length))}
+function wsHTML(c,sep){var st=sPlain(c.s);return (c.w?esc(c.w):'')+(c.w&&st?'<br>':'')+(st?'<em>'+esc(st)+'</em>':'')}
+function pwHTML(c){var l=(c.pw||[]).filter(function(x){return String(x).trim()});return l.length?'<p class="mins">'+l.map(function(x){return '<span class="mtag">Project with '+esc(x)+'</span>'}).join('')+'</p>':''}
+function goIdx(go){return (go&&KEY.hasOwnProperty(go))?KEY[go]:null}
+function absHTML(c){return c.abs?'<details class="abs"><summary aria-label="Abstract" title="Abstract"></summary><p>'+esc(c.abs)+'</p></details>':''}
+function liHTML(id){var c=CARD[id];if(!c)return '';
+  var L=[];
+  if(c.hu)L.push({u:c.hu,t:c.hul||hostOf(c.hu)});
+  else{if(c.url)L.push({u:c.url,t:c.ul||hostOf(c.url)});(c.more||[]).forEach(function(x){var q=String(x).split('|'),t=q.length>1?q[0].trim():'',u=(q.length>1?q.slice(1).join('|'):q[0]).trim();if(/^https?:\/\//.test(u))L.push({u:u,t:t||hostOf(u)})})}
+  var plus=c.abs?'<button type="button" class="abt" aria-expanded="false" aria-label="Abstract" title="Abstract"></button>':'';
+  var lines=[];if(c.w)lines.push(esc(c.w));if(c.s)lines.push('<em>'+sHTML(c.s)+'</em>');
+  var meta='';if(lines.length){lines[lines.length-1]+=plus;plus='';meta='<div class="lmeta">'+lines.join('<br>')+'</div>'}
+  return '<li class="lit"><div class="lirow"><button class="li" type="button" data-card="'+esc(id)+'" style="'+cv(AREAOF[id])+'"><i class="hx"></i><span><b>'+esc(c.t)+'</b></span></button>'+plus+'</div>'+meta+
+    (L.length?'<span class="lnks">'+L.map(function(l){return '<a class="lnk" href="'+esc(l.u)+'" target="_blank" rel="noopener">'+esc(l.t)+' ↗</a>'}).join('')+'</span>':'')+
+    (c.abs?'<p class="absp" hidden>'+esc(c.abs)+'</p>':'')+'</li>'}
+function rowHTML(r){var ci=goIdx(r.go),cls='li'+(r.y?' wy':''),inner='<i class="hx"></i><span><b>'+esc(r.t)+'</b>'+(r.s?'<span class="s">'+esc(r.s)+'</span>':'')+'</span>'+(r.y?'<span class="y">'+esc(r.y)+'</span>':'');return '<li>'+(ci!==null?'<button class="'+cls+'" type="button" data-go="'+esc(r.go)+'" style="'+cv(ci)+'">'+inner+'</button>':'<div class="'+cls+'" style="'+cv(null)+'">'+inner+'</div>')+'</li>'}
+function rng(seed){var h=2166136261;for(var i=0;i<seed.length;i++){h^=seed.charCodeAt(i);h=Math.imul(h,16777619)}return function(){h^=h<<13;h^=h>>>17;h^=h<<5;return((h>>>0)%10000)/10000}}
+function art(id,ci,ic){
+  var r=rng(String(id)),w=320,h=140,s=15,dx=s*1.5,dy=s*1.732,out='',cx=w*(.25+r()*.5),cy=h*(.3+r()*.4),rad=40+r()*60;
+  if(ic&&ICONS[ic]){cx=w/2;cy=h/2;rad=110}
+  for(var col=-1;col*dx<w+s;col++){for(var row=-1;row*dy<h+s;row++){
+    var x=col*dx,y=row*dy+(col%2?dy/2:0),d=Math.hypot(x-cx,y-cy),p=Math.max(0,1-d/rad)+r()*.35;
+    if(p<.3)continue;var op=p>1?1:p>.75?.85:p>.5?.55:.28;
+    var pts=[[x-s,y],[x-s/2,y-dy/2],[x+s/2,y-dy/2],[x+s,y],[x+s/2,y+dy/2],[x-s/2,y+dy/2]].map(function(q){return q[0].toFixed(1)+','+q[1].toFixed(1)}).join(' ');
+    out+='<polygon points="'+pts+'" fill="var(--'+(p>.9?'t':'c')+ci+')" fill-opacity="'+op+'" stroke="var(--paper)" stroke-width="1.5"/>';
+  }}
+  if(ic&&ICONS[ic])out+='<circle cx="'+w/2+'" cy="'+h/2+'" r="40" fill="var(--paper)"/><g transform="translate('+(w/2-27)+' '+(h/2-27)+') scale(2.25)" fill="none" stroke="var(--t'+ci+')" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">'+ICONS[ic][1]+'</g>';
+  return '<svg viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="xMidYMid slice" aria-hidden="true">'+out+'</svg>';
+}
+function moreHTML(c){return (c.more||[]).map(function(s){var p=String(s).split('|'),t=p.length>1?p[0].trim():'',u=(p.length>1?p.slice(1).join('|'):p[0]).trim();return /^https?:\/\//.test(u)?'<a class="lk" href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(t||hostOf(u))+' ↗</a>':''}).join('')}
+var STORE_IC='<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>';
+function mediaHTML(g){
+  var h='';
+  var vids=(g.media||[]).filter(function(m){return m.k==='video'});
+  if(vids.length){
+    var shots=g.media.filter(function(m){return m.k==='shot'}),rest=g.media.filter(function(m){return m.k!=='video'&&m.k!=='shot'}),inrow=shots.length>0;
+    var feat='<div class="mfeat'+(rest.length?' has-side':'')+'">'+vids.slice(0,1).map(function(m){return '<figure class="mv"><video controls playsinline preload="metadata"'+(m.poster?' poster="'+esc(m.poster)+'"':'')+' src="'+esc(m.src)+'"></video></figure>'+(m.cap?'<p class="mvcap">'+esc(m.cap)+'</p>':'')}).join('')+
+      (rest.length?'<div class="mside">'+(inrow?'':'<p class="mrefh">Photos from the pilot</p>')+'<div class="mrefs" style="grid-template-rows:repeat('+rest.length+',minmax(0,1fr))">'+rest.map(function(m){return '<div class="mref"><img src="'+esc(m.src)+'" alt="'+esc(m.alt||m.cap||'')+'" loading="lazy"></div>'}).join('')+'</div></div>':'')+'</div>';
+    if(inrow)h+='<div class="mxrow"><div class="mapp"><p class="mlab">'+esc(g.sh||'The app')+'</p><div class="mshots">'+shots.map(function(m){return '<div class="phone"><img src="'+esc(m.src)+'" alt="'+esc(m.alt||m.cap||'')+'" loading="lazy"></div>'}).join('')+'</div></div><div class="mpilot"><p class="mlab">'+esc(g.vh||'Classroom pilot')+'</p>'+feat+'</div></div>';
+    else h+=feat;
+  }
+  else if(g.media&&g.media.length)h+='<div class="mgal">'+g.media.map(function(m){
+    var cap=m.cap?'<figcaption>'+esc(m.cap)+'</figcaption>':'';
+    if(m.k==='video')return '<figure class="mv"><video controls playsinline preload="metadata"'+(m.poster?' poster="'+esc(m.poster)+'"':'')+' src="'+esc(m.src)+'"></video>'+cap+'</figure>';
+    if(m.k==='shot')return '<figure class="ms"><div class="phone"><img src="'+esc(m.src)+'" alt="'+esc(m.alt||m.cap||'')+'" loading="lazy"></div>'+cap+'</figure>';
+    return '<figure class="mp"><img src="'+esc(m.src)+'" alt="'+esc(m.alt||m.cap||'')+'" loading="lazy">'+cap+'</figure>';
+  }).join('')+'</div>';
+  if(g.stores&&g.stores.length)h+='<div class="stores">'+g.stores.map(function(s){var inner=STORE_IC+'<span><small>'+esc(s.s||'')+'</small><b>'+esc(s.t||'')+'</b></span>';return s.url?'<a class="store" href="'+esc(s.url)+'" target="_blank" rel="noopener">'+inner+'</a>':'<span class="store">'+inner+'</span>'}).join('')+'</div>';
+  return h;
+}
+function cardHTML(c,ci){
+  return '<article class="card" id="card-'+esc(c.id)+'" style="'+cv(ci)+'"><div class="art">'+(c.img?'<img src="'+esc(c.img)+'" alt="" loading="lazy">':art(c.id,ci,c.ic))+'</div><div class="cb"><h4>'+esc(c.k||c.t)+'</h4>'+(c.k?'<p class="ft">'+esc(c.t)+'</p>':'')+(c.w?'<p class="w">'+esc(c.w)+'</p>':'')+(c.s?'<p class="w'+(/^project with/i.test(c.s)?' pl':'')+'"><em>'+sHTML(c.s)+'</em></p>':'')+pwHTML(c)+(c.q?'<p class="q">'+esc(c.q)+'</p>':'')+absHTML(c)+((c.url||(c.more&&c.more.length))?'<div class="lks">'+(c.url?'<a class="lk" href="'+esc(c.url)+'" target="_blank" rel="noopener">'+esc(c.ul||hostOf(c.url))+' ↗</a>':'')+moreHTML(c)+'</div>':'')+'</div></article>';
+}
+
+/* ---------- Edit-mode building blocks ---------- */
+function fid(path){return 'f-'+path.replace(/[^a-zA-Z0-9]+/g,'-')}
+function inp(path,label,o){o=o||{};var v=get(path);v=(v==null)?'':v;var id=fid(path);
+  return '<label class="ef" for="'+id+'"><span>'+esc(label)+'</span>'+(o.area?'<textarea class="ed" id="'+id+'" rows="'+(o.rows||2)+'" data-b="'+path+'"'+(o.ph?' placeholder="'+esc(o.ph)+'"':'')+'>'+esc(v)+'</textarea>':'<input class="ed" id="'+id+'" data-b="'+path+'" value="'+esc(v)+'"'+(o.ph?' placeholder="'+esc(o.ph)+'"':'')+'>')+'</label>'}
+function lines(path,label){var v=get(path)||[];var id=fid(path);return '<label class="ef" for="'+id+'"><span>'+esc(label)+'</span><textarea class="ed" id="'+id+'" rows="'+Math.max(2,v.length)+'" data-bc="'+path+'">'+esc(v.join('\n'))+'</textarea></label>'}
+function eb(act,p,label,danger){return '<button type="button" class="eb'+(danger?' danger':'')+'" data-act="'+act+'"'+(p!=null?' data-p="'+p+'"':'')+'>'+esc(label)+'</button>'}
+function moveDel(p,delLabel){return eb('up',p,'↑')+eb('down',p,'↓')+eb('del',p,delLabel||'Delete',1)}
+function areaSelect(path,label,cur,useKey){var id=fid(path);
+  return '<label class="ef" for="'+id+'"><span>'+esc(label)+'</span><select class="ed" id="'+id+'" '+(useKey?'data-b':'data-num')+'="'+path+'"><option value="">None (gray)</option>'+D.areas.map(function(a,i){var val=useKey?a.key:String(i);return '<option value="'+esc(val)+'"'+(String(cur)===val?' selected':'')+'>'+esc(a.name||a.ab)+'</option>'}).join('')+'</select></label>'}
+function homeOf(id){for(var i=0;i<D.home.length;i++){if(D.home[i].ids.indexOf(id)>=0)return i}return -1}
+
+function cardForm(c,ai,gi,ci){
+  var p='areas.'+ai+'.groups.'+gi+'.cards.'+ci,h=homeOf(c.id),sid='home-'+String(c.id).replace(/[^a-zA-Z0-9]+/g,'-');
+  return '<article class="card editing" style="'+cv(ai)+'"><div class="cb">'+
+    inp(p+'.t','Title',{area:1,rows:2})+inp(p+'.k','Keyword title (optional; shown in bold, full title goes below in grey)')+lines(p+'.pw','Project with (one ministry or partner per line, optional)')+
+    '<div class="two">'+inp(p+'.w','Coauthors',{ph:'with ...'})+inp(p+'.s','Status (shown in italics)',{ph:'Under review at ...'})+'</div>'+
+    inp(p+'.q','One-line description',{area:1,rows:2})+
+    inp(p+'.abs','Abstract (optional, opens under a + toggle)',{area:1,rows:5})+
+    inp(p+'.l','Short name on the hexagon map (optional)',{ph:c.t})+
+    iconSelect(p+'.ic','Picture on the card (used when there is no photo)',c.ic||'',true)+
+    '<div class="erow">'+(ASSETS?'<label class="eb" style="cursor:pointer">'+(c.img?'Change card photo':'Add card photo')+'<input type="file" accept="image/*" data-card-photo="'+p+'" hidden></label>':'')+(c.img?eb('delimg',p,'Remove card photo',true):'')+'</div>'+
+    '<div class="two">'+inp(p+'.url','Link (optional)',{ph:'https://'})+inp(p+'.ul','Link text',{ph:'Paper'})+'</div>'+
+    lines(p+'.more','More links, one per line: Link text | https://...')+
+    '<div class="ef"><span>Themes</span><div class="tgs">'+D.themes.map(function(t){var on=(c.tg||'').indexOf(t.k)>=0;var id=fid(p+'-tg-'+t.k);return '<label for="'+id+'"><input type="checkbox" id="'+id+'" data-tg="'+p+'" data-k="'+t.k+'"'+(on?' checked':'')+'>'+esc(t.label)+'</label>'}).join('')+'</div></div>'+
+    '<label class="ef" for="'+sid+'"><span>Show on home page</span><select class="ed" id="'+sid+'" data-home="'+esc(c.id)+'"><option value="">Not on home</option>'+D.home.map(function(g,hi){return '<option value="'+hi+'"'+(h===hi?' selected':'')+'>'+esc(g.h)+'</option>'}).join('')+'</select></label>'+
+    '<div class="erow">'+moveDel(p)+'</div>'+
+  '</div></article>';
+}
+
+/* ---------- Views ---------- */
+function renderHeader(){
+  Q('#name-link').textContent=D.name||'';Q('#role').textContent=D.role||'';Q('#mail').textContent=D.email||'';
+  document.title=D.name||'Homepage';
+  var b=Q('#editbtn');b.hidden=!ART;b.textContent=editing?'Editing':'Edit';b.disabled=editing;
+}
+function renderIntro(){
+  var box=Q('#intro'),f=Q('#pfig'),ab=D.about||{},ps=(ab.p||[]).filter(function(x){return String(x).trim()});
+  box.classList.toggle('nophoto',!D.photo);
+  Q('#about').innerHTML=(ab.h?'<h2>'+esc(ab.h)+'</h2>':'')+ps.map(function(x){return '<p>'+esc(x)+'</p>'}).join('');
+  box.hidden=!D.photo&&!ab.h&&!ps.length;
+  if(D.photo){f.innerHTML='<img src="'+esc(D.photo)+'" alt="'+esc((D.name||'')+' portrait')+'">';f.hidden=false}else{f.innerHTML='';f.hidden=true}
+}
+function renderChips(){
+  Q('#chips').innerHTML=D.themes.map(function(t){return '<button class="chip" type="button" data-lens="'+esc(t.k)+'" aria-pressed="'+(lens===t.k?'true':'false')+'">'+esc(t.label)+'</button>'}).join('');
+}
+function renderEdHome(){
+  var box=Q('#ed-home');
+  if(!editing){box.hidden=true;box.innerHTML='';return}
+  box.hidden=false;
+  box.innerHTML='<div class="epanel"><h2 class="eh">Page settings</h2>'+
+    (ASSETS?'<label class="eb" style="justify-self:start;cursor:pointer">'+(D.photo?'Change photo':'Add photo')+'<input type="file" accept="image/*" data-upload-photo hidden></label>':'')+(D.photo?eb('delphoto',null,'Remove photo',true):'')+inp('about.h','Heading next to your photo')+lines('about.p','Text next to your photo (one paragraph per line)')+
+    '<div class="two">'+inp('name','Name')+inp('role','Title under your name')+'</div>'+
+    inp('email','Email')+
+    inp('center','Center of the hexagon. Put *stars* around a word to make it bold.')+
+    '<div class="ef"><span>Theme buttons: names and order</span>'+D.themes.map(function(t,i){return '<div class="erow wide"><input class="ed" id="'+fid('themes.'+i+'.label')+'" data-b="themes.'+i+'.label" value="'+esc(t.label)+'" aria-label="Theme '+(i+1)+'">'+eb('up','themes.'+i,'↑')+eb('down','themes.'+i,'↓')+'</div>'}).join('')+'</div>'+
+    '<details><summary>Text that appears on the lines between hexagons</summary>'+D.links.map(function(l,i){return inp('links.'+i+'.text',(D.areas[l.a]||{}).ab+' ↔ '+(D.areas[l.b]||{}).ab)}).join('')+'</details>'+
+    '<p class="ehint">Hexagon labels are edited on each area page. The map shows your changes after you save.</p></div>';
+}
+function brandHTML(a){
+  var ls=(a.links||[]).filter(function(l){return l&&l.url});
+  var logos=[];if(a.img2)logos.push({src:a.img2,cls:'alogo alogo-d'});if(a.img)logos.push({src:a.img,cls:'alogo'});
+  if(!logos.length&&!ls.length)return '';
+  var h=logos.map(function(g,k){var l=ls[k],img='<img class="'+g.cls+'" src="'+esc(g.src)+'" alt="'+esc((l&&l.t)||a.head||'')+'">';return l?'<a class="alogoa" href="'+esc(l.url)+'" target="_blank" rel="noopener" title="'+esc(l.t||hostOf(l.url))+'">'+img+'</a>':img}).join('');
+  var extra=ls.slice(logos.length);
+  return '<div class="abrand">'+h+(extra.length?'<span class="alinks">'+extra.map(function(l){return '<a href="'+esc(l.url)+'" target="_blank" rel="noopener">'+esc(l.t||hostOf(l.url))+' ↗</a>'}).join('')+'</span>':'')+'</div>';
+}
+function deckHTML(c,i){
+  var t=c.dh||'Slides';
+  return '<div class="deck" style="'+cv(i)+'"><div class="dtop"><h4>'+esc(t)+'</h4><span class="dn">'+esc(c.l||c.t)+'</span></div><div class="dscroll" tabindex="0" role="region" aria-label="'+esc(t)+'">'+c.deck.map(function(src,k){return '<img src="'+esc(src)+'" alt="Slide '+(k+1)+'" loading="lazy">'}).join('')+'</div></div>';
+}
+function groupsHTML(i){
+  var a=D.areas[i],h='';
+  a.groups.forEach(function(g,gi){
+    h+='<div class="agrp" data-g="'+gi+'"><h3>'+esc(g.h)+'</h3>';
+    if(g.steps&&g.steps.length)h+='<ol class="steps" style="'+cv(i)+'">'+g.steps.map(function(st){return '<li><b>'+esc(st.t||'')+'</b>'+(st.q?'<span>'+esc(st.q)+'</span>':'')+'</li>'}).join('')+'</ol>';
+    if(g.chips&&g.chips.length)h+='<div class="chips">'+g.chips.map(function(ch){return '<span class="tag" style="'+cv(i)+'">'+esc(ch)+'</span>'}).join('')+'</div>';
+    if((g.media&&g.media.length)||(g.stores&&g.stores.length))h+='<div style="'+cv(i)+'">'+mediaHTML(g)+'</div>';
+    if(g.cards&&g.cards.length)h+='<div class="cards">'+g.cards.map(function(c){return cardHTML(c,i)}).join('')+'</div>';
+    var dk=(g.cards||[]).filter(function(c){return c.deck&&c.deck.length});
+    if(dk.length)h+='<div class="decks">'+dk.map(function(c){return deckHTML(c,i)}).join('')+'</div>';
+    h+='</div>';
+  });
+  return h;
+}
+var homeTab='home';
+function tabOrder(){var o=(D.tabs||[]).map(function(k){return KEY[k]}).filter(function(i){return i!=null&&D.areas[i]});D.areas.forEach(function(a,i){if(o.indexOf(i)<0)o.push(i)});return o}
+function htabsHTML(){
+  return '<nav class="htabs" aria-label="Sections"><button type="button" class="htab" data-htab="-1" aria-pressed="'+(sel.v===null&&homeTab!=='sel')+'">Home</button><button type="button" class="htab" data-htab="sel" aria-pressed="'+(sel.v===null&&homeTab==='sel')+'">Selected Research</button>'+tabOrder().map(function(i){var a=D.areas[i];return '<button type="button" class="htab" data-htab="'+i+'" aria-pressed="'+(sel.v===i)+'" style="'+cv(i)+'"><i class="hx"></i>'+esc(a.ab||a.title)+'</button>'}).join('')+'</nav>';
+}
+function renderHomeLists(){
+  var h=editing?'':htabsHTML();
+  if(!editing&&sel.v!==null&&D.areas[sel.v]){
+    var a=D.areas[sel.v];
+    h+='<div class="hdetail">'+(a.intro||a.link?'<p class="hintro">'+esc(a.intro||'')+(a.link?' <a href="'+esc(a.link)+'" target="_blank" rel="noopener">'+esc(a.lt||hostOf(a.link))+' ↗</a>':'')+'</p>':'')+brandHTML(a)+groupsHTML(sel.v)+
+      '<div class="hback"><button type="button" class="chip" data-overview>← Back to overview</button></div></div>';
+  }else if(!editing&&homeTab==='sel'){
+    h+='<div class="hagenda">'+agendaViewHTML('h')+'</div>';
+  }else if(!editing){
+    D.home.forEach(function(g){var items=g.ids.map(liHTML).join('');if(items)h+='<div class="grp"><h2>'+esc(g.h)+'</h2><ul class="items">'+items+'</ul></div>'});
+    if(D.exp.length)h+='<div class="grp"><h2>Experience</h2><ul class="items">'+D.exp.map(rowHTML).join('')+'</ul></div>';
+    if(D.edu.length)h+='<div class="grp"><h2>Education</h2><ul class="items">'+D.edu.map(rowHTML).join('')+'</ul></div>';
+  }else{
+    D.home.forEach(function(g,gi){var gp='home.'+gi;
+      h+='<div class="grp editing"><div class="gtitle">'+inp(gp+'.h','Section title on the home page')+'<div class="erow">'+moveDel(gp,'Delete section')+'</div></div><ul class="items">'+
+        g.ids.map(function(id,ii){var c=CARD[id];if(!c)return '';var ip=gp+'.ids.'+ii;return '<li class="eitem" style="'+cv(AREAOF[id])+'"><i class="hx"></i><span>'+esc(c.t)+'</span><span class="erow">'+eb('up',ip,'↑')+eb('down',ip,'↓')+eb('del',ip,'Remove from home')+'</span></li>'}).join('')+
+        '</ul></div>';
+    });
+    h+='<p class="ehint">To add research to the home page, open its area page (click a hexagon) and pick a section under "Show on home page".</p>'+eb('addhome',null,'+ Add home section').replace('class="eb"','class="eadd"');
+    ['exp','edu'].forEach(function(key){
+      h+='<div class="grp editing"><h2>'+(key==='exp'?'Experience':'Education')+'</h2>'+D[key].map(function(r,i){var p=key+'.'+i;return '<div class="erowcard"><div class="two">'+inp(p+'.t','School or organization (top line)')+inp(p+'.s','Degree or role (smaller line below)')+'</div>'+inp(p+'.y','Year (optional)',{ph:'2024 or Present'})+areaSelect(p+'.go','Color and link to an area page',r.go||'',true)+'<div class="erow">'+moveDel(p)+'</div></div>'}).join('')+
+        eb('addrow',key,'+ Add '+(key==='exp'?'experience':'education')).replace('class="eb"','class="eadd"')+'</div>';
+    });
+  }
+  Q('#home-lists').innerHTML=h;
+}
+function renderArea(i){
+  var a=D.areas[i],ap='areas.'+i,h;
+  if(!editing){
+    h='<div class="ahead"><div class="bighex" style="'+cv(i)+'">'+HEX+'<span>'+esc(a.title)+'</span></div><div><h2>'+esc(a.head)+'</h2>'+(a.meta?'<p class="meta">'+esc(a.meta)+'</p>':'')+(a.intro||a.link?'<p class="intro">'+esc(a.intro)+(a.link?' <a href="'+esc(a.link)+'" target="_blank" rel="noopener">'+esc(a.lt||hostOf(a.link))+' ↗</a>':'')+'</p>':'')+brandHTML(a)+'</div></div>';
+  }else{
+    h='<div class="aedit" style="'+cv(i)+'"><h2 class="eh">'+esc(a.name||a.ab)+'</h2><div class="two">'+inp(ap+'.title','Hexagon label (press Enter for a new line)',{area:1,rows:3})+inp(ap+'.sub','Small text inside the hexagon',{area:1,rows:3})+'</div><div class="two">'+inp(ap+'.ab','Short label (small hexagon and buttons)')+inp(ap+'.name','Full name of this area')+'</div>'+inp(ap+'.head','Page title')+inp(ap+'.meta','Subtitle')+inp(ap+'.intro','Intro sentence',{area:1})+'<div class="two">'+inp(ap+'.link','Website link (optional)',{ph:'https://'})+inp(ap+'.lt','Link text',{ph:'Website'})+'</div>'+
+      ((a.img||a.links)?'<div class="erow">'+(ASSETS?'<label class="eb" style="cursor:pointer">'+(a.img?'Change logo':'Add logo')+'<input type="file" accept="image/*" data-card-photo="'+ap+'" hidden></label>':'')+(a.img?eb('delimg',ap,'Remove logo',true):'')+'</div>'+(a.links||[]).map(function(l,k){return '<div class="two">'+inp(ap+'.links.'+k+'.t','Link next to the logo')+inp(ap+'.links.'+k+'.url','Link address',{ph:'https://'})+'</div>'}).join(''):'')+'</div>';
+  }
+  h+='<nav class="switch" aria-label="Areas">'+tabOrder().map(function(k){var b=D.areas[k];return '<a class="sw" href="#'+esc(b.key)+'" style="'+cv(k)+'"'+(k===i?' aria-current="page"':'')+'><i class="hx"></i>'+esc(b.ab)+'</a>'}).join('')+'</nav>';
+  a.groups.forEach(function(g,gi){
+    var gp=ap+'.groups.'+gi;
+    if(!editing){
+      if(gi===0)h+=groupsHTML(i);
+    }else{
+      h+='<div class="agrp editing"><div class="ghead">'+inp(gp+'.h','Section title')+'<div class="erow">'+moveDel(gp,'Delete section')+'</div></div>';
+      if(g.chips)h+=lines(gp+'.chips','Tags, one per line');
+      if(g.media){h+='<div class="medit">'+g.media.map(function(m,mi){var mp=gp+'.media.'+mi;return '<div class="erowcard"><div class="mrow">'+(m.k==='video'?'<video src="'+esc(m.src)+'" muted preload="metadata"></video>':'<img src="'+esc(m.src)+'" alt="">')+'<div class="ef">'+inp(mp+'.cap','Caption (optional)')+'<div class="erow">'+moveDel(mp,'Remove')+'</div></div></div></div>'}).join('')+
+        (ASSETS?'<label class="eadd">+ Add photo or video<input type="file" accept="image/*,video/mp4,video/quicktime,video/webm" data-upload="'+gp+'" hidden></label>':'<p class="ehint">Adding photos and videos needs editor access.</p>')+'</div>'}
+      if(g.steps)h+=g.steps.map(function(st,si){var sp=gp+'.steps.'+si;return '<div class="erowcard"><div class="two">'+inp(sp+'.t','Step')+inp(sp+'.q','Short text')+'</div></div>'}).join('');
+      if(g.stores)h+=g.stores.map(function(s,si){var sp=gp+'.stores.'+si;return '<div class="erowcard"><div class="two">'+inp(sp+'.t','Store button')+inp(sp+'.s','Small text')+'</div>'+inp(sp+'.url','Link',{ph:'https://'})+'<div class="erow">'+moveDel(sp,'Remove')+'</div></div>'}).join('');
+      h+='<div class="cards editing">'+(g.cards||[]).map(function(c,ci){return cardForm(c,i,gi,ci)}).join('')+'</div>'+eb('addcard',gp,'+ Add item to "'+(g.h||'section')+'"').replace('class="eb"','class="eadd"')+'</div>';
+    }
+  });
+  if(editing)h+='<div style="margin-top:28px">'+eb('addgroup',ap+'.groups','+ Add section').replace('class="eb"','class="eadd"')+'</div>';
+  Q('#v-area').innerHTML=h;
+}
+function renderMisc(){
+  var h;
+  if(!editing){
+    h=D.misc.map(function(m,k){var ci=(m.c==null)?null:m.c;return '<article class="card" style="'+cv(ci)+'"><div class="art">'+art('misc'+k+(m.t||''),ci==null?4:ci)+'</div><div class="cb"><h4>'+esc(m.t)+'</h4>'+(m.q?'<p class="q">'+esc(m.q)+'</p>':'')+(m.chips&&m.chips.length?'<div class="chips" style="margin-top:6px">'+m.chips.map(function(ch){return '<span class="tag">'+esc(ch)+'</span>'}).join('')+'</div>':'')+(m.url?'<a class="lk" href="'+esc(m.url)+'" target="_blank" rel="noopener">'+esc(m.ul||hostOf(m.url))+' ↗</a>':'')+'</div></article>'}).join('');
+  }else{
+    h=D.misc.map(function(m,k){var p='misc.'+k;return '<article class="card editing" style="'+cv(m.c==null?null:m.c)+'"><div class="cb">'+inp(p+'.t','Title')+inp(p+'.q','Text',{area:1,rows:3})+lines(p+'.chips','Tags, one per line (optional)')+'<div class="two">'+inp(p+'.url','Link (optional)',{ph:'https://'})+inp(p+'.ul','Link text')+'</div>'+areaSelect(p+'.c','Color',m.c==null?'':m.c,false)+'<div class="erow">'+moveDel(p)+'</div></div></article>'}).join('')+
+      '<div>'+eb('addmisc',null,'+ Add card').replace('class="eb"','class="eadd"')+'</div>';
+  }
+  Q('#misc-grid').innerHTML=h;
+}
+function renderViews(){
+  renderHeader();renderIntro();renderChips();renderEdHome();renderHomeLists();renderMisc();
+  if(curView==='area'&&curArea!==null)renderArea(curArea);
+  if(curView==='agenda')renderAgenda();
+}
+
+/* ---------- Research page ---------- */
+var ICONS={
+ clock:['Clock','<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>'],
+ moat:['Castle','<path d="M4 20V10h3V7h2v3h2V7h2v3h2V7h2v3h3v10z"/><path d="M10 20v-4.5a2 2 0 0 1 4 0V20"/>'],
+ balance:['Scale','<path d="M12 4v16M7 20h10M4 7h16"/><path d="M6 7l-3 6a3 3 0 0 0 6 0zM18 7l-3 6a3 3 0 0 0 6 0z"/>'],
+ lock:['Lock','<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>'],
+ ship:['Ship','<path d="M3 15h18l-2.5 5h-13z"/><path d="M6 15V9h12v6"/><path d="M10 9V5h4v4"/>'],
+ speech:['Speech','<path d="M4 5h16v10h-9l-5 4v-4H4z"/>'],
+ chip:['Chip','<rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/>'],
+ factory:['Factory','<path d="M3 20V11l5 3v-3l5 3v-3l5 3V5h3v15z"/>'],
+ globe:['Globe','<circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c3 3.2 3 13.8 0 17M12 3.5c-3 3.2-3 13.8 0 17"/>'],
+ route:['Return arrow','<path d="M5 18h10a4 4 0 0 0 0-8H7"/><path d="M10 7l-3 3 3 3"/>'],
+ check:['Magnifier','<circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.3-4.3"/><path d="M8.5 11.2l1.8 1.8 3.2-3.6"/>'],
+ atom:['Atom','<circle cx="12" cy="12" r="1.6"/><ellipse cx="12" cy="12" rx="9" ry="3.6"/><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(120 12 12)"/>'],
+ compass:['Compass','<circle cx="12" cy="12" r="8.5"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>'],
+ network:['Network','<circle cx="6" cy="7" r="2.2"/><circle cx="18" cy="7" r="2.2"/><circle cx="12" cy="18" r="2.2"/><path d="M8.2 7h7.6M7.1 9l3.8 7M16.9 9l-3.8 7"/>'],
+ spark:['Spark','<path d="M12 3v5M12 16v5M3 12h5M16 12h5M6 6l3 3M15 15l3 3M18 6l-3 3M9 15l-3 3"/>'],
+ dot:['Dot','<circle cx="12" cy="12" r="4"/>'],
+ flag:['Flag','<path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/>'],
+ search:['Search','<circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/>'],
+ cloud:['Cloud','<path d="M7 18h10a4 4 0 0 0 .6-7.96A6 6 0 0 0 6.2 9.1 4.5 4.5 0 0 0 7 18z"/>'],
+ brief:['Briefcase','<rect x="3.5" y="7.5" width="17" height="12" rx="2"/><path d="M9 7.5V5.5h6v2M3.5 12.5h17"/>'],
+ shield:['Shield','<path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/>'],
+ alert:['Warning','<path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17h.01"/>'],
+ city:['City','<path d="M3 21h18M5 21V9h5v12M10 21V4h7v17M17 21v-8h3v8"/><path d="M7 12h1M7 15h1M13 8h1M13 11h1M13 14h1"/>'],
+ leaf:['Leaf','<path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19l8-8"/>'],
+ mic:['Microphone','<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M9 21h6"/>'],
+ school:['School','<path d="M3 10l9-6 9 6"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-5h4v5"/>'],
+ battery:['Battery','<rect x="3" y="7" width="16" height="10" rx="2"/><path d="M21 10.5v3"/><path d="M11 9l-2 3h4l-2 3"/>'],
+ bolt:['Bolt','<path d="M13 3L5 13h6l-1 8 8-10h-6z"/>'],
+ wind:['Wind turbine','<circle cx="12" cy="9" r="1.3"/><path d="M12 7.7V3M13.1 9.7l4.1 2.4M10.9 9.7l-4.1 2.4M12 10.3V21M9 21h6"/>'],
+ link:['Chain link','<path d="M9.5 14.5l5-5"/><path d="M11 6.5l1.5-1.5a4 4 0 0 1 5.7 5.7L16.7 12M13 17.5L11.5 19a4 4 0 0 1-5.7-5.7L7.3 12"/>'],
+ doc:['Document','<path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/>'],
+ home:['House','<path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-6h4v6"/>'],
+ people:['People','<circle cx="9" cy="8" r="3"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2A4.5 4.5 0 0 1 21 18.5"/>'],
+ cycle:['Cycle','<path d="M20 12a8 8 0 0 1-14.3 4.9M4 12a8 8 0 0 1 14.3-4.9"/><path d="M18.5 3.5v4h-4M5.5 20.5v-4h4"/>'],
+ chart:['Bar chart','<path d="M4 20V4M4 20h16"/><path d="M8 17v-5M12.5 17V8M17 17V5"/>'],
+ trend:['Rising line','<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>'],
+ map:['Map','<path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/>'],
+ swap:['Two-way arrows','<path d="M4 8h14l-3-3M20 16H6l3 3"/>']
+};
+var COLORS=['Apricot','Blue','Mint','Lavender','Sky','Coral'];
+function icon(k){return '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">'+(ICONS[k]||ICONS.dot)[1]+'</svg>'}
+function iconSelect(path,label,cur,none){var id=fid(path);return '<label class="ef" for="'+id+'"><span>'+esc(label)+'</span><select class="ed" id="'+id+'" data-b="'+path+'">'+(none?'<option value="">Pattern only</option>':'')+Object.keys(ICONS).map(function(k){return '<option value="'+k+'"'+(k===cur?' selected':'')+'>'+ICONS[k][0]+'</option>'}).join('')+'</select></label>'}
+function colorSelect(path,label,cur){var id=fid(path);return '<label class="ef" for="'+id+'"><span>'+esc(label)+'</span><select class="ed" id="'+id+'" data-num="'+path+'">'+COLORS.map(function(n,i){return '<option value="'+i+'"'+(i===cur?' selected':'')+'>'+n+'</option>'}).join('')+'</select></label>'}
+function cardSelect(path,label,cur){var id=fid(path);return '<label class="ef" for="'+id+'"><span>'+esc(label)+'</span><select class="ed" id="'+id+'" data-b="'+path+'">'+D.areas.map(function(a){return '<optgroup label="'+esc(a.name||a.ab)+'">'+a.groups.map(function(g){return (g.cards||[]).map(function(c){return '<option value="'+esc(c.id)+'"'+(c.id===cur?' selected':'')+'>'+esc(c.l||c.t)+'</option>'}).join('')}).join('')+'</optgroup>'}).join('')+'</select></label>'}
+function agItem(it){
+  var c=it.card?CARD[it.card]:null;if(it.card&&!c)return '';
+  var t=c?c.t:it.t,meta=c?wsHTML(c,' · '):esc(it.s||''),q=c?c.q:'';
+  var attr=c?' data-card="'+esc(c.id)+'"':(it.go?' data-go="'+esc(it.go)+'"':'');
+  return '<li><button type="button" class="ai"'+attr+'><span class="ib">'+icon(it.icon)+'</span><span class="at"><b>'+esc(t)+'</b>'+(meta?'<span class="am">'+meta+'</span>':'')+(q?'<span class="aq">'+esc(q)+'</span>':'')+'</span></button>'+(c&&c.url?'<a class="lnk" href="'+esc(c.url)+'" target="_blank" rel="noopener">'+esc(c.ul||hostOf(c.url))+' ↗</a>':'')+'</li>';
+}
+function vennLabel(x,i,cx,cy){
+  var parts=String(x.t||'').split('→'),l1=parts[0].trim(),l2=parts.length>1?'→ '+parts.slice(1).join('→').trim():'';
+  return '<g class="vl" data-ax="'+i+'" tabindex="0" role="button" aria-label="'+esc(x.h||x.t)+'"><svg x="'+(cx-11)+'" y="'+(cy-40)+'" width="22" height="22" viewBox="0 0 24 24" class="ic">'+(ICONS[x.icon]||ICONS.dot)[1]+'</svg><text x="'+cx+'" y="'+(cy)+'">'+esc(l1)+'</text>'+(l2?'<text x="'+cx+'" y="'+(cy+18)+'">'+esc(l2)+'</text>':'')+'</g>';
+}
+function agendaViewHTML(pre){
+  var AG=D.agenda||{axes:[]};
+    var pos=[[200,126],[136,236],[264,236]],lab=[[200,82],[96,268],[304,268]];
+    var svg='<svg class="venn" viewBox="0 0 400 350" role="group" aria-label="Three connected research areas">';
+    AG.axes.slice(0,3).forEach(function(x,i){svg+='<circle class="vc" data-ax="'+i+'" cx="'+pos[i][0]+'" cy="'+pos[i][1]+'" r="104" style="fill:var(--c'+x.c+');animation-delay:'+(-i*2.3)+'s"/>'});
+    AG.axes.slice(0,3).forEach(function(x,i){svg+=vennLabel(x,i,lab[i][0],lab[i][1])});
+    svg+='<text class="vcenter" x="200" y="204">'+esc(AG.center||'')+'</text></svg>';
+    return '<p class="alead">'+esc(AG.lead)+'</p><div class="vwrap">'+svg+'</div><div class="axes">'+AG.axes.map(function(x,i){return '<section class="axis" id="'+pre+'ax-'+i+'" data-ax="'+i+'" style="'+cv(x.c)+'"><div class="axh"><span class="badge">'+icon(x.icon)+'</span><div><h3>'+esc(x.h)+'</h3><p class="axq">'+esc(x.q)+'</p></div></div><ul class="ail">'+(x.items||[]).map(agItem).join('')+'</ul></section>'}).join('')+'</div>';
+}
+function renderAgenda(){
+  var AG=D.agenda||{axes:[]},box=Q('#v-agenda'),h='';
+  if(!editing){
+    h=agendaViewHTML('');
+  }else{
+    h='<div class="epanel"><h2 class="eh">Research page</h2>'+inp('agenda.lead','Opening sentence',{area:1,rows:3})+inp('agenda.center','Word in the middle of the circles')+'</div>';
+    AG.axes.forEach(function(x,i){var p='agenda.axes.'+i;
+      h+='<div class="aedit" style="'+cv(x.c)+'"><div class="two">'+inp(p+'.t','Label inside the circle (→ starts a second line)')+inp(p+'.h','Heading')+'</div>'+inp(p+'.q','Question',{area:1})+'<div class="two">'+colorSelect(p+'.c','Color',x.c)+iconSelect(p+'.icon','Symbol',x.icon)+'</div>'+
+        (x.items||[]).map(function(it,j){var ip=p+'.items.'+j;return '<div class="erowcard">'+(it.card!==undefined?cardSelect(ip+'.card','Project',it.card):'<div class="two">'+inp(ip+'.t','Title')+inp(ip+'.s','Details')+'</div>'+areaSelect(ip+'.go','Links to',it.go||'',true))+iconSelect(ip+'.icon','Symbol',it.icon)+'<div class="erow">'+moveDel(ip)+'</div></div>'}).join('')+
+        eb('additem',p+'.items','+ Add project').replace('class="eb"','class="eadd"')+'</div>';
+    });
+  }
+  box.innerHTML=h;
+}
+function setAx(i){document.querySelectorAll('#v-agenda [data-ax],#home-lists [data-ax]').forEach(function(el){var on=i!==null&&+el.dataset.ax===i;el.classList.toggle('on',on);el.classList.toggle('off',i!==null&&!on)})}
+document.addEventListener('mouseover',function(e){if((curView!=='agenda'&&curView!=='home')||editing)return;var g=e.target.closest&&e.target.closest('#v-agenda [data-ax],#home-lists [data-ax]');setAx(g?+g.dataset.ax:null)});
+document.addEventListener('focusin',function(e){if((curView!=='agenda'&&curView!=='home')||editing)return;var g=e.target.closest&&e.target.closest('#v-agenda .vl,#home-lists .vl');setAx(g?+g.dataset.ax:null)});
+
+/* ---------- Router ---------- */
+function route(){
+  var k=(location.hash||'').replace('#','')||'home';
+  var isArea=KEY.hasOwnProperty(k),view=isArea?'area':(k==='misc'?'misc':(k==='agenda'?'agenda':'home'));
+  curView=view;curArea=isArea?KEY[k]:null;
+  Q('#v-home').hidden=view!=='home';Q('#v-area').hidden=view!=='area';Q('#v-misc').hidden=view!=='misc';Q('#v-agenda').hidden=view!=='agenda';
+  document.querySelectorAll('[data-nav]').forEach(function(a){if(a.dataset.nav===view)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+  homeVisible=view==='home';
+  renderViews();
+  if(homeVisible)plan();
+  var target=pendingCard&&isArea&&!editing?document.getElementById('card-'+pendingCard):null;pendingCard=null;
+  if(target){target.classList.add('focus');target.scrollIntoView({block:'center',behavior:RM?'auto':'smooth'});setTimeout(function(){target.classList.remove('focus')},2400)}
+  else if(view!=='home'||k==='home')window.scrollTo(0,0);
+}
+window.addEventListener('hashchange',route);
+
+/* ---------- Events ---------- */
+document.addEventListener('click',function(e){
+  var ch=e.target.closest('.chip[data-lens]');if(ch){setLens(ch.dataset.lens);return}
+  var vx=e.target.closest('.vc,.vl');if(vx){var vroot=vx.closest('#home-lists,#v-agenda')||document,ax=vroot.querySelector('.axis[data-ax="'+vx.getAttribute('data-ax')+'"]');if(ax)ax.scrollIntoView({block:'start',behavior:RM?'auto':'smooth'});return}
+  var abt=e.target.closest('.abt');if(abt){var ap=abt.closest('.lit');ap=ap&&ap.querySelector('.absp');var op=abt.getAttribute('aria-expanded')!=='true';abt.setAttribute('aria-expanded',op?'true':'false');if(ap)ap.hidden=!op;return}
+  var ht=e.target.closest('[data-htab]');if(ht){var hvs=ht.dataset.htab;if(hvs==='sel'||hvs==='-1'){homeTab=hvs==='sel'?'sel':'home';if(sel.v!==null)closeAll();else renderHomeLists()}else{var hv=+hvs;if(sel.v!==hv)openV(hv)}return}
+  if(e.target.closest('[data-overview]')){closeAll();var st=Q('#stage');if(st.scrollIntoView)st.scrollIntoView({block:'nearest',behavior:RM?'auto':'smooth'});return}
+  var xt=e.target.closest('.xt');if(xt){sel.c=+xt.dataset.g;sel.l=null;clearX();render(null);renderExplore();var gEl=Q('#home-lists .agrp[data-g="'+xt.dataset.g+'"]');if(gEl&&gEl.scrollIntoView)gEl.scrollIntoView({block:'start',behavior:RM?'auto':'smooth'});return}
+  var xi=e.target.closest('button.xi[data-cid]');if(xi){var xc0=CARD[xi.dataset.cid];if(!xc0)return;sel.l=xc0.id;renderExplore();markX(xc0);
+    var cEl=Q('#home-lists').querySelector('#card-'+(window.CSS&&CSS.escape?CSS.escape(xc0.id):xc0.id));
+    if(cEl){render(null);cEl.classList.add('focus');cEl.scrollIntoView({block:'center',behavior:RM?'auto':'smooth'});setTimeout(function(){cEl.classList.remove('focus')},2400)}
+    else{render(cPanel(xc0,sel.v),sel.v);if(mobile&&panel.scrollIntoView)panel.scrollIntoView({block:'nearest',behavior:RM?'auto':'smooth'})}
+    return}
+  var xc=e.target.closest('.xc');if(xc){openV(+xc.dataset.v);return}
+  var act=e.target.closest('[data-act]');
+  if(act){e.preventDefault();doAction(act.dataset.act,act.dataset.p);return}
+  var b=e.target.closest('button[data-card],button[data-go]');if(!b)return;
+  if(b.dataset.card){var id=b.dataset.card;pendingCard=id;location.hash=D.areas[AREAOF[id]].key}
+  else location.hash=b.dataset.go;
+});
+function newId(){return 'c'+Date.now().toString(36)+Math.floor(Math.random()*1e4).toString(36)}
+function doAction(act,p){
+  if(act==='delimg'){var cc=get(p);if(cc){delete cc.img;changed();renderViews()}return}
+  if(act==='delphoto'){delete D.photo;changed();renderViews();return}
+  var parts,idx,arr,j,tmp;
+  if(act==='up'||act==='down'){parts=p.split('.');idx=+parts.pop();arr=get(parts.join('.'));j=idx+(act==='up'?-1:1);if(!arr||j<0||j>=arr.length)return;tmp=arr[idx];arr[idx]=arr[j];arr[j]=tmp}
+  else if(act==='del'){parts=p.split('.');idx=+parts.pop();arr=get(parts.join('.'));if(arr)arr.splice(idx,1)}
+  else if(act==='addcard'){var g=get(p);(g.cards=g.cards||[]).push({id:newId(),t:'New item'})}
+  else if(act==='addgroup'){get(p).push({h:'New section',cards:[]})}
+  else if(act==='addhome'){D.home.push({h:'New section',ids:[]})}
+  else if(act==='addrow'){get(p).push({t:'New entry'})}
+  else if(act==='addmisc'){D.misc.push({c:0,t:'New card'})}
+  else if(act==='additem'){var ids=Object.keys(CARD);get(p).push({card:ids[0],icon:'dot'})}
+  else return;
+  index();prune();changed();renderViews();
+}
+document.addEventListener('input',function(e){
+  var t=e.target;if(!editing)return;
+  if(t.dataset.b){set(t.dataset.b,t.value);changed()}
+  else if(t.dataset.bc){set(t.dataset.bc,t.value.split('\n').map(function(s){return s.trim()}).filter(Boolean));changed()}
+});
+document.addEventListener('change',function(e){
+  var t=e.target;if(!editing)return;
+  if(t.dataset.upload&&t.files&&t.files[0]){upload(t.dataset.upload,t.files[0]);t.value='';return}
+  if(t.hasAttribute('data-upload-photo')&&t.files&&t.files[0]){uploadPhoto(t.files[0]);t.value='';return}
+  if(t.dataset.cardPhoto&&t.files&&t.files[0]){uploadCardPhoto(t.dataset.cardPhoto,t.files[0]);t.value='';return}
+  if(t.dataset.tg){var c=get(t.dataset.tg);if(!c)return;var s=(c.tg||'').split(t.dataset.k).join('');if(t.checked)s+=t.dataset.k;set(t.dataset.tg+'.tg',s);changed()}
+  else if(t.dataset.home!==undefined){var id=t.dataset.home;D.home.forEach(function(h){h.ids=h.ids.filter(function(x){return x!==id})});if(t.value!==''&&D.home[+t.value])D.home[+t.value].ids.push(id);changed()}
+  else if(t.dataset.num){set(t.dataset.num,t.value===''?null:+t.value);changed();if(curView==='misc')renderMisc();if(curView==='agenda')renderAgenda()}
+  else if(t.dataset.b&&t.tagName==='SELECT'){if(curView==='home')renderHomeLists();if(curView==='agenda')renderAgenda()}
+});
+document.addEventListener('keydown',function(e){
+  if((e.key==='Enter'||e.key===' ')&&e.target.closest&&e.target.closest('.vl')){e.preventDefault();e.target.closest('.vl').dispatchEvent(new MouseEvent('click',{bubbles:true}));return}
+  if(e.key!=='Escape'||!homeVisible)return;
+  if(e.target.closest&&e.target.closest('input,textarea,select'))return;
+  if(sel.l){sel.l=null;clearX();render(null);renderExplore()}
+  else if(sel.v!==null){closeAll()}
+});
+
+/* ---------- Uploads (photos and videos) ---------- */
+async function upload(gp,file){
+  if(!ASSETS){estat.textContent='Uploading needs editor access.';return}
+  var g=get(gp);if(!g)return;
+  var type=file.type||(/\.mov$/i.test(file.name)?'video/quicktime':/\.mp4$/i.test(file.name)?'video/mp4':'');
+  estat.textContent='Uploading '+file.name+'…';
+  try{
+    var r=await ASSETS.upload(file,type?{contentType:type}:undefined);
+    (g.media=g.media||[]).push({k:/^video\//.test(r.contentType||type)?'video':'img',src:'/_blob/'+r.id});
+    changed();renderViews();estat.textContent='Uploaded. Press Save to publish it.';
+  }catch(err){
+    var c=err&&err.code;
+    estat.textContent=c==='too_large'?'That file is over 20 MB. Compress it and try again.':(c==='not_granted'||c==='not_writer')?'Uploading needs editor access.':'Could not upload that file.';
+  }
+}
+
+async function uploadCardPhoto(path,file){
+  if(!ASSETS){estat.textContent='Uploading needs editor access.';return}
+  estat.textContent='Uploading '+file.name+'…';
+  try{var r=await ASSETS.upload(file,file.type?{contentType:file.type}:undefined);var c=get(path);if(c){c.img='/_blob/'+r.id;changed();renderViews();estat.textContent='Card photo updated. Press Save to publish it.'}}
+  catch(err){estat.textContent=(err&&err.code)==='too_large'?'That file is over 20 MB.':'Could not upload that photo.'}
+}
+async function uploadPhoto(file){
+  if(!ASSETS){estat.textContent='Uploading needs editor access.';return}
+  estat.textContent='Uploading '+file.name+'…';
+  try{var r=await ASSETS.upload(file,file.type?{contentType:file.type}:undefined);D.photo='/_blob/'+r.id;changed();renderViews();estat.textContent='Photo updated. Press Save to publish it.'}
+  catch(err){estat.textContent=(err&&err.code)==='too_large'?'That file is over 20 MB.':'Could not upload that photo.'}
+}
+
+/* ---------- Edit and save ---------- */
+var estat=Q('#estat'),esave=Q('#esave');
+function changed(){dirty=true;estat.textContent='Unsaved changes. Press Save to publish them.'}
+function enterEdit(){if(!ART)return;editing=true;dirty=false;document.body.classList.add('is-editing');Q('#ebar').hidden=false;esave.disabled=false;estat.textContent='Editing. Nothing is saved until you press Save.';renderViews()}
+function cancelEdit(){
+  D=JSON.parse(ORIG);index();prune();computeLens();editing=false;dirty=false;
+  document.body.classList.remove('is-editing');Q('#ebar').hidden=true;
+  buildMap();route();
+}
+function buildDoc(){
+  var json=JSON.stringify(D,null,1).replace(/</g,'\\u003c');
+  return '<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>'+RESET+'</style></head><body>'+
+    '<title>'+esc(D.name||'Homepage')+'</title>\n<meta name="claude:viewport-fit-sides" content="cover">\n'+FONTS+'\n<style id="site-css">'+CSS+'</style>\n\n'+WRAP+'\n\n<script type="application/json" id="site-data">'+json+'<\/script>\n\n<script>'+SRC+'<\/script></body></html>';
+}
+async function save(){
+  if(!ART)return;
+  esave.disabled=true;estat.textContent='Saving…';
+  try{
+    await ART.publish(buildDoc());
+    estat.textContent='Saved. The page is reloading with your changes.';
+  }catch(err){
+    var code=err&&err.code;
+    if(code==='conflict')estat.textContent='A newer version was saved somewhere else. The page is reloading to it, so this edit was not kept.';
+    else if(code==='not_writer'||code==='not_granted'||code==='consent_required'||code==='capability_disabled'||code==='not_declared'||code==='capability_removed'){estat.textContent='This view is read-only. Open the page as its owner or an editor to save.';return}
+    else if(code==='rate_limited'){estat.textContent='Saving too often. Wait a minute, then press Save again.';esave.disabled=false}
+    else if(code==='too_large'){estat.textContent='The page is too large to save. Remove some content and try again.';esave.disabled=false}
+    else{estat.textContent='Could not save. Press Save to try again.';esave.disabled=false}
+  }
+}
+Q('#editbtn').addEventListener('click',enterEdit);
+Q('#ecancel').addEventListener('click',cancelEdit);
+esave.addEventListener('click',save);
+window.addEventListener('beforeunload',function(e){if(editing&&dirty){e.preventDefault();e.returnValue=''}});
+
+function initEdit(tries){
+  if(!(window.claude&&typeof window.claude.use==='function')){if(tries<20)setTimeout(function(){initEdit(tries+1)},500);return}
+  window.claude.use('artifact').then(function(art){
+    if(!art)return null;
+    return window.claude.use('user').then(function(u){return u&&u.canEdit?u.canEdit():null}).catch(function(){return null}).then(function(can){
+      if(can===false)return;ART=art;renderHeader();
+      window.claude.use('assets').then(function(a){ASSETS=a||null;if(editing)renderViews()}).catch(function(){});
+    });
+  }).catch(function(){});
+}
+
+/* ---------- Start ---------- */
+buildMap();route();
+if(RM){draw(0)}else{draw(performance.now());last=performance.now();requestAnimationFrame(tick)}
+if(window.ResizeObserver){var rw=0;new ResizeObserver(function(){var w=stage.clientWidth;if(w&&w!==rw){var firstShow=!rw;rw=w;if(firstShow)first=true;plan()}}).observe(stage)}
+else window.addEventListener('resize',plan);
+initEdit(0);
+
+var copy=Q('#copy');
+copy.addEventListener('click',function(){
+  var txt=Q('#mail').textContent,done=function(){copy.textContent='Copied';setTimeout(function(){copy.textContent='Copy'},1500)};
+  function pick(){var r=document.createRange();r.selectNodeContents(Q('#mail'));var s=getSelection();s.removeAllRanges();s.addRange(r)}
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(done).catch(pick);else pick();
+});
+})();
+</script>
 </body>
 </html>
