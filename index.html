@@ -7,7 +7,7 @@
 <meta name="description" content="Hana Kwon, pre-doctoral researcher in Strategy and Entrepreneurial Management at Harvard Business School, studying how firms turn frontier science and technology into advantage.">
 <meta property="og:title" content="Hana Kwon">
 <meta property="og:description" content="Pre-doctoral researcher at Harvard Business School studying frontier technology, innovation, and firm strategy.">
-<meta property="og:image" content="assets/hana_portrait5.jpg">
+<meta property="og:image" content="assets/hana_portrait6.jpg">
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body>
@@ -172,6 +172,7 @@ span.xi{color:var(--soft)}
 .go.open{background:var(--ink);color:var(--paper)}
 
 .grp{display:grid;grid-template-columns:128px minmax(0,1fr);gap:10px 24px;padding-block:30px 0}
+.grp+.grp{border-top:1px solid var(--rule);margin-top:26px;padding-top:28px}
 .grp h2{font-family:var(--serif);font-weight:400;font-size:1.15rem;line-height:1.3;margin:0;color:var(--soft)}
 .items{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:4px;max-width:46em}
 .li{display:grid;grid-template-columns:15px minmax(0,1fr);gap:10px;width:100%;padding:6px 8px;margin-inline:-8px;border-radius:5px;transition:background .15s}
@@ -367,7 +368,24 @@ label.eadd{display:block;cursor:pointer}
 
 /* Misc */
 .mhead h2{font-family:var(--serif);font-weight:400;font-size:1.9rem;margin:16px 0 4px}
-.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:18px;margin-top:20px}
+.fun{display:grid;gap:64px;margin-top:34px}
+.frow{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:40px;align-items:center}
+.frow:nth-child(even) .fimg{order:2}
+.fimg{position:relative;margin:0;border-radius:18px;overflow:hidden;aspect-ratio:16/10;background:var(--rule);box-shadow:0 14px 36px color-mix(in srgb,var(--ink) 14%,transparent)}
+.fimg img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.frow:hover .fimg img{transform:scale(1.045)}
+.fno{position:absolute;left:14px;top:14px;min-width:38px;height:38px;padding:0 8px;display:grid;place-items:center;border-radius:99px;background:var(--vc);color:var(--vk);font-weight:700;font-size:14px;letter-spacing:.04em;box-shadow:0 4px 12px rgba(0,0,0,.18)}
+.ftext{min-width:0}
+.fkick{margin:0;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--fc)}
+.fh{font-family:var(--serif);font-weight:400;font-size:clamp(1.45rem,2.5vw,2.05rem);line-height:1.2;margin:8px 0 12px;color:var(--ink);text-wrap:balance}
+.fq{margin:0 0 18px;font-size:15.5px;line-height:1.6;max-width:36em}
+.fstat{display:flex;align-items:center;gap:14px;width:fit-content;max-width:100%;padding:12px 18px;border-radius:14px;background:color-mix(in srgb,var(--vc) 24%,var(--paper))}
+.fstat b{flex:none;font-family:var(--serif);font-size:1.9rem;font-weight:600;line-height:1;color:var(--fc);white-space:nowrap}
+.fstat span{font-size:13px;line-height:1.35;color:var(--soft);max-width:19em}
+.fchips{margin-top:14px}
+@media (max-width:760px){.fun{gap:44px}.frow{grid-template-columns:minmax(0,1fr);gap:16px}.frow:nth-child(even) .fimg{order:0}.fstat b{font-size:1.6rem}}
+.mintro{margin:6px 0 0;font-size:16px;max-width:40em;color:var(--soft)}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:18px;margin-top:20px;align-items:start}
 
 /* Edit mode */
 .ebar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 16px;background:var(--ink);color:var(--paper);font-size:14px;padding-top:12px;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px));padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
@@ -434,7 +452,7 @@ details .ef{margin-bottom:8px}
       <p class="role" id="role"></p>
     </div>
     <div class="side">
-      <nav class="nav" aria-label="Pages"><a href="#home" data-nav="home">Home</a><a href="#agenda" data-nav="agenda">Research</a><a href="#misc" data-nav="misc">Misc</a><button class="editbtn" id="editbtn" type="button" hidden="">Edit</button></nav>
+      <nav class="nav" aria-label="Pages"><a href="#home" data-nav="home">Home</a><a href="#agenda" data-nav="agenda">Research</a><a href="#misc" data-nav="misc">Fun Projects</a><button class="editbtn" id="editbtn" type="button" hidden="">Edit</button></nav>
       <div class="contact"><span id="mail"></span><button class="copy" id="copy" type="button">Copy</button></div>
     </div>
   </header>
@@ -462,7 +480,7 @@ details .ef{margin-bottom:8px}
   <section class="view" id="v-agenda" hidden=""></section>
 
   <section class="view" id="v-misc" hidden="">
-    <div class="mhead"><h2>Misc</h2></div>
+    <div class="mhead"><h2>Fun Projects</h2><p class="mintro" id="misc-intro"></p></div>
     <div class="mgrid" id="misc-grid"></div>
   </section>
 
@@ -473,7 +491,7 @@ details .ef{margin-bottom:8px}
  "name": "Hana Kwon",
  "role": "Pre-doctorate, Harvard Business School",
  "email": "hkkwon5@gmail.com",
- "photo": "assets/hana_portrait5.jpg",
+ "photo": "assets/hana_portrait6.jpg",
  "about": {
   "h": "Who leads at the technological frontier?",
   "p": [
@@ -603,7 +621,7 @@ details .ef{margin-bottom:8px}
       {
        "id": "esg",
        "l": "Product recalls and firm risk",
-       "t": "Market Reaction Following Corporate Crisis: The Role of ESG Performance & Crisis Response Speed",
+       "t": "Market Reaction Following Corporate Crisis: The Role of ESG & Crisis Response Speed",
        "w": "with Theresa S. Cho",
        "s": "M.S. Thesis · [AOM Proceedings](https://journals.aom.org/doi/10.5465/AMPROC.2024.11914abstract)",
        "q": "How do product recalls turn into firm-specific risk? Evidence from FDA high-severity Class I recalls across industries on market penalties, crisis response speed, and post-crisis risk. Presented at AOM and SMS.",
@@ -638,7 +656,7 @@ details .ef{margin-bottom:8px}
       {
        "id": "recall",
        "l": "Recall disclosure",
-       "t": "Which Recalls Become Company-Level Events? Product Recall Disclosure and External Evaluation",
+       "t": "Product Problem or Company Problem? Recall Disclosure and External Evaluation",
        "w": "with Theresa S. Cho",
        "s": "Working paper",
        "q": "How product recall disclosure shapes external evaluation, in medical devices and robotics.",
@@ -1009,7 +1027,7 @@ details .ef{margin-bottom:8px}
       {
        "id": "cc",
        "l": "Commitment Compass",
-       "t": "Commitment Compass",
+       "t": "Commitment Compass: Real Options and the Decision to Let Go",
        "w": "with Ebehi Iyoha, Reza Satchu",
        "q": "When do founders and investors stop paying to keep weaker options open? Real options logic meets the behavioral economics of commitment.",
        "tg": "ief",
@@ -1020,7 +1038,7 @@ details .ef{margin-bottom:8px}
       {
        "id": "config",
        "l": "Configuring AI",
-       "t": "Configuring Artificial Intelligence in Multinational Enterprises: Managerial Capabilities and the Gains from Adoption",
+       "t": "Configuring AI in Multinational Enterprises: Managerial Capabilities and the Gains from Adoption",
        "w": "with Ebehi Iyoha",
        "s": "Under review at Global Strategy Journal",
        "q": "Do AI gains depend on where AI workers sit relative to managers?",
@@ -1076,7 +1094,7 @@ details .ef{margin-bottom:8px}
       {
        "id": "ideology",
        "l": "SMB Tariff",
-       "t": "Trading on Ideology: Small-Business Sourcing in the 2025 Trade War",
+       "t": "Trading on Ideology in the 2025 Trade War",
        "w": "with David Atkin, Zoe Cullen, Ebehi Iyoha",
        "q": "How owners' politics shape sourcing under tariffs.",
        "tg": "sipg",
@@ -1206,6 +1224,17 @@ details .ef{margin-bottom:8px}
  ],
  "exp": [
   {
+   "t": "Harvard Business School",
+   "s": "Pre-doctoral Researcher, Strategy and Entrepreneurial Management",
+   "go": "research",
+   "y": "Present"
+  },
+  {
+   "t": "Columbia Business School and ISERP",
+   "s": "Research Assistant to Professor Lori Yue",
+   "go": "quant"
+  },
+  {
    "t": "Korea Institute for Industrial Economics and Trade (KIET)",
    "s": "Researcher, Korea's national economic policy research institute",
    "go": "policy"
@@ -1227,12 +1256,6 @@ details .ef{margin-bottom:8px}
   }
  ],
  "edu": [
-  {
-   "t": "Harvard Business School",
-   "s": "Pre-doctorate in Strategy and Entrepreneurial Management",
-   "go": "research",
-   "y": "Present"
-  },
   {
    "t": "Columbia University",
    "s": "M.A. Quantitative Methods in the Social Sciences - Data Science ",
@@ -1328,27 +1351,67 @@ details .ef{margin-bottom:8px}
  },
  "misc": [
   {
-   "c": 2,
-   "t": "Things I build",
-   "q": "Yappi, an interactive AI tutor for children's spoken English, designed for remote and hybrid learning.",
-   "url": "https://aiedustudio.com/",
-   "ul": "Yappi"
+   "c": 5,
+   "t": "K-Beauty and Olive Young",
+   "img": "assets/int_beauty.jpg",
+   "q": "Ideas from dermatology clinics or from cosmetic science: which one decides the K-beauty brands that move first, with Olive Young as the bridge to the mass market. Plus: what brands do when the EU bans an ingredient in one market only.",
+   "chips": [
+    "Market entry",
+    "Trends",
+    "Regulation"
+   ],
+   "kicker": "K-Beauty · Olive Young",
+   "h": "Where do beauty trends come from, and who launches first?",
+   "sn": "122,920",
+   "sc": "functional-cosmetic filings in Korea, 2018–2026"
   },
   {
-   "c": 4,
-   "t": "Languages",
+   "c": 2,
+   "t": "European Football",
+   "img": "assets/int_football.jpg",
+   "q": "Equal revenue sharing, powerful clubs, and outside capital, from LaLiga to the Bundesliga. Plus: how English clubs found foreign talent after Brexit closed one door.",
    "chips": [
-    "Korean",
-    "English",
-    "Japanese"
-   ]
+    "Private equity",
+    "Revenue sharing",
+    "Brexit"
+   ],
+   "kicker": "European Football",
+   "h": "Why did Europe's football leagues split on the same private-equity offer?",
+   "sn": "26",
+   "sc": "outside-capital offers to member-owned sports organizations, 2018–2026"
   },
   {
    "c": 3,
-   "t": "Where I started",
-   "q": "English language and literature, with a minor in education."
+   "t": "Game Jams and Consoles",
+   "img": "assets/int_game.jpg",
+   "q": "Following the same developers across itch.io game jams around Unity's per-install fee and the release of Godot 4.0. Plus: can crowds or AI judges spot which 48-hour prototypes become real games, and why are PlayStation and Xbox taking opposite roads?",
+   "chips": [
+    "Platforms",
+    "Switching",
+    "AI judges"
+   ],
+   "kicker": "Game Jams · Consoles",
+   "h": "Do developers leave when a better tool arrives, or when the incumbent raises its price?",
+   "sn": "3.4% → 26.1%",
+   "sc": "returning Unity developers who moved to Godot, before the fee vs. the fee year"
+  },
+  {
+   "c": 0,
+   "t": "Formula 1",
+   "img": "assets/int_f1.jpg",
+   "q": "Rivals photograph each other's cars every race weekend. Across 199 technical innovations since 1977, what sits on the surface gets copied fast; what hides inside, like engines and electronics, travels through suppliers and sister teams.",
+   "chips": [
+    "Imitation",
+    "Visibility",
+    "Suppliers"
+   ],
+   "kicker": "Formula 1",
+   "h": "How long does an F1 innovation stay exclusive?",
+   "sn": "10 vs. 54",
+   "sc": "races until half of visible vs. hidden innovations were copied"
   }
  ],
+ "miscIntro": "Research is my favorite way to explore. Beyond my main research streams, these are the worlds I can't stop asking questions about.",
  "links": [
   {
    "a": 0,
@@ -1897,7 +1960,7 @@ function renderHomeLists(){
     h+='<div class="hagenda">'+agendaViewHTML('h')+'</div>';
   }else if(!editing){
     D.home.forEach(function(g){var items=g.ids.map(liHTML).join('');if(items)h+='<div class="grp"><h2>'+esc(g.h)+'</h2><ul class="items">'+items+'</ul></div>'});
-    if(D.exp.length)h+='<div class="grp"><h2>Experience</h2><ul class="items">'+D.exp.map(rowHTML).join('')+'</ul></div>';
+    if(D.exp.length)h+='<div class="grp"><h2>Professional Experience</h2><ul class="items">'+D.exp.map(rowHTML).join('')+'</ul></div>';
     if(D.edu.length)h+='<div class="grp"><h2>Education</h2><ul class="items">'+D.edu.map(rowHTML).join('')+'</ul></div>';
   }else{
     D.home.forEach(function(g,gi){var gp='home.'+gi;
@@ -1907,7 +1970,7 @@ function renderHomeLists(){
     });
     h+='<p class="ehint">To add research to the home page, open its area page (click a hexagon) and pick a section under "Show on home page".</p>'+eb('addhome',null,'+ Add home section').replace('class="eb"','class="eadd"');
     ['exp','edu'].forEach(function(key){
-      h+='<div class="grp editing"><h2>'+(key==='exp'?'Experience':'Education')+'</h2>'+D[key].map(function(r,i){var p=key+'.'+i;return '<div class="erowcard"><div class="two">'+inp(p+'.t','School or organization (top line)')+inp(p+'.s','Degree or role (smaller line below)')+'</div>'+inp(p+'.y','Year (optional)',{ph:'2024 or Present'})+areaSelect(p+'.go','Color and link to an area page',r.go||'',true)+'<div class="erow">'+moveDel(p)+'</div></div>'}).join('')+
+      h+='<div class="grp editing"><h2>'+(key==='exp'?'Professional Experience':'Education')+'</h2>'+D[key].map(function(r,i){var p=key+'.'+i;return '<div class="erowcard"><div class="two">'+inp(p+'.t','School or organization (top line)')+inp(p+'.s','Degree or role (smaller line below)')+'</div>'+inp(p+'.y','Year (optional)',{ph:'2024 or Present'})+areaSelect(p+'.go','Color and link to an area page',r.go||'',true)+'<div class="erow">'+moveDel(p)+'</div></div>'}).join('')+
         eb('addrow',key,'+ Add '+(key==='exp'?'experience':'education')).replace('class="eb"','class="eadd"')+'</div>';
     });
   }
@@ -1942,12 +2005,19 @@ function renderArea(i){
 function renderMisc(){
   var h;
   if(!editing){
-    h=D.misc.map(function(m,k){var ci=(m.c==null)?null:m.c;return '<article class="card" style="'+cv(ci)+'"><div class="art">'+art('misc'+k+(m.t||''),ci==null?4:ci)+'</div><div class="cb"><h4>'+esc(m.t)+'</h4>'+(m.q?'<p class="q">'+esc(m.q)+'</p>':'')+(m.chips&&m.chips.length?'<div class="chips" style="margin-top:6px">'+m.chips.map(function(ch){return '<span class="tag">'+esc(ch)+'</span>'}).join('')+'</div>':'')+(m.url?'<a class="lk" href="'+esc(m.url)+'" target="_blank" rel="noopener">'+esc(m.ul||hostOf(m.url))+' ↗</a>':'')+'</div></article>'}).join('');
+    var feats=D.misc.filter(function(m){return m.img}),rest=D.misc.filter(function(m){return !m.img});
+    h=feats.map(function(m,k){var ci=m.c==null?4:m.c;return '<article class="frow" style="'+cv(ci)+';--fc:var(--t'+ci+')"><div class="fimg"><img src="'+esc(m.img)+'" alt="" loading="lazy"><span class="fno">'+(k<9?'0':'')+(k+1)+'</span></div><div class="ftext">'+
+      '<p class="fkick">'+esc(m.kicker||m.t||'')+'</p>'+(m.h?'<h3 class="fh">'+esc(m.h)+'</h3>':'')+(m.q?'<p class="fq">'+esc(m.q)+'</p>':'')+
+      (m.sn?'<div class="fstat"><b>'+esc(m.sn)+'</b><span>'+esc(m.sc||'')+'</span></div>':'')+
+      (m.chips&&m.chips.length?'<div class="chips fchips">'+m.chips.map(function(ch){return '<span class="tag">'+esc(ch)+'</span>'}).join('')+'</div>':'')+
+      (m.url?'<a class="lk" href="'+esc(m.url)+'" target="_blank" rel="noopener">'+esc(m.ul||hostOf(m.url))+' ↗</a>':'')+'</div></article>'}).join('')+
+      (rest.length?'<div class="mgrid">'+rest.map(function(m){var ci=(m.c==null)?null:m.c;return '<article class="card" style="'+cv(ci)+'"><div class="cb"><h4>'+esc(m.t)+'</h4>'+(m.q?'<p class="q">'+esc(m.q)+'</p>':'')+(m.chips&&m.chips.length?'<div class="chips" style="margin-top:6px">'+m.chips.map(function(ch){return '<span class="tag">'+esc(ch)+'</span>'}).join('')+'</div>':'')+'</div></article>'}).join('')+'</div>':'');
   }else{
-    h=D.misc.map(function(m,k){var p='misc.'+k;return '<article class="card editing" style="'+cv(m.c==null?null:m.c)+'"><div class="cb">'+inp(p+'.t','Title')+inp(p+'.q','Text',{area:1,rows:3})+lines(p+'.chips','Tags, one per line (optional)')+'<div class="two">'+inp(p+'.url','Link (optional)',{ph:'https://'})+inp(p+'.ul','Link text')+'</div>'+areaSelect(p+'.c','Color',m.c==null?'':m.c,false)+'<div class="erow">'+moveDel(p)+'</div></div></article>'}).join('')+
+    h=D.misc.map(function(m,k){var p='misc.'+k;return '<article class="card editing" style="'+cv(m.c==null?null:m.c)+'"><div class="cb">'+inp(p+'.t','Title')+inp(p+'.kicker','Small label above the question')+inp(p+'.h','Big question')+inp(p+'.q','Text',{area:1,rows:3})+'<div class="two">'+inp(p+'.sn','Big number')+inp(p+'.sc','What the number means')+'</div>'+lines(p+'.chips','Tags, one per line (optional)')+'<div class="two">'+inp(p+'.url','Link (optional)',{ph:'https://'})+inp(p+'.ul','Link text')+'</div>'+areaSelect(p+'.c','Color',m.c==null?'':m.c,false)+'<div class="erow">'+moveDel(p)+'</div></div></article>'}).join('')+
       '<div>'+eb('addmisc',null,'+ Add card').replace('class="eb"','class="eadd"')+'</div>';
   }
-  Q('#misc-grid').innerHTML=h;
+  Q('#misc-grid').innerHTML=h;Q('#misc-grid').className=editing?'mgrid':'fun';
+  var mi=Q('#misc-intro');if(mi){if(editing){mi.innerHTML=inp('miscIntro','Intro line under "Other Interests"')}else{mi.textContent=D.miscIntro||''}}
 }
 function renderViews(){
   renderHeader();renderIntro();renderChips();renderEdHome();renderHomeLists();renderMisc();
