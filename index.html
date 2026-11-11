@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Hana Kwon</title>
-<meta name="description" content="Hana Kwon, pre-doctoral researcher in Strategy and Entrepreneurial Management at Harvard Business School, studying how firms turn frontier science and technology into advantage.">
+<meta name="description" content="Hana Kwon, predoctoral research associate at Harvard Business School, studying innovation at the intersection of technology and geopolitics.">
 <meta property="og:title" content="Hana Kwon">
-<meta property="og:description" content="Pre-doctoral researcher at Harvard Business School studying frontier technology, innovation, and firm strategy.">
+<meta property="og:description" content="Predoctoral research associate at Harvard Business School studying innovation at the intersection of technology and geopolitics.">
 <meta property="og:image" content="assets/hana_portrait6.jpg">
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
@@ -21,19 +21,19 @@
 <style id="site-css">
 /* Layout concept: the hexagon is a color wheel and the front door. Each color opens its own page of cards. */
 :root{
-  --paper:#FCFCFA; --ink:#1D2430; --soft:#5D6A73; --faint:#8E9BA2; --rule:#E4E8EA; --edge:#C3CDD2; --white:#FFFFFF; --danger:#B4232A; --blend:multiply;
-  --c0:#FFC46B; --c1:#4A63C2; --c2:#6FD3A6; --c3:#B89BF2; --c4:#7EC4F0; --c5:#F47C7C;
-  --k0:#1D2430; --k1:#FFFFFF; --k2:#1D2430; --k3:#1D2430; --k4:#1D2430; --k5:#1D2430;
-  --wine:#7B2D3E; --mt:#5A3EC0; --mtb:#EFEAFC; --mtl:#7B62CF;
+  --paper:#FDFBF6; --ink:#1F2228; --soft:#615D58; --faint:#99938B; --rule:#ECE7DE; --edge:#D5CEC3; --white:#FFFFFF; --danger:#B4232A; --blend:multiply;
+  --c0:#FFC46B; --c1:#8195E3; --c2:#6FD3A6; --c3:#B89BF2; --c4:#7EC4F0; --c5:#F47C7C;
+  --k0:#1D2430; --k1:#1D2430; --k2:#1D2430; --k3:#1D2430; --k4:#1D2430; --k5:#1D2430;
+  --wine:#7B2D3E; --pillbg:#FFFFFF; --pillfg:#7B2D3E; --mt:#5A3EC0; --mtb:#EFEAFC; --mtl:#7B62CF;
   --t0:#F0A83A; --t1:#4A63C2; --t2:#3FBF87; --t3:#9B7BE6; --t4:#4FA9E3; --t5:#EC5F5F;
   --serif:"Spectral",Georgia,"Times New Roman",serif;
   --sans:"IBM Plex Sans",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --paper:#12181D; --ink:#E9EEF0; --soft:#A7B4BC; --faint:#76868F; --rule:#28333A; --edge:#4D5E67; --t1:#8297EA; --wine:#D99AA6; --mt:#C9B9FF; --mtb:#2B2546; --mtl:#B7A6F2; --danger:#FF8A8A; --blend:screen; color-scheme:dark;
+  --paper:#12181D; --ink:#E9EEF0; --soft:#A7B4BC; --faint:#76868F; --rule:#28333A; --edge:#4D5E67; --t1:#8297EA; --wine:#D99AA6; --pillbg:#232C33; --pillfg:#F3D6DC; --mt:#C9B9FF; --mtb:#2B2546; --mtl:#B7A6F2; --danger:#FF8A8A; --blend:screen; color-scheme:dark;
 }}
 :root[data-theme="dark"]{
-  --paper:#12181D; --ink:#E9EEF0; --soft:#A7B4BC; --faint:#76868F; --rule:#28333A; --edge:#4D5E67; --t1:#8297EA; --wine:#D99AA6; --mt:#C9B9FF; --mtb:#2B2546; --mtl:#B7A6F2; --danger:#FF8A8A; --blend:screen; color-scheme:dark;
+  --paper:#12181D; --ink:#E9EEF0; --soft:#A7B4BC; --faint:#76868F; --rule:#28333A; --edge:#4D5E67; --t1:#8297EA; --wine:#D99AA6; --pillbg:#232C33; --pillfg:#F3D6DC; --mt:#C9B9FF; --mtb:#2B2546; --mtl:#B7A6F2; --danger:#FF8A8A; --blend:screen; color-scheme:dark;
 }
 *{box-sizing:border-box}
 body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.45;-webkit-font-smoothing:antialiased}
@@ -42,11 +42,12 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .wrap{max-width:1080px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));padding-block:0 72px}
 :focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 
-.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:10px 32px;padding-block:34px 18px}
-h1{font-family:var(--serif);font-weight:300;font-size:2.7rem;line-height:1.05;margin:0;letter-spacing:-.01em}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:10px 32px;padding-block:112px 26px}
+@media (max-width:760px){.top{padding-block:64px 18px}}
+h1{font-family:var(--serif);font-weight:600;font-size:2.6rem;line-height:1.05;margin:0;letter-spacing:-.015em}
 h1 a{text-decoration:none}
 .role{margin:6px 0 0;color:var(--soft)}
-.intro{display:grid;grid-template-columns:290px minmax(0,1fr);gap:44px;align-items:start;margin:12px 0 34px}
+.intro{display:grid;grid-template-columns:290px minmax(0,1fr);gap:44px;align-items:start;margin:22px 0 34px}
 .intro.nophoto{grid-template-columns:minmax(0,1fr)}
 .pfig{margin:0}
 .pfig img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:10px;background:var(--rule)}
@@ -106,6 +107,9 @@ h1 a{text-decoration:none}
 .tile .full,.tile .ab{position:relative;display:block;padding-inline:11px;line-height:1.2}
 .tile .ab{display:none;font-size:11.5px;font-weight:600;padding-inline:2px}
 .tile b{display:block;font-weight:600;font-size:15px;white-space:pre-line}
+.tile .tic{position:static;inset:auto;overflow:visible;display:block;width:25px;height:25px;margin:0 auto 4px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;opacity:.85}
+#stage.m .tile .tic{width:18px;height:18px;margin-bottom:2px}
+.bighex .tic{position:static;inset:auto;display:block;width:28px;height:28px;margin:0 auto 4px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .tile i{display:block;font-style:normal;font-size:12px;opacity:.8;margin-top:4px;white-space:pre-line}
 #stage.m .tile b{font-size:12.5px}
 #stage.m .tile i{font-size:10px;margin-top:2px}
@@ -120,9 +124,12 @@ h1 a{text-decoration:none}
 .tile.dim polygon{fill:color-mix(in srgb,var(--vc) 22%,var(--paper))}
 .tile.center{width:var(--cw);height:var(--ch);z-index:1;color:var(--paper)}
 .tile.center polygon{fill:var(--ink)}
-.tile.center .full{font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.25;padding-inline:30px}
-.tile.center .full b{display:inline;font-size:inherit;font-weight:600;white-space:normal}
-#stage.m .tile.center .full{font-size:11.5px;padding-inline:20px}
+.tile.center svg{filter:drop-shadow(0 6px 16px rgba(20,24,30,.18))}
+.tile.center .full{font-family:var(--serif);font-style:normal;font-size:25px;line-height:1.2;padding-inline:24px;letter-spacing:.005em}
+.tile.center .full b{display:inline;font-size:inherit;font-weight:400;white-space:normal}
+.tile.center .cbar{display:block;width:46px;height:3px;margin:10px auto 0;padding:0;border-radius:2px;opacity:1;background:linear-gradient(90deg,var(--c0),var(--c5),var(--c3),var(--c1),var(--c4),var(--c2))}
+#stage.m .tile.center .full{font-size:16px;padding-inline:14px}
+#stage.m .tile.center .cbar{width:30px;height:2.5px;margin-top:6px}
 .tile.center.compact{width:calc(var(--cw)*.48);height:calc(var(--ch)*.48)}
 .dot{width:30px;height:30px;display:grid;place-items:center;transition:opacity .2s;z-index:1}
 .dot::after{content:"";width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,var(--da),var(--db));box-shadow:0 0 0 2.5px var(--paper),0 0 0 3.5px color-mix(in srgb,var(--ink) 18%,transparent);transition:transform .2s}
@@ -184,7 +191,21 @@ span.xi{color:var(--soft)}
 .grp{display:grid;grid-template-columns:128px minmax(0,1fr);gap:10px 24px;padding-block:30px 0}
 .grp+.grp{border-top:1px solid var(--rule);margin-top:26px;padding-top:28px}
 .grp h2{font-family:var(--serif);font-weight:400;font-size:1.15rem;line-height:1.3;margin:0;color:var(--soft)}
-.items{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:4px;max-width:46em}
+.items{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:4px}
+.items.tl{position:relative;gap:6px}
+.items.tl::before{content:"";position:absolute;left:6.5px;top:16px;bottom:16px;width:2px;border-radius:2px;background:linear-gradient(var(--edge),var(--rule))}
+.items.tl .li{position:relative}
+.items.tl .hx{position:relative;z-index:1}
+.items.tl .li::before{content:"";position:absolute;left:8px;top:calc(6px + .22em - 1px);width:15px;height:15px;border-radius:50%;background:var(--vc);opacity:0;animation:tlpulse 3.2s ease-out infinite}
+.items.tl li:nth-child(2) .li::before{animation-delay:.4s}
+.items.tl li:nth-child(3) .li::before{animation-delay:.8s}
+.items.tl li:nth-child(4) .li::before{animation-delay:1.2s}
+.items.tl li:nth-child(5) .li::before{animation-delay:1.6s}
+.items.tl li:nth-child(6) .li::before{animation-delay:2s}
+.items.tl li:nth-child(7) .li::before{animation-delay:2.4s}
+.items.tl li:nth-child(8) .li::before{animation-delay:2.8s}
+@keyframes tlpulse{0%{transform:scale(.7);opacity:.6}70%{transform:scale(2.3);opacity:0}100%{transform:scale(2.3);opacity:0}}
+@media (prefers-reduced-motion:reduce){.items.tl .li::before{animation:none}}
 .li{display:grid;grid-template-columns:15px minmax(0,1fr);gap:10px;width:100%;padding:6px 8px;margin-inline:-8px;border-radius:5px;transition:background .15s}
 button.li:hover{background:color-mix(in srgb,var(--vc) 22%,var(--paper))}
 .hx{width:15px;height:13px;margin-top:.22em;background:var(--vc);clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);display:block}
@@ -206,7 +227,9 @@ button.li:hover{background:color-mix(in srgb,var(--vc) 22%,var(--paper))}
 .abt:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 .lirow>.abt{margin-top:9px}
 .absp{margin:4px 0 8px 25px;max-width:44em;font-size:14px;line-height:1.55;color:var(--ink)}
-.li .y{font-size:13.5px;color:var(--soft);font-variant-numeric:tabular-nums;white-space:nowrap;padding-top:.1em}
+.li .y{font-size:13.5px;color:var(--soft);font-variant-numeric:tabular-nums;white-space:nowrap;padding-top:.1em;display:grid;justify-items:end;gap:1px;text-align:right}
+.li .yl{color:var(--soft);font-size:13.5px}
+.curp{display:inline-block;margin-left:8px;padding:1px 9px;border-radius:99px;font-size:11.5px;font-weight:600;letter-spacing:.02em;line-height:1.5;vertical-align:1px;color:var(--ink);background:color-mix(in srgb,var(--vc) 32%,var(--paper))}
 #home-lists{padding-top:26px}
 .htabs{display:flex;flex-wrap:wrap;gap:6px 4px;padding-block:26px 0;border-bottom:1px solid var(--rule)}
 .htab{display:inline-flex;align-items:center;gap:6px;padding:7px 12px 9px;margin-bottom:-1px;border:0;border-bottom:2px solid transparent;background:none;font:inherit;font-size:14px;color:var(--soft);cursor:pointer}
@@ -216,7 +239,7 @@ button.li:hover{background:color-mix(in srgb,var(--vc) 22%,var(--paper))}
 .htab:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 .hdetail{display:grid;gap:4px;padding-top:8px}
 .hagenda{padding-top:6px}
-.decks{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:18px;margin-top:18px}
+.decks{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:22px;margin-top:48px}
 .deck{border:1px solid var(--rule);border-radius:12px;overflow:hidden;min-width:0}
 .dtop{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 12px;padding:10px 14px;border-bottom:1px solid var(--rule)}
 .dtop h4{margin:0;font-size:15px;font-weight:600}
@@ -225,7 +248,14 @@ button.li:hover{background:color-mix(in srgb,var(--vc) 22%,var(--paper))}
 .dscroll img{display:block;width:100%;height:auto;aspect-ratio:auto 16/9;border-radius:4px;background:#fff;box-shadow:0 1px 4px color-mix(in srgb,var(--ink) 18%,transparent)}
 .dscroll:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
 .hdetail .agrp h3{margin-top:22px}
-.hintro{margin:4px 0 0;font-size:16px;max-width:40em}
+.hhead{display:grid;gap:7px;margin:28px 0 14px;padding:28px 34px 30px;border-left:4px solid var(--vc);border-radius:0 12px 12px 0;background:color-mix(in srgb,var(--vc) 13%,var(--paper));--fc:var(--ink)}
+.hk{color:color-mix(in srgb,var(--fc) 72%,var(--ink))}
+.hhead h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.4rem,2.5vw,1.8rem);line-height:1.25;margin:4px 0 0;text-wrap:balance}
+.hmeta{margin:0;font-size:14px;color:var(--soft)}
+.hfocus{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+@media (max-width:760px){.hhead{padding:20px 18px 22px}}
+.hfocus span{padding:5px 12px;border-radius:99px;border:1px solid color-mix(in srgb,var(--vc) 75%,var(--paper));background:var(--paper);font-size:13.5px;line-height:1.3}
+.hintro{margin:12px 0 0;font-size:16px;line-height:1.65;max-width:54em;text-wrap:pretty}
 .hintro a{font-weight:500}
 .hback{margin-top:30px}
 .lit{display:grid;min-width:0}
@@ -239,6 +269,10 @@ button.li:hover{background:color-mix(in srgb,var(--vc) 22%,var(--paper))}
 .abs summary:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 .abs p{margin:4px 0 8px;font-size:14px;line-height:1.55;color:var(--ink)}
 .card .abs{margin:4px 0 0}
+.cdesc{margin:6px 0 2px}
+.cdesc summary{width:24px;height:24px}
+.cdesc p{font-size:14.5px;line-height:1.6}
+.tcard .cdesc{margin-top:8px}
 
 /* Area pages */
 .ahead{display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px 32px;align-items:center;padding-block:16px 8px}
@@ -248,7 +282,10 @@ button.li:hover{background:color-mix(in srgb,var(--vc) 22%,var(--paper))}
 .bighex span{position:relative;padding-inline:16px}
 .ahead h2{font-family:var(--serif);font-weight:400;font-size:1.9rem;line-height:1.15;margin:0;text-wrap:balance}
 .ahead .meta{margin:6px 0 0;color:var(--soft)}
-.ahead .intro{margin:10px 0 0;font-size:16px;max-width:40em}
+.ahead .hk{margin:0 0 6px}
+.ahead .acall{margin:0;min-width:0}
+.ahead .intro{display:block;margin:10px 0 0;font-size:16px;line-height:1.6;max-width:54em;text-wrap:pretty}
+.nw{white-space:nowrap}
 .ahead .intro a{font-weight:500}
 .abrand{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin:14px 0 2px}
 .alogo{display:block;height:46px;width:auto;max-width:100%;background:#fff;border:1px solid var(--rule);border-radius:10px;padding:6px 12px}
@@ -262,19 +299,33 @@ button.li:hover{background:color-mix(in srgb,var(--vc) 22%,var(--paper))}
 .sw{display:flex;align-items:center;gap:7px;padding:5px 12px 5px 9px;border-radius:99px;font-size:13.5px;text-decoration:none;background:color-mix(in srgb,var(--vc) 22%,var(--paper))}
 .sw .hx{margin:0}
 .sw[aria-current="page"]{background:var(--vc);color:var(--vk);font-weight:500}
-.agrp h3{font-family:var(--serif);font-weight:400;font-size:1.25rem;margin:34px 0 14px;color:var(--soft)}
+.agrp h3{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:400;font-size:1.35rem;margin:36px 0 14px;color:color-mix(in srgb,var(--fc,var(--soft)) 78%,var(--ink))}
+.agrp h3::before{content:"";flex:none;width:20px;height:3px;border-radius:2px;background:var(--fc,var(--edge))}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:18px}
 .card{border-radius:8px;overflow:hidden;background:color-mix(in srgb,var(--vc) 10%,var(--paper));display:flex;flex-direction:column;scroll-margin-top:20px;transition:box-shadow .3s}
 .card .art{aspect-ratio:16/7;max-width:100%;display:block;background:color-mix(in srgb,var(--vc) 26%,var(--paper))}
 .card .art svg{display:block;width:100%;height:100%}
 .card .art img{display:block;width:100%;height:100%;object-fit:cover}
+.card .art.asplit{display:flex;align-items:center;justify-content:center;padding:0 16px;background:color-mix(in srgb,var(--vc) 22%,var(--paper));background-image:linear-gradient(color-mix(in srgb,var(--vc) 24%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--vc) 24%,transparent) 1px,transparent 1px);background-size:22px 22px;background-position:-1px -1px}
+.spl{display:grid;grid-template-columns:auto 18px minmax(0,1fr);align-items:center;width:100%;max-width:380px;font-family:var(--sans)}
+.spr{display:grid;gap:2px;padding:9px 12px;border-radius:8px;background:var(--ink);color:var(--paper);white-space:nowrap}
+.spr b{font-size:13px;font-weight:700}
+.spr i,.spk i{font-style:normal;font-size:10.5px;line-height:1.2;opacity:.78;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.spc{height:1.5px;background:color-mix(in srgb,var(--ink) 55%,transparent)}
+.spk{position:relative;display:grid;gap:5px;margin:0 0 0 12px;padding:0;list-style:none}
+.spk::before{content:"";position:absolute;left:-12px;top:15px;bottom:15px;border-left:1.5px solid color-mix(in srgb,var(--ink) 55%,transparent)}
+.spk li{position:relative;display:grid;gap:1px;min-height:30px;align-content:center;padding:3px 10px;border-radius:7px;background:var(--paper);border:1px solid color-mix(in srgb,var(--vc) 70%,var(--paper));color:var(--ink);min-width:0}
+.spk li::before{content:"";position:absolute;left:-13px;top:50%;width:12px;border-top:1.5px solid color-mix(in srgb,var(--ink) 55%,transparent)}
+.spk li b{font-size:12px;font-weight:650;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.spk li.hi{border:1.5px solid var(--ink);box-shadow:0 2px 8px color-mix(in srgb,var(--ink) 14%,transparent)}
 .card .cb{padding:14px 16px 16px;display:grid;gap:4px;min-width:0}
 .card h4{margin:0;font-size:16px;font-weight:600;line-height:1.3;text-wrap:balance}
 .card .w,.card .s{margin:0;font-size:13.5px;color:var(--soft)}
 .mins{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 0}
 .li .mins{margin-top:5px}
 .mtag{display:inline-block;font-size:12.5px;font-weight:600;line-height:1.3;padding:3px 10px;border-radius:99px;color:var(--mt);background:var(--mtb)}
-.card .w.pl{color:var(--mtl)}
+.card .w.pl{display:inline-block;width:fit-content;max-width:100%;margin-top:4px;padding:4px 11px;border-radius:8px;background:var(--mtb);color:var(--mt);font-size:12.5px;font-weight:600;line-height:1.4}
+.card .w.pl em{font-style:normal}
 .card .w .ilk{font-style:normal;font-weight:500;color:var(--soft);text-decoration:none}
 .card .w .ilk:hover{color:var(--ink);text-decoration:underline}
 .card .ft{margin:-2px 0 0;font-size:13.5px;line-height:1.4;font-style:italic;color:var(--soft)}
@@ -347,6 +398,13 @@ label.eadd{display:block;cursor:pointer}
 .atitle{font-family:var(--serif);font-weight:300;font-size:clamp(1.8rem,3.4vw,2.5rem);line-height:1.2;margin:0 0 16px;color:var(--wine);text-wrap:balance}
 .akw{color:inherit;text-decoration:underline;text-decoration-color:var(--vc);text-decoration-thickness:.16em;text-underline-offset:.16em;text-decoration-skip-ink:none}
 .alead{font-size:16.5px;line-height:1.6;color:var(--soft);margin:0;max-width:34em}
+.mmrow{margin-top:30px;padding:4px 34px;border-radius:14px;background:color-mix(in srgb,var(--wine) 6%,var(--paper));border:1px solid color-mix(in srgb,var(--wine) 14%,var(--paper))}
+.mmcard{display:grid;grid-template-columns:118px minmax(0,1fr);gap:8px 30px;align-items:baseline;padding:26px 0;min-width:0}
+.mmcard+.mmcard{border-top:1px solid color-mix(in srgb,var(--wine) 16%,var(--paper))}
+.mml{margin:0;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--wine)}
+.mmt{margin:0;font-family:var(--serif);font-size:1.12rem;line-height:1.65;color:var(--ink);text-wrap:pretty}
+.mmis .mmt{font-size:1.2rem}
+@media (max-width:760px){.mmrow{padding:2px 20px}.mmcard{grid-template-columns:minmax(0,1fr);padding:20px 0}}
 .vwrap{display:grid;place-items:center;padding-block:6px 10px}
 .venn{width:min(100%,520px);height:auto;overflow:visible;display:block}
 .vc{fill-opacity:.6;mix-blend-mode:var(--blend);stroke:var(--paper);stroke-width:2;cursor:pointer;transition:fill-opacity .25s;transform-box:fill-box;transform-origin:center;animation:breathe 7s ease-in-out infinite}
@@ -354,10 +412,11 @@ label.eadd{display:block;cursor:pointer}
 .vc.off{fill-opacity:.22}
 @keyframes breathe{50%{transform:scale(1.025)}}
 .vl{cursor:pointer;outline:none}
-.vl text{font-family:var(--sans);font-size:14px;font-weight:600;fill:var(--ink);text-anchor:middle}
+.vl text{font-family:var(--sans);font-size:13.5px;font-weight:600;fill:var(--ink);text-anchor:middle}
 .vl svg{stroke:var(--ink)}
 .vl:focus-visible text{text-decoration:underline}
-.vcenter{font-family:var(--serif);font-style:italic;font-weight:600;font-size:17px;fill:var(--ink);text-anchor:middle}
+.vcenter{font-family:var(--serif);font-style:italic;font-weight:600;font-size:18px;fill:var(--pillfg);text-anchor:middle;dominant-baseline:central;letter-spacing:.01em;pointer-events:none}
+.vpill{fill:var(--pillbg);stroke:color-mix(in srgb,var(--pillfg) 22%,transparent);stroke-width:1;filter:drop-shadow(0 4px 10px rgba(60,30,40,.16));pointer-events:none}
 .ic{fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .arows{display:grid;gap:64px;margin-top:40px}
 .axis{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:40px;align-items:start;scroll-margin-top:24px;transition:opacity .25s;min-width:0;--fc:var(--ink)}
@@ -388,15 +447,119 @@ label.eadd{display:block;cursor:pointer}
 .frow:hover .fimg img{transform:scale(1.045)}
 .fno{position:absolute;left:14px;top:14px;min-width:38px;height:38px;padding:0 8px;display:grid;place-items:center;border-radius:99px;background:var(--vc);color:var(--vk);font-weight:700;font-size:14px;letter-spacing:.04em;box-shadow:0 4px 12px rgba(0,0,0,.18)}
 .ftext{min-width:0}
-.fkick{margin:0;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--fc)}
+.fkick{margin:0;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:color-mix(in srgb,var(--fc) 74%,var(--ink))}
 .fh{font-family:var(--serif);font-weight:400;font-size:clamp(1.45rem,2.5vw,2.05rem);line-height:1.2;margin:8px 0 12px;color:var(--ink);text-wrap:balance}
 .fq{margin:0 0 18px;font-size:15.5px;line-height:1.6;max-width:36em}
 .fstat{display:flex;align-items:center;gap:14px;width:fit-content;max-width:100%;padding:12px 18px;border-radius:14px;background:color-mix(in srgb,var(--vc) 24%,var(--paper))}
 .fstat b{flex:none;font-family:var(--serif);font-size:1.9rem;font-weight:600;line-height:1;color:var(--fc);white-space:nowrap}
-.fstat span{font-size:13px;line-height:1.35;color:var(--soft);max-width:19em}
+.fstat span{font-size:13px;line-height:1.35;color:var(--soft);max-width:21em}
+.fsl{display:block;font-style:normal;font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:color-mix(in srgb,var(--fc) 74%,var(--ink));margin-bottom:2px}
+.fimg.ffig{aspect-ratio:auto;background:color-mix(in srgb,var(--vc) 16%,var(--paper));box-shadow:none;border:1px solid color-mix(in srgb,var(--vc) 45%,var(--paper))}
+.fgx{padding:62px 26px 22px;display:grid;gap:12px}
+.fgt{margin:0;font-family:var(--serif);font-size:1.3rem;line-height:1.2;color:var(--ink)}
+.fgx ul{list-style:none;margin:0;padding:0;display:grid}
+.fgx li{display:grid;grid-template-columns:minmax(0,8.5em) minmax(0,1fr) auto;gap:6px 14px;align-items:center;padding:10px 0;border-top:1px solid color-mix(in srgb,var(--vc) 40%,var(--paper))}
+.fgx li:last-child{border-bottom:1px solid color-mix(in srgb,var(--vc) 40%,var(--paper))}
+.fgx .fgn b{display:block;font-weight:600;font-size:14.5px}
+.fgx .fgn i{font-style:normal;font-size:12.5px;color:var(--soft)}
+.fgx .fgw{font-size:13.5px;line-height:1.4;min-width:0}
+.fgo{font-style:normal;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:99px;white-space:nowrap}
+.fgo.ok{background:color-mix(in srgb,var(--c4) 30%,var(--paper));color:color-mix(in srgb,var(--t4) 55%,var(--ink))}
+.fgo.no{background:color-mix(in srgb,var(--c5) 26%,var(--paper));color:color-mix(in srgb,var(--t5) 60%,var(--ink))}
+.fgnote{margin:0;font-size:12.5px;color:var(--soft)}
+@media (max-width:520px){.fgx{padding:58px 16px 16px}.fgx li{grid-template-columns:minmax(0,1fr) auto}.fgx .fgw{grid-column:1/-1;grid-row:2}}
 .fchips{margin-top:14px}
 @media (max-width:760px){.fun{gap:44px}.frow{grid-template-columns:minmax(0,1fr);gap:16px}.frow:nth-child(even) .fimg{order:0}.fstat b{font-size:1.6rem}}
-.mintro{margin:6px 0 0;font-size:16px;max-width:40em;color:var(--soft)}
+.mintro{margin:6px 0 0;font-size:16px;line-height:1.6;max-width:40em;color:var(--soft);text-wrap:pretty}
+.fst{display:inline-block;margin-left:10px;padding:2px 9px;border-radius:99px;font-size:10.5px;letter-spacing:.08em;vertical-align:1px;background:color-mix(in srgb,var(--vc) 30%,var(--paper));color:var(--ink)}
+.bsec{scroll-margin-top:24px}
+.fwhy{margin:-4px 0 14px;font-family:var(--serif);font-style:italic;font-size:1.06rem;line-height:1.5;color:color-mix(in srgb,var(--fc) 70%,var(--ink))}
+.bquad{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);gap:10px 12px;max-width:820px;margin-top:40px}
+.qcol{padding-left:4px;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+.qrow{align-self:center;writing-mode:vertical-rl;transform:rotate(180deg);font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+.qcell{position:relative;display:grid;gap:4px;align-content:start;min-height:104px;padding:18px 20px 18px;border-radius:14px;border:1px solid color-mix(in srgb,var(--vc) 60%,var(--paper));background:color-mix(in srgb,var(--vc) 20%,var(--paper));color:var(--ink);font:inherit;text-align:left;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.qcell:hover{transform:translateY(-2px);box-shadow:0 8px 20px color-mix(in srgb,var(--ink) 10%,transparent)}
+.qcell:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.qcell b{font-family:var(--serif);font-weight:400;font-size:1.3rem;line-height:1.2}
+.qcell span{font-size:13.5px;line-height:1.45;color:var(--soft)}
+.qcell i{position:absolute;right:16px;top:16px;font-style:normal;font-size:14px;color:var(--soft)}
+@media (max-width:560px){.bquad{gap:8px}.qcell{min-height:0;padding:14px}.qcell b{font-size:1.08rem}.qcell span{font-size:12.5px}.qcell i{display:none}}
+.bem{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:99px;background:color-mix(in srgb,var(--wine) 9%,var(--paper));font-size:20px;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+.bhead h3:has(.bem)::before{display:none}
+.qem{margin-right:8px;font-style:normal;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;font-size:1.05rem}
+.fem{margin-right:8px;font-size:15px;letter-spacing:0;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+.prog{display:grid;gap:0;margin:20px 0 0;border-top:1px solid var(--rule)}
+.prog div{display:grid;grid-template-columns:118px minmax(0,1fr);gap:4px 16px;padding:11px 0;border-bottom:1px solid var(--rule)}
+.prog dt{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--wine);padding-top:3px}
+.prog dd{margin:0;font-family:var(--serif);font-size:1.05rem;line-height:1.45}
+.prog dd b{font-weight:600}
+.prog dd i{display:block;font-family:var(--sans);font-style:normal;font-size:12.5px;color:var(--soft);margin-top:2px}
+@media (max-width:560px){.prog div{grid-template-columns:minmax(0,1fr)}}
+.bsban{margin:24px 0 0;border-radius:16px;overflow:hidden;aspect-ratio:20/7;background:var(--rule)}
+.bsban img{display:block;width:100%;height:100%;object-fit:cover}
+.bsban+.tgrid{margin-top:18px}
+@media (max-width:560px){.bsban{aspect-ratio:16/8}}
+.bfeat{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:40px;align-items:start;margin-top:26px}
+.bfeat.flip .bfimg{order:2}
+.bfimg{margin:0;border-radius:18px;overflow:hidden;aspect-ratio:16/10;background:var(--rule);box-shadow:0 14px 36px color-mix(in srgb,var(--ink) 14%,transparent)}
+.bfimg img{display:block;width:100%;height:100%;object-fit:cover}
+.bftext{min-width:0}
+.bfkick{margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--wine)}
+.bfstory{margin:0;font-family:var(--serif);font-size:1.22rem;line-height:1.6;color:var(--ink);text-wrap:pretty}
+.bfnote{display:grid;gap:4px;margin-top:20px;padding:16px 20px;border-radius:12px;background:color-mix(in srgb,var(--wine) 6%,var(--paper));border:1px solid color-mix(in srgb,var(--wine) 13%,var(--paper))}
+.bfnote b{font-size:14px;font-weight:650}
+.bfnote span{font-size:14.5px;line-height:1.55;color:var(--soft)}
+.bfstat{display:flex;align-items:baseline;gap:10px;margin-top:20px}
+.bfstat b{font-family:var(--serif);font-size:2.6rem;font-weight:600;line-height:1;color:var(--wine)}
+.bfstat span{font-size:14px;color:var(--soft)}
+.bfchips{margin-top:12px}
+.bfchips .tag{background:color-mix(in srgb,var(--wine) 8%,var(--paper))}
+@media (max-width:760px){.bfeat{grid-template-columns:minmax(0,1fr);gap:18px}.bfeat.flip .bfimg{order:0}.bfstory{font-size:1.1rem}}
+.bsec{margin-top:84px}
+#beyond-pre .bsec{margin-top:46px}
+.bhead h3{display:flex;align-items:center;gap:12px;margin:0;font-family:var(--serif);font-weight:400;font-size:1.65rem;color:var(--wine)}
+.bhead h3::before{content:"";flex:none;width:22px;height:3px;border-radius:2px;background:var(--wine)}
+.bsub{margin:8px 0 0;max-width:46em;font-size:15.5px;line-height:1.6;color:var(--soft);text-wrap:pretty}
+.bsec .fun{margin-top:40px}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:18px;margin-top:26px}
+.tcard{display:flex;flex-direction:column;gap:6px;min-width:0;padding:24px 26px 26px;border-radius:14px;background:color-mix(in srgb,var(--wine) 5%,var(--paper));border:1px solid color-mix(in srgb,var(--wine) 13%,var(--paper))}
+.tico{display:grid;place-items:center;width:40px;height:40px;margin-bottom:8px;border-radius:99px;background:color-mix(in srgb,var(--wine) 12%,var(--paper))}
+.tico svg{width:21px;height:21px;fill:none;stroke:var(--wine);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.tcard h4{margin:0;font-size:17px;font-weight:650;line-height:1.3}
+.tmeta{margin:0;font-size:13px;color:var(--soft)}
+.tq{margin:6px 0 0;font-size:15px;line-height:1.6;text-wrap:pretty}
+.tgo{margin-top:auto;padding-top:10px;font-size:14px;font-weight:600;color:var(--wine);text-decoration:none}
+.tgo:hover{text-decoration:underline}
+.trec{margin-top:18px;border-radius:14px;border:1px solid color-mix(in srgb,var(--wine) 13%,var(--paper));background:var(--paper)}
+.trec summary{display:flex;align-items:center;gap:12px;padding:16px 22px;cursor:pointer;list-style:none;font-weight:600;font-size:15px}
+.trec summary::-webkit-details-marker{display:none}
+.trec summary:focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:14px}
+.tpl{position:relative;flex:none;width:22px;height:22px;border-radius:99px;background:color-mix(in srgb,var(--wine) 12%,var(--paper))}
+.tpl::before,.tpl::after{content:"";position:absolute;left:6px;right:6px;top:10.25px;height:1.5px;background:var(--wine);transition:transform .2s}
+.tpl::after{transform:rotate(90deg)}
+.trec[open] .tpl::after{transform:rotate(0)}
+.tcount{margin-left:auto;font-size:12.5px;font-weight:500;color:var(--soft)}
+.trec ul{margin:0;padding:0 22px 10px;list-style:none}
+.trec li{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr) minmax(0,1.5fr);gap:4px 20px;align-items:baseline;padding:13px 0;border-top:1px solid var(--rule)}
+.rc b{font-weight:600}
+.rc i{margin-left:6px;font-style:normal;font-size:13px;color:var(--soft)}
+.ri{font-size:14px;color:var(--soft)}
+.rt{font-size:13.5px;color:var(--soft);text-align:right}
+@media (max-width:760px){.trec li{grid-template-columns:minmax(0,1fr)}.rt{text-align:left}.bsec{margin-top:64px}.tcard{padding:20px}}
+.gsub{margin:-4px 0 18px;max-width:46em;font-size:15px;line-height:1.6;color:var(--soft)}
+.pgal{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);grid-template-rows:auto auto;grid-auto-flow:column;gap:14px}
+.pgal figure{position:relative;margin:0;overflow:hidden;border-radius:12px;background:var(--rule);min-width:0}
+.pgal img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:2/1}
+.pgal figure:nth-child(-n+2) img{aspect-ratio:4/3}
+.pgal figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 10px;font-size:12.5px;line-height:1.35;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.62))}
+@media (max-width:760px){.pgal{grid-template-columns:minmax(0,1fr);grid-auto-flow:row}.pgal img,.pgal figure:nth-child(-n+2) img{aspect-ratio:3/2}}
+.talks{margin:20px 0 0;padding:0;list-style:none;border-top:1px solid var(--rule)}
+.talks li{display:grid;grid-template-columns:minmax(0,1fr) auto 92px;gap:4px 18px;align-items:baseline;padding:13px 2px;border-bottom:1px solid var(--rule)}
+.tkv b{font-weight:600}
+.tkv i{margin-left:8px;font-style:normal;font-size:13.5px;color:var(--soft)}
+.tkk{padding:2px 10px;border-radius:99px;font-size:12px;background:color-mix(in srgb,var(--vc) 28%,var(--paper))}
+.tky{font-size:13.5px;color:var(--soft);text-align:right;white-space:nowrap}
+@media (max-width:760px){.talks li{grid-template-columns:minmax(0,1fr) auto}.tkk{grid-row:2;width:fit-content}.tky{grid-row:1;grid-column:2}}
 .mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:18px;margin-top:20px;align-items:start}
 
 /* Edit mode */
@@ -464,7 +627,7 @@ details .ef{margin-bottom:8px}
       <p class="role" id="role"></p>
     </div>
     <div class="side">
-      <nav class="nav" aria-label="Pages"><a href="#home" data-nav="home">Home</a><a href="#agenda" data-nav="agenda">Research</a><a href="#misc" data-nav="misc">Fun Projects</a><button class="editbtn" id="editbtn" type="button" hidden="">Edit</button></nav>
+      <nav class="nav" aria-label="Pages"><a href="#home" data-nav="home">Home</a><a href="#agenda" data-nav="agenda">Research</a><a href="#misc" data-nav="misc">Beyond Research</a><button class="editbtn" id="editbtn" type="button" hidden="">Edit</button></nav>
       <div class="contact" hidden=""><span id="mail"></span><button class="copy" id="copy" type="button">Copy</button></div>
     </div>
   </header>
@@ -492,8 +655,11 @@ details .ef{margin-bottom:8px}
   <section class="view" id="v-agenda" hidden=""></section>
 
   <section class="view" id="v-misc" hidden="">
-    <div class="mhead"><h2>Fun Projects!</h2><p class="mintro" id="misc-intro"></p></div>
-    <div class="mgrid" id="misc-grid"></div>
+    <div class="mhead"><h2>Beyond Research</h2><p class="mintro" id="misc-intro"></p></div>
+    <div id="bquad"></div>
+    <div id="beyond-pre"></div>
+    <div class="bsec" id="bq-sq"><div class="bhead" id="sq-head"></div><div class="mgrid" id="misc-grid"></div></div>
+    <div id="beyond-more"></div>
   </section>
 
   <div class="ebar" id="ebar" hidden=""><span id="estat" role="status">Editing. Nothing is saved until you press Save.</span><span class="eacts"><button type="button" id="ecancel">Cancel</button><button type="button" id="esave" class="primary">Save</button></span></div>
@@ -501,7 +667,7 @@ details .ef{margin-bottom:8px}
 
 <script type="application/json" id="site-data">{
  "name": "Hana Kwon",
- "role": "Pre-doctorate, Harvard Business School",
+ "role": "Predoctoral Research Associate, Harvard Business School",
  "email": "hkkwon5@gmail.com",
  "cv": "assets/HanaKwon_CV.pdf",
  "linkedin": "https://www.linkedin.com/in/hanakwon26/",
@@ -509,13 +675,13 @@ details .ef{margin-bottom:8px}
  "about": {
   "h": "",
   "p": [
-   "Hello! I am a pre-doctoral researcher in Strategy and Entrepreneurial Management at Harvard Business School, where I am fortunate to work with Professors Andy Wu, Ebehi Iyoha, and Jaya Wen.",
-   "I study how firms turn frontier science and technology into advantage under socio-economic and political uncertainty: build-or-buy choices, critical input control, and responses to export controls, tariffs, and industrial policy.",
-   "Before HBS, I was a researcher at KIET, Korea's national economic policy research institute, working on industrial policy for semiconductors, batteries, and supply chains, and a research assistant at Columbia Business School and ISERP with Professor Lori Yue.",
-   "I am also a co-founder of an EdTech startup, where I built and launched Yappi, an interactive AI voice app now being piloted in an English kindergarten in Korea. Before that, I was a strategy consultant on digital transformation and go-to-market for manufacturing, software, and fintech firms."
+   "Hello! I am a predoctoral research associate at Harvard Business School, where I am fortunate to work with Professors Andy Wu, Ebehi Iyoha, and Jaya Wen.",
+   "I study innovation at the intersection of technology and geopolitics: how firms turn frontier science into advantage when states compete over who can build, buy, and use it, and what that means for who leads in critical technologies.",
+   "Before HBS, I was a researcher at KIET, Korea's government think tank for industry and trade, working on economic and industrial policy for semiconductors, batteries, and supply chains, and a research assistant at Columbia Business School and ISERP.",
+   "I am also a co-founder of an EdTech startup, where I designed, built, and launched Yappi, an interactive AI voice app now being piloted in an English kindergarten in Korea. Before that, I was a strategy consultant for software, fintech, and manufacturing firms, working on go-to-market strategy, process innovation, and technology adoption."
   ]
  },
- "center": "*Innovation*\nunder technological · political uncertainty",
+ "center": "*Innovation*",
  "themes": [
   {
    "k": "i",
@@ -530,17 +696,17 @@ details .ef{margin-bottom:8px}
    ]
   },
   {
-   "k": "f",
-   "label": "Deep Tech",
+   "k": "p",
+   "label": "Geopolitics",
    "areas": [
     "research",
-    "consulting",
-    "policy"
+    "policy",
+    "quant"
    ]
   },
   {
-   "k": "g",
-   "label": "Global Strategy",
+   "k": "f",
+   "label": "Deep Tech",
    "areas": [
     "research",
     "consulting",
@@ -558,12 +724,12 @@ details .ef{margin-bottom:8px}
    ]
   },
   {
-   "k": "p",
-   "label": "Political Economy",
+   "k": "g",
+   "label": "Global Strategy",
    "areas": [
     "research",
-    "policy",
-    "quant"
+    "consulting",
+    "policy"
    ]
   }
  ],
@@ -575,27 +741,12 @@ details .ef{margin-bottom:8px}
    "sub": "Tech Strategy\nMarket Entry",
    "ab": "Consulting",
    "head": "Strategy Consulting",
-   "meta": "Tech strategy · Market entry · Digital transformation",
-   "intro": "Go-to-market and digital transformation for technology firms, including Hitachi Vantara (cloud and HCI) and Siemens (digital twins).",
+   "meta": "Software · Fintech · Manufacturing",
+   "intro": "",
    "groups": [
     {
-     "h": "Projects",
+     "h": "Selected Projects",
      "cards": [
-      {
-       "id": "notion",
-       "l": "Notion · market entry",
-       "t": "Go-to-Market Strategy: Notion's Market Entry into Korea",
-       "q": "Supported Notion's entry into Korea, its first market beyond English, in 2020.",
-       "url": "https://marketerasia.com/notion-south-korea/",
-       "ul": "Marketer Asia",
-       "tg": "sg",
-       "x": [
-        5
-       ],
-       "ic": "flag",
-       "img": "assets/card_notion_real.jpg",
-       "w": "with Notion"
-      },
       {
        "id": "dx",
        "t": "Digital Transformation: Kia Global",
@@ -614,10 +765,75 @@ details .ef{margin-bottom:8px}
         "CES 2019|https://www.kiamedia.com/us/es/media/pressreleases/14844/ces-2019-kia-prepares-for-post-autonomous-driving-era-with-ai-based-real-time-emotion-recognition-te"
        ],
        "w": "with Kia Global, Google Cloud"
+      },
+      {
+       "id": "notion",
+       "l": "Notion · market entry",
+       "t": "Go-to-Market Strategy: Notion's Market Entry into Korea",
+       "q": "Supported Notion's entry into Korea, its first market beyond English, in 2020.",
+       "url": "https://marketerasia.com/notion-south-korea/",
+       "ul": "Marketer Asia",
+       "tg": "sg",
+       "x": [
+        5
+       ],
+       "ic": "flag",
+       "img": "assets/card_notion_real.jpg",
+       "w": "with Notion"
+      },
+      {
+       "id": "hitachi",
+       "l": "Hitachi Vantara · hybrid cloud",
+       "t": "Hybrid Cloud Adoption: Hitachi Vantara",
+       "w": "with Hitachi Vantara",
+       "q": "Supported enterprise adoption of hybrid cloud and hyperconverged infrastructure (HCI), 2019–2021.",
+       "url": "https://www.nasdaq.com/press-release/hitachi-vantara-unifies-cloud-management-with-updated-hyperconverged-infrastructure",
+       "ul": "Press release",
+       "tg": "fc",
+       "ic": "cloud",
+       "img": "assets/card_bubble.jpg"
+      },
+      {
+       "id": "siemens",
+       "l": "Siemens · strategic risk",
+       "t": "Strategic Risk Analysis: Siemens Energy Spin-off",
+       "w": "with Siemens",
+       "q": "Analyzed strategic and structural risks as Siemens spun off its gas and power business as Siemens Energy, listed in September 2020, and shifted toward industrial software and digital twins.",
+       "url": "https://www.siemens-energy.com/global/en/home/press-releases/siemens-energys-debut-stock-market.html",
+       "ul": "Siemens Energy",
+       "tg": "fg",
+       "ic": "bolt",
+       "img": "assets/card_siemens_energy.jpg",
+       "split": {
+        "root": "Siemens AG",
+        "rs": "Vision 2020",
+        "kids": [
+         {
+          "n": "Siemens Healthineers",
+          "d": "IPO · 2018"
+         },
+         {
+          "n": "Siemens Energy",
+          "d": "Spin-off · Sep 2020",
+          "hi": true
+         },
+         {
+          "n": "Siemens",
+          "d": "Software · digital twins"
+         }
+        ]
+       }
       }
      ]
     }
-   ]
+   ],
+   "focus": [
+    "Technology adoption",
+    "Process innovation",
+    "Digital transformation",
+    "Go-to-market strategy"
+   ],
+   "icon": "brief"
   },
   {
    "key": "strategy",
@@ -625,9 +841,9 @@ details .ef{margin-bottom:8px}
    "title": "SNU",
    "sub": "Strategy\nEntrepreneurship\nInt'l Business",
    "ab": "SNU",
-   "head": "M.S. Strategy and International Business",
-   "meta": "Seoul National University",
-   "intro": "Graduate training in strategy and international business.",
+   "head": "Seoul National University",
+   "meta": "M.S. Strategy and International Business",
+   "intro": "",
    "groups": [
     {
      "h": "Research",
@@ -690,7 +906,7 @@ details .ef{margin-bottom:8px}
         2
        ],
        "ic": "leaf",
-       "img": "assets/card_impact3.jpg",
+       "img": "assets/card_impact4.webp",
        "deck": [
         "assets/imp_p-02.jpg",
         "assets/imp_p-04.jpg",
@@ -705,8 +921,70 @@ details .ef{margin-bottom:8px}
        "dh": "Project portfolio"
       }
      ]
+    },
+    {
+     "h": "Conference Presentations",
+     "sub": "My first full paper, my M.S. thesis on ESG and crisis response, was selected for presentation at five conferences, from AOM in Chicago to SMS in Istanbul.",
+     "photos": [
+      {
+       "src": "assets/talk_sms_present.jpg",
+       "cap": "Presenting at the SMS Paper Development Workshop, Seoul"
+      },
+      {
+       "src": "assets/talk_sms_room.jpg",
+       "cap": "SMS PDW session at SNU Business School, July 2024"
+      },
+      {
+       "src": "assets/talk_sms_pdw.jpg",
+       "cap": "SMS Paper Development Workshop in Seoul, July 2024"
+      },
+      {
+       "src": "assets/talk_aom2024.jpg",
+       "cap": "AOM Annual Meeting, Chicago, August 2024"
+      }
+     ],
+     "talks": [
+      {
+       "v": "SMS Annual Conference",
+       "p": "Istanbul",
+       "k": "Oral",
+       "y": "Oct 2024"
+      },
+      {
+       "v": "Academy of Management Annual Meeting",
+       "p": "Chicago, IL",
+       "k": "Oral",
+       "y": "Aug 2024"
+      },
+      {
+       "v": "SMS Paper Development Workshop",
+       "p": "Seoul",
+       "k": "Oral",
+       "y": "Jul 2024"
+      },
+      {
+       "v": "Korean Society of Strategic Management Conference",
+       "p": "Seoul",
+       "k": "Oral",
+       "y": "Nov 2023"
+      },
+      {
+       "v": "6th Global Conference: ESG Management & Sustainability",
+       "p": "Seoul",
+       "k": "Poster",
+       "y": "Nov 2023"
+      }
+     ]
     }
-   ]
+   ],
+   "focus": [
+    "Innovation strategy of Korean MNEs",
+    "Regional innovation clusters",
+    "Social impact",
+    "Corporate risk",
+    "Text analysis"
+   ],
+   "icon": "compass"
   },
   {
    "key": "entrepreneur",
@@ -714,19 +992,19 @@ details .ef{margin-bottom:8px}
    "title": "Founder",
    "sub": "AI EdTech\nStartup",
    "ab": "Founder",
-   "head": "Co-founder, AI Edu Studio",
-   "meta": "Yappi",
-   "intro": "Co-founded an AI education startup, then built and launched Yappi, an interactive voice-based AI tutoring app for children's spoken English.",
+   "head": "AI Edu Studio",
+   "meta": "Co-founder",
+   "intro": "Building on my background in English and Education, and on growing up around my family's education business, I designed, built, and launched Yappi, an interactive voice-based AI tutoring app for children's spoken English. It is now being piloted in an English kindergarten in Korea.",
    "groups": [
     {
-     "h": "Built and launched",
+     "h": "Entrepreneurial Experience",
      "steps": [
       {
        "t": "Co-founded",
        "q": "AI Edu Studio, an AI English-education startup based in Seoul"
       },
       {
-       "t": "Built",
+       "t": "Designed · Built",
        "q": "Yappi, a voice AI tutor on large language models, for iOS and Android"
       },
       {
@@ -807,7 +1085,13 @@ details .ef{margin-bottom:8px}
      "url": "https://aiedustudio.com/"
     }
    ],
-   "img2": "assets/aies_logo_pad.jpg"
+   "img2": "assets/aies_logo_pad.jpg",
+   "focus": [
+    "LLM-based voice tutoring",
+    "iOS and Android app",
+    "Prototype to launch"
+   ],
+   "icon": "rocket"
   },
   {
    "key": "policy",
@@ -816,21 +1100,9 @@ details .ef{margin-bottom:8px}
    "sub": "KIET\nNational Think Tank",
    "ab": "Policy",
    "head": "Korea Institute for Industrial Economics and Trade",
-   "meta": "Korea's national economic policy research institute",
-   "intro": "Policy research for Korea's Ministry of Economy and Finance and Ministry of Trade, Industry and Energy.",
+   "meta": "Researcher",
+   "intro": "Joint policy research with Korea's Ministry of Trade, Industry and Energy and Ministry of Economy and Finance.",
    "groups": [
-    {
-     "h": "Focus areas",
-     "tg": "ipfg",
-     "chips": [
-      "National economic and industrial policy",
-      "Supply chains",
-      "Economic security",
-      "Semiconductors",
-      "Clean energy, renewables, and batteries",
-      "Regional tech hubs"
-     ]
-    },
     {
      "h": "Policy research",
      "cards": [
@@ -838,24 +1110,18 @@ details .ef{margin-bottom:8px}
        "id": "sfs",
        "t": "Sustainability for Survival: Strategies for Korean Battery Makers in the European Market",
        "w": "with Kyung In Hwang",
-       "s": "KIET Industrial Economic Review, 2025",
-       "q": "How European sustainability regulation reshapes the competitive strategy of Korean battery makers.",
-       "url": "https://ssrn.com/abstract=5132325",
-       "ul": "SSRN",
+       "s": "KIET Industrial Economic Review, 2025 · [SSRN](https://ssrn.com/abstract=5132325) · [KIET](https://www.kiet.re.kr/en/pub/ecoreviewDetailView?detail_no=1057)",
        "tg": "spg",
        "ic": "battery",
        "img": "assets/card_sfs.jpg",
        "k": "EU Sustainability Rules and Korean Battery Makers",
-       "more": [
-        "KIET Industrial Economic Review|https://www.kiet.re.kr/en/pub/ecoreviewDetailView?detail_no=1057"
-       ]
+       "abs": "How European sustainability regulation reshapes the competitive strategy of Korean battery makers."
       },
       {
        "id": "battery",
        "l": "Clean energy and battery policy",
-       "t": "National Technology Strategy: Policy Proposals in Response to Changes in Global Energy & Battery Industrial and Trade Policies",
+       "t": "Policy Proposals in Response to Changes in Global Energy & Battery Industrial and Trade Policies",
        "s": "Project with Ministry of Trade, Industry and Energy, 2024",
-       "q": "How shifts in U.S. and European industrial and trade policy reshape the clean energy and battery industries, with policy proposals for Korea.",
        "url": "https://www.kiet.re.kr/research/reportView?report_no=1137",
        "ul": "KIET",
        "tg": "sipg",
@@ -866,90 +1132,49 @@ details .ef{margin-bottom:8px}
         "National Knowledge Information System|https://www.nkis.re.kr/subject_view1.do?otpId=OTP_0000000000015276&otpSeq=0"
        ],
        "hu": "https://www.nkis.re.kr/subject_view1.do?otpId=OTP_0000000000015276&otpSeq=0",
-       "hul": "National Knowledge Information System"
+       "hul": "National Knowledge Information System",
+       "abs": "How shifts in U.S. and European industrial and trade policy reshape the clean energy and battery industries, with policy proposals for Korea."
       },
       {
        "id": "pohang",
        "l": "Pohang Valley Tech Hub",
        "t": "Innovation Strategy and Cluster Development in the Renewable Energy Industry: The Case of Pohang Valley Tech Hub",
        "s": "Project with Ministry of Trade, Industry and Energy, 2024",
-       "q": "How a regional innovation cluster can build a renewable energy industry: the case of Pohang Valley.",
        "tg": "i",
        "ic": "wind",
        "img": "assets/card_pohang.jpg",
-       "k": "Renewable Energy Innovation Cluster: Pohang Tech Hub"
-      }
-     ]
-    },
-    {
-     "h": "Projects",
-     "cards": [
-      {
-       "id": "secur",
-       "l": "Supply-chain stability",
-       "t": "Core items for supply-chain stability",
-       "s": "KIET Issue Paper",
-       "q": "Identifying the inputs that matter for economic security.",
-       "tg": "ipg",
-       "x": [
-        5
-       ],
-       "ic": "link",
-       "img": "assets/card_secur.jpg"
-      },
-      {
-       "id": "reg",
-       "l": "Regulatory impact analysis",
-       "t": "Regulatory impact analysis",
-       "s": "KIET Research Report",
-       "q": "A framework for analyzing regulation in advanced strategic industries.",
-       "tg": "sp",
-       "x": [
-        1
-       ],
-       "ic": "doc",
-       "img": "assets/card_reg.jpg"
+       "k": "Renewable Energy Innovation Cluster: Pohang Tech Hub",
+       "abs": "How a regional innovation cluster can build a renewable energy industry: the case of Pohang Valley."
       }
      ]
     }
-   ]
+   ],
+   "focus": [
+    "Economic, industrial, and trade policy",
+    "Supply chains and economic security",
+    "Semiconductors and batteries",
+    "Regional tech hubs"
+   ],
+   "kick": "Government Think Tank · Industrial Economics",
+   "icon": "balance"
   },
   {
    "key": "quant",
    "name": "Causal Inference",
    "title": "Columbia",
-   "sub": "Quant Data Science",
+   "sub": "Quantitative Methods\nData Science",
    "ab": "Columbia",
-   "head": "M.A. Quantitative Methods in the Social Sciences",
-   "meta": "Data Science · Columbia University",
-   "intro": "Causal inference, experiments, and machine learning. Research assistant at Columbia Business School and ISERP with Professors Lori Yue and Mabel Abraham.",
+   "head": "Columbia University",
+   "meta": "M.A. Quantitative Methods in the Social Sciences",
+   "intro": "Research assistant at Columbia Business School and ISERP with Professors Lori Yue and Mabel Abraham.",
    "groups": [
     {
-     "h": "Thesis",
-     "cards": [
-      {
-       "id": "fow",
-       "l": "The Future of Work",
-       "t": "The Future of Work: Work Arrangements and Job Interest",
-       "s": "M.A. thesis",
-       "q": "A randomized experiment on how in-person, hybrid, and remote work shape job interest.",
-       "tg": "e",
-       "x": [
-        2
-       ],
-       "ic": "home",
-       "img": "assets/card_fow.jpg"
-      }
-     ]
-    },
-    {
-     "h": "With Lori Yue",
+     "h": "Identity and politics in markets",
      "cards": [
       {
        "id": "nation",
        "l": "Nationalism in digital marketplaces",
        "t": "Nationalism in digital marketplaces",
-       "w": "with Lori Yue",
        "q": "Why small businesses use nationalist rhetoric in partisan marketplaces.",
        "tg": "ep",
        "ic": "flag",
@@ -959,46 +1184,60 @@ details .ef{margin-bottom:8px}
        "id": "blm",
        "l": "Corporate activism around BLM",
        "t": "Corporate activism around Black Lives Matter",
-       "w": "with Lori Yue, Soomin Cho",
        "tg": "p",
        "ic": "speech",
-       "img": "assets/card_blm.jpg"
+       "img": "assets/card_blm.jpg",
+       "q": "How companies respond to Black Lives Matter, and how CEO and top management team characteristics relate to those responses."
       }
-     ]
+     ],
+     "sub": "With Lori Yue, Soomin Cho, and Yixi Chen."
     },
     {
-     "h": "Experiments and models",
+     "h": "Work and organizations",
      "cards": [
       {
+       "id": "fow",
+       "l": "The Future of Work",
+       "t": "Future of Work and Work Design: A Field Experiment on Work Arrangements in Digitally Mediated Jobs",
+       "s": "M.A. thesis · Advisor: Laura Boudreau",
+       "q": "When a startup recruits an engineer, a single line about how the job is designed also tells candidates what kind of organization it is. In a field experiment with 991 early-career professionals invited to a Software Engineer I role, I test how that organizational signal shapes who engages at the first step of hiring, drawing on signaling theory and person–organization fit.",
+       "tg": "e",
+       "x": [
+        2
+       ],
+       "ic": "home",
+       "img": "assets/card_fow.jpg",
+       "k": "Signaling Fit: How Startups Attract Software Engineers"
+      },
+      {
        "id": "r2w",
-       "t": "Return2Work",
+       "t": "Evaluations of Remote Work: Field Experimental Evidence",
        "w": "with Mabel Abraham, Derek Brown",
-       "q": "A field experiment on work arrangements and candidate interest.",
+       "q": "Does pursuing remote work, or having remote work experience, widen racial and gender inequality in the labor market? Field experiments on both job seekers and employers.",
        "tg": "e",
        "ic": "people",
-       "img": "assets/card_r2w.jpg"
+       "img": "assets/card_r2w.jpg",
+       "s": "Russell Sage Foundation Presidential Research Grant (2024)",
+       "l": "Return2Work"
       },
       {
        "id": "relc",
-       "t": "Relational contracts",
+       "t": "Relational Contracts: Cooperation in Repeated Games",
        "w": "with W. Bentley MacLeod",
-       "q": "A repeated-game simulation of how trust emerges.",
+       "q": "Using experimental data on repeated prisoner’s dilemmas, compared how strategies such as tit-for-tat pay off in finite versus indefinite relationships.",
        "ic": "cycle",
        "img": "assets/card_relc.jpg"
       }
      ]
-    },
-    {
-     "h": "Methods",
-     "chips": [
-      "Causal inference",
-      "Field experiments",
-      "NLP and machine learning",
-      "Record linkage",
-      "Survey design"
-     ]
     }
-   ]
+   ],
+   "focus": [
+    "Causal inference",
+    "Organizational theory",
+    "Future of work",
+    "Field experiments"
+   ],
+   "icon": "linechart"
   },
   {
    "key": "research",
@@ -1006,9 +1245,9 @@ details .ef{margin-bottom:8px}
    "title": "HBS",
    "sub": "Tech Strategy\nGeopolitics",
    "ab": "HBS",
-   "head": "Pre-doctorate",
-   "meta": "Harvard Business School",
-   "intro": "",
+   "head": "Harvard Business School",
+   "meta": "Predoctoral Research Associate",
+   "intro": "Working with Professors Andy Wu (Strategy), Ebehi Iyoha (Entrepreneurial Management), and Jaya Wen (Business, Government and the International Economy).",
    "groups": [
     {
      "h": "Frontier technology and advantage",
@@ -1017,13 +1256,137 @@ details .ef{margin-bottom:8px}
        "id": "clock",
        "t": "The Technology Clock: Expected Arrival and Investment Timing in Deep Technologies",
        "s": "Proposal under review at Organization Science",
-       "q": "When do firms expect a deep technology to arrive, and do they invest earlier when that date moves closer?",
+       "q": "When do firms expect a deep technology to arrive, and do they invest earlier when that date moves closer? Starting with quantum computing, then the U.S. Critical and Emerging Technologies List, from AI and semiconductors to biotechnology.",
        "tg": "sif",
        "l": "Technology Clock",
-       "abs": "Asks whether a field’s stated arrival date for a deep technology moves closer as the technology progresses, and whether firms whose expected arrival moves closer invest earlier in patents, hiring, and partnerships. Starting with quantum computing, a language model extracts dated arrival estimates from 2,247 passages in 1,222 company earnings calls; Nvidia CEO Jensen Huang’s January 2025 remark that useful quantum computers were 15 to 30 years away provides a field-wide shock to expectations. The measurement is being extended to the U.S. government’s list of critical and emerging technologies.",
+       "abs": "Asks whether a field’s stated arrival date for a deep technology moves closer as the technology progresses, and whether firms whose expected arrival moves closer invest earlier in patents, hiring, and partnerships. Starting with quantum computing, a language model extracts dated arrival estimates from 2,247 passages in 1,222 company earnings calls; Nvidia CEO Jensen Huang’s January 2025 remark that useful quantum computers were 15 to 30 years away provides a field-wide shock to expectations. The measurement is being extended to the U.S. Critical and Emerging Technologies List, from artificial intelligence and semiconductors to biotechnologies and space technologies.",
        "ic": "clock",
        "img": "assets/card_clock.jpg"
       },
+      {
+       "id": "config",
+       "l": "Configuring AI",
+       "t": "Configuring AI in Multinational Enterprises: Managerial Capabilities and the Gains from Adoption",
+       "w": "with Ebehi Iyoha",
+       "s": "Under review at Global Strategy Journal",
+       "q": "Do AI gains depend on where AI workers sit relative to managers?",
+       "tg": "sifg",
+       "x": [
+        0
+       ],
+       "abs": "Examines how multinational firms combine AI expertise with existing managerial capabilities. Using workforce and financial data on manufacturing multinationals, the study asks whether the gains from AI adoption depend on where AI employees are located relative to managers, linking the geographic configuration of new capabilities to firm performance.",
+       "ic": "globe",
+       "img": "assets/card_config.jpg"
+      },
+      {
+       "id": "africa",
+       "t": "RADIA: Research on AI Diffusion and Innovation in Africa",
+       "w": "with Ebehi Iyoha, Abdoulaye Ndiaye",
+       "q": "How African firms adopt and build with AI, and what slows its diffusion.",
+       "tg": "iefg",
+       "ic": "map",
+       "img": "assets/card_africa.jpg",
+       "l": "RADIA",
+       "abs": "A research initiative on how African firms adopt and build with AI: which startups and enterprises use AI to solve industry problems, how deeply and how early firms of different sizes adopt it, how adoption shows up in sales, profits, and wage premiums, and how the pull of AI talent toward firms abroad and gaps in skills, networks, and financing slow diffusion. Combines firm surveys with workforce data on African professionals."
+      },
+      {
+       "id": "returning",
+       "l": "Returning to Explore",
+       "t": "Returning to Explore: Scientist Mobility and Recombination of Expertise",
+       "q": "Does incoming scientists' expertise help existing researchers with their own problems, or redirect research toward the newcomers' agendas?",
+       "tg": "i",
+       "ic": "swap",
+       "img": "assets/card_returning.jpg"
+      },
+      {
+       "id": "wars",
+       "t": "AI Bubble & AI Wars: Value and Competition in the AI Industry",
+       "w": "with Andy Wu",
+       "s": "HBS case (AI Wars 2026)",
+       "q": "Where value is created and captured in AI, and how competition and strategic partnerships shape the industry.",
+       "tg": "sf",
+       "x": [
+        0
+       ],
+       "ic": "network",
+       "img": "assets/card_wars.jpg",
+       "l": "AI Bubble & AI Wars"
+      }
+     ]
+    },
+    {
+     "h": "Geopolitics and the direction of innovation",
+     "cards": [
+      {
+       "id": "cic",
+       "l": "Critical Inputs",
+       "t": "Critical Input Control and Technological Leadership",
+       "w": "with Andy Wu",
+       "q": "When does control of an input a whole technology depends on, like the memory chips behind AI, become leadership in that technology?",
+       "tg": "ifgp",
+       "x": [
+        3
+       ],
+       "abs": "Asks when control of an input that an entire technology depends on, such as the high-bandwidth memory Korean firms supply to the AI industry, becomes leadership in that technology. Against the prevailing view that such suppliers gain most by selling to every downstream producer, the study hypothesizes that they integrate forward, as BYD moved from batteries into cars, only when the input’s margin falls below the value they can capture downstream and they already hold the complementary assets the downstream technology requires. U.S. export controls on advanced chips (2022) and high-bandwidth memory (2024), which cut some suppliers’ sales to China more than others’, provide the variation to compare downstream investment, acquisitions, and patenting.",
+       "ic": "chip",
+       "img": "assets/card_cic.jpg"
+      },
+      {
+       "id": "svm",
+       "l": "State vs. Market",
+       "t": "State vs. Market-Oriented Innovation",
+       "w": "with Jaya Wen, Todd Lensman",
+       "q": "What shapes where firms direct innovation?",
+       "tg": "ipg",
+       "x": [
+        3
+       ],
+       "abs": "Studies how market incentives and policy priorities shape firms’ choices about where to direct innovation, using provincial leadership data and technology plans in China.",
+       "ic": "balance",
+       "img": "assets/card_svm.jpg"
+      },
+      {
+       "id": "ideology",
+       "l": "SMB Tariff",
+       "t": "Trading on Ideology in the 2025 Trade War",
+       "w": "with David Atkin, Zoe Cullen, Ebehi Iyoha",
+       "q": "How owners' politics shape sourcing under tariffs.",
+       "tg": "sipg",
+       "x": [
+        3,
+        4
+       ],
+       "ic": "ship",
+       "img": "assets/card_ideology.jpg",
+       "abs": "How does an owner's political orientation shape a small business's response to tariffs? Linking firms' trade records with owners' political data, the project compares sourcing before and after the 2025 tariffs with difference-in-differences and event-study designs, asking whether firms switch suppliers, shift sourcing countries, or absorb costs differently depending on their owners' ideology."
+      },
+      {
+       "id": "reroute",
+       "t": "Trade rerouting",
+       "w": "with Jaya Wen, Ebehi Iyoha, Edmund Malesky",
+       "q": "Rerouting and relocation in the U.S.–China trade war.",
+       "tg": "ipg",
+       "ic": "route",
+       "img": "assets/card_reroute.jpg"
+      },
+      {
+       "id": "export",
+       "t": "Export Controls and Innovation in Sanctioned Countries",
+       "w": "Liu, Liu, and Makarin · research assistance with Jaya Wen",
+       "q": "What happens to innovation when access closes?",
+       "tg": "ipfg",
+       "x": [
+        3
+       ],
+       "ic": "lock",
+       "img": "assets/card_export.jpg",
+       "s": "HBS Working Paper 25-004"
+      }
+     ]
+    },
+    {
+     "h": "Entrepreneurial bets under uncertainty",
+     "cards": [
       {
        "id": "moats",
        "t": "Proprietary AI and the Durability of Startup Advantage",
@@ -1050,137 +1413,6 @@ details .ef{margin-bottom:8px}
        "abs": "Real options logic prizes flexibility, but in many ventures commitment compounds: the longer one stays with a path, the more it pays, while every option kept alive has a cost and eventually expires. This project studies when people stop paying to keep weaker options open and commit to the option their experience supports, using an incentivized game with compounding and expiring options, and tests in a two-wave online experiment whether personalized feedback improves follow-through. The setting speaks to founders choosing among ideas and investors deciding when to stop funding a bet."
       },
       {
-       "id": "config",
-       "l": "Configuring AI",
-       "t": "Configuring AI in Multinational Enterprises: Managerial Capabilities and the Gains from Adoption",
-       "w": "with Ebehi Iyoha",
-       "s": "Under review at Global Strategy Journal",
-       "q": "Do AI gains depend on where AI workers sit relative to managers?",
-       "tg": "sifg",
-       "x": [
-        0
-       ],
-       "abs": "Examines how multinational firms combine AI expertise with existing managerial capabilities. Using workforce and financial data on manufacturing multinationals, the study asks whether the gains from AI adoption depend on where AI employees are located relative to managers, linking the geographic configuration of new capabilities to firm performance.",
-       "ic": "globe",
-       "img": "assets/card_config.jpg"
-      },
-      {
-       "id": "bubble",
-       "t": "AI Bubble",
-       "w": "with Andy Wu",
-       "q": "Value creation and value capture in AI.",
-       "tg": "sf",
-       "ic": "chart",
-       "img": "assets/card_bubble.jpg"
-      },
-      {
-       "id": "wars",
-       "t": "AI Wars",
-       "w": "with Andy Wu",
-       "s": "HBS case",
-       "q": "Competition and partnerships in the AI industry.",
-       "tg": "sf",
-       "x": [
-        0
-       ],
-       "ic": "network",
-       "img": "assets/card_wars.jpg"
-      }
-     ]
-    },
-    {
-     "h": "Geopolitics and the direction of innovation",
-     "cards": [
-      {
-       "id": "cic",
-       "l": "Critical Inputs",
-       "t": "Critical Input Control and Technological Leadership",
-       "w": "with Andy Wu",
-       "q": "When does control of an input a whole technology depends on, like the memory chips behind AI, become leadership in that technology?",
-       "tg": "ifgp",
-       "x": [
-        3
-       ],
-       "abs": "Asks when control of an input that an entire technology depends on, such as the high-bandwidth memory Korean firms supply to the AI industry, becomes leadership in that technology. Against the prevailing view that such suppliers gain most by selling to every downstream producer, the study hypothesizes that they integrate forward, as BYD moved from batteries into cars, only when the input’s margin falls below the value they can capture downstream and they already hold the complementary assets the downstream technology requires. U.S. export controls on advanced chips (2022) and high-bandwidth memory (2024), which cut some suppliers’ sales to China more than others’, provide the variation to compare downstream investment, acquisitions, and patenting.",
-       "ic": "chip",
-       "img": "assets/card_cic.jpg"
-      },
-      {
-       "id": "ideology",
-       "l": "SMB Tariff",
-       "t": "Trading on Ideology in the 2025 Trade War",
-       "w": "with David Atkin, Zoe Cullen, Ebehi Iyoha",
-       "q": "How owners' politics shape sourcing under tariffs.",
-       "tg": "sipg",
-       "x": [
-        3,
-        4
-       ],
-       "ic": "ship",
-       "img": "assets/card_ideology.jpg",
-       "abs": "How does an owner's political orientation shape a small business's response to tariffs? Linking firms' trade records with owners' political data, the project compares sourcing before and after the 2025 tariffs with difference-in-differences and event-study designs, asking whether firms switch suppliers, shift sourcing countries, or absorb costs differently depending on their owners' ideology."
-      },
-      {
-       "id": "svm",
-       "l": "State vs. Market",
-       "t": "State vs. Market-Oriented Innovation",
-       "w": "with Jaya Wen, Todd Lensman",
-       "q": "What shapes where firms direct innovation?",
-       "tg": "ipg",
-       "x": [
-        3
-       ],
-       "abs": "Studies how market incentives and policy priorities shape firms’ choices about where to direct innovation, using provincial leadership data and technology plans in China.",
-       "ic": "balance",
-       "img": "assets/card_svm.jpg"
-      },
-      {
-       "id": "export",
-       "t": "Export controls and innovation",
-       "w": "with Jaya Wen",
-       "q": "What happens to innovation when access closes?",
-       "tg": "ipfg",
-       "x": [
-        3
-       ],
-       "ic": "lock",
-       "img": "assets/card_export.jpg"
-      },
-      {
-       "id": "reroute",
-       "t": "Trade rerouting",
-       "w": "with Jaya Wen, Ebehi Iyoha, Edmund Malesky",
-       "q": "Rerouting and relocation in the U.S.–China trade war.",
-       "tg": "ipg",
-       "ic": "route",
-       "img": "assets/card_reroute.jpg"
-      }
-     ]
-    },
-    {
-     "h": "Entrepreneurs and ecosystems",
-     "cards": [
-      {
-       "id": "returning",
-       "l": "Returning to Explore",
-       "t": "Returning to Explore: Scientist Mobility and Recombination of Expertise",
-       "q": "Does incoming scientists' expertise help existing researchers with their own problems, or redirect research toward the newcomers' agendas?",
-       "tg": "i",
-       "ic": "swap",
-       "img": "assets/card_returning.jpg"
-      },
-      {
-       "id": "africa",
-       "t": "RADIA: Research on AI Diffusion and Innovation in Africa",
-       "w": "with Ebehi Iyoha, Abdoulaye Ndiaye",
-       "q": "How African firms adopt and build with AI, and what slows its diffusion.",
-       "tg": "iefg",
-       "ic": "map",
-       "img": "assets/card_africa.jpg",
-       "l": "RADIA",
-       "abs": "A research initiative on how African firms adopt and build with AI: which startups and enterprises use AI to solve industry problems, how deeply and how early firms of different sizes adopt it, how adoption shows up in sales, profits, and wage premiums, and how the pull of AI talent toward firms abroad and gaps in skills, networks, and financing slow diffusion. Combines firm surveys with workforce data on African professionals."
-      },
-      {
        "id": "projection",
        "t": "Entrepreneurial Projection Strategy",
        "w": "with Andy Wu, Aticus Peterson",
@@ -1191,7 +1423,14 @@ details .ef{margin-bottom:8px}
       }
      ]
     }
-   ]
+   ],
+   "focus": [
+    "AI and frontier technology",
+    "Trade and export controls",
+    "Entrepreneurship",
+    "Emerging markets"
+   ],
+   "icon": "atom"
   }
  ],
  "tabs": [
@@ -1239,34 +1478,47 @@ details .ef{margin-bottom:8px}
  "exp": [
   {
    "t": "Harvard Business School",
-   "s": "Pre-doctoral Researcher, Strategy and Entrepreneurial Management",
+   "s": "Predoctoral Research Associate",
    "go": "research",
-   "y": "Present"
+   "y": "Present",
+   "loc": "Boston, MA"
   },
   {
    "t": "Columbia Business School and ISERP",
    "s": "Research Assistant to Professors Lori Yue and Mabel Abraham",
-   "go": "quant"
+   "go": "quant",
+   "loc": "New York, NY"
   },
   {
    "t": "Korea Institute for Industrial Economics and Trade (KIET)",
    "s": "Researcher, Korea's national economic policy research institute",
-   "go": "policy"
+   "go": "policy",
+   "loc": "Sejong, Korea"
+  },
+  {
+   "t": "Seoul National University Business School",
+   "s": "Graduate Research Assistant, Center for Global Business and Research",
+   "go": "strategy",
+   "loc": "Seoul, Korea"
   },
   {
    "t": "AI Edu Studio",
-   "s": "Co-founder, AI EdTech startup · Yappi, an interactive AI tutor app for children's spoken English",
-   "go": "entrepreneur"
+   "s": "Co-founder, AI EdTech startup",
+   "go": "entrepreneur",
+   "loc": "Seoul, Korea",
+   "y": "Present"
   },
   {
    "t": "MSL Global",
    "s": "Associate Consultant, IT/Tech/Startup",
-   "go": "consulting"
+   "go": "consulting",
+   "loc": "Seoul, Korea"
   },
   {
    "t": "Hill+Knowlton Strategies",
    "s": "Strategy Consultant",
-   "go": "consulting"
+   "go": "consulting",
+   "loc": "Seoul, Korea"
   }
  ],
  "edu": [
@@ -1289,7 +1541,7 @@ details .ef{margin-bottom:8px}
   }
  ],
  "agenda": {
-  "lead": "I study how firms turn frontier science and technology into advantage when governments compete over who can build, buy, and use it.",
+  "lead": "I am passionate about innovation at the intersection of technology and geopolitics: how firms turn frontier science into advantage when states compete over who can build, buy, and use it.",
   "center": "Innovation",
   "axes": [
    {
@@ -1298,7 +1550,7 @@ details .ef{margin-bottom:8px}
     "t": "Science & Tech",
     "k": "Science & Technology",
     "kw": "frontier",
-    "img": "assets/ax_sci.jpg",
+    "img": "assets/ax_sci2.jpg",
     "h": "How frontier technology becomes advantage",
     "q": "When a frontier technology arrives and spreads, which firms turn it into lasting advantage?",
     "items": [
@@ -1318,7 +1570,7 @@ details .ef{margin-bottom:8px}
    },
    {
     "c": 5,
-    "icon": "map",
+    "icon": "globe",
     "t": "Geopolitics",
     "k": "Geopolitics",
     "kw": "decides",
@@ -1331,16 +1583,16 @@ details .ef{margin-bottom:8px}
       "icon": "chip"
      },
      {
-      "card": "export",
-      "icon": "lock"
-     },
-     {
       "card": "svm",
       "icon": "balance"
      },
      {
       "card": "ideology",
       "icon": "ship"
+     },
+     {
+      "card": "export",
+      "icon": "lock"
      },
      {
       "go": "policy",
@@ -1352,7 +1604,7 @@ details .ef{margin-bottom:8px}
    },
    {
     "c": 2,
-    "icon": "spark",
+    "icon": "rocket",
     "t": "Entrepreneurship",
     "k": "Entrepreneurship",
     "kw": "wins",
@@ -1377,13 +1629,15 @@ details .ef{margin-bottom:8px}
     ]
    }
   ],
-  "title": "Who wins at the frontier, and who decides?"
+  "title": "Who wins at the frontier, and who decides?",
+  "motivation": "At KIET, Korea's government think tank for industry and trade, I witnessed the country's semiconductor and battery strategies take shape at the national core, and learned that even world-leading firms depend on inputs, partners, and markets that governments can open or close. Building an AI app as a startup co-founder raised a parallel question: what still sets a firm apart when anyone can buy the same technology?",
+  "mission": "My mission is to understand how firms and countries, especially those caught between great powers, can turn investments in science and technology into lasting advantage, building on their strongest capabilities even when access to critical inputs and markets can be opened or closed."
  },
  "misc": [
   {
    "c": 5,
    "t": "K-Beauty and Olive Young",
-   "img": "assets/int_beauty.jpg",
+   "img": "assets/int_beauty2.jpg",
    "q": "Ideas from dermatology clinics or from cosmetic science: which one decides the K-beauty brands that move first, with Olive Young as the bridge to the mass market. Plus: what brands do when the EU bans an ingredient in one market only.",
    "chips": [
     "Market entry",
@@ -1392,8 +1646,40 @@ details .ef{margin-bottom:8px}
    ],
    "kicker": "K-Beauty · Olive Young",
    "h": "Where do beauty trends come from, and who launches first?",
-   "sn": "122,920",
-   "sc": "functional-cosmetic filings in Korea, 2018–2026"
+   "st": "In progress",
+   "why": "I'm a cosmetics geek. If I hadn't gone into research, the beauty and fashion industry is probably where I'd be.",
+   "em": "💄"
+  },
+  {
+   "c": 3,
+   "t": "Game Jams and Consoles",
+   "img": "assets/int_game.jpg",
+   "q": "Following the same developers across itch.io game jams around Unity's per-install fee and the release of Godot 4.0. Plus: can crowds or AI judges spot which 48-hour prototypes become real games, and why are PlayStation and Xbox taking opposite roads?",
+   "chips": [
+    "Platforms",
+    "Switching",
+    "AI judges"
+   ],
+   "kicker": "Video Games · Game Jams",
+   "h": "Do developers leave when a better tool arrives, or when the incumbent raises its price?",
+   "st": "In progress",
+   "why": "I love video games.",
+   "em": "🎮"
+  },
+  {
+   "c": 0,
+   "t": "Formula 1",
+   "img": "assets/int_f1.jpg",
+   "q": "Rivals photograph each other's cars every race weekend. I am tracing F1 technical innovations back to 1977 to see which ones get copied, how fast, and whether hidden parts like engines and electronics spread through suppliers and sister teams instead.",
+   "chips": [
+    "Imitation",
+    "Visibility",
+    "Suppliers"
+   ],
+   "kicker": "Formula 1",
+   "h": "How long does an F1 innovation stay exclusive?",
+   "st": "In progress",
+   "em": "🏎️"
   },
   {
    "c": 2,
@@ -1407,41 +1693,11 @@ details .ef{margin-bottom:8px}
    ],
    "kicker": "European Football",
    "h": "Why did Europe's football leagues split on the same private-equity offer?",
-   "sn": "26",
-   "sc": "outside-capital offers to member-owned sports organizations, 2018–2026"
-  },
-  {
-   "c": 3,
-   "t": "Game Jams and Consoles",
-   "img": "assets/int_game.jpg",
-   "q": "Following the same developers across itch.io game jams around Unity's per-install fee and the release of Godot 4.0. Plus: can crowds or AI judges spot which 48-hour prototypes become real games, and why are PlayStation and Xbox taking opposite roads?",
-   "chips": [
-    "Platforms",
-    "Switching",
-    "AI judges"
-   ],
-   "kicker": "Game Jams · Consoles",
-   "h": "Do developers leave when a better tool arrives, or when the incumbent raises its price?",
-   "sn": "3.4% → 26.1%",
-   "sc": "returning Unity developers who moved to Godot, before the fee vs. the fee year"
-  },
-  {
-   "c": 0,
-   "t": "Formula 1",
-   "img": "assets/int_f1.jpg",
-   "q": "Rivals photograph each other's cars every race weekend. Across 199 technical innovations since 1977, what sits on the surface gets copied fast; what hides inside, like engines and electronics, travels through suppliers and sister teams.",
-   "chips": [
-    "Imitation",
-    "Visibility",
-    "Suppliers"
-   ],
-   "kicker": "Formula 1",
-   "h": "How long does an F1 innovation stay exclusive?",
-   "sn": "10 vs. 54",
-   "sc": "races until half of visible vs. hidden innovations were copied"
+   "st": "In progress",
+   "em": "⚽"
   }
  ],
- "miscIntro": "Research is my favorite way to explore the world. Beyond my main streams, these are the side quests I love digging into.",
+ "miscIntro": "Research is my favorite way to explore the world, and teaching is how I share it. Here is the rest of me: the classrooms, the questions I chase for fun, the piano, and the places I've been.",
  "links": [
   {
    "a": 0,
@@ -1539,7 +1795,207 @@ details .ef{margin-bottom:8px}
    "text": "Remote and hybrid learning → remote and hybrid work",
    "aux": true
   }
- ]
+ ],
+ "sq": {
+  "h": "Side Quests",
+  "sub": "Questions I dig into for fun, outside my main research streams. All are still in progress.",
+  "em": "🗺️"
+ },
+ "teach": {
+  "h": "Why I Teach",
+  "lead": "I trained in English and Education, and teaching has followed me for over a decade: from kindergarten conversation lessons to business school classrooms to an app for children.",
+  "items": [
+   {
+    "ic": "speech",
+    "t": "English Teacher",
+    "m": "Tutoring · summer schools · student teaching",
+    "q": "Tutored English for about ten years, starting in college, from conversation lessons for kindergarteners to middle and high school students. I also taught high school English in summer schools and as a student teacher."
+   },
+   {
+    "ic": "school",
+    "t": "Teaching Assistant",
+    "m": "SNU Business School · 2020–2023",
+    "q": "Six courses, from the undergraduate core to executive MBA and PhD seminars, with Professors Theresa Cho, Hyuk Choe, Jeho Lee, and Sun Hyun Park."
+   },
+   {
+    "ic": "mic",
+    "t": "EdTech Startup",
+    "m": "AI Edu Studio · Co-founder",
+    "q": "Designed, built, and launched an interactive AI voice app that helps children practice spoken English, now being piloted in an English kindergarten in Korea.",
+    "go": "entrepreneur",
+    "gl": "See the Founder page"
+   }
+  ],
+  "rech": "Full teaching record",
+  "rec": [
+   {
+    "c": "English Tutoring",
+    "l": "Kindergarten to high school",
+    "i": "Private lessons",
+    "y": "About ten years, since college"
+   },
+   {
+    "c": "Strategic Management",
+    "l": "BBA Core",
+    "i": "Prof. Theresa Cho & Dr. Shinhye Ahn",
+    "y": "Spring 2021, Fall 2021, Fall 2022, Spring 2023, Fall 2023"
+   },
+   {
+    "c": "Negotiation",
+    "l": "Executive MBA",
+    "i": "Prof. Theresa Cho",
+    "y": "Spring 2021, Summer 2021"
+   },
+   {
+    "c": "Strategic Process",
+    "l": "MS/PhD",
+    "i": "Prof. Theresa Cho",
+    "y": "Spring 2021"
+   },
+   {
+    "c": "Financial Management",
+    "l": "BBA Core",
+    "i": "Prof. Hyuk Choe",
+    "y": "Spring 2021"
+   },
+   {
+    "c": "International Management",
+    "l": "Global MBA",
+    "i": "Prof. Jeho Lee",
+    "y": "Fall 2020"
+   },
+   {
+    "c": "Research Seminars in Strategy & International Management",
+    "l": "MS/PhD",
+    "i": "Prof. Sun Hyun Park",
+    "y": "Fall 2020"
+   },
+   {
+    "c": "English Teacher, High School Summer Schools",
+    "l": "",
+    "i": "Ministry of Education, Korea",
+    "y": ""
+   },
+   {
+    "c": "Student Teaching for the Teacher's Certificate",
+    "l": "English",
+    "i": "Korea University",
+    "y": "Apr–May 2014"
+   }
+  ],
+  "em": "🍎"
+ },
+ "vol": {
+  "h": "Volunteer Work",
+  "lead": "Education volunteering and student activities from my college years at Korea University.",
+  "items": [
+   {
+    "ic": "people",
+    "t": "Volunteer Mentor",
+    "m": "JOB-A-Dream · Seongbuk District and Korea University",
+    "q": "Mentored students from low-income families, offering academic guidance, career advice, and tutoring in the subjects they found hardest, and talking through their concerns."
+   },
+   {
+    "ic": "compass",
+    "t": "Mentor",
+    "m": "Korea University",
+    "q": "Led counseling sessions with students in Seongbuk District on the education opportunities open to them."
+   },
+   {
+    "ic": "city",
+    "t": "Student Consultant",
+    "m": "KULAP · Korea University",
+    "q": "On JOB-A-Dream, a public policy project between Seongbuk District and Korea University, worked on consulting projects for government institutions, helped plan digital transformation for public-sector organizations, and led workshops evaluating policy applications and public projects."
+   }
+  ],
+  "em": "🤝",
+  "img": "assets/beyond_vol.jpg",
+  "alt": "An open notebook and a pencil"
+ },
+ "quad": {
+  "cols": [
+   "For myself",
+   "For others"
+  ],
+  "rows": [
+   "Curiosity",
+   "Practice"
+  ],
+  "cells": [
+   {
+    "t": "Side Quests",
+    "d": "Beauty, video games, F1, and football",
+    "to": "sq",
+    "c": 0,
+    "em": "🗺️"
+   },
+   {
+    "t": "Teaching",
+    "d": "Tutoring, TA, and an EdTech startup",
+    "to": "teach",
+    "c": 2,
+    "em": "🍎"
+   },
+   {
+    "t": "Piano and Travel",
+    "d": "Classical piano and about 20 countries",
+    "to": "music",
+    "c": 4,
+    "em": "🎹"
+   },
+   {
+    "t": "Volunteering",
+    "d": "Playing for hospitals and churches, and mentoring students",
+    "to": "vol",
+    "c": 5,
+    "em": "🤝"
+   }
+  ]
+ },
+ "music": {
+  "h": "Piano",
+  "em": "🎹",
+  "kick": "Classical piano · since age 5",
+  "img": "assets/beyond_piano.jpg",
+  "alt": "Piano keys in warm light",
+  "story": "I have played classical piano since I was five. In my first year of middle school, I won the grand prize at a national competition, and I seriously considered a life in music. My mom, a music major herself, had other plans for me: take the road she didn't, go out into a bigger world, and do something big there. So instead of an arts high school, I went to a foreign language high school and started dreaming of studying abroad. The piano came along anyway. I still play.",
+  "prog": [
+   {
+    "l": "Competition",
+    "c": "Liszt,",
+    "p": "Mephisto Waltz No. 1",
+    "x": "National grand prize, first year of middle school"
+   },
+   {
+    "l": "Most at home",
+    "c": "Chopin,",
+    "p": "“Revolutionary” and “Black Key” Études, Op. 10"
+   },
+   {
+    "l": "Favorite",
+    "c": "Mendelssohn,",
+    "p": "Rondo Capriccioso, Op. 14"
+   }
+  ],
+  "nt": "Piano volunteering",
+  "note": "I have played at churches, community welfare centers, hospitals, and nursing homes, and at ceremonies such as graduations and weddings."
+ },
+ "travel": {
+  "h": "Travel",
+  "flip": true,
+  "img": "assets/beyond_travel.jpg",
+  "alt": "Sunlight through airplane windows",
+  "story": "Growing up, my family traveled abroad two or three times every year during school breaks. The habit stuck.",
+  "n": "20",
+  "nl": "countries, give or take",
+  "chips": [
+   "Europe",
+   "Australia",
+   "North America",
+   "Southeast Asia"
+  ],
+  "em": "✈️"
+ }
 }</script>
 
 <script>
@@ -1595,7 +2051,7 @@ function buildMap(){
   T=D.areas.map(function(a,i){
     var b=document.createElement('button');b.type='button';b.className='tile';b.setAttribute('style',cv(i));
     b.setAttribute('aria-expanded','false');b.setAttribute('aria-label',(a.name||a.ab)+', '+String(a.sub||'').replace(/\n/g,' '));
-    b.innerHTML=HEX+'<span class="full"><b>'+esc(a.title)+'</b><i>'+esc(a.sub)+'</i></span><span class="ab">'+esc(a.ab)+'</span>';
+    b.innerHTML=HEX+'<span class="full">'+(a.icon&&ICONS[a.icon]?'<svg class="tic" viewBox="0 0 24 24" aria-hidden="true">'+ICONS[a.icon][1]+'</svg>':'')+'<b>'+esc(a.title)+'</b><i>'+esc(a.sub)+'</i></span><span class="ab">'+esc(a.ab)+'</span>';
     b.addEventListener('click',function(){openV(i)});
     b.addEventListener('pointerenter',function(e){if(e.pointerType==='mouse'&&sel.v===null)hot(i)});
     b.addEventListener('pointerleave',function(e){if(e.pointerType==='mouse'&&sel.v===null)hot(null)});
@@ -1605,7 +2061,7 @@ function buildMap(){
     return {a:a,el:b,kite:k,x:0,y:0,f:.74,vf:0,tf:.74,kids:kids};
   });
   center=document.createElement('button');center.type='button';center.className='tile center';
-  center.innerHTML=HEX+'<span class="full">'+ctr(D.center)+'</span><span class="ab">Overview</span>';
+  center.innerHTML=HEX+'<span class="full">'+ctr(D.center)+'<i class="cbar" aria-hidden="true"></i></span><span class="ab">Overview</span>';
   center.addEventListener('click',function(){if(sel.v!==null)closeAll();else setLens(lens)});
   layer.appendChild(center);
   var LK=D.links.slice(),nT=T.length;
@@ -1695,7 +2151,7 @@ function openV(i){
   if(sel.v===i){closeAll();return}
   hideTip();clearX();sel={v:i,c:0,l:null};
   markSel();renderExplore();render(null);renderHomeLists();
-  if(mobile){var ex=Q('#explore');if(ex.scrollIntoView)ex.scrollIntoView({block:'nearest',behavior:RM?'auto':'smooth'})}
+  var tb=Q('#home-lists .htabs');if(tb&&tb.getBoundingClientRect){var tr=tb.getBoundingClientRect();if(tr.top<0||tr.top>innerHeight*.55)tb.scrollIntoView({block:'start',behavior:RM?'auto':'smooth'})}
 }
 function closeAll(){clearX();sel={v:null,c:null,l:null};markSel();renderExplore();render(null);renderHomeLists()}
 function markX(c){clearX();(c.x||[]).forEach(function(v){if(T[v])T[v].el.classList.add('linked')})}
@@ -1706,7 +2162,7 @@ function sharedText(i,o){
 }
 function renderExplore(){
   var box=Q('#explore'),i=sel.v;
-  if(i===null||!D.areas[i]){box.hidden=true;box.innerHTML='';return}
+  if(i===null||!D.areas[i]||!editing){box.hidden=true;box.innerHTML='';return}
   var a=D.areas[i],vis=a.groups.filter(function(gg){return (gg.cards&&gg.cards.length)||(gg.chips&&gg.chips.length)});
   var g=a.groups[sel.c];if(!g||vis.indexOf(g)<0)g=vis[0]||{h:'',cards:[]};
   var conn=TH.filter(function(t){return t.a===i||t.b===i}).map(function(t){var o=t.a===i?t.b:t.a;return {o:o,text:t.text||sharedText(i,o)}}).sort(function(x,y){return x.o-y.o});
@@ -1835,9 +2291,9 @@ function tick(now){
 
 /* ---------- Read-mode views ---------- */
 var ILK=/\s*(?:·\s*)?\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/;
-function sPlain(t){return String(t||'').replace(ILK,'').trim()}
+function sPlain(t){return String(t||'').replace(new RegExp(ILK.source,'g'),'').trim()}
 function sLink(t){var m=String(t||'').match(ILK);return m?{t:m[1],u:m[2]}:null}
-function sHTML(t){var m=String(t||'').match(ILK);if(!m)return esc(t);var i=String(t).indexOf(m[0]);var pre=String(t).slice(0,i),mid=m[0].slice(0,m[0].indexOf('['));return esc(pre)+esc(mid)+'<a class="ilk" href="'+esc(m[2])+'" target="_blank" rel="noopener">'+esc(m[1])+' ↗</a>'+esc(String(t).slice(i+m[0].length))}
+function sHTML(t){t=String(t||'');var re=new RegExp(ILK.source,'g'),out='',last=0,m;while((m=re.exec(t))){out+=esc(t.slice(last,m.index))+esc(m[0].slice(0,m[0].indexOf('[')))+'<a class="ilk" href="'+esc(m[2])+'" target="_blank" rel="noopener">'+esc(m[1])+' ↗</a>';last=m.index+m[0].length}return out+esc(t.slice(last))}
 function wsHTML(c,sep){var st=sPlain(c.s);return (c.w?esc(c.w):'')+(c.w&&st?'<br>':'')+(st?'<em>'+esc(st)+'</em>':'')}
 function pwHTML(c){var l=(c.pw||[]).filter(function(x){return String(x).trim()});return l.length?'<p class="mins">'+l.map(function(x){return '<span class="mtag">Project with '+esc(x)+'</span>'}).join('')+'</p>':''}
 function goIdx(go){return (go&&KEY.hasOwnProperty(go))?KEY[go]:null}
@@ -1852,7 +2308,7 @@ function liHTML(id){var c=CARD[id];if(!c)return '';
   return '<li class="lit"><div class="lirow"><button class="li" type="button" data-card="'+esc(id)+'" style="'+cv(AREAOF[id])+'"><i class="hx"></i><span><b>'+esc(c.t)+'</b></span></button>'+plus+'</div>'+meta+
     (L.length?'<span class="lnks">'+L.map(function(l){return '<a class="lnk" href="'+esc(l.u)+'" target="_blank" rel="noopener">'+esc(l.t)+' ↗</a>'}).join('')+'</span>':'')+
     (c.abs?'<p class="absp" hidden>'+esc(c.abs)+'</p>':'')+'</li>'}
-function rowHTML(r){var ci=goIdx(r.go),cls='li'+(r.y?' wy':''),inner='<i class="hx"></i><span><b>'+esc(r.t)+'</b>'+(r.s?'<span class="s">'+esc(r.s)+'</span>':'')+'</span>'+(r.y?'<span class="y">'+esc(r.y)+'</span>':'');return '<li>'+(ci!==null?'<button class="'+cls+'" type="button" data-go="'+esc(r.go)+'" style="'+cv(ci)+'">'+inner+'</button>':'<div class="'+cls+'" style="'+cv(null)+'">'+inner+'</div>')+'</li>'}
+function rowHTML(r){var ci=goIdx(r.go),cur=/^(present|current)$/i.test(String(r.y||'').trim()),yy=cur?'':r.y,cls='li'+(yy||r.loc?' wy':''),inner='<i class="hx"></i><span><b>'+esc(r.t)+'</b>'+(cur?'<span class="curp">Current</span>':'')+(r.s?'<span class="s">'+esc(r.s)+'</span>':'')+'</span>'+(yy||r.loc?'<span class="y">'+(r.loc?'<span class="yl">'+esc(r.loc)+'</span>':'')+(yy?'<span class="yy">'+esc(yy)+'</span>':'')+'</span>':'');return '<li>'+(ci!==null?'<button class="'+cls+'" type="button" data-go="'+esc(r.go)+'" style="'+cv(ci)+'">'+inner+'</button>':'<div class="'+cls+'" style="'+cv(null)+'">'+inner+'</div>')+'</li>'}
 function rng(seed){var h=2166136261;for(var i=0;i<seed.length;i++){h^=seed.charCodeAt(i);h=Math.imul(h,16777619)}return function(){h^=h<<13;h^=h>>>17;h^=h<<5;return((h>>>0)%10000)/10000}}
 function art(id,ci,ic){
   var r=rng(String(id)),w=320,h=140,s=15,dx=s*1.5,dy=s*1.732,out='',cx=w*(.25+r()*.5),cy=h*(.3+r()*.4),rad=40+r()*60;
@@ -1887,8 +2343,10 @@ function mediaHTML(g){
   if(g.stores&&g.stores.length)h+='<div class="stores">'+g.stores.map(function(s){var inner=STORE_IC+'<span><small>'+esc(s.s||'')+'</small><b>'+esc(s.t||'')+'</b></span>';return s.url?'<a class="store" href="'+esc(s.url)+'" target="_blank" rel="noopener">'+inner+'</a>':'<span class="store">'+inner+'</span>'}).join('')+'</div>';
   return h;
 }
+function splitHTML(f){return '<div class="spl" role="img" aria-label="'+esc(f.root+': '+f.kids.map(function(k){return k.n+', '+k.d}).join('; '))+'"><div class="spr"><b>'+esc(f.root)+'</b>'+(f.rs?'<i>'+esc(f.rs)+'</i>':'')+'</div><span class="spc" aria-hidden="true"></span><ul class="spk">'+f.kids.map(function(k){return '<li'+(k.hi?' class="hi"':'')+'><b>'+esc(k.n)+'</b><i>'+esc(k.d)+'</i></li>'}).join('')+'</ul></div>'}
+function descHTML(c){var q=c.q?'<p>'+esc(c.q)+'</p>':'',a=c.abs?'<p>'+esc(c.abs)+'</p>':'';return (q||a)?'<details class="abs cdesc"><summary aria-label="Description" title="Description"></summary>'+q+a+'</details>':''}
 function cardHTML(c,ci){
-  return '<article class="card" id="card-'+esc(c.id)+'" style="'+cv(ci)+'"><div class="art">'+(c.img?'<img src="'+esc(c.img)+'" alt="" loading="lazy">':art(c.id,ci,c.ic))+'</div><div class="cb"><h4>'+esc(c.k||c.t)+'</h4>'+(c.k?'<p class="ft">'+esc(c.t)+'</p>':'')+(c.w?'<p class="w">'+esc(c.w)+'</p>':'')+(c.s?'<p class="w'+(/^project with/i.test(c.s)?' pl':'')+'"><em>'+sHTML(c.s)+'</em></p>':'')+pwHTML(c)+(c.q?'<p class="q">'+esc(c.q)+'</p>':'')+absHTML(c)+((c.url||(c.more&&c.more.length))?'<div class="lks">'+(c.url?'<a class="lk" href="'+esc(c.url)+'" target="_blank" rel="noopener">'+esc(c.ul||hostOf(c.url))+' ↗</a>':'')+moreHTML(c)+'</div>':'')+'</div></article>';
+  return '<article class="card" id="card-'+esc(c.id)+'" style="'+cv(ci)+'"><div class="art'+(c.split?' asplit':'')+'">'+(c.split?splitHTML(c.split):c.img?'<img src="'+esc(c.img)+'" alt="" loading="lazy">':art(c.id,ci,c.ic))+'</div><div class="cb"><h4>'+esc(c.k||c.t)+'</h4>'+(c.k?'<p class="ft">'+esc(c.t)+'</p>':'')+(c.w?'<p class="w">'+esc(c.w)+'</p>':'')+(c.s?'<p class="w'+(/^project with/i.test(c.s)?' pl':'')+'"><em>'+sHTML(c.s)+'</em></p>':'')+pwHTML(c)+descHTML(c)+((c.url||(c.more&&c.more.length))?'<div class="lks">'+(c.url?'<a class="lk" href="'+esc(c.url)+'" target="_blank" rel="noopener">'+esc(c.ul||hostOf(c.url))+' ↗</a>':'')+moreHTML(c)+'</div>':'')+'</div></article>';
 }
 
 /* ---------- Edit-mode building blocks ---------- */
@@ -1966,10 +2424,13 @@ function deckHTML(c,i){
 function groupsHTML(i){
   var a=D.areas[i],h='';
   a.groups.forEach(function(g,gi){
-    h+='<div class="agrp" data-g="'+gi+'"><h3>'+esc(g.h)+'</h3>';
+    h+='<div class="agrp" data-g="'+gi+'" style="--fc:var(--t'+i+')"><h3>'+esc(g.h)+'</h3>';
     if(g.steps&&g.steps.length)h+='<ol class="steps" style="'+cv(i)+'">'+g.steps.map(function(st){return '<li><b>'+esc(st.t||'')+'</b>'+(st.q?'<span>'+esc(st.q)+'</span>':'')+'</li>'}).join('')+'</ol>';
     if(g.chips&&g.chips.length)h+='<div class="chips">'+g.chips.map(function(ch){return '<span class="tag" style="'+cv(i)+'">'+esc(ch)+'</span>'}).join('')+'</div>';
     if((g.media&&g.media.length)||(g.stores&&g.stores.length))h+='<div style="'+cv(i)+'">'+mediaHTML(g)+'</div>';
+    if(g.sub)h+='<p class="gsub">'+esc(g.sub)+'</p>';
+    if(g.photos&&g.photos.length)h+='<div class="pgal">'+g.photos.map(function(ph){return '<figure><img src="'+esc(ph.src)+'" alt="'+esc(ph.cap||'')+'" loading="lazy">'+(ph.cap?'<figcaption>'+esc(ph.cap)+'</figcaption>':'')+'</figure>'}).join('')+'</div>';
+    if(g.talks&&g.talks.length)h+='<ul class="talks" style="'+cv(i)+'">'+g.talks.map(function(t){return '<li><span class="tkv"><b>'+esc(t.v)+'</b><i>'+esc(t.p||'')+'</i></span><span class="tkk">'+esc(t.k||'')+'</span><span class="tky">'+esc(t.y||'')+'</span></li>'}).join('')+'</ul>';
     if(g.cards&&g.cards.length)h+='<div class="cards">'+g.cards.map(function(c){return cardHTML(c,i)}).join('')+'</div>';
     var dk=(g.cards||[]).filter(function(c){return c.deck&&c.deck.length});
     if(dk.length)h+='<div class="decks">'+dk.map(function(c){return deckHTML(c,i)}).join('')+'</div>';
@@ -1978,22 +2439,28 @@ function groupsHTML(i){
   return h;
 }
 var homeTab='home';
+var NBP=['Columbia Business School','Harvard Business School','Seoul National University','Lori Yue','Mabel Abraham','Andy Wu','Ebehi Iyoha','Jaya Wen','AI Edu Studio','Ministry of Economy and Finance','Ministry of Trade, Industry and Energy','Google Cloud','Kia Global','go-to-market strategy','process innovation','technology adoption'];
+function nbp(t){NBP.forEach(function(x){var e=esc(x);t=t.split(e).join('<span class="nw">'+e+'</span>')});return t}
+function akw(a){return a.kick?String(a.kick):String(a.sub||'').split('\n').map(function(x){return x.trim()}).filter(Boolean).join(' · ')}
+function areaHeadHTML(a,i){var k=akw(a);return '<header class="hhead" style="'+cv(i)+';--fc:var(--t'+i+')">'+(k?'<p class="fkick hk">'+esc(k)+'</p>':'')+'<h3>'+esc(a.head||a.name||'')+'</h3>'+(a.meta?'<p class="hmeta">'+esc(a.meta)+'</p>':'')+(a.intro||a.link?'<p class="hintro">'+nbp(esc(a.intro||''))+(a.link?' <a href="'+esc(a.link)+'" target="_blank" rel="noopener">'+esc(a.lt||hostOf(a.link))+' ↗</a>':'')+'</p>':'')+focusHTML(a)+'</header>'}
+function focusHTML(a){return a.focus&&a.focus.length?'<div class="hfocus" aria-label="Focus areas">'+a.focus.map(function(f){return '<span>'+esc(f)+'</span>'}).join('')+'</div>':''}
 function tabOrder(){var o=(D.tabs||[]).map(function(k){return KEY[k]}).filter(function(i){return i!=null&&D.areas[i]});D.areas.forEach(function(a,i){if(o.indexOf(i)<0)o.push(i)});return o}
 function htabsHTML(){
-  return '<nav class="htabs" aria-label="Sections"><button type="button" class="htab" data-htab="-1" aria-pressed="'+(sel.v===null&&homeTab!=='sel')+'">Home</button><button type="button" class="htab" data-htab="sel" aria-pressed="'+(sel.v===null&&homeTab==='sel')+'">Selected Research</button>'+tabOrder().map(function(i){var a=D.areas[i];return '<button type="button" class="htab" data-htab="'+i+'" aria-pressed="'+(sel.v===i)+'" style="'+cv(i)+'"><i class="hx"></i>'+esc(a.ab||a.title)+'</button>'}).join('')+'</nav>';
+  return '<nav class="htabs" aria-label="Sections"><button type="button" class="htab" data-htab="-1" aria-pressed="'+(sel.v===null&&homeTab!=='sel')+'">Overview</button><button type="button" class="htab" data-htab="sel" aria-pressed="'+(sel.v===null&&homeTab==='sel')+'">Selected Research</button>'+tabOrder().map(function(i){var a=D.areas[i];return '<button type="button" class="htab" data-htab="'+i+'" aria-pressed="'+(sel.v===i)+'" style="'+cv(i)+'"><i class="hx"></i>'+esc(a.ab||a.title)+'</button>'}).join('')+'</nav>';
 }
 function renderHomeLists(){
   var h=editing?'':htabsHTML();
   if(!editing&&sel.v!==null&&D.areas[sel.v]){
     var a=D.areas[sel.v];
-    h+='<div class="hdetail">'+(a.intro||a.link?'<p class="hintro">'+esc(a.intro||'')+(a.link?' <a href="'+esc(a.link)+'" target="_blank" rel="noopener">'+esc(a.lt||hostOf(a.link))+' ↗</a>':'')+'</p>':'')+brandHTML(a)+groupsHTML(sel.v)+
+    h+='<div class="hdetail">'+areaHeadHTML(a,sel.v)+brandHTML(a)+groupsHTML(sel.v)+
       '<div class="hback"><button type="button" class="chip" data-overview>← Back to overview</button></div></div>';
   }else if(!editing&&homeTab==='sel'){
     h+='<div class="hagenda">'+agendaViewHTML('h')+'</div>';
   }else if(!editing){
     D.home.forEach(function(g){var items=g.ids.map(liHTML).join('');if(items)h+='<div class="grp"><h2>'+esc(g.h)+'</h2><ul class="items">'+items+'</ul></div>'});
-    if(D.exp.length)h+='<div class="grp"><h2>Professional Experience</h2><ul class="items">'+D.exp.map(rowHTML).join('')+'</ul></div>';
-    if(D.edu.length)h+='<div class="grp"><h2>Education</h2><ul class="items">'+D.edu.map(rowHTML).join('')+'</ul></div>';
+    if(D.exp.length)h+='<div class="grp"><h2>Experience</h2><ul class="items tl">'+D.exp.map(rowHTML).join('')+'</ul></div>';
+    if(D.edu.length)h+='<div class="grp"><h2>Education</h2><ul class="items tl">'+D.edu.map(rowHTML).join('')+'</ul></div>';
+    if(D.honors&&D.honors.length)h+='<div class="grp"><h2>Honors</h2><ul class="items">'+D.honors.map(rowHTML).join('')+'</ul></div>';
   }else{
     D.home.forEach(function(g,gi){var gp='home.'+gi;
       h+='<div class="grp editing"><div class="gtitle">'+inp(gp+'.h','Section title on the home page')+'<div class="erow">'+moveDel(gp,'Delete section')+'</div></div><ul class="items">'+
@@ -2001,9 +2468,10 @@ function renderHomeLists(){
         '</ul></div>';
     });
     h+='<p class="ehint">To add research to the home page, open its area page (click a hexagon) and pick a section under "Show on home page".</p>'+eb('addhome',null,'+ Add home section').replace('class="eb"','class="eadd"');
-    ['exp','edu'].forEach(function(key){
-      h+='<div class="grp editing"><h2>'+(key==='exp'?'Professional Experience':'Education')+'</h2>'+D[key].map(function(r,i){var p=key+'.'+i;return '<div class="erowcard"><div class="two">'+inp(p+'.t','School or organization (top line)')+inp(p+'.s','Degree or role (smaller line below)')+'</div>'+inp(p+'.y','Year (optional)',{ph:'2024 or Present'})+areaSelect(p+'.go','Color and link to an area page',r.go||'',true)+'<div class="erow">'+moveDel(p)+'</div></div>'}).join('')+
-        eb('addrow',key,'+ Add '+(key==='exp'?'experience':'education')).replace('class="eb"','class="eadd"')+'</div>';
+    if(!D.honors)D.honors=[];
+    ['exp','edu','honors'].forEach(function(key){
+      h+='<div class="grp editing"><h2>'+(key==='exp'?'Experience':key==='edu'?'Education':'Honors')+'</h2>'+D[key].map(function(r,i){var p=key+'.'+i;return '<div class="erowcard"><div class="two">'+inp(p+'.t','School or organization (top line)')+inp(p+'.s','Degree or role (smaller line below)')+'</div>'+'<div class="two">'+inp(p+'.loc','Place (optional)',{ph:'Boston, MA'})+inp(p+'.y','Year (optional)',{ph:'2024 or Present'})+'</div>'+areaSelect(p+'.go','Color and link to an area page',r.go||'',true)+'<div class="erow">'+moveDel(p)+'</div></div>'}).join('')+
+        eb('addrow',key,'+ Add '+(key==='exp'?'experience':key==='edu'?'education':'award')).replace('class="eb"','class="eadd"')+'</div>';
     });
   }
   Q('#home-lists').innerHTML=h;
@@ -2011,9 +2479,9 @@ function renderHomeLists(){
 function renderArea(i){
   var a=D.areas[i],ap='areas.'+i,h;
   if(!editing){
-    h='<div class="ahead"><div class="bighex" style="'+cv(i)+'">'+HEX+'<span>'+esc(a.title)+'</span></div><div><h2>'+esc(a.head)+'</h2>'+(a.meta?'<p class="meta">'+esc(a.meta)+'</p>':'')+(a.intro||a.link?'<p class="intro">'+esc(a.intro)+(a.link?' <a href="'+esc(a.link)+'" target="_blank" rel="noopener">'+esc(a.lt||hostOf(a.link))+' ↗</a>':'')+'</p>':'')+brandHTML(a)+'</div></div>';
+    h='<div class="ahead"><div class="bighex" style="'+cv(i)+'">'+HEX+'<span>'+(a.icon&&ICONS[a.icon]?'<svg class="tic" viewBox="0 0 24 24" aria-hidden="true">'+ICONS[a.icon][1]+'</svg>':'')+esc(a.title)+'</span></div><div class="hhead acall" style="'+cv(i)+';--fc:var(--t'+i+')">'+(akw(a)?'<p class="fkick hk">'+esc(akw(a))+'</p>':'')+'<h2>'+esc(a.head)+'</h2>'+(a.meta?'<p class="meta">'+esc(a.meta)+'</p>':'')+(a.intro||a.link?'<p class="intro">'+nbp(esc(a.intro))+(a.link?' <a href="'+esc(a.link)+'" target="_blank" rel="noopener">'+esc(a.lt||hostOf(a.link))+' ↗</a>':'')+'</p>':'')+focusHTML(a)+brandHTML(a)+'</div></div>';
   }else{
-    h='<div class="aedit" style="'+cv(i)+'"><h2 class="eh">'+esc(a.name||a.ab)+'</h2><div class="two">'+inp(ap+'.title','Hexagon label (press Enter for a new line)',{area:1,rows:3})+inp(ap+'.sub','Small text inside the hexagon',{area:1,rows:3})+'</div><div class="two">'+inp(ap+'.ab','Short label (small hexagon and buttons)')+inp(ap+'.name','Full name of this area')+'</div>'+inp(ap+'.head','Page title')+inp(ap+'.meta','Subtitle')+inp(ap+'.intro','Intro sentence',{area:1})+'<div class="two">'+inp(ap+'.link','Website link (optional)',{ph:'https://'})+inp(ap+'.lt','Link text',{ph:'Website'})+'</div>'+
+    h='<div class="aedit" style="'+cv(i)+'"><h2 class="eh">'+esc(a.name||a.ab)+'</h2><div class="two">'+inp(ap+'.title','Hexagon label (press Enter for a new line)',{area:1,rows:3})+inp(ap+'.sub','Small text inside the hexagon',{area:1,rows:3})+'</div><div class="two">'+inp(ap+'.ab','Short label (small hexagon and buttons)')+inp(ap+'.name','Full name of this area')+'</div>'+inp(ap+'.head','Page title')+inp(ap+'.meta','Subtitle')+iconSelect(ap+'.icon','Symbol in the hexagon',a.icon||'',true)+inp(ap+'.kick','Small colored label at the top (optional; hexagon text is used if empty)')+inp(ap+'.intro','Intro sentence',{area:1})+lines(ap+'.focus','Focus areas, one per line')+'<div class="two">'+inp(ap+'.link','Website link (optional)',{ph:'https://'})+inp(ap+'.lt','Link text',{ph:'Website'})+'</div>'+
       ((a.img||a.links)?'<div class="erow">'+(ASSETS?'<label class="eb" style="cursor:pointer">'+(a.img?'Change logo':'Add logo')+'<input type="file" accept="image/*" data-card-photo="'+ap+'" hidden></label>':'')+(a.img?eb('delimg',ap,'Remove logo',true):'')+'</div>'+(a.links||[]).map(function(l,k){return '<div class="two">'+inp(ap+'.links.'+k+'.t','Link next to the logo')+inp(ap+'.links.'+k+'.url','Link address',{ph:'https://'})+'</div>'}).join(''):'')+'</div>';
   }
   h+='<nav class="switch" aria-label="Areas">'+tabOrder().map(function(k){var b=D.areas[k];return '<a class="sw" href="#'+esc(b.key)+'" style="'+cv(k)+'"'+(k===i?' aria-current="page"':'')+'><i class="hx"></i>'+esc(b.ab)+'</a>'}).join('')+'</nav>';
@@ -2034,23 +2502,53 @@ function renderArea(i){
   if(editing)h+='<div style="margin-top:28px">'+eb('addgroup',ap+'.groups','+ Add section').replace('class="eb"','class="eadd"')+'</div>';
   Q('#v-area').innerHTML=h;
 }
+function figHTML(f){return '<div class="fgx">'+(f.title?'<p class="fgt">'+esc(f.title)+'</p>':'')+'<ul>'+(f.rows||[]).map(function(r){var ok=/^accept/i.test(r[3]||'');return '<li><span class="fgn"><b>'+esc(r[0])+'</b><i>'+esc(r[1]||'')+'</i></span><span class="fgw">'+esc(r[2]||'')+'</span><em class="fgo '+(ok?'ok':'no')+'">'+esc(r[3]||'')+'</em></li>'}).join('')+'</ul>'+(f.note?'<p class="fgnote">'+esc(f.note)+'</p>':'')+'</div>'}
 function renderMisc(){
   var h;
   if(!editing){
     var feats=D.misc.filter(function(m){return m.img}),rest=D.misc.filter(function(m){return !m.img});
-    h=feats.map(function(m,k){var ci=m.c==null?4:m.c;return '<article class="frow" style="'+cv(ci)+';--fc:var(--t'+ci+')"><div class="fimg"><img src="'+esc(m.img)+'" alt="" loading="lazy"><span class="fno">'+(k<9?'0':'')+(k+1)+'</span></div><div class="ftext">'+
-      '<p class="fkick">'+esc(m.kicker||m.t||'')+'</p>'+(m.h?'<h3 class="fh">'+esc(m.h)+'</h3>':'')+(m.q?'<p class="fq">'+esc(m.q)+'</p>':'')+
-      (m.sn?'<div class="fstat"><b>'+esc(m.sn)+'</b><span>'+esc(m.sc||'')+'</span></div>':'')+
+    h=feats.map(function(m,k){var ci=m.c==null?4:m.c;return '<article class="frow" style="'+cv(ci)+';--fc:var(--t'+ci+')"><div class="fimg'+(m.fig?' ffig':'')+'">'+(m.fig?figHTML(m.fig):'<img src="'+esc(m.img)+'" alt="" loading="lazy">')+'<span class="fno">'+(k<9?'0':'')+(k+1)+'</span></div><div class="ftext">'+
+      '<p class="fkick">'+(m.em?'<span class="fem" aria-hidden="true">'+esc(m.em)+'</span>':'')+esc(m.kicker||m.t||'')+(m.st?'<span class="fst">'+esc(m.st)+'</span>':'')+'</p>'+(m.h?'<h3 class="fh">'+esc(m.h)+'</h3>':'')+(m.why?'<p class="fwhy">'+esc(m.why)+'</p>':'')+(m.q?'<p class="fq">'+esc(m.q)+'</p>':'')+
+      (m.sn?'<div class="fstat"><b>'+esc(m.sn)+'</b><span>'+(m.sl?'<em class="fsl">'+esc(m.sl)+'</em>':'')+esc(m.sc||'')+'</span></div>':'')+
       (m.chips&&m.chips.length?'<div class="chips fchips">'+m.chips.map(function(ch){return '<span class="tag">'+esc(ch)+'</span>'}).join('')+'</div>':'')+
       (m.url?'<a class="lk" href="'+esc(m.url)+'" target="_blank" rel="noopener">'+esc(m.ul||hostOf(m.url))+' ↗</a>':'')+'</div></article>'}).join('')+
       (rest.length?'<div class="mgrid">'+rest.map(function(m){var ci=(m.c==null)?null:m.c;return '<article class="card" style="'+cv(ci)+'"><div class="cb"><h4>'+esc(m.t)+'</h4>'+(m.q?'<p class="q">'+esc(m.q)+'</p>':'')+(m.chips&&m.chips.length?'<div class="chips" style="margin-top:6px">'+m.chips.map(function(ch){return '<span class="tag">'+esc(ch)+'</span>'}).join('')+'</div>':'')+'</div></article>'}).join('')+'</div>':'');
   }else{
-    h=D.misc.map(function(m,k){var p='misc.'+k;return '<article class="card editing" style="'+cv(m.c==null?null:m.c)+'"><div class="cb">'+inp(p+'.t','Title')+inp(p+'.kicker','Small label above the question')+inp(p+'.h','Big question')+inp(p+'.q','Text',{area:1,rows:3})+'<div class="two">'+inp(p+'.sn','Big number')+inp(p+'.sc','What the number means')+'</div>'+lines(p+'.chips','Tags, one per line (optional)')+'<div class="two">'+inp(p+'.url','Link (optional)',{ph:'https://'})+inp(p+'.ul','Link text')+'</div>'+areaSelect(p+'.c','Color',m.c==null?'':m.c,false)+'<div class="erow">'+moveDel(p)+'</div></div></article>'}).join('')+
+    h=D.misc.map(function(m,k){var p='misc.'+k;return '<article class="card editing" style="'+cv(m.c==null?null:m.c)+'"><div class="cb">'+inp(p+'.t','Title')+inp(p+'.kicker','Small label above the question')+inp(p+'.h','Big question')+inp(p+'.q','Text',{area:1,rows:3})+'<div class="two">'+inp(p+'.sl','Label above the number (e.g. Finding)')+inp(p+'.sn','Big number')+inp(p+'.sc','What the number means')+'</div>'+lines(p+'.chips','Tags, one per line (optional)')+'<div class="two">'+inp(p+'.url','Link (optional)',{ph:'https://'})+inp(p+'.ul','Link text')+'</div>'+areaSelect(p+'.c','Color',m.c==null?'':m.c,false)+'<div class="erow">'+moveDel(p)+'</div></div></article>'}).join('')+
       '<div>'+eb('addmisc',null,'+ Add card').replace('class="eb"','class="eadd"')+'</div>';
   }
   Q('#misc-grid').innerHTML=h;Q('#misc-grid').className=editing?'mgrid':'fun';
-  var mi=Q('#misc-intro');if(mi){if(editing){mi.innerHTML=inp('miscIntro','Intro line under "Other Interests"')}else{mi.textContent=D.miscIntro||''}}
+  var mi=Q('#misc-intro');if(mi){if(editing){mi.innerHTML=inp('miscIntro','Intro line under "Beyond Research"')}else{mi.textContent=D.miscIntro||''}}
+  var sq=D.sq||{},sh=Q('#sq-head');if(sh)sh.innerHTML=editing?'<div class="two">'+inp('sq.h','Section title')+inp('sq.sub','Line under the title')+'</div>':(sq.h?'<h3>'+emo(sq.em)+esc(sq.h)+'</h3>':'')+(sq.sub?'<p class="bsub">'+esc(sq.sub)+'</p>':'');
+  var bm=Q('#beyond-more');if(bm)bm.innerHTML=beyondHTML();
+  var bp=Q('#beyond-pre');if(bp)bp.innerHTML=bsecHTML('teach');
+  var bq=Q('#bquad');if(bq)bq.innerHTML=quadHTML();
 }
+function tcardHTML(it,p){
+  if(editing)return '<article class="tcard editing">'+inp(p+'.t','Title')+inp(p+'.m','Small line under the title')+inp(p+'.q','Text',{area:1,rows:3})+'</article>';
+  var ic=it.ic&&ICONS[it.ic]?'<span class="tico"><svg viewBox="0 0 24 24" aria-hidden="true">'+ICONS[it.ic][1]+'</svg></span>':'';
+  return '<article class="tcard">'+ic+'<h4>'+esc(it.t)+'</h4>'+(it.m?'<p class="tmeta">'+esc(it.m)+'</p>':'')+(it.q?'<details class="abs cdesc"><summary aria-label="Description" title="Description"></summary><p>'+esc(it.q)+'</p></details>':'')+(it.go?'<a class="tgo" href="#'+esc(it.go)+'" data-go="'+esc(it.go)+'">'+esc(it.gl||'More')+' →</a>':'')+'</article>';
+}
+function bsecHTML(key){
+  var b=D[key];if(!b)return '';
+  var head=editing?'<div class="two">'+inp(key+'.h','Section title')+inp(key+'.lead','Line under the title')+'</div>':'<h3>'+emo(b.em)+esc(b.h)+'</h3>'+(b.lead?'<p class="bsub">'+esc(b.lead)+'</p>':'');
+  var h='<section class="bsec" id="bq-'+key+'"><div class="bhead">'+head+'</div>'+(b.img&&!editing?'<figure class="bsban"><img src="'+esc(b.img)+'" alt="'+esc(b.alt||'')+'" loading="lazy"></figure>':'')+'<div class="tgrid">'+(b.items||[]).map(function(it,k){return tcardHTML(it,key+'.items.'+k)}).join('')+'</div>';
+  if(b.rec&&b.rec.length&&!editing)h+='<details class="trec"><summary><span class="tpl" aria-hidden="true"></span>'+esc(b.rech||'Details')+'</summary><ul>'+b.rec.map(function(r){return '<li><span class="rc"><b>'+esc(r.c)+'</b>'+(r.l?'<i>'+esc(r.l)+'</i>':'')+'</span><span class="ri">'+esc(r.i||'')+'</span><span class="rt">'+esc(r.y||'')+'</span></li>'}).join('')+'</ul></details>';
+  return h+'</section>';
+}
+function emo(e){return e?'<span class="bem" aria-hidden="true">'+esc(e)+'</span>':''}
+function featHTML(key){
+  var f=D[key];if(!f)return '';
+  if(editing)return '<section class="bsec"><div class="bhead">'+inp(key+'.h','Section title')+'</div>'+inp(key+'.kick','Small label')+inp(key+'.story','Story',{area:1,rows:4})+(f.note!=null?'<div class="two">'+inp(key+'.nt','Note title')+inp(key+'.note','Note text',{area:1,rows:3})+'</div>':'')+'</section>';
+  var side=(f.n?'<div class="bfstat"><b>'+esc(f.n)+'</b><span>'+esc(f.nl||'')+'</span></div>':'')+(f.chips&&f.chips.length?'<div class="chips bfchips">'+f.chips.map(function(c){return '<span class="tag">'+esc(c)+'</span>'}).join('')+'</div>':'');
+  return '<section class="bsec" id="bq-'+key+'"><div class="bhead"><h3>'+emo(f.em)+esc(f.h)+'</h3></div><div class="bfeat'+(f.flip?' flip':'')+'"><figure class="bfimg"><img src="'+esc(f.img)+'" alt="'+esc(f.alt||'')+'" loading="lazy"></figure><div class="bftext">'+(f.kick?'<p class="bfkick">'+esc(f.kick)+'</p>':'')+'<p class="bfstory">'+esc(f.story)+'</p>'+side+(f.prog&&f.prog.length?'<dl class="prog">'+f.prog.map(function(p){return '<div><dt>'+esc(p.l)+'</dt><dd><b>'+esc(p.c)+'</b> '+esc(p.p)+(p.x?'<i>'+esc(p.x)+'</i>':'')+'</dd></div>'}).join('')+'</dl>':'')+(f.note?'<div class="bfnote"><b>'+esc(f.nt||'')+'</b><span>'+esc(f.note)+'</span></div>':'')+'</div></div></section>';
+}
+function quadHTML(){
+  var q=D.quad;if(!q||editing)return '';
+  var cell=function(c){return '<button type="button" class="qcell" data-bq="bq-'+esc(c.to)+'" style="'+cv(c.c)+'"><b>'+(c.em?'<em class="qem" aria-hidden="true">'+esc(c.em)+'</em>':'')+esc(c.t)+'</b><span>'+esc(c.d)+'</span><i aria-hidden="true">↓</i></button>'};
+  return '<div class="bquad" role="group" aria-label="Beyond research at a glance"><span></span><span class="qcol">'+esc(q.cols[0])+'</span><span class="qcol">'+esc(q.cols[1])+'</span><span class="qrow">'+esc(q.rows[0])+'</span>'+cell(q.cells[0])+cell(q.cells[1])+'<span class="qrow">'+esc(q.rows[1])+'</span>'+cell(q.cells[2])+cell(q.cells[3])+'</div>';
+}
+function beyondHTML(){return featHTML('music')+bsecHTML('vol')+featHTML('travel')}
 function renderViews(){
   renderHeader();renderIntro();renderChips();renderEdHome();renderHomeLists();renderMisc();
   if(curView==='area'&&curArea!==null)renderArea(curArea);
@@ -2067,6 +2565,7 @@ var ICONS={
  speech:['Speech','<path d="M4 5h16v10h-9l-5 4v-4H4z"/>'],
  chip:['Chip','<rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/>'],
  factory:['Factory','<path d="M3 20V11l5 3v-3l5 3v-3l5 3V5h3v15z"/>'],
+ rocket:['Rocket','<path d="M12 3c3.2 2.2 4.8 5.6 4.5 9.6L14 15h-4l-2.5-2.4C7.2 8.6 8.8 5.2 12 3z"/><circle cx="12" cy="9.5" r="1.6"/><path d="M9.6 15.2 8 19.5l2.6-1.6M14.4 15.2 16 19.5l-2.6-1.6M7.5 12.6 4.5 14l1.2 2.8M16.5 12.6l3 1.4-1.2 2.8"/>'],
  globe:['Globe','<circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c3 3.2 3 13.8 0 17M12 3.5c-3 3.2-3 13.8 0 17"/>'],
  route:['Return arrow','<path d="M5 18h10a4 4 0 0 0 0-8H7"/><path d="M10 7l-3 3 3 3"/>'],
  check:['Magnifier','<circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.3-4.3"/><path d="M8.5 11.2l1.8 1.8 3.2-3.6"/>'],
@@ -2094,6 +2593,7 @@ var ICONS={
  people:['People','<circle cx="9" cy="8" r="3"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2A4.5 4.5 0 0 1 21 18.5"/>'],
  cycle:['Cycle','<path d="M20 12a8 8 0 0 1-14.3 4.9M4 12a8 8 0 0 1 14.3-4.9"/><path d="M18.5 3.5v4h-4M5.5 20.5v-4h4"/>'],
  chart:['Bar chart','<path d="M4 20V4M4 20h16"/><path d="M8 17v-5M12.5 17V8M17 17V5"/>'],
+ linechart:['Line chart','<path d="M4 20V4M4 20h16"/><path d="M7 15.5l4-4.5 3 3 5.5-6.5"/>'],
  trend:['Rising line','<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>'],
  map:['Map','<path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/>'],
  swap:['Two-way arrows','<path d="M4 8h14l-3-3M20 16H6l3 3"/>']
@@ -2120,19 +2620,20 @@ function agTitle(AG){
 }
 function agendaViewHTML(pre){
   var AG=D.agenda||{axes:[]};
-    var pos=[[200,126],[136,236],[264,236]],lab=[[200,82],[96,268],[304,268]];
+    var pos=[[200,126],[136,236],[264,236]],lab=[[200,80],[106,274],[294,274]];
     var svg='<svg class="venn" viewBox="0 0 400 350" role="group" aria-label="Three connected research areas">';
     AG.axes.slice(0,3).forEach(function(x,i){svg+='<circle class="vc" data-ax="'+i+'" cx="'+pos[i][0]+'" cy="'+pos[i][1]+'" r="104" style="fill:var(--c'+x.c+');animation-delay:'+(-i*2.3)+'s"/>'});
     AG.axes.slice(0,3).forEach(function(x,i){svg+=vennLabel(x,i,lab[i][0],lab[i][1])});
-    svg+='<text class="vcenter" x="200" y="204">'+esc(AG.center||'')+'</text></svg>';
-    return '<div class="rhead"><div class="atop">'+(AG.title?'<h2 class="atitle">'+agTitle(AG)+'</h2>':'')+'<p class="alead">'+esc(AG.lead)+'</p></div><div class="vwrap">'+svg+'</div></div><div class="arows">'+AG.axes.map(function(x,i){return '<section class="axis" id="'+pre+'ax-'+i+'" data-ax="'+i+'" style="'+cv(x.c)+';--fc:var(--t'+x.c+')">'+(x.img?'<div class="fimg"><img src="'+esc(x.img)+'" alt="" loading="lazy"><span class="fno">0'+(i+1)+'</span></div>':'')+'<div class="atx"><p class="fkick">'+esc(x.k||x.t)+'</p><h3 class="fh">'+esc(x.h)+'</h3><p class="fq">'+esc(x.q)+'</p><ul class="ail">'+(x.items||[]).map(agItem).join('')+'</ul></div></section>'}).join('')+'</div>';
+    var cw=Math.max(96,String(AG.center||'').length*10.5+34);svg+=(AG.center?'<rect class="vpill" x="'+(200-cw/2)+'" y="181" width="'+cw+'" height="38" rx="19"/><text class="vcenter" x="200" y="200">'+esc(AG.center)+'</text>':'')+'</svg>';
+    var mm=(AG.motivation?'<section class="mmcard"><p class="mml">Motivation</p><p class="mmt">'+nbp(esc(AG.motivation))+'</p></section>':'')+(AG.mission?'<section class="mmcard mmis"><p class="mml">Mission</p><p class="mmt">'+nbp(esc(AG.mission))+'</p></section>':'');
+    return '<div class="rhead"><div class="atop">'+(AG.title?'<h2 class="atitle">'+agTitle(AG)+'</h2>':'')+'<p class="alead">'+esc(AG.lead)+'</p></div><div class="vwrap">'+svg+'</div></div>'+(mm?'<div class="mmrow">'+mm+'</div>':'')+'<div class="arows">'+AG.axes.map(function(x,i){return '<section class="axis" id="'+pre+'ax-'+i+'" data-ax="'+i+'" style="'+cv(x.c)+';--fc:var(--t'+x.c+')">'+(x.img?'<div class="fimg"><img src="'+esc(x.img)+'" alt="" loading="lazy"><span class="fno">0'+(i+1)+'</span></div>':'')+'<div class="atx"><p class="fkick">'+esc(x.k||x.t)+'</p><h3 class="fh">'+esc(x.h)+'</h3><p class="fq">'+esc(x.q)+'</p><ul class="ail">'+(x.items||[]).map(agItem).join('')+'</ul></div></section>'}).join('')+'</div>';
 }
 function renderAgenda(){
   var AG=D.agenda||{axes:[]},box=Q('#v-agenda'),h='';
   if(!editing){
     h=agendaViewHTML('');
   }else{
-    h='<div class="epanel"><h2 class="eh">Research page</h2>'+inp('agenda.title','Question at the top')+inp('agenda.lead','Opening sentence',{area:1,rows:3})+inp('agenda.center','Word in the middle of the circles')+'</div>';
+    h='<div class="epanel"><h2 class="eh">Research page</h2>'+inp('agenda.title','Question at the top')+inp('agenda.lead','Opening sentence',{area:1,rows:3})+inp('agenda.motivation','Motivation card',{area:1,rows:4})+inp('agenda.mission','Mission card',{area:1,rows:3})+inp('agenda.center','Word in the middle of the circles')+'</div>';
     AG.axes.forEach(function(x,i){var p='agenda.axes.'+i;
       h+='<div class="aedit" style="'+cv(x.c)+'"><div class="two">'+inp(p+'.t','Label inside the circle (→ starts a second line)')+inp(p+'.h','Heading')+'</div><div class="two">'+inp(p+'.k','Small label above the heading')+inp(p+'.kw','Word in the top question to underline')+'</div>'+inp(p+'.q','Question',{area:1})+(ASSETS?'<label class="eb" style="justify-self:start;cursor:pointer">'+(x.img?'Change photo':'Add photo')+'<input type="file" accept="image/*" data-card-photo="'+p+'" hidden></label>':'')+'<div class="two">'+colorSelect(p+'.c','Color',x.c)+iconSelect(p+'.icon','Symbol',x.icon)+'</div>'+
         (x.items||[]).map(function(it,j){var ip=p+'.items.'+j;return '<div class="erowcard">'+(it.card!==undefined?cardSelect(ip+'.card','Project',it.card):'<div class="two">'+inp(ip+'.t','Title')+inp(ip+'.s','Details')+'</div>'+areaSelect(ip+'.go','Links to',it.go||'',true))+iconSelect(ip+'.icon','Symbol',it.icon)+'<div class="erow">'+moveDel(ip)+'</div></div>'}).join('')+
@@ -2162,6 +2663,7 @@ function route(){
 window.addEventListener('hashchange',route);
 
 /* ---------- Events ---------- */
+document.addEventListener('click',function(e){var qb=e.target.closest('[data-bq]');if(qb){var qt=document.getElementById(qb.dataset.bq);if(qt)qt.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'})}});
 document.addEventListener('click',function(e){
   var ch=e.target.closest('.chip[data-lens]');if(ch){setLens(ch.dataset.lens);return}
   var vx=e.target.closest('.vc,.vl');if(vx){var vroot=vx.closest('#home-lists,#v-agenda')||document,ax=vroot.querySelector('.axis[data-ax="'+vx.getAttribute('data-ax')+'"]');if(ax)ax.scrollIntoView({block:'start',behavior:RM?'auto':'smooth'});return}
