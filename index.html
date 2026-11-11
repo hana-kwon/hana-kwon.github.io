@@ -515,6 +515,10 @@ label.eadd{display:block;cursor:pointer}
 .ail .lnk{flex:none;margin-top:12px}
 .am{display:block;font-size:12.5px;color:var(--soft)}
 .aq{display:block;font-size:13.5px;line-height:1.5;margin-top:2px}
+.ai.aiq{display:flex;align-items:baseline;gap:10px;justify-content:space-between}
+.ai.aiq b{font-weight:500;font-size:14.5px;line-height:1.5}
+.aigo{flex:none;font-style:normal;color:var(--faint);transition:transform .15s,color .15s}
+.ai.aiq:hover .aigo{color:var(--fc);transform:translateX(2px)}
 @media (max-width:860px){.rhead{grid-template-columns:minmax(0,1fr);gap:8px}.venn{width:min(100%,420px)}.arows{gap:44px;margin-top:28px}.axis{grid-template-columns:minmax(0,1fr);gap:16px}.axis:nth-child(even) .fimg{order:0}}
 @media (prefers-reduced-motion:reduce){.vc{animation:none}}
 
@@ -886,6 +890,7 @@ label.eadd{display:block;cursor:pointer}
 .sqsh .sqem{font-size:26px;line-height:1.2}
 .sqsh h3{margin:0;font-family:var(--serif);font-weight:400;font-size:1.7rem;line-height:1.2;color:var(--ink)}
 .sqsh p{margin:6px 0 0;font-size:15px;color:var(--soft)}
+.sqsh p.sqrip{margin:4px 0 0;font-size:12.5px;font-style:italic;letter-spacing:.01em;color:var(--soft);opacity:.8}
 .fecho{margin:2px 0 0;display:flex;flex-wrap:wrap;gap:2px 6px;align-items:baseline;font-size:12.5px;line-height:1.4;color:var(--soft)}
 .fecho button{padding:0;border:0;background:none;font:inherit;font-weight:600;color:color-mix(in srgb,var(--fc) 70%,var(--ink));cursor:pointer;text-align:left}
 .fecho button:hover{text-decoration:underline}
@@ -1659,7 +1664,7 @@ details .ef{margin-bottom:8px}
         2
        ],
        "ic": "home",
-       "img": "assets/card_fow.jpg",
+       "img": "assets/card_signal.jpg",
        "k": "Signaling Fit: How Startups Attract Software Engineers",
        "abs": "When a startup recruits an engineer, a single line about how the job is designed also tells candidates what kind of organization it is. In a field experiment with 991 early-career professionals invited to a Software Engineer I role, I test how that organizational signal shapes who engages at the first step of hiring, drawing on signaling theory and person–organization fit."
       },
@@ -1737,7 +1742,7 @@ details .ef{margin-bottom:8px}
       {
        "id": "africa",
        "t": "RADIA: Research on AI Diffusion and Innovation in Africa",
-       "w": "Assisted Ebehi Iyoha and Abdoulaye Ndiaye",
+       "w": "Assisting Ebehi Iyoha and Abdoulaye Ndiaye",
        "q": "How African firms adopt and build with AI, and what slows its diffusion.",
        "tg": "iefg",
        "ic": "map",
@@ -1753,12 +1758,13 @@ details .ef{margin-bottom:8px}
        "tg": "i",
        "ic": "swap",
        "img": "assets/card_returning.jpg",
-       "abs": "Tracing 563 life scientists who returned from U.S. to Chinese institutions between 1996 and 2021 and the 311 institutions they joined, the project compares how the methods each returnee brought spread among existing researchers with how equally rare methods the returnee did not bring spread."
+       "abs": "Tracing 563 life scientists who returned from U.S. to Chinese institutions between 1996 and 2021 and the 311 institutions they joined, the project compares how the methods each returnee brought spread among existing researchers with how equally rare methods the returnee did not bring spread.",
+       "s": "Research in progress"
       },
       {
        "id": "wars",
        "t": "AI Bubble & AI Wars: Value and Competition in the AI Industry",
-       "w": "Assisted Andy Wu",
+       "w": "Assisting Andy Wu",
        "s": "HBS case (AI Wars 2026)",
        "q": "Where value is created and captured in AI, and how competition and strategic partnerships shape the industry.",
        "tg": "sf",
@@ -1792,7 +1798,7 @@ details .ef{margin-bottom:8px}
        "id": "svm",
        "l": "State vs. Market",
        "t": "State vs. Market-Oriented Innovation",
-       "w": "Assisted Jaya Wen and Todd Lensman",
+       "w": "Assisting Jaya Wen and Todd Lensman",
        "q": "What shapes where firms direct innovation?",
        "tg": "ipg",
        "x": [
@@ -1806,7 +1812,7 @@ details .ef{margin-bottom:8px}
        "id": "ideology",
        "l": "SMB Tariff",
        "t": "Trading on Ideology in the 2025 Trade War",
-       "w": "Assisted Ebehi Iyoha, Zoe Cullen, and David Atkin",
+       "w": "Assisting Ebehi Iyoha, Zoe Cullen, and David Atkin",
        "q": "How owners' politics shape sourcing under tariffs.",
        "tg": "sipg",
        "x": [
@@ -1850,7 +1856,7 @@ details .ef{margin-bottom:8px}
       {
        "id": "projection",
        "t": "Entrepreneurial Projection Strategy",
-       "w": "Assisted Andy Wu and Aticus Peterson",
+       "w": "Assisting Andy Wu and Aticus Peterson",
        "q": "How startups use revenue projections to establish credibility.",
        "tg": "e",
        "ic": "trend",
@@ -2437,7 +2443,8 @@ details .ef{margin-bottom:8px}
  "github": "https://github.com/hana-kwon",
  "sqr": {
   "h": "Mechanisms at Play",
-  "sub": "Fields I love for fun, where the mechanisms I study play out in plain sight."
+  "sub": "Fields I love for fun, where the mechanisms I study play out in plain sight.",
+  "note": "Research in progress"
  },
  "streams": {
   "h": "Six themes, one path",
@@ -3006,7 +3013,7 @@ var ILK=/\s*(?:·\s*)?\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/;
 function sPlain(t){return String(t||'').replace(new RegExp(ILK.source,'g'),'').trim()}
 function sLink(t){var m=String(t||'').match(ILK);return m?{t:m[1],u:m[2]}:null}
 function sHTML(t){t=String(t||'');var re=new RegExp(ILK.source,'g'),out='',last=0,m;while((m=re.exec(t))){out+=esc(t.slice(last,m.index))+esc(m[0].slice(0,m[0].indexOf('[')))+'<a class="ilk" href="'+esc(m[2])+'" target="_blank" rel="noopener">'+esc(m[1])+' ↗</a>';last=m.index+m[0].length}return out+esc(t.slice(last))}
-function isRA(c){return /^(research assistan|assisted\b)/i.test(String(c.w||'').trim())}
+function isRA(c){return /^(research assistan|assist(ed|ing)\b)/i.test(String(c.w||'').trim())}
 function wFace(c){return c.w||''}
 function raHTML(c){return ''}
 function wsHTML(c,sep){var st=sPlain(c.s),w=wFace(c);return (w?esc(w):'')+(w&&st?'<br>':'')+(st?'<em>'+esc(st)+'</em>':'')}
@@ -3363,9 +3370,10 @@ function colorSelect(path,label,cur){var id=fid(path);return '<label class="ef" 
 function cardSelect(path,label,cur){var id=fid(path);return '<label class="ef" for="'+id+'"><span>'+esc(label)+'</span><select class="ed" id="'+id+'" data-b="'+path+'">'+D.areas.map(function(a){return '<optgroup label="'+esc(a.name||a.ab)+'">'+a.groups.map(function(g){return (g.cards||[]).map(function(c){return '<option value="'+esc(c.id)+'"'+(c.id===cur?' selected':'')+'>'+esc(c.l||c.t)+'</option>'}).join('')}).join('')+'</optgroup>'}).join('')+'</select></label>'}
 function agItem(it){
   var c=it.card?CARD[it.card]:null;if(it.card&&!c)return '';
-  var t=c?c.t:it.t,meta=c?wsHTML(c,' · '):esc(it.s||''),q=c?c.q:'';
+  // the Research page shows only the question; the project itself (title, people, details) lives once, on its card
+  var line=c?(c.q||c.t):it.t;
   var attr=c?' data-card="'+esc(c.id)+'"':(it.go?' data-go="'+esc(it.go)+'"':'');
-  return '<li><button type="button" class="ai"'+attr+'><b>'+esc(t)+'</b>'+(meta?'<span class="am">'+meta+'</span>':'')+(q?'<span class="aq">'+esc(q)+'</span>':'')+'</button>'+(c&&c.url?'<a class="lnk" href="'+esc(c.url)+'" target="_blank" rel="noopener">'+esc(c.ul||hostOf(c.url))+' ↗</a>':'')+'</li>';
+  return '<li><button type="button" class="ai aiq"'+attr+'><b>'+esc(line)+'</b><i class="aigo" aria-hidden="true">→</i></button></li>';
 }
 function vennLabel(x,i,cx,cy){
   var parts=String(x.t||'').split('→'),l1=parts[0].trim(),l2=parts.length>1?'→ '+parts.slice(1).join('→').trim():'';
@@ -3391,7 +3399,7 @@ function researchMapHTML(){
   if(editing)return '';
   return '<details class="qfold umbfold" open><summary><span class="qfh">How the projects fit together</span><span class="qfs">One map of the research</span><i class="sqchev" aria-hidden="true"></i></summary><div class="umbwrap">'+UMB_SVG+'</div></details>';
 }
-function sqTeaserHTML(){var m=D.misc||[];if(!m.length)return '';var R=D.sqr||{},qc=((D.quad||{}).cells||[]).filter(function(c){return c.to==='sq'})[0],em=(qc&&qc.em)||'\ud83d\uddfa\ufe0f';return '<section class="sqsec" id="sqsec"><div class="sqsh"><span class="sqem" aria-hidden="true">'+esc(em)+'</span><div><h3>'+esc(R.h||'Side Quests')+'</h3>'+(R.sub?'<p>'+esc(R.sub)+'</p>':'')+'</div></div><div class="sqgrid">'+sqCardsHTML()+'</div></section>'}
+function sqTeaserHTML(){var m=D.misc||[];if(!m.length)return '';var R=D.sqr||{},qc=((D.quad||{}).cells||[]).filter(function(c){return c.to==='sq'})[0],em=(qc&&qc.em)||'\ud83d\uddfa\ufe0f';return '<section class="sqsec" id="sqsec"><div class="sqsh"><span class="sqem" aria-hidden="true">'+esc(em)+'</span><div><h3>'+esc(R.h||'Side Quests')+'</h3>'+(R.sub?'<p>'+esc(R.sub)+'</p>':'')+(R.note?'<p class="sqrip">'+esc(R.note)+'</p>':'')+'</div></div><div class="sqgrid">'+sqCardsHTML()+'</div></section>'}
 
 function renderAgenda(){
   var AG=D.agenda||{axes:[]},box=Q('#v-agenda'),h='';
