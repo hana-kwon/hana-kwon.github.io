@@ -137,6 +137,8 @@ h1 a{text-decoration:none}
 .tile.center svg{filter:drop-shadow(0 6px 16px rgba(20,24,30,.18))}
 .tile.center .full{font-family:var(--serif);font-style:normal;font-size:25px;line-height:1.2;padding-inline:24px;letter-spacing:.005em}
 .tile.center .full b{display:inline;font-size:inherit;font-weight:400;white-space:normal}
+.tile.center .ckick{display:block;margin:0 0 4px;font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;opacity:.62}
+#stage.m .tile.center .ckick{font-size:8.5px;letter-spacing:.12em;margin-bottom:2px}
 .tile.center .cbar{display:block;width:46px;height:3px;margin:10px auto 0;padding:0;border-radius:2px;opacity:1;background:linear-gradient(90deg,var(--c0),var(--c5),var(--c3),var(--c1),var(--c4),var(--c2))}
 #stage.m .tile.center .full{font-size:16px;padding-inline:14px}
 #stage.m .tile.center .cbar{width:30px;height:2.5px;margin-top:6px}
@@ -420,6 +422,7 @@ button.li:hover{background:color-mix(in srgb,var(--vc) 22%,var(--paper))}
 /* Galleries */
 .lks{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:6px}
 .lks .lk{margin-top:0}
+.lks .lkp{font-size:12.5px;font-style:italic;color:var(--soft);opacity:.85;margin-right:-6px;align-self:center}
 .mgal{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:16px;align-items:start}
 .mgal figure{margin:0;min-width:0;display:grid;gap:6px}
 .mgal figcaption{font-size:13px;color:var(--soft);line-height:1.35}
@@ -820,6 +823,7 @@ label.eadd{display:block;cursor:pointer}
 .mmore p{font-family:var(--narr);font-size:13.5px;line-height:1.62;color:var(--soft)}
 .note .nt{font-family:var(--narr);font-size:13.5px;line-height:1.6}
 .mstory.solo p{color:var(--ink)}
+.mlist .mtx>p.msh{margin:0 0 6px;font-family:var(--narr);font-weight:700;font-size:14.5px;line-height:1.35;color:var(--ink)}
 .mstory.solo p:first-child{margin-top:0}
 .mstory p{margin:8px 0 0;font-family:var(--narr);font-size:13.5px;line-height:1.62;color:var(--soft)}
 .mtkn{font-family:var(--narr);font-size:14px}
@@ -1118,6 +1122,7 @@ details .ef{margin-bottom:8px}
   ]
  },
  "center": "*Innovation*",
+ "centerKick": "I study",
  "themes": [
   {
    "k": "i",
@@ -1200,7 +1205,8 @@ details .ef{margin-bottom:8px}
         "CES 2019|https://www.kiamedia.com/us/es/media/pressreleases/14844/ces-2019-kia-prepares-for-post-autonomous-driving-era-with-ai-based-real-time-emotion-recognition-te"
        ],
        "w": "with Kia Global, Google Cloud",
-       "abs": "Digital transformation of manufacturing process engineering for Kia worldwide, and a Google Cloud–based data platform built with Google."
+       "abs": "Digital transformation of manufacturing process engineering for Kia worldwide, and a Google Cloud–based data platform built with Google.",
+       "lp": "Background"
       },
       {
        "id": "notion",
@@ -1215,7 +1221,8 @@ details .ef{margin-bottom:8px}
        "ic": "flag",
        "img": "assets/card_notion_real.jpg",
        "w": "with Notion",
-       "abs": "Supported Notion's entry into Korea, its first market beyond English, in 2020."
+       "abs": "Supported Notion's entry into Korea, its first market beyond English, in 2020.",
+       "lp": "Background"
       },
       {
        "id": "hitachi",
@@ -1227,7 +1234,8 @@ details .ef{margin-bottom:8px}
        "tg": "fc",
        "ic": "cloud",
        "img": "assets/card_bubble.jpg",
-       "abs": "Supported enterprise adoption of hybrid cloud and hyperconverged infrastructure (HCI), 2019–2021."
+       "abs": "Supported enterprise adoption of hybrid cloud and hyperconverged infrastructure (HCI), 2019–2021.",
+       "lp": "Background"
       },
       {
        "id": "siemens",
@@ -1258,7 +1266,8 @@ details .ef{margin-bottom:8px}
          }
         ]
        },
-       "abs": "Analyzed strategic and structural risks as Siemens spun off its gas and power business as Siemens Energy, listed in September 2020, and shifted toward industrial software and digital twins."
+       "abs": "Analyzed strategic and structural risks as Siemens spun off its gas and power business as Siemens Energy, listed in September 2020, and shifted toward industrial software and digital twins.",
+       "lp": "Background"
       }
      ]
     }
@@ -2655,14 +2664,16 @@ details .ef{margin-bottom:8px}
      "em": "🎹",
      "t": "",
      "code": "Since age 5",
-     "story": "I have loved classical piano since I started at five. Music runs on my mother’s side: my grandfather and my mom both studied music, which makes me the third generation. I played for years and was good at it. At twelve, I won the grand prize at a national competition with Liszt’s Mephisto Waltz No. 1, and I seriously considered a life in music. When I had to choose between an arts high school and a foreign language high school, I asked my mom for advice. A musician herself, she knew how narrow a career in music could be, mostly performing or teaching, and she told me to choose the path with more doors and a wider world. I took her advice and went to the foreign language high school, but I never stopped playing.\n\nMusic is still how I unwind, let go of stress, and take in the world. I have been listening to classical music since before I was born, so it has always felt like home. I especially love playing Chopin’s “Revolutionary” and “Black Key” Études, and my favorite piece of all is Mendelssohn’s Rondo Capriccioso."
+     "story": "I have loved classical piano since I started at five. Music runs on my mother’s side: my grandfather and my mom both studied music, which makes me the third generation. I played for years and was good at it. At twelve, I won the grand prize at a national competition with Liszt’s Mephisto Waltz No. 1, and I seriously considered a life in music. When I had to choose between an arts high school and a foreign language high school, I asked my mom for advice. A musician herself, she knew how narrow a career in music could be, mostly performing or teaching, and she told me to choose the path with more doors and a wider world. I took her advice and went to the foreign language high school, but I never stopped playing.\n\nMusic is still how I unwind, let go of stress, and take in the world. I have been listening to classical music since before I was born, so it has always felt like home. I especially love playing Chopin’s “Revolutionary” and “Black Key” Études, and my favorite piece of all is Mendelssohn’s Rondo Capriccioso.",
+     "sh": "Classical piano"
     },
     {
      "em": "✈️",
      "t": "",
      "photos": "travel",
      "code": "20 countries",
-     "story": "Travel is a family tradition. Every school break, we went somewhere new, and we have covered about 20 countries across five continents so far. Most recently, the destination was Boston and New York, with me as the ultimate tour guide. Where to next? That decision is currently under review, by a few PhD admissions committees. 😉"
+     "story": "Travel is a family tradition. Every school break, we went somewhere new, and we have covered about 20 countries across five continents so far. Most recently, the destination was Boston and New York, with me as the ultimate tour guide. Where to next? That decision is currently under review, by a few PhD admissions committees. 😉",
+     "sh": "Family travel"
     }
    ]
   },
@@ -2778,7 +2789,7 @@ function buildMap(){
   });
   if(D.hexOrder&&D.hexOrder.length===T.length)D.hexOrder.forEach(function(k){if(T[k])layer.appendChild(T[k].el)});
   center=document.createElement('button');center.type='button';center.className='tile center';
-  center.innerHTML=HEX+'<span class="full">'+ctr(D.center)+'<i class="cbar" aria-hidden="true"></i></span><span class="ab">Overview</span>';
+  center.innerHTML=HEX+'<span class="full">'+(D.centerKick?'<span class="ckick">'+esc(D.centerKick)+'</span>':'')+ctr(D.center)+'<i class="cbar" aria-hidden="true"></i></span><span class="ab">Overview</span>';
   center.addEventListener('click',function(){if(sel.v!==null)closeAll();else setLens(lens)});
   layer.appendChild(center);
   var LK=D.links.slice(),nT=T.length;
@@ -3071,11 +3082,11 @@ function qHTML(c){return c.q?'<p class="cq">'+esc(c.q)+'</p>':''}
 function descHTML(c){var q='',a=(c.abs?String(c.abs).split(/\n\s*\n/).map(function(x){return '<p>'+esc(x.trim())+'</p>'}).join(''):'')+(c.role?'<p class="ra">'+esc(c.role)+'</p>':'');return (q||a)?'<details class="abs cdesc"><summary aria-label="Description" title="Description"></summary>'+q+a+'</details>':''}
 function prowHTML(c,ci){
   var meta=[];if(wFace(c))meta.push('<span>'+esc(wFace(c))+'</span>');if(c.s)meta.push('<em>'+sHTML(c.s)+'</em>');
-  var lks=(c.url||(c.more&&c.more.length))?'<div class="lks">'+(c.url?'<a class="lk" href="'+esc(c.url)+'" target="_blank" rel="noopener">'+esc(c.ul||hostOf(c.url))+' ↗</a>':'')+moreHTML(c)+'</div>':'';
+  var lks=(c.url||(c.more&&c.more.length))?'<div class="lks">'+(c.lp?'<span class="lkp">'+esc(c.lp)+':</span>':'')+(c.url?'<a class="lk" href="'+esc(c.url)+'" target="_blank" rel="noopener">'+esc(c.ul||hostOf(c.url))+' ↗</a>':'')+moreHTML(c)+'</div>':'';
   return '<article class="prow" id="card-'+esc(c.id)+'" style="'+cv(ci)+'"><div class="pth">'+(c.img?'<img src="'+esc(c.img)+'" alt="" loading="lazy">':art(c.id,ci,c.ic))+'</div><div class="pbd"><h4>'+esc(c.k||c.t)+'</h4>'+(c.k?'<p class="ft">'+esc(c.t)+'</p>':'')+(meta.length?'<p class="pm">'+meta.join('<i aria-hidden="true">·</i>')+'</p>':'')+pwHTML(c)+qHTML(c)+raHTML(c)+descHTML(c)+lks+'</div></article>';
 }
 function cardHTML(c,ci){
-  return '<article class="card" id="card-'+esc(c.id)+'" style="'+cv(ci)+'"><div class="art'+(c.split?' asplit':'')+'">'+(c.split?splitHTML(c.split):c.img?'<img src="'+esc(c.img)+'" alt="" loading="lazy">':art(c.id,ci,c.ic))+(c.badge?'<span class="abadge"><img src="'+esc(c.badge)+'" alt="" loading="lazy">'+(c.badgeT?'<span>'+esc(c.badgeT).replace(/\n/g,'<br>')+'</span>':'')+'</span>':'')+'</div><div class="cb"><h4>'+esc(c.k||c.t)+'</h4>'+(c.k?'<p class="ft">'+esc(c.t)+'</p>':'')+(wFace(c)?'<p class="w">'+esc(wFace(c))+'</p>':'')+(c.s?'<p class="w'+(/^project with/i.test(c.s)?' pl':'')+'"><em>'+sHTML(c.s)+'</em></p>':'')+pwHTML(c)+qHTML(c)+raHTML(c)+descHTML(c)+((c.url||(c.more&&c.more.length))?'<div class="lks">'+(c.url?'<a class="lk" href="'+esc(c.url)+'" target="_blank" rel="noopener">'+esc(c.ul||hostOf(c.url))+' ↗</a>':'')+moreHTML(c)+'</div>':'')+'</div></article>';
+  return '<article class="card" id="card-'+esc(c.id)+'" style="'+cv(ci)+'"><div class="art'+(c.split?' asplit':'')+'">'+(c.split?splitHTML(c.split):c.img?'<img src="'+esc(c.img)+'" alt="" loading="lazy">':art(c.id,ci,c.ic))+(c.badge?'<span class="abadge"><img src="'+esc(c.badge)+'" alt="" loading="lazy">'+(c.badgeT?'<span>'+esc(c.badgeT).replace(/\n/g,'<br>')+'</span>':'')+'</span>':'')+'</div><div class="cb"><h4>'+esc(c.k||c.t)+'</h4>'+(c.k?'<p class="ft">'+esc(c.t)+'</p>':'')+(wFace(c)?'<p class="w">'+esc(wFace(c))+'</p>':'')+(c.s?'<p class="w'+(/^project with/i.test(c.s)?' pl':'')+'"><em>'+sHTML(c.s)+'</em></p>':'')+pwHTML(c)+qHTML(c)+raHTML(c)+descHTML(c)+((c.url||(c.more&&c.more.length))?'<div class="lks">'+(c.lp?'<span class="lkp">'+esc(c.lp)+':</span>':'')+(c.url?'<a class="lk" href="'+esc(c.url)+'" target="_blank" rel="noopener">'+esc(c.ul||hostOf(c.url))+' ↗</a>':'')+moreHTML(c)+'</div>':'')+'</div></article>';
 }
 
 /* ---------- Edit-mode building blocks ---------- */
@@ -3275,7 +3286,7 @@ function bxHTML(x){
     var go='';var gob=it.go?'<button type="button" class="mpill" data-go="'+esc(it.go)+'">'+(it.gem?'<span aria-hidden="true">'+esc(it.gem)+'</span>':'')+esc(it.gl||'More')+' <i aria-hidden="true">→</i></button>':'';
     var more=(it.more?'<details class="abs cdesc mmore"><summary aria-label="More" title="More"></summary>'+paras(it.more)+'</details>':'')+(it.story?'<div class="mstory'+(it.t?'':' solo')+'">'+paras(it.story)+'</div>':'');
     var ph='';var src=it.photos&&D[it.photos];if(src&&src.photos&&src.photos.length)ph='<div class="bstrip mstrip" style="--n:'+src.photos.length+'">'+src.photos.map(function(p){return '<figure><img src="'+esc(p.src)+'" alt="'+esc(p.alt||p.cap||'')+'" loading="lazy"'+(p.pos?' style="object-position:'+esc(p.pos)+'"':'')+'></figure>'}).join('')+'</div>';
-    return '<li><span class="mcode">'+esc(it.code||((x.code||'')+(i+1)))+'</span><span class="mem" aria-hidden="true">'+esc(it.em||'')+'</span><div class="mtx">'+(it.t?'<p>'+esc(it.t)+link+go+'</p>':'')+gob+more+ph+'</div></li>'}).join('');
+    return '<li><span class="mcode">'+esc(it.code||((x.code||'')+(i+1)))+'</span><span class="mem" aria-hidden="true">'+esc(it.em||'')+'</span><div class="mtx">'+(it.sh?'<p class="msh">'+esc(it.sh)+'</p>':'')+(it.t?'<p>'+esc(it.t)+link+go+'</p>':'')+gob+more+ph+'</div></li>'}).join('');
   var rec='';var b=D[x.key];if(x.rec&&b&&b.recg&&b.recg.length)rec='<details class="trec"><summary><span class="tpl" aria-hidden="true"></span>'+esc(b.rech||'Details')+'</summary><div class="tgroups">'+b.recg.map(function(g){return '<div class="tgp"><p class="tgh"><b>'+esc(g.h)+'</b>'+(g.s?'<span>'+esc(g.s)+'</span>':'')+'</p>'+(g.note?'<p class="tgn">'+esc(g.note)+'</p>':'')+(g.rows&&g.rows.length?'<ul>'+g.rows.map(function(r){return '<li><span class="rc"><b>'+esc(r.c)+'</b>'+(r.l?'<i>'+esc(r.l)+'</i>':'')+'</span><span class="ri">'+esc(r.i||'')+(r.y?' · '+esc(r.y):'')+'</span></li>'}).join('')+'</ul>':'')+'</div>'}).join('')+'</div></details>';
   if(x.style==='cards'){var NC={roots:'#5E1424',snu:'#4A63C2',cons:'#E0952B',fnd:'#3AA57A'};items='<div class="gbn">'+(x.items||[]).map(function(it,i){return '<article class="note" style="--nc:'+(NC[it.c]||'#5E1424')+';--rot:'+[-1.4,1.1,.9,-1][i%4]+'deg"><span class="tape" aria-hidden="true"></span><div class="nh"><span class="nem" aria-hidden="true">'+esc(it.em||'')+'</span><span class="nk">'+esc(it.k||'')+'</span></div><p class="nhand">'+esc(it.hand||'')+'</p><p class="nt">'+esc(it.t)+'</p>'+(it.u?'<a class="mlk" href="'+esc(it.u)+'" target="_blank" rel="noopener">'+esc(it.ul||hostOf(it.u))+' \u2197</a>':'')+'</article>'}).join('')+'</div>';return '<section class="bsec mx" id="bq-'+esc(x.key)+'"><div class="bhead"><h3>'+emo(x.em)+esc(x.h)+'</h3>'+(x.prem?'<p class="mprem">'+esc(x.prem)+'</p>':'')+'</div>'+items+'</section>'}
   return '<section class="bsec mx" id="bq-'+esc(x.key)+'"><div class="bhead"><h3>'+emo(x.em)+esc(x.h)+'</h3>'+(x.prem?'<p class="mprem">'+esc(x.prem)+'</p>':'')+'</div>'+(x.lead?'<p class="mlead">'+esc(x.lead)+'</p>':'')+'<ol class="mlist">'+items+'</ol>'+rec+'</section>';
