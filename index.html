@@ -1366,7 +1366,7 @@ details .ef{margin-bottom:8px}
   "h": "",
   "p": [
    "Hello! I am a predoctoral research associate at Harvard Business School, where I am fortunate to work with Professors Andy Wu, Ebehi Iyoha, and Jaya Wen.",
-   "I study how firms innovate at the technological frontier: how they build capabilities that rivals cannot buy, and when they invest in technologies they may be unable to buy when they need them.",
+   "I study how firms innovate at the technological frontier, especially as markets, technological maturity, and state power open and close access to frontier technology.",
    "Before HBS, I was a researcher at KIET, Korea's government think tank for industry and trade, working on economic and industrial policy for semiconductors, batteries, and supply chains, and a research assistant at Columbia Business School and ISERP.",
    "I am also a co-founder of an EdTech startup, where I designed, built, and launched an interactive AI voice app for children, now being piloted in an English kindergarten in Korea. Before that, I was a strategy consultant for software, fintech, and manufacturing firms, working on go-to-market strategy, process innovation, and technology adoption."
   ]
@@ -1990,9 +1990,9 @@ details .ef{margin-bottom:8px}
        "ic": "globe",
        "img": "assets/card_config_map.jpg",
        "th": [
-        55,
-        50,
-        0.75
+        64,
+        40,
+        1.5
        ]
       },
       {
@@ -2007,7 +2007,12 @@ details .ef{margin-bottom:8px}
        ],
        "ic": "network",
        "img": "assets/card_wars.jpg",
-       "l": "AI Bubble & AI Wars"
+       "l": "AI Bubble & AI Wars",
+       "th": [
+        51,
+        62,
+        0.85
+       ]
       },
       {
        "id": "africa",
@@ -2034,7 +2039,12 @@ details .ef{margin-bottom:8px}
        "ic": "swap",
        "img": "assets/card_returning.jpg",
        "abs": "Tracing 563 life scientists who returned from U.S. to Chinese institutions between 1996 and 2021 and the 311 institutions they joined, the project compares how the methods each returnee brought spread among existing researchers with how equally rare methods the returnee did not bring spread.",
-       "s": "Research in progress"
+       "s": "Research in progress",
+       "th": [
+        33,
+        45,
+        1.1
+       ]
       }
      ]
     },
@@ -2094,9 +2104,9 @@ details .ef{margin-bottom:8px}
        "img": "assets/card_reroute.jpg",
        "abs": "How does an owner's political orientation shape a small business's response to tariffs? Linking firms' trade records with owners' political data, the project compares sourcing before and after the 2025 tariffs with difference-in-differences and event-study designs, asking whether firms switch suppliers, shift sourcing countries, or absorb costs differently depending on their owners' ideology.",
        "th": [
-        49,
-        47,
-        0.5
+        74,
+        50,
+        1
        ]
       }
      ]
@@ -2269,7 +2279,7 @@ details .ef{margin-bottom:8px}
   }
  ],
  "agenda": {
-  "lead": "Innovating at the frontier requires investing in {o:capabilities that rivals cannot buy} and in {c:technologies that firms may be unable to buy when they need them}. I study how firms develop organizational capabilities to innovate with technologies equally available to their rivals, and how they adjust their sourcing and technology investments under technological and political uncertainty.",
+  "lead": "I study how firms innovate at the technological frontier, especially as markets, technological maturity, and state power open and close access to frontier technology. The underlying question is how access shapes not only how much firms invest in new technology, but {o:where their advantage comes from} and {c:what they choose to build}: which capabilities they develop in-house, which technologies they buy or make, and when they commit.\n\nMy current work examines how firms time investments in deep technologies whose arrival is uncertain, how control over critical inputs shapes technological leadership, where multinationals place new AI talent relative to their managers, and whether proprietary AI still sustains startup advantage once comparable models can be bought. Methodologically, I exploit policy and technology shocks with difference-in-differences and instrumental-variable designs and run field and online experiments and surveys. I also build new measures, linking large-scale trade, worker, and firm records and using large language models to read what firms say.",
   "center": "Innovation",
   "axes": [
    {
@@ -3012,7 +3022,9 @@ details .ef{margin-bottom:8px}
     "items": [
      "config",
      "moats",
-     "africa"
+     "wars",
+     "africa",
+     "returning"
     ],
     "ak": "When access opens"
    },
@@ -3759,7 +3771,7 @@ function agendaViewHTML(pre){
   var mid='<div class="pv-mid"><div class="pv-midcard"><p class="pv-bk">'+esc(BR.h)+'</p>'+gauge+'<p class="pv-bt">'+esc(BR.t||'')+'</p><p class="pv-bq">'+esc(BR.q)+'</p>'+BR.items.map(function(id){var c=CARD[id];if(!c)return '';return '<button type="button" class="pv-mini pv-wth" data-card="'+esc(id)+'">'+pvTh(c)+'<span class="pv-t">'+esc(String(c.t).split(':')[0])+'</span><span class="pv-m">'+esc(c.w||'Independent research')+'</span><i class="pv-arr" aria-hidden="true">→</i></button>'}).join('')+'</div></div>';
   var fork='<div class="pv-fork" aria-hidden="true"><div class="pv-fkl"></div><div class="pv-fkc"><span>Access to frontier technology</span></div><div class="pv-fkr"></div></div>';
   var split='<section class="pv-block"><h3 class="pv-bh">Research Streams</h3>'+fork+'<div class="pv-split">'+stream(P.streams[0],'l')+mid+stream(P.streams[1],'r')+'</div></section>';
-  return '<div class="rhead pv-rhead"><div class="atop">'+(AG.title?'<h2 class="atitle">'+esc(AG.title)+'</h2>':'')+'<p class="alead">'+hl(esc(AG.lead))+'</p></div></div>'+(mm?'<details class="mmfold"><summary><span>Motivation &amp; Mission</span><i class="sqchev" aria-hidden="true"></i></summary><div class="mmrow">'+mm+'</div></details>':'')+quadHTML()+split+sqTeaserHTML();
+  return '<div class="rhead pv-rhead"><div class="atop">'+(AG.title?'<h2 class="atitle">'+esc(AG.title)+'</h2>':'')+String(AG.lead||'').split(/\n\s*\n/).map(function(x){return '<p class="alead">'+hl(esc(x.trim()))+'</p>'}).join('')+'</div></div>'+(mm?'<details class="mmfold"><summary><span>Motivation &amp; Mission</span><i class="sqchev" aria-hidden="true"></i></summary><div class="mmrow">'+mm+'</div></details>':'')+quadHTML()+split+sqTeaserHTML();
 }
 var UMB_SVG="<svg class=\"umb\" viewBox=\"0 0 1200 883\" role=\"img\" aria-labelledby=\"ut ud\" xmlns=\"http://www.w3.org/2000/svg\"><title id=\"ut\">Research map: one overarching question over three overlapping research areas<\/title><desc id=\"ud\">An umbrella labeled The overarching question, Who wins at the frontier, and who decides, covers a three-circle Venn diagram of Science and Technology, Geopolitics, and Entrepreneurship, with Innovation at the center and ten projects placed in the regions. At the bottom, the methods behind the work.<\/desc><defs><clipPath id=\"ucp\"><path d=\"M250,172 A350.0,122 0 0 1 950,172 Q891.7,148 833.3,172 Q775.0,148 716.7,172 Q658.3,148 600.0,172 Q541.7,148 483.3,172 Q425.0,148 366.7,172 Q308.3,148 250.0,172 Z\"/><\/clipPath><\/defs><line x1=\"600\" y1=\"50\" x2=\"600\" y2=\"28\" class=\"u-tip\"/><circle cx=\"600\" cy=\"25\" r=\"3.5\" class=\"u-tipdot\"/><path d=\"M250,172 A350.0,122 0 0 1 950,172 Q891.7,148 833.3,172 Q775.0,148 716.7,172 Q658.3,148 600.0,172 Q541.7,148 483.3,172 Q425.0,148 366.7,172 Q308.3,148 250.0,172 Z\" class=\"u-can\"/><g clip-path=\"url(#ucp)\" class=\"u-pan\"><path d=\"M600,50 L250.0,176 L366.7,176 Z\"/><path d=\"M600,50 L483.3,176 L600.0,176 Z\"/><path d=\"M600,50 L716.7,176 L833.3,176 Z\"/><\/g><g clip-path=\"url(#ucp)\" class=\"u-rib\"><line x1=\"600\" y1=\"50\" x2=\"366.7\" y2=\"172\"/><line x1=\"600\" y1=\"50\" x2=\"483.3\" y2=\"172\"/><line x1=\"600\" y1=\"50\" x2=\"600.0\" y2=\"172\"/><line x1=\"600\" y1=\"50\" x2=\"716.7\" y2=\"172\"/><line x1=\"600\" y1=\"50\" x2=\"833.3\" y2=\"172\"/><\/g><path d=\"M250,172 A350.0,122 0 0 1 950,172 Q891.7,148 833.3,172 Q775.0,148 716.7,172 Q658.3,148 600.0,172 Q541.7,148 483.3,172 Q425.0,148 366.7,172 Q308.3,148 250.0,172 Z\" class=\"u-canline\"/><text x=\"600.0\" y=\"112.0\" class=\"u-uk\" text-anchor=\"middle\">THE OVERARCHING QUESTION<\/text><text x=\"600.0\" y=\"148.0\" class=\"u-uq\" text-anchor=\"middle\">Who wins at the frontier, and who decides?<\/text><g class=\"u-circ\"><circle cx=\"600\" cy=\"394\" r=\"200\" class=\"u-ca\"/><circle cx=\"480.0\" cy=\"601.8\" r=\"200\" class=\"u-cb\"/><circle cx=\"720.0\" cy=\"601.8\" r=\"200\" class=\"u-cc\"/><\/g><text x=\"600.0\" y=\"258.0\" class=\"u-h u-ha\" text-anchor=\"middle\">SCIENCE &amp; TECHNOLOGY<\/text><g class=\"u-pj\" data-card=\"clock\" role=\"button\" tabindex=\"0\" aria-label=\"Future Tech Clock\"><text x=\"600.0\" y=\"290.0\" class=\"u-p\" text-anchor=\"middle\">Future Tech Clock<\/text><\/g><g class=\"u-pj\" data-card=\"config\" role=\"button\" tabindex=\"0\" aria-label=\"Geography of AI\"><text x=\"600.0\" y=\"311.0\" class=\"u-p\" text-anchor=\"middle\">Geography of AI<\/text><\/g><g class=\"u-pj\" data-card=\"africa\" role=\"button\" tabindex=\"0\" aria-label=\"RADIA: AI in Africa\"><text x=\"600.0\" y=\"332.0\" class=\"u-p\" text-anchor=\"middle\">RADIA: AI in Africa<\/text><\/g><text x=\"418.0\" y=\"631.8\" class=\"u-h u-hb\" text-anchor=\"middle\">GEOPOLITICS<\/text><g class=\"u-pj\" data-card=\"svm\" role=\"button\" tabindex=\"0\" aria-label=\"State vs. Market-led Innovation\"><text x=\"418.0\" y=\"661.8\" class=\"u-p\" text-anchor=\"middle\">State vs. Market-led<\/text><text x=\"418.0\" y=\"679.8\" class=\"u-p\" text-anchor=\"middle\">Innovation<\/text><\/g><g class=\"u-pj\" data-card=\"ideology\" role=\"button\" tabindex=\"0\" aria-label=\"Trading on Ideology\"><text x=\"418.0\" y=\"709.8\" class=\"u-p\" text-anchor=\"middle\">Trading on Ideology<\/text><\/g><text x=\"782.0\" y=\"631.8\" class=\"u-h u-hc\" text-anchor=\"middle\">ENTREPRENEURSHIP<\/text><g class=\"u-pj\" data-card=\"cc\" role=\"button\" tabindex=\"0\" aria-label=\"Commitment Compass\"><text x=\"782.0\" y=\"661.8\" class=\"u-p\" text-anchor=\"middle\">Commitment Compass<\/text><\/g><g class=\"u-pj\" data-card=\"cic\" role=\"button\" tabindex=\"0\" aria-label=\"Critical Input Control\"><text x=\"478.0\" y=\"454.6\" class=\"u-p\" text-anchor=\"middle\">Critical Input<\/text><text x=\"478.0\" y=\"471.6\" class=\"u-p\" text-anchor=\"middle\">Control<\/text><\/g><g class=\"u-pj\" data-card=\"returning\" role=\"button\" tabindex=\"0\" aria-label=\"Scientist Mobility\"><text x=\"478.0\" y=\"498.6\" class=\"u-p\" text-anchor=\"middle\">Scientist<\/text><text x=\"478.0\" y=\"515.6\" class=\"u-p\" text-anchor=\"middle\">Mobility<\/text><\/g><g class=\"u-pj\" data-card=\"moats\" role=\"button\" tabindex=\"0\" aria-label=\"Startup AI Moats\"><text x=\"722.0\" y=\"476.6\" class=\"u-p\" text-anchor=\"middle\">Startup<\/text><text x=\"722.0\" y=\"493.6\" class=\"u-p\" text-anchor=\"middle\">AI Moats<\/text><\/g><text x=\"600.0\" y=\"671.8\" class=\"u-p\" text-anchor=\"middle\">Reading<\/text><text x=\"600.0\" y=\"688.8\" class=\"u-p\" text-anchor=\"middle\">Politics<\/text><text x=\"600.0\" y=\"540.6\" class=\"u-core\" text-anchor=\"middle\">Innovation<\/text><line x1=\"210\" y1=\"829\" x2=\"990\" y2=\"829\" class=\"u-gl\"/><text x=\"600\" y=\"859\" text-anchor=\"middle\" class=\"u-g\"><tspan class=\"u-gk\">METHODS<\/tspan><tspan dx=\"14\">Causal inference · Field and online experiments · Panel data · LLM text measurement<\/tspan><\/text><\/svg>";
 function researchMapHTML(){
