@@ -82,8 +82,9 @@ h1 a{text-decoration:none}
 .chip{padding:6px 14px;border:1px solid var(--edge);border-radius:99px;font-size:14px;transition:background .2s,color .2s,border-color .2s}
 .chip:hover{border-color:var(--ink)}
 .chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
-#chips{align-items:center;gap:10px 10px;margin-top:34px;padding-bottom:30px;border-bottom:1px solid var(--rule)}
+#chips{align-items:center;gap:10px 10px;margin-top:56px;padding-bottom:30px;border-bottom:1px solid var(--rule)}
 #chips+#stage{margin-top:30px}
+@media (min-width:761px){#chips{padding-left:334px;margin-top:22px;row-gap:8px}#chips .tlabel{flex-basis:100%;margin:0 0 2px}}
 #chips .tlabel{margin-right:10px;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
 #chips .chip{padding:5px 14px;font-size:13.5px;border-color:var(--rule);color:var(--soft);background:color-mix(in srgb,var(--ink) 3%,var(--paper))}
 #chips .chip:hover{color:var(--ink);border-color:var(--edge)}
@@ -1160,6 +1161,7 @@ details .ef{margin-bottom:8px}
 .pv-fkc span{position:relative;z-index:1;padding:5px 14px;border:1.5px solid var(--ink);border-radius:99px;background:var(--paper);font:700 10.5px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);white-space:nowrap}
 .pv-fkc::after{content:"";position:absolute;left:50%;top:24px;height:20px;width:2px;margin-left:-1px;background:var(--ink)}
 .pv-fork{height:auto}
+@media (min-width:821px){.pv-split{grid-template-rows:auto auto}.pv-split>.pv-col{grid-row:span 2;display:grid;grid-template-rows:subgrid;row-gap:0}.pv-split>.pv-mid{grid-row:span 2}}
 .lsbridge{display:flex;justify-content:center;margin:26px 0 0}
 .lsbridge a{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border:1.5px solid var(--ink);border-radius:99px;font-weight:600;font-size:14.5px;color:var(--ink);text-decoration:none;background:var(--paper)}
 .lsbridge a:hover{background:var(--ink);color:var(--paper)}
@@ -1241,9 +1243,9 @@ details .ef{margin-bottom:8px}
 @media (max-width:760px){.talks li{display:grid;grid-template-columns:62px minmax(0,1fr);gap:0 28px}.tkd{font-size:10.5px;letter-spacing:.05em}.talks li::before{left:75px}.talks li::after{left:69px}.tkp{display:block;margin-left:0}}
 
 .hl{padding:0}
-.hl-o{color:color-mix(in srgb,var(--t4) 72%,var(--ink));font-weight:600;background:linear-gradient(transparent 64%,color-mix(in srgb,var(--c4) 34%,transparent) 0)}
-.hl-c{color:color-mix(in srgb,var(--t5) 80%,var(--ink));font-weight:600;background:linear-gradient(transparent 64%,color-mix(in srgb,var(--c5) 30%,transparent) 0)}
-.hl-k{color:var(--ink);font-weight:600;background:linear-gradient(transparent 60%,color-mix(in srgb,var(--c0) 55%,transparent) 0)}
+.hl-o{color:color-mix(in srgb,var(--t4) 72%,var(--ink));font-weight:600;background:linear-gradient(transparent 76%,color-mix(in srgb,var(--c4) 18%,transparent) 0)}
+.hl-c{color:color-mix(in srgb,var(--t5) 80%,var(--ink));font-weight:600;background:linear-gradient(transparent 76%,color-mix(in srgb,var(--c5) 16%,transparent) 0)}
+.hl-k{color:var(--ink);font-weight:600}
 #v-agenda .atitle{color:var(--ink)}
 #v-agenda .mmfold>summary{color:var(--soft)}
 #v-agenda .mml{color:var(--soft)}
@@ -1292,6 +1294,20 @@ details .ef{margin-bottom:8px}
 #v-misc .bem{background:color-mix(in srgb,var(--sc) 30%,var(--paper));box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--sc) 55%,var(--paper))}
 #v-misc .mlist>li{position:relative;border-left:2px solid color-mix(in srgb,var(--sc) 55%,var(--paper))}
 #v-misc .mlist{gap:0}
+#v-misc .mtagline{margin:0 0 10px;font-family:var(--serif);font-size:clamp(1.1rem,1.8vw,1.3rem);line-height:1.4;color:var(--ink)}
+#v-misc .olist{display:grid;gap:14px;margin:18px 0 0;padding:0 0 0 16px;list-style:none;max-width:46em}
+#v-misc .olist li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:0 12px;align-items:baseline}
+#v-misc .olist .on{font:700 12px var(--sans);letter-spacing:.08em;color:color-mix(in srgb,var(--sc) 70%,var(--ink))}
+#v-misc .olist .ot{font-family:var(--narr);font-size:14.5px;line-height:1.6;color:var(--ink)}
+#v-misc .olist li.todo .ot{color:var(--soft)}
+#v-misc .olist .otd{font-style:italic;color:var(--soft)}
+#v-misc .qgrp{margin-top:20px;padding-left:16px}
+#v-misc .qgh{margin:0 0 12px;font:700 11.5px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+#v-misc .qstamps{display:flex;flex-wrap:wrap;gap:16px 18px}
+#v-misc .qst{position:relative;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:106px;height:106px;border-radius:50%;border:2px dashed color-mix(in srgb,var(--sc) 75%,var(--ink));background:color-mix(in srgb,var(--sc) 14%,var(--paper));transform:rotate(var(--rot,0deg));box-shadow:inset 0 0 0 5px var(--paper),inset 0 0 0 6.5px color-mix(in srgb,var(--sc) 45%,var(--paper))}
+#v-misc .qse{font-size:26px;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+#v-misc .qsl{font:700 10.5px/1.15 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:color-mix(in srgb,var(--sc) 35%,var(--ink));text-align:center;max-width:84px;overflow-wrap:anywhere}
+#v-misc .qsc{position:absolute;right:-2px;top:-2px;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:color-mix(in srgb,var(--sc) 80%,var(--ink));color:var(--paper);font:700 13px/1 var(--sans);font-style:normal;transform:rotate(calc(-1*var(--rot,0deg)))}
 #v-misc .bbody{margin-top:8px;border-left:2px solid color-mix(in srgb,var(--sc) 55%,var(--paper))}
 #v-misc .mprem .memo{font-style:normal;letter-spacing:.06em;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
 #v-misc .bbody .mprem{margin:0;border-left:0;padding:0 0 0 14px}
@@ -1320,7 +1336,7 @@ details .ef{margin-bottom:8px}
       <p class="role" id="role"></p>
     </div>
     <div class="side">
-      <nav class="nav" aria-label="Pages"><a href="#home" data-nav="home">Home</a><a href="#agenda" data-nav="agenda">Research</a><a href="#story" data-nav="story">Trajectory</a><a href="#misc" data-nav="misc">Beyond Research</a><button class="editbtn" id="editbtn" type="button" hidden="">Edit</button></nav>
+      <nav class="nav" aria-label="Pages"><a href="#home" data-nav="home">Home</a><a href="#agenda" data-nav="agenda">Research</a><a href="#story" data-nav="story">Trajectory</a><a href="#misc" data-nav="misc">Beyond</a><button class="editbtn" id="editbtn" type="button" hidden="">Edit</button></nav>
       <div class="contact" hidden=""><span id="mail"></span><button class="copy" id="copy" type="button">Copy</button></div>
     </div>
   </header>
@@ -1363,7 +1379,7 @@ details .ef{margin-bottom:8px}
   </section>
 
   <section class="view" id="v-misc" hidden="">
-    <div class="mhead"><h2>Beyond Research</h2><p class="mintro" id="misc-intro"></p><div id="bquad"></div></div>
+    <div class="mhead"><h2>Beyond</h2><p class="mtagline" id="misc-tag"></p><p class="mintro" id="misc-intro"></p><div id="bquad"></div></div>
     <div class="bsec" id="bq-sq"><div class="bhead" id="sq-head"></div><div class="mgrid" id="misc-grid"></div></div>
     <div id="beyond-pre"></div>
     <div id="beyond-more"></div>
@@ -2577,7 +2593,7 @@ details .ef{margin-bottom:8px}
  },
  "teach": {
   "h": "A Third-Generation Educator",
-  "lead": "Most Koreans learn this phrase in school as Korea’s ancient founding ideal. In my family, it was less a lesson than a way of life, since three generations of us have been educators. My family runs an education business, so I grew up in classrooms, and teaching language came naturally to me. In college, I studied English and Education and became certified to teach English in secondary schools. I never made teaching my profession, but I have kept at it outside of work, part-time or as a volunteer, from kindergarten conversation lessons to business school classrooms. It is where I feel most useful, passing on what inspires me and drawing energy from someone else’s curiosity.",
+  "lead": "Most Koreans learn this phrase in school as Korea’s ancient founding ideal. In my family, it was less a lesson than a way of life, since three generations of us have been educators. My family runs an education business, so I grew up in classrooms, and teaching language came naturally to me. In college, I studied English and Education and became certified to teach English in secondary schools. Ever since, I have kept teaching part-time and as a volunteer, from kindergarten conversation lessons to business school classrooms. I genuinely enjoy sharing what I know. Passing on what inspires me is my own kind of talent donation, and the back-and-forth with curious learners always gives me energy.",
   "items": [
    {
     "ic": "speech",
@@ -2692,7 +2708,7 @@ details .ef{margin-bottom:8px}
    },
    {
     "t": "Piano and ✈️ Travel",
-    "d": "Classical piano and 20+ countries",
+    "d": "Classical piano, the Han River, and 20+ countries",
     "to": "music",
     "c": 4,
     "em": "🎹"
@@ -2934,7 +2950,7 @@ details .ef{margin-bottom:8px}
    "em": "🍎",
    "h": "A Third-Generation Educator",
    "prem": "홍익인간 (hongik ingan) 🐻🧄🌿: “live to benefit the world widely.”",
-   "lead": "Most Koreans learn this phrase in school as Korea’s ancient founding ideal. In my family, it was less a lesson than a way of life, since three generations of us have been educators. My family runs an education business, so I grew up in classrooms, and teaching language came naturally to me. In college, I studied English and Education and became certified to teach English in secondary schools. I never made teaching my profession, but I have kept at it outside of work, part-time or as a volunteer, from kindergarten conversation lessons to business school classrooms. It is where I feel most useful, passing on what inspires me and drawing energy from someone else’s curiosity.",
+   "lead": "Most Koreans learn this phrase in school as Korea’s ancient founding ideal. In my family, it was less a lesson than a way of life, since three generations of us have been educators. My family runs an education business, so I grew up in classrooms, and teaching language came naturally to me. In college, I studied English and Education and became certified to teach English in secondary schools. Ever since, I have kept teaching part-time and as a volunteer, from kindergarten conversation lessons to business school classrooms. I genuinely enjoy sharing what I know. Passing on what inspires me is my own kind of talent donation, and the back-and-forth with curious learners always gives me energy.",
    "code": "T",
    "rec": 1,
    "items": [
@@ -2972,11 +2988,11 @@ details .ef{margin-bottom:8px}
      "sh": "Classical pianist"
     },
     {
-     "em": "🩰",
+     "em": "🌊",
      "t": "",
-     "code": "How I recharge",
-     "sh": "Pilates and ballet lover",
-     "story": "Pilates and ballet keep me going. I firmly believe that strength is the foundation of stamina, for long research days as much as for anything else, so I keep showing up at the barre and on the reformer."
+     "code": "Home rivers",
+     "sh": "Han River lover",
+     "story": "I love the Han River in Seoul and the Charles River in Boston. Korean saju reads me as a great river in summer, so perhaps it is no surprise that I feel most at home by the water."
     },
     {
      "em": "✈️",
@@ -2985,6 +3001,29 @@ details .ef{margin-bottom:8px}
      "code": "20+ countries",
      "story": "Travel is a family tradition. Every school break, we went somewhere new, and we have covered more than 20 countries across five continents so far. Most recently, the destination was Boston and New York, with me as the ultimate tour guide. Where to next? 😉",
      "sh": "Globetrotter"
+    }
+   ]
+  },
+  {
+   "key": "quest",
+   "em": "🎲",
+   "h": "Real Options, Kept Open",
+   "sc": "var(--c0)",
+   "style": "olist",
+   "prem": "The one corner of my life where I ignore my own research on when to let options go.",
+   "code": "O",
+   "items": [
+    {
+     "t": "Ambassador for Musinsa, Korea’s largest fashion platform"
+    },
+    {
+     "t": "Pilates, yoga, barre, and spinning, all in service of one belief: strength is the foundation of stamina"
+    },
+    {
+     "t": "Volunteering with rescue dogs"
+    },
+    {
+     "t": "Traveling solo"
     }
    ]
   },
@@ -3055,8 +3094,8 @@ details .ef{margin-bottom:8px}
    },
    {
     "k": "Stream 2",
-    "h": "Sourcing and technology investment",
-    "q": "How do firms decide when to build rather than buy, under technological and political uncertainty?",
+    "h": "Technological capabilities",
+    "q": "How do firms decide when to invest in technology, and whether to build or source it, under technological and political uncertainty?",
     "c": 5,
     "items": [
      "clock",
@@ -3085,7 +3124,8 @@ details .ef{margin-bottom:8px}
    ],
    "t": "Commitment"
   }
- }
+ },
+ "miscTag": "Curious explorer. Steady learner. Happy sharer."
 }</script>
 
 <script>
@@ -3639,14 +3679,15 @@ function renderMisc(){
   }
   Q('#misc-grid').innerHTML=h;Q('#misc-grid').className=editing?'mgrid':'sqgrid';
   var bsq=Q('#bq-sq');if(bsq)bsq.hidden=!editing;
-  var mi=Q('#misc-intro');if(mi){if(editing){mi.innerHTML=inp('miscIntro','Intro line under "Beyond Research"')}else{mi.textContent=D.miscIntro||''}}
+  var mi=Q('#misc-intro');if(mi){if(editing){mi.innerHTML=inp('miscIntro','Intro line under "Beyond"')}else{mi.textContent=D.miscIntro||''}}
+  var mt=Q('#misc-tag');if(mt){if(editing){mt.innerHTML=inp('miscTag','Who I am, in a few words')}else{mt.textContent=D.miscTag||'';mt.hidden=!D.miscTag}}
   var sq=D.sq||{},sh=Q('#sq-head');if(sh)sh.innerHTML=editing?'<div class="two">'+inp('sq.h','Section title')+inp('sq.sub','Line under the title')+'</div>':(sq.h?'<h3>'+emo(sq.em)+esc(sq.h)+'</h3>':'')+(sq.sub?'<p class="bsub">'+esc(sq.sub)+'</p>':'');
   var BX=(!editing&&D.bx&&D.bx.length)?D.bx:null,bxo=function(k){return BX?BX.filter(function(x){return x.key===k})[0]:null};
-  var bm=Q('#beyond-more');if(bm)bm.innerHTML=BX?(bxo('music')?bxHTML(bxo('music')):'')+(bxo('vol')?bxHTML(bxo('vol')):'')+bxTicketHTML():beyondHTML();
+  var bm=Q('#beyond-more');if(bm)bm.innerHTML=BX?(bxo('music')?bxHTML(bxo('music')):'')+(bxo('quest')?bxHTML(bxo('quest')):'')+(bxo('vol')?bxHTML(bxo('vol')):'')+bxTicketHTML():beyondHTML();
   var bp=Q('#beyond-pre');if(bp)bp.innerHTML=BX&&bxo('teach')?bxHTML(bxo('teach')):bsecHTML('teach');
   var bq=Q('#bquad');if(bq)bq.innerHTML=BX?'':quadHTML();
 }
-function bxSC(key){var q=((D.quad||{}).cells||[]).filter(function(c){return c.to===key})[0];return q?'var(--c'+q.c+')':'var(--edge)'}
+function bxSC(key){var own=((D.bx||[]).filter(function(x){return x.key===key})[0]||{}).sc;if(own)return own;var q=((D.quad||{}).cells||[]).filter(function(c){return c.to===key})[0];return q?'var(--c'+q.c+')':'var(--edge)'}
 function emoSpan(t){return String(t).replace(/(\p{Extended_Pictographic}\uFE0F?(?:\s*\p{Extended_Pictographic}\uFE0F?)*)/gu,'<span class="memo">$1</span>')}
 function bxHTML(x){
   var paras=function(t){return String(t||'').split(/\n\s*\n/).map(function(p){return '<p>'+esc(p.trim())+'</p>'}).join('')};
@@ -3657,6 +3698,8 @@ function bxHTML(x){
     var ph='';var src=it.photos&&D[it.photos];if(src&&src.photos&&src.photos.length)ph='<div class="bstrip mstrip" style="--n:'+src.photos.length+'">'+src.photos.map(function(p){return '<figure><img src="'+esc(p.src)+'" alt="'+esc(p.alt||p.cap||'')+'" loading="lazy"'+(p.pos?' style="object-position:'+esc(p.pos)+'"':'')+'></figure>'}).join('')+'</div>';
     return '<li><span class="mcode">'+esc(it.code||((x.code||'')+(i+1)))+'</span><span class="mem" aria-hidden="true">'+esc(it.em||'')+'</span><div class="mtx">'+(it.sh?'<p class="msh">'+esc(it.sh)+'</p>':'')+(it.t?'<p>'+esc(it.t)+link+go+'</p>':'')+gob+more+ph+'</div></li>'}).join('');
   var rec='';var b=D[x.key];if(x.rec&&b&&b.recg&&b.recg.length)rec='<details class="trec"><summary><span class="tpl" aria-hidden="true"></span>'+esc(b.rech||'Details')+'</summary><div class="tgroups">'+b.recg.map(function(g){return '<div class="tgp"><p class="tgh"><b>'+esc(g.h)+'</b>'+(g.s?'<span>'+esc(g.s)+'</span>':'')+'</p>'+(g.note?'<p class="tgn">'+esc(g.note)+'</p>':'')+(g.rows&&g.rows.length?'<ul>'+g.rows.map(function(r){return '<li><span class="rc"><b>'+esc(r.c)+'</b>'+(r.l?'<i>'+esc(r.l)+'</i>':'')+'</span><span class="ri">'+esc(r.i||'')+(r.y?' · '+esc(r.y):'')+'</span></li>'}).join('')+'</ul>':'')+'</div>'}).join('')+'</div></details>';
+  if(x.style==='olist'){return '<section class="bsec mx" id="bq-'+esc(x.key)+'" style="--sc:'+bxSC(x.key)+'"><div class="bhead"><h3>'+emo(x.em)+esc(x.h)+'</h3></div><div class="bbody">'+(x.prem?'<p class="mprem">'+emoSpan(esc(x.prem))+'</p>':'')+'<ol class="olist">'+(x.items||[]).map(function(it,k){return '<li'+(it.todo?' class="todo"':'')+'><span class="on">'+esc(it.n||((x.code||'O')+(k+1)))+'</span><span class="ot">'+esc(it.t)+(it.u?' <a class="mlk" href="'+esc(it.u)+'" target="_blank" rel="noopener">'+esc(it.ul||hostOf(it.u))+' \u2197</a>':'')+(it.todo?' <em class="otd">(to be realized)</em>':'')+'</span></li>'}).join('')+'</ol></div></section>'}
+  if(x.style==='stamps'){return '<section class="bsec mx" id="bq-'+esc(x.key)+'" style="--sc:'+bxSC(x.key)+'"><div class="bhead"><h3>'+emo(x.em)+esc(x.h)+'</h3></div><div class="bbody">'+(x.prem?'<p class="mprem">'+emoSpan(esc(x.prem))+'</p>':'')+(x.groups||[]).map(function(g){return '<div class="qgrp">'+(g.h?'<p class="qgh">'+esc(g.h)+'</p>':'')+'<div class="qstamps">'+(g.items||[]).map(function(it,k){return '<span class="qst" style="--rot:'+[-6,4,-3,7,-5,3][k%6]+'deg"><span class="qse" aria-hidden="true">'+esc(it.em||'')+'</span><span class="qsl">'+esc(it.t)+'</span><i class="qsc" aria-hidden="true">\u2713</i></span>'}).join('')+'</div></div>'}).join('')+'</div></section>'}
   if(x.style==='cards'){var NC={roots:'#5E1424',snu:'#4A63C2',cons:'#E0952B',fnd:'#3AA57A',kiet:'#8B6AD8',col:'#3B95CF'};items='<div class="gbn">'+(x.items||[]).map(function(it,i){var body='<div class="nh"><span class="nem" aria-hidden="true">'+esc(it.em||'')+'</span><span class="nk">'+esc(it.k||'')+'</span></div><p class="nhand">'+esc(it.hand||'')+'</p><p class="nt">'+esc(it.t)+'</p>'+(it.u?'<a class="mlk" href="'+esc(it.u)+'" target="_blank" rel="noopener">'+esc(it.ul||hostOf(it.u))+' \u2197</a>':'');return '<article class="note'+(it.model?' nwide':'')+'" style="--nc:'+(NC[it.c]||'#5E1424')+';--rot:'+(it.model?'.35':[-1.4,1.1,.9,-1][i%4])+'deg"><span class="tape" aria-hidden="true"></span>'+body+'</article>'}).join('')+'</div>';return '<section class="bsec mx" id="bq-'+esc(x.key)+'" style="--sc:'+bxSC(x.key)+'"><div class="bhead"><h3>'+emo(x.em)+esc(x.h)+'</h3></div><div class="bbody">'+(x.prem?'<p class="mprem">'+esc(x.prem)+'</p>':'')+items+'</div></section>'}
   return '<section class="bsec mx" id="bq-'+esc(x.key)+'" style="--sc:'+bxSC(x.key)+'"><div class="bhead"><h3>'+emo(x.em)+esc(x.h)+'</h3></div><div class="bbody">'+(x.prem?'<p class="mprem">'+emoSpan(esc(x.prem))+'</p>':'')+(x.lead?'<p class="mlead">'+esc(x.lead)+'</p>':'')+'<ol class="mlist">'+items+'</ol></div>'+rec+'</section>';
 }
